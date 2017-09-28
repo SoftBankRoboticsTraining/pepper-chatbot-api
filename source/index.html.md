@@ -42,6 +42,14 @@ You can view general integration instructions in this central, light blue sectio
 
 
 ```msbot
+"Provide your 'botToken' to the SoftBank Robotics Sales Engineer assisting you with setup. 
+You can find your 'botToken' by following these steps:
+Step 1: Open your bot in Azure portal
+Step 2: Select the CHANNELS tab
+Step 3: Add DirectLine to your bot
+Step 4: Click on Edit
+Step 5: Copy one of the Secret Keys that was generated; this is your botToken"
+
 "To see a working example, download the emulator and follow the instructions here:
 
 https://docs.microsoft.com/en-us/bot-framework/debug-bots-emulator,
