@@ -10,7 +10,7 @@ toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
 
 includes:
-  - errors
+  - faq
 
 search: true
 ---
@@ -19,16 +19,38 @@ search: true
 
 
 ```satisfi
-"Satisfi is the default bot used by our Pepper API. If a user doesn’t 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Satisfi is the default bot used by our Pepper API. If a user doesn’t 
 hash their company with a different bot, they are allowed to use and 
-train our Satisfi bot with Utterances and Responses as they wish. "
+train our Satisfi bot with Utterances and Responses as they wish.
+
+To use a different bot, select from the tab options above.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ```
 
 ```msbot
-"Microsoft's open source Bot Builder SDKs allow you to build simple
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Microsoft's open source Bot Builder SDKs allow you to build simple
 to sophisticated dialogs; Cognitive Services enable your bot to see,
 hear, interpret and interact in more human ways. Ms-Bot is the first,
-3rd-party ChatBot integration that SoftBank Robotics supports."
+3rd-party ChatBot integration that SoftBank Robotics supports.
+
+To see a working example, download the emulator here:
+    https://docs.microsoft.com/en-us/bot-framework/debug-bots-emulator
+and use the following sample PuppyBot information to set up your emulator:
+
+MS Bot Endpoint:
+   https://pepper-msbot.azurewebsites.net/api/messages?code=e3fa60oaOlabQUptT63DYSWPxrdG0pS9zFrADLT1xX9iGx6FxAG7pw==
+
+PuppyBot App Id:
+   808ad83e-3876-40fd-b0e8-a616e014fc6f
+
+PuppyBot Password:
+   9nHp8QNcwQJcNDHHjBCnoj7
+
+PuppyBot LUIS Endpoint:
+   https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/4e4b1c46-5d6d-4035-9905-eef921df734f?subscription-key=37e463e0ae22427abc606d076dafbdd3&timezoneOffset=-480&verbose=true&spellCheck=true&q=
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ```
 
 Welcome to the Pepper ChatBot API! You can use this API to access a 3rd party chatbot's endpoints in order to integrate an existing chatbot with Pepper. 
@@ -40,37 +62,25 @@ You can view general integration instructions in this central, light blue sectio
 
 # Authentication
 
+```satisfi
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Authentication for our Satisfi bot is handled from within the CMS.
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+```
 
 ```msbot
-"Provide your 'botToken' to the SoftBank Robotics Sales Engineer assisting you with setup. 
-You can find your 'botToken' by following these steps:
-Step 1: Open your bot in Azure portal
-Step 2: Select the CHANNELS tab
-Step 3: Add DirectLine to your bot
-Step 4: Click on Edit
-Step 5: Copy one of the Secret Keys that was generated; this is your botToken"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Provide your 'botToken' to the SoftBank Robotics Sales Engineer assisting 
+you with setup. You can find your 'botToken' by following these steps:
 
-"To see a working example, download the emulator and follow the instructions here:
-
-https://docs.microsoft.com/en-us/bot-framework/debug-bots-emulator,
-
-using the following sample PuppyBot information to set up your emulator:"
-
-MS Bot Endpoint:
-
-"https://pepper-msbot.azurewebsites.net/api/messages?code=e3fa60oaOlabQUptT63DYSWPxrdG0pS9zFrADLT1xX9iGx6FxAG7pw=="
-
-PuppyBot App Id
-
-"808ad83e-3876-40fd-b0e8-a616e014fc6f"
-
-PuppyBot Password
-
-"9nHp8QNcwQJcNDHHjBCnoj7"
-
-PuppyBot LUIS Endpoint:
-
-"https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/4e4b1c46-5d6d-4035-9905-eef921df734f?subscription-key=37e463e0ae22427abc606d076dafbdd3&timezoneOffset=-480&verbose=true&spellCheck=true&q="
+Step 1: Open your bot in Azure portal.
+Step 2: Select the CHANNELS tab.
+Step 3: Add DirectLine to your bot.
+Step 4: Click on Edit.
+Step 5: Copy one of the Secret Keys that was generated.
+Step 6: Give the copied value (botToken) to the SBR Sales Engineer.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ```
 ChatBots use RESTful APIs with APP IDs, PASSWORDs, and/or ACCESS TOKENS to authenticate in order to retrieve chatbot data. Requests are made to the ChatBot from a single endpoint:
 
@@ -156,17 +166,17 @@ A nullable string that contains the actionable value to be returned to the chat 
 
 ```json
 {
-    "msgType": "chatbotresponse",
-    "data": "Answer",
-    "type": "message",
-    "conversationID": "testgguid",
-    "uniqueID": "b958c65a-3c9f-4f38-919d-0a4c70ae3e0d",
-    "utteranceID": "testutteranceID",
-    "sessionID": "testgguid",
-    "response": "Answer",
-    "speak": "Answer",
-    "show": {
-        "text": "Answer"
+    msgType: "chatbotresponse",
+    data: "Answer",
+    type: "message",
+    conversationID: "testgguid",
+    uniqueID: "b958c65a-3c9f-4f38-919d-0a4c70ae3e0d",
+    utteranceID: "testutteranceID",
+    sessionID: "testgguid",
+    response: "Answer",
+    speak: "Answer",
+    show: {
+        text: "Answer"
     }
 }
 ```
@@ -328,145 +338,232 @@ A nullable string that contains the actionable value to be returned to the chat 
 
 <img src = "images/Pepper_Data_Model-Text_Bubbles_Response.png"/>
 
-# Training Your ChatBot
+# Accepted ChatBot Responses
 
-
+Not all of a ChatBot's responses will necessarily be compatible with our Pepper ChatBot API.
+We will generally accept the subset of all ChatBot responses that coincide with the Pepper
+ChatBot API data model. Scroll the options to the right within the appropriate tab for your
+given ChatBot to see what the accepted responses are for your given ChatBot.
 
 ```satisfi
-{
-  "payload":{
-       "type":"TRAIN",
-      "response_action": "[ADD][ADD-UPDATE][UPDATE][DELETE][NONE]",
-      "response_id": "sample_id",
-      "response_msg": "sample answer",
-      "input_action": "[ADD][ADD-REPLACE][DELETE][NONE]",
-      "input_msg": 
-      [
-          "sample question1",
-          "sample question2",
-          "sample question3",
-          "sample question4"
-       ],
-       "keys": 
-          {
-              "unit_id":"12345"
-          }
-     }
-}
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+All Satisfi responses are handled by default.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ```
+
 
 
 ```msbot
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-## Video Only Response
+"""""""""""""""""""""""""""""""""""
+Hero Card with Images and Choices
+"""""""""""""""""""""""""""""""""""
 
 {
-  utteranceId: "1234abcde",
-  sessionId: "abcde1234",
-        botConversationId: "a1b2c3d4e5",
-        utterance: "Can you show me a video?",
-  speak: "Look at this cool video",
-  show: {
-    content: [{
-        contentURL: "https.content.mp4",
-        contentType: "video/mp4",
-        action: false
+  "type": "message",
+  "attachmentLayout": "carousel",
+  "attachments": [
+    {
+      "contentType": "application/vnd.microsoft.card.thumbnail",
+      "content": {
+        "title": "Bulldog",
+        "subtitle": "A breed of utility dog.",
+        "text": "The American bulldog is a stocky, well built, strong-looking dog, with a large head and a muscular build. Its coat is short and generally smooth. The breed is a light to moderate shedder.",
+        "images": [
+          {
+            "url": "https://static.pexels.com/photos/158682/snow-dog-de-bordeaux-158682.jpeg"
+          }
+        ],
+        "buttons": [
+          {
+            "type": "imBack",
+            "value": "bulldog",
+            "title": "Bulldog"
+          }
+        ]
       }
-    ]
-  }
-}
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
+    },
+    {
+      "contentType": "application/vnd.microsoft.card.thumbnail",
+      "content": {
+        "title": "Papillon",
+        "subtitle": "Continental Toy Spaniel",
+        "text": "The Papillon is a very intelligent and self-assured dog that has a very easy time learning new tricks. This dog can be sociable with children and strangers but is generally reserved around new people. ",
+        "images": [
+          {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Papillon_Ears.jpg"
+          }
+        ],
+        "buttons": [
+          {
+            "type": "imBack",
+            "value": "papillon",
+            "title": "Papillon"
+          }
+        ]
+      }
+    }
+  ],
+  "locale": "en-US",
+  "localTimestamp": "2017-09-21T20:43:18-07:00",
+  "from": {
+    "id": "7n77ehm8i7g704je6",
+    "name": "Bot"
   },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+  "recipient": {
+    "id": "default-user"
+  },
+  "inputHint": "acceptingInput",
+  "replyToId": "f2elbk5fm3n785gejc",
+  "id": "h6aj6d5iib0bk4al",
+  "channelId": "emulator",
+  "timestamp": "2017-09-22T03:43:18.660Z",
+  "conversation": {
+    "id": "8kmh7c4c87d3j7amgc"
   }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
 }
+
+"""""""""""""""""""""""
+Hero Card with Choices
+"""""""""""""""""""""""
+
+{
+  "type": "message",
+  "attachments": [
+    {
+      "contentType": "application/vnd.microsoft.card.hero",
+      "content": {
+        "title": "Do you want to know about Puppies?",
+        "buttons": [
+          {
+            "type": "imBack",
+            "value": "Yes",
+            "title": "Yes"
+          },
+          {
+            "type": "imBack",
+            "value": "No",
+            "title": "No"
+          }
+        ]
+      }
+    }
+  ],
+  "locale": "en-US",
+  "localTimestamp": "2017-09-21T20:30:30-07:00",
+  "from": {
+    "id": "7n77ehm8i7g704je6",
+    "name": "Bot"
+  },
+  "recipient": {
+    "id": "default-user"
+  },
+  "inputHint": "acceptingInput",
+  "replyToId": "dnc31h22amejd2847c",
+  "id": "m65fn3h9hfnk07cdc",
+  "channelId": "emulator",
+  "timestamp": "2017-09-22T03:30:30.970Z",
+  "conversation": {
+    "id": "8kmh7c4c87d3j7amgc"
+  }
+}
+
+"""""""""
+Greeting
+"""""""""
+
+
+{
+  "text": "What's up with you homie?",
+  "inputHint": "expectingInput",
+  "type": "message",
+  "localTimestamp": "2017-09-22T03:27:11.411Z",
+  "from": {
+    "id": "7n77ehm8i7g704je6",
+    "name": "Bot"
+  },
+  "recipient": {
+    "id": "default-user",
+    "name": "User"
+  },
+  "replyToId": "df2d0764lj5fhkn5ac"
+}
+
+"""""""""""""""""""""""""
+Waterfall Conversations
+"""""""""""""""""""""""""
+
+{
+  "key": {
+    "channelId": "emulator",
+    "conversationId": "1a54knkii792169k6",
+    "userId": "default-user"
+  },
+  "state": {
+    "eTag": "*",
+    "data": {
+      "BotBuilder.Data.SessionState": {
+        "callstack": [
+          {
+            "id": "*:puppyconvo",
+            "state": {
+              "BotBuilder.Data.WaterfallStep": 0
+            }
+          },
+          {
+            "id": "BotBuilder:prompt-text",
+            "state": {
+              "options": {
+                "prompt": "Do you like puppies more than chips?",
+                "promptAfterAction": true,
+                "libraryNamespace": "*"
+              },
+              "turns": 0,
+              "lastTurn": 1505155674017,
+              "isReprompt": false
+            }
+          }
+        ],
+        "lastAccess": 1505155673299,
+        "version": 0
+      }
+    }
+  }
+}
+
+"""""""""""
+Rich Cards
+"""""""""""
+
+{
+  "type": "message",
+  "attachments": [{
+    "contentType": "application/vnd.microsoft.card.thumbnail",
+    "content": {
+      "title": "Puppies make you proud!",
+      "subtitle": "Your Puppies — wherever your users are talking",
+      "text": "Connect intelligent puppies to interact more naturally wherever they are, from text/sms to Skype, Slack, Office 365 mail and other popular services.",
+      "images": [{
+        "url": "https://www.artsfon.com/pic/201511/1366x768/artsfon.com-77661.jpg"
+      }],
+      "buttons": [{
+        "type": "openUrl",
+        "value": "http://www.adoptapet.com/s/buy-a-puppy/",
+        "title": "Get Started"
+      }]
+    }
+  }],
+  "locale": "en-US",
+  "localTimestamp": "2017-09-11T18:12:53.892Z",
+  "from": {
+    "id": "n5dm5eb6ldekh6a3",
+    "name": "Bot"
+  },
+  "recipient": {
+    "id": "default-user",
+    "name": "User"
+  },
+  "inputHint": "acceptingInput",
+  "replyToId": "43fk1c49hdibb3kml"
+}
+
 ```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
