@@ -17,99 +17,311 @@ search: true
 
 # Pepper ChatBot API
 
+
 ```satisfi
-"Satisfi is the default bot used by our Pepper API. If a user doesn’t "
-"hash their company with a different bot, they are allowed to use and "
-"train our Satisfi bot with Utterances and Responses as they wish. 
+"Satisfi is the default bot used by our Pepper API. If a user doesn’t 
+hash their company with a different bot, they are allowed to use and 
+train our Satisfi bot with Utterances and Responses as they wish. "
 ```
 
 ```msbot
-"Microsoft's open source Bot Builder SDKs allow you to build simple "
-"to sophisticated dialogs; Cognitive Services enable your bot to see, "
-"hear, interpret and interact in more human ways. Ms-Bot is the first "
-"3rd party ChatBot that SoftBank Robotics officially supports."
+"Microsoft's open source Bot Builder SDKs allow you to build simple
+to sophisticated dialogs; Cognitive Services enable your bot to see,
+hear, interpret and interact in more human ways. Ms-Bot is the first,
+3rd-party ChatBot integration that SoftBank Robotics supports."
 ```
 
-Welcome to the Pepper ChatBot API! You can use this API to access a 3rd party chatbot's API endpoints in order to integrate an existing chatbot with Pepper. 
+Welcome to the Pepper ChatBot API! You can use this API to access a 3rd party chatbot's endpoints in order to integrate an existing chatbot with Pepper. 
 
-You can view integration instructions in the dark area to the right, and you can switch between different chatbot-specific code examples with the tabs in the top right.
+You can view general integration instructions in this central, light blue section. In the dark area to the right, you can see chatbot-specific code examples corresponding visually in line with each general section. Switch between different chatbot-specific code examples with the tabs in the top right.
 
-We currently support integrations with Satisfi and MS-Bot, but this list will be growing quickly, so check back soon or else get in touch with us directly if your chatbot platform does not appear on this list! 
+<aside class="notice">We currently only support integrations with our default chatbot service (satisfi) and the Microsoft Bot Framework (msbot), but this list is quickly growing, so check back soon or else get in touch with us directly if your chatbot platform does not appear on this list!</aside>
 
 
 # Authentication
 
-> Bot Endpoints:
-
 
 ```msbot
-Bot Endpoint:
+"To see a working example, download the emulator and follow the instructions here:
+
+https://docs.microsoft.com/en-us/bot-framework/debug-bots-emulator,
+
+using the following sample PuppyBot information to set up your emulator:"
+
+MS Bot Endpoint:
 
 "https://pepper-msbot.azurewebsites.net/api/messages?code=e3fa60oaOlabQUptT63DYSWPxrdG0pS9zFrADLT1xX9iGx6FxAG7pw=="
 
-App Id
+PuppyBot App Id
 
 "808ad83e-3876-40fd-b0e8-a616e014fc6f"
 
-Password
+PuppyBot Password
 
 "9nHp8QNcwQJcNDHHjBCnoj7"
 
-LUIS Endpoint:
+PuppyBot LUIS Endpoint:
 
 "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/4e4b1c46-5d6d-4035-9905-eef921df734f?subscription-key=37e463e0ae22427abc606d076dafbdd3&timezoneOffset=-480&verbose=true&spellCheck=true&q="
 ```
+ChatBots use RESTful APIs with APP IDs, PASSWORDs, and/or ACCESS TOKENS to authenticate in order to retrieve chatbot data. Requests are made to the ChatBot from a single endpoint:
 
+<code>https://{YOUR-CHATBOT'S-ENDPOINT}</code>
 
-> Make sure to replace `token` with your token key.
+<aside class="notice">Authorization: Varies between chatbots, but typically requires your App ID and Password when configuring. We currently must work together with your   developers to set this up, but will soon provide a web interface for self service.</aside>
 
-ChatBots use RESTful API with access tokens to send and retrieve data.
-
-`Authorization: TOKEN`
-
-<aside class="notice">
-You must replace <code>TOKEN</code> with your personal API key.
-</aside>
 
 # Pepper Data Model
 
-{ <br>
-&nbsp;&nbsp;utteranceId: GUID,<br>
-&nbsp;&nbsp;sessionId: GUID,<br>
-&nbsp;&nbsp;botConversationId: GUID,<br>
-&nbsp;&nbsp;utterance: STRING,<br>
-&nbsp;&nbsp;speak: STRING,<br>
-&nbsp;&nbsp;show: {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;text: STRING,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;content: [{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text: STRING,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;speak: STRING,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentURL: STRING URL,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentType: STRING<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;action: BOOLEAN<br>
-&nbsp;&nbsp;&nbsp;&nbsp;}]<br>
-&nbsp;&nbsp;}<br>
-}<br>
+> Pepper Data Model - Pepper API returns the following data model, with its variations, in reply to an utterance or wav file sent through either POST or Websocket:
 
-# Training Your ChatBot
+```json
+{ 
+    "utteranceId": GUID,
+    "sessionId": GUID,
+    "botConversationId": GUID,
+    "speak": STRING,
+    "show": {
+       "text": STRING,
+        "content": [{
+            "text": STRING,
+            "speak": STRING,
+            "contentURL": STRING URL,
+            "value": STRING
+        }]
+    }
+}
+```
+
+To the right, you can see the generic data model returned by the Pepper API. Below you can find definitions for the various datums returned in the response. In the sections that follow, you can see precisely how Pepper will display various types of mixed media responses.
+
+
+### Definitions:
+
+<code> utteranceId</code>
+
+A GUID generated by Pepper in order to track the sent and returned values for an utterance.
+
+<code> sessionId </code>
+
+A GUID generated by Pepper in order to track the chat session, has a mapping to a botCoversationId if needed.
+
+<code> botConversationId </code>
+
+A GUID generated by the bot in the cloud. Satisfi let’s us set this, so it’s a one to one mapping in some cases.
+
+<code> speak </code>
+
+A string Pepper is meant to speak upon RETURN of the data model from the WebSocket
+
+<code> show </code>
+
+An object detailing out what Pepper is supposed to show, along with actionable entities
+
+<code> show.text </code>
+
+A string that Pepper is supposed to show as a title for the content to be displayed
+
+<code> show.content </code>
+
+A object that contains an array of objects meant to cover all scenarios related to chatbot interfaces.
+
+<code> show.content.text </code>
+
+A nullable string to be shown for the content object
+
+<code> show.content.speak </code>
+
+A nullable string for Pepper to speak upon selection of the content object
+
+<code> show.content.contentURL </code>
+
+The nullable url for the content to be displayed of the content object
+
+<code> show.content.value </code>
+
+A nullable string that contains the actionable value to be returned to the chat bot upon content selection.
+
+
 
 ## Text Only Response
 
-
+```json
 {
-&nbsp;&nbsp;&nbsp;&nbsp;"msgType": "chatbotresponse",
-&nbsp;&nbsp;&nbsp;&nbsp;"data": "Answer",
-&nbsp;&nbsp;&nbsp;&nbsp;"type": "message",
-&nbsp;&nbsp;&nbsp;&nbsp;"conversationID": "testgguid",
-&nbsp;&nbsp;&nbsp;&nbsp;"uniqueID": "b958c65a-3c9f-4f38-919d-0a4c70ae3e0d",
-&nbsp;&nbsp;&nbsp;&nbsp;"utteranceID": "testutteranceID",
-&nbsp;&nbsp;&nbsp;&nbsp;"sessionID": "testgguid",
-&nbsp;&nbsp;&nbsp;&nbsp;"response": "Answer",
-&nbsp;&nbsp;&nbsp;&nbsp;"speak": "Answer",
-&nbsp;&nbsp;&nbsp;&nbsp;"show": {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"text": "Answer"
-&nbsp;&nbsp;&nbsp;&nbsp;}
+    "msgType": "chatbotresponse",
+    "data": "Answer",
+    "type": "message",
+    "conversationID": "testgguid",
+    "uniqueID": "b958c65a-3c9f-4f38-919d-0a4c70ae3e0d",
+    "utteranceID": "testutteranceID",
+    "sessionID": "testgguid",
+    "response": "Answer",
+    "speak": "Answer",
+    "show": {
+        "text": "Answer"
+    }
 }
+```
+
+<img src = "images/Pepper_Data_Model-Text_Only_Response.png"/>
+
+
+## Video Response
+
+```json
+{
+  utteranceId: "1234abcde",
+  sessionId: "abcde1234",
+        botConversationId: "a1b2c3d4e5",
+  speak: "Look at this cool video",
+  show: {
+    content: [{
+        contentURL: "https.content.mp4"
+      }
+    ]
+  }
+}
+```
+
+<img src = "images/Pepper_Data_Model-Video_Response.png"/>
+
+## Picture and Text Response (Non-actionable)
+
+```json
+{
+  utteranceId: "1234abcde",
+  sessionId: "abcde1234",
+        botConversationId: "a1b2c3d4e5",
+  speak: "The weather in San Francisco today is a high of 66 degrees and a low of 48.",
+  show: {
+    text: "The weather in San Francisco today is a high of 66 degrees and a low of 48.",
+    content: [{
+        text: "Caption",
+        contentURL: "https.content.png"
+      },
+      {
+        text: "Caption",
+        contentURL: "https.content.jpeg"
+      },
+      {
+        text: "Caption",
+        contentURL: "https.content.gif"
+      }
+    ]
+  }
+}
+```
+
+<img src = "images/Pepper_Data_Model-Picture_And_Text_Response.png"/>
+
+## Picture Only Response (Non-actionable)
+
+```json
+{
+  utteranceId: "1234abcde",
+  sessionId: "abcde1234",
+        botConversationId: "a1b2c3d4e5",
+  speak: "Look at this cool pic",
+  show: {
+    text: "Look at this cool pic",
+    content: [{
+        contentURL: "https.content.png"
+      }
+    ]
+  }
+}
+```
+
+<img src = "images/Pepper_Data_Model-Picture_Only_Response.png"/>
+
+## Picture and Text Response (Actionable)
+
+```json
+{
+  utteranceId: "1234abcde",
+  sessionId: "abcde1234",
+        botConversationId: "a1b2c3d4e5",
+  speak: "The weather in San Francisco today is a high of 66 degrees and a low of 48.",
+  show: {
+    text: "The weather in San Francisco today is a high of 66 degrees and a low of 48.",
+    content: [{
+        text: "Caption",
+        contentURL: "https.content.png",
+        value: "action1"
+      },
+      {
+        text: "Caption",
+        contentURL: "https.content.jpeg",
+        value: "action2"
+      },
+      {
+        text: "Caption",
+        contentURL: "https.content.gif",
+        value: "action3"
+      }
+    ]
+  }
+}
+```
+
+<img src = "images/Pepper_Data_Model-Picture_And_Text_Response.png"/>
+
+## Picture Only Response (Actionable)
+
+```json
+{
+  utteranceId: "1234abcde",
+  sessionId: "abcde1234",
+        botConversationId: "a1b2c3d4e5",
+  speak: "The weather in San Francisco today is a high of 66 degrees and a low of 48.",
+  show: {
+    text: "The weather in San Francisco today is a high of 66 degrees and a low of 48.",
+    content: [{
+        contentURL: "https.content.png",
+        value: "action1"
+      },
+      {
+        contentURL: "https.content.jpeg",
+        value: "action2"
+      },
+      {
+        contentURL: "https.content.gif",
+        value: "action3"
+      }
+    ]
+  }
+}
+```
+< No Image Provided in Luxoft Documentation >
+
+
+## Text Bubbles Response (Actionable)
+
+```json
+{
+  utteranceId: "1234abcde",
+  sessionId: "abcde1234",
+        botConversationId: "a1b2c3d4e5",
+  speak: "The weather in San Francisco today is a high of 66 degrees and a low of 48.",
+  show: {
+    text: "The weather in San Francisco today is a high of 66 degrees and a low of 48.",
+    content: [{
+        text: "YES",
+        value: "yes"
+      },
+      {
+        text: "NO",
+        value: "no"
+      }
+    ]
+  }
+}
+```
+
+<img src = "images/Pepper_Data_Model-Text_Bubbles_Response.png"/>
+
+# Training Your ChatBot
+
 
 
 ```satisfi
