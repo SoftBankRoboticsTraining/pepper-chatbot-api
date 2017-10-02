@@ -505,15 +505,15 @@ ChatBot API data model. Scroll the options to the right within the appropriate t
 given ChatBot to see what the accepted responses are for your ChatBot.</p>
 <div class="highlight"><pre class="highlight msbot tab-msbot"><code><span class="s2">"""""""""""""""""""""""""""
 Supported MS-Bot Responses:
-"""""""""""""""""""""""""""</span><span class="w">
-</span><span class="err">The</span><span class="w"> </span><span class="err">following</span><span class="w"> </span><span class="err">show</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">models</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">various</span><span class="w"> </span><span class="err">MS-Bot</span><span class="w"> </span><span class="err">responses</span><span class="p">,</span><span class="w"> 
-</span><span class="err">followed</span><span class="w"> </span><span class="err">by</span><span class="w"> </span><span class="err">their</span><span class="w"> </span><span class="err">mappings</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">Pepper</span><span class="w"> </span><span class="err">ChatBot</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">model</span><span class="p">:</span><span class="w">
+""""""""""""""""""""""""""
+The following show the data models of various MS-Bot responses, 
+followed by their mappings to the Pepper ChatBot data model:
 
-</span><span class="s2">"""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""
 Hero Card with Images and Choices
-"""""""""""""""""""""""""""""""""""</span><span class="w">
-</span><span class="err">MS-Bot</span><span class="w"> </span><span class="err">response</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">model</span><span class="p">:</span><span class="w">
-</span><span class="p">{</span><span class="w">
+""""""""""""""""""""""""""""""""""
+MS-Bot response data model:
+"</span><span class="p">{</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"attachmentLayout"</span><span class="p">:</span><span class="w"> </span><span class="s2">"carousel"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
@@ -566,26 +566,26 @@ Hero Card with Images and Choices
   </span><span class="s2">"conversation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6ja3le587mmjbc4c"</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="s2">"
 
-</span><span class="err">Mapping</span><span class="w"> </span><span class="err">(MS-Bot</span><span class="w"> </span><span class="err">-&gt;</span><span class="w"> </span><span class="err">Pepper</span><span class="w"> </span><span class="err">Data</span><span class="w"> </span><span class="err">Model)</span><span class="p">:</span><span class="w">
-</span><span class="err">attachments</span><span class="w"> </span><span class="err">~&gt;</span><span class="w"> </span><span class="err">show.content</span><span class="w">
-</span><span class="err">attachments.title</span><span class="w"> </span><span class="err">-&gt;</span><span class="w"> </span><span class="err">show.content.text</span><span class="w">
-</span><span class="err">attachments.subtitle</span><span class="w"> </span><span class="err">-&gt;</span><span class="w"> </span><span class="err">**ABANDONED**</span><span class="w">
-</span><span class="err">attachments.text</span><span class="w"> </span><span class="err">-&gt;</span><span class="w"> </span><span class="err">show.content.speak</span><span class="w">
-</span><span class="err">attachments.images.url</span><span class="w"> </span><span class="err">-&gt;</span><span class="w"> </span><span class="err">show.content.contentURL</span><span class="w">
-</span><span class="err">attachments.buttons.value</span><span class="w"> </span><span class="err">-&gt;</span><span class="w"> </span><span class="err">show.content.value</span><span class="w">
+Mapping (MS-Bot -&gt; Pepper Data Model):
+attachments ~&gt; show.content
+attachments.title -&gt; show.content.text
+attachments.subtitle -&gt; **ABANDONED**
+attachments.text -&gt; show.content.speak
+attachments.images.url -&gt; show.content.contentURL
+attachments.buttons.value -&gt; show.content.value
 
-</span><span class="err">ADDED</span><span class="w">
-</span><span class="err">speak</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tap or Say one of the following"</span><span class="w">
-</span><span class="err">show.content.text</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tap or Say one of the following"</span><span class="w">
+ADDED
+speak: 'Tap or Say one of the following'
+show.content.text: 'Tap or Say one of the following'
 
-</span><span class="err">WHERE</span><span class="w">
-</span><span class="err">~&gt;</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">loosely</span><span class="w"> </span><span class="err">mapped</span><span class="w">
-</span><span class="err">-&gt;</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">strictly</span><span class="w"> </span><span class="err">mapped</span><span class="w">
+WHERE
+~&gt; = loosely mapped
+-&gt; = strictly mapped
 
-</span><span class="err">Pepper</span><span class="w"> </span><span class="err">ChatBot</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">Translation</span><span class="p">:</span><span class="w">
-</span><span class="p">{</span><span class="w">
+Pepper ChatBot API Translation:
+"</span><span class="p">{</span><span class="w">
   </span><span class="s2">"msgType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chatbotresponse"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tap or Say one of the following"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
@@ -609,14 +609,14 @@ Hero Card with Images and Choices
     </span><span class="p">}],</span><span class="w">
     </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tap or Say one of the following"</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="s2">"
 
 
-</span><span class="s2">"""""""""""""""""""""""
+""""""""""""""""""""""""
 Hero Card with Choices
-"""""""""""""""""""""""</span><span class="w">
-</span><span class="err">MS-Bot</span><span class="w"> </span><span class="err">response</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">model</span><span class="p">:</span><span class="w">
-</span><span class="p">{</span><span class="w">
+""""""""""""""""""""""""
+MS-Bot response data model:
+"</span><span class="p">{</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
     </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/vnd.microsoft.card.hero"</span><span class="p">,</span><span class="w">
@@ -652,21 +652,21 @@ Hero Card with Choices
   </span><span class="s2">"conversation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6ja3le587mmjbc4c"</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="s2">"
 
-</span><span class="err">Mapping</span><span class="w"> </span><span class="err">(MS-Bot</span><span class="w"> </span><span class="err">-&gt;</span><span class="w"> </span><span class="err">Pepper</span><span class="w"> </span><span class="err">Data</span><span class="w"> </span><span class="err">Model)</span><span class="p">:</span><span class="w">
-</span><span class="err">attachments.content.buttons</span><span class="w"> </span><span class="err">~&gt;</span><span class="w"> </span><span class="err">show.content</span><span class="w">
-</span><span class="err">attachments.content.buttons.title</span><span class="w"> </span><span class="err">-&gt;</span><span class="w"> </span><span class="err">show.content.text</span><span class="w">
-</span><span class="err">attachments.content.buttons.value</span><span class="w"> </span><span class="err">-&gt;</span><span class="w"> </span><span class="err">show.content.value</span><span class="w">
-</span><span class="err">attachments.content.title</span><span class="w"> </span><span class="err">-&gt;</span><span class="w"> </span><span class="err">show.text</span><span class="w">
-</span><span class="err">attachments.content.title</span><span class="w"> </span><span class="err">-&gt;</span><span class="w"> </span><span class="err">speak</span><span class="w">
+Mapping (MS-Bot -&gt; Pepper Data Model):
+attachments.content.buttons ~&gt; show.content
+attachments.content.buttons.title -&gt; show.content.text
+attachments.content.buttons.value -&gt; show.content.value
+attachments.content.title -&gt; show.text
+attachments.content.title -&gt; speak
 
-</span><span class="err">WHERE</span><span class="w">
-</span><span class="err">~&gt;</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">loosely</span><span class="w"> </span><span class="err">mapped</span><span class="w">
-</span><span class="err">-&gt;</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">strictly</span><span class="w"> </span><span class="err">mapped</span><span class="w">
+WHERE
+~&gt; = loosely mapped
+-&gt; = strictly mapped
 
-</span><span class="err">Pepper</span><span class="w"> </span><span class="err">ChatBot</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">Translation</span><span class="p">:</span><span class="w">
-</span><span class="p">{</span><span class="w">
+Pepper ChatBot API Translation:
+"</span><span class="p">{</span><span class="w">
   </span><span class="s2">"msgType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chatbotresponse"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Do you want to know about Puppies?"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
@@ -686,15 +686,15 @@ Hero Card with Choices
     </span><span class="p">}],</span><span class="w">
     </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Do you want to know about Puppies?"</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="s2">"
 
 
-</span><span class="s2">"""""""""""""""""""""""""
+""""""""""""""""""""""
 Image Attachments
-"""""""""""""""""""""""""</span><span class="w">
+""""""""""""""""""""""
 
-</span><span class="err">MS-Bot</span><span class="w"> </span><span class="err">response</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">model</span><span class="p">:</span><span class="w">
-</span><span class="p">{</span><span class="w">
+MS-Bot response data model:
+"</span><span class="p">{</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
       </span><span class="s2">"contentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.greathillpartners.com/wp-content/uploads/Golden-Puppy.jpg"</span><span class="p">,</span><span class="w">
@@ -730,21 +730,21 @@ Image Attachments
   </span><span class="s2">"conversation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"efj6c25bj3e43b0c9"</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="s2">"
 
-</span><span class="err">Mapping</span><span class="w"> </span><span class="err">(MS-Bot</span><span class="w"> </span><span class="err">-&gt;</span><span class="w"> </span><span class="err">Pepper</span><span class="w"> </span><span class="err">Data</span><span class="w"> </span><span class="err">Model)</span><span class="p">:</span><span class="w">
-</span><span class="err">attachments</span><span class="w"> </span><span class="err">~&gt;</span><span class="w"> </span><span class="err">show.content</span><span class="w">
-</span><span class="err">attachments.contentUrl-&gt;</span><span class="w"> </span><span class="err">show.content.</span><span class="w"> </span><span class="err">contentURL</span><span class="w">
-</span><span class="err">attachments.contentType-&gt;</span><span class="w"> </span><span class="err">show.content.contentType</span><span class="w">
-</span><span class="err">text</span><span class="w"> </span><span class="err">-&gt;</span><span class="w"> </span><span class="err">speak</span><span class="w">
-</span><span class="err">text</span><span class="w"> </span><span class="err">-&gt;</span><span class="w"> </span><span class="err">show.text</span><span class="w">
+Mapping (MS-Bot -&gt; Pepper Data Model):
+attachments ~&gt; show.content
+attachments.contentUrl-&gt; show.content.contentURL
+attachments.contentType-&gt; show.content.contentType
+text -&gt; speak
+text -&gt; show.text
 
-</span><span class="err">WHERE</span><span class="w">
-</span><span class="err">~&gt;</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">loosely</span><span class="w"> </span><span class="err">mapped</span><span class="w">
-</span><span class="err">-&gt;</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">strictly</span><span class="w"> </span><span class="err">mapped</span><span class="w">
+WHERE
+~&gt; = loosely mapped
+-&gt; = strictly mapped
 
-</span><span class="err">Pepper</span><span class="w"> </span><span class="err">ChatBot</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">translation</span><span class="p">:</span><span class="w">
-</span><span class="p">{</span><span class="w">
+Pepper ChatBot API translation:
+"</span><span class="p">{</span><span class="w">
   </span><span class="s2">"msgType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chatbotresponse"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puppy pic 1"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
@@ -771,10 +771,10 @@ Image Attachments
 
 </span><span class="s2">"""""""""""
 Text Only
-"""""""""""</span><span class="w">
+""""""""""
 
-</span><span class="err">MS-Bot</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">model</span><span class="p">:</span><span class="w">
-</span><span class="p">{</span><span class="w">
+MS-Bot data model:
+"</span><span class="p">{</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Duh, German Shepard Puppies tell the best jokes!"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US"</span><span class="p">,</span><span class="w">
@@ -794,17 +794,17 @@ Text Only
   </span><span class="s2">"conversation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mb6c0bcdl2eclij9i"</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="s2">"
 
-</span><span class="err">Mapping</span><span class="w"> </span><span class="err">(MS-Bot</span><span class="w"> </span><span class="err">-&gt;</span><span class="w"> </span><span class="err">Pepper</span><span class="w"> </span><span class="err">Data</span><span class="w"> </span><span class="err">Model)</span><span class="p">:</span><span class="w">
-</span><span class="err">text</span><span class="w"> </span><span class="err">-&gt;</span><span class="w"> </span><span class="err">speak</span><span class="w">
-</span><span class="err">text</span><span class="w"> </span><span class="err">-&gt;</span><span class="w"> </span><span class="err">show.text</span><span class="w">
+Mapping (MS-Bot -&gt; Pepper Data Model):
+text -&gt; speak
+text -&gt; show.text
 
-</span><span class="err">WHERE</span><span class="w">
-</span><span class="err">-&gt;</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">strictly</span><span class="w"> </span><span class="err">mapped</span><span class="w">
+WHERE
+-&gt; = strictly mapped
 
-</span><span class="err">Pepper</span><span class="w"> </span><span class="err">ChatBot</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">translation</span><span class="p">:</span><span class="w">
-</span><span class="p">{</span><span class="w">
+Pepper ChatBot API translation:
+"</span><span class="p">{</span><span class="w">
   </span><span class="s2">"msgType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chatbotresponse"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Duh, German Shepard Puppies tell the best jokes!"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
@@ -817,14 +817,14 @@ Text Only
   </span><span class="s2">"show"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Duh, German Shepard Puppies tell the best jokes!"</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="s2">"
 
-</span><span class="s2">""""""""""""""""""</span><span class="w">
-</span><span class="err">Video</span><span class="w"> </span><span class="err">Attachments</span><span class="w">
-</span><span class="s2">""""""""""""""""""</span><span class="w">
+""""""""""""""""""
+Video Attachments
+""""""""""""""""""
 
-</span><span class="err">MS-Bot</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">model</span><span class="p">:</span><span class="w">
-</span><span class="p">{</span><span class="w">
+MS-Bot data model:
+"</span><span class="p">{</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
     </span><span class="s2">"contentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pepperstoragedev.blob.core.windows.net/pepperstories/b68b2247-f74a-4f6b-b3ad-3e7e66c1e600.mp4?decache=QLT1MXCSF1A9"</span><span class="p">,</span><span class="w">
@@ -849,22 +849,22 @@ Text Only
   </span><span class="s2">"conversation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mb6c0bcdl2eclij9i"</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="s2">"
 
-</span><span class="err">Mapping</span><span class="w"> </span><span class="err">(MS-Bot</span><span class="w"> </span><span class="err">-&gt;</span><span class="w"> </span><span class="err">Pepper</span><span class="w"> </span><span class="err">Data</span><span class="w"> </span><span class="err">Model)</span><span class="p">:</span><span class="w">
-</span><span class="err">attachments</span><span class="w"> </span><span class="err">~&gt;</span><span class="w"> </span><span class="err">show.content</span><span class="w">
-</span><span class="err">attachments.contentUrl-&gt;</span><span class="w"> </span><span class="err">show.content.</span><span class="w"> </span><span class="err">contentURL</span><span class="w">
-</span><span class="err">attachments.contentType-&gt;</span><span class="w"> </span><span class="err">show.content.contentType</span><span class="w">
-</span><span class="err">text</span><span class="w"> </span><span class="err">-&gt;</span><span class="w"> </span><span class="err">speak</span><span class="w">
-</span><span class="err">text</span><span class="w"> </span><span class="err">-&gt;</span><span class="w"> </span><span class="err">show.text</span><span class="w">
+Mapping (MS-Bot -&gt; Pepper Data Model):
+attachments ~&gt; show.content
+attachments.contentUrl-&gt; show.content. contentURL
+attachments.contentType-&gt; show.content.contentType
+text -&gt; speak
+text -&gt; show.text
 
-</span><span class="err">WHERE</span><span class="w">
-</span><span class="err">~&gt;</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">loosely</span><span class="w"> </span><span class="err">mapped</span><span class="w">
-</span><span class="err">-&gt;</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">strictly</span><span class="w"> </span><span class="err">mapped</span><span class="w">
+WHERE
+~&gt; = loosely mapped
+-&gt; = strictly mapped
 
 
-</span><span class="err">Pepper</span><span class="w"> </span><span class="err">ChatBot</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">translation</span><span class="p">:</span><span class="w">
-</span><span class="p">{</span><span class="w">
+Pepper ChatBot API translation:
+"</span><span class="p">{</span><span class="w">
   </span><span class="s2">"msgType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chatbotresponse"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Here is a puppy video"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
@@ -885,10 +885,10 @@ Text Only
 
 </span><span class="s2">"""""""""
 Greeting
-"""""""""</span><span class="w">
+""""""""
 
-</span><span class="err">MS-Bot</span><span class="w"> </span><span class="err">response</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">model</span><span class="p">:</span><span class="w">
-</span><span class="p">{</span><span class="w">
+MS-Bot response data model:
+"</span><span class="p">{</span><span class="w">
   </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What's up with you homie?"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"inputHint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expectingInput"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
@@ -902,10 +902,10 @@ Greeting
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"replyToId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"df2d0764lj5fhkn5ac"</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="s2">"
 
-</span><span class="err">Mapping</span><span class="w"> </span><span class="err">(MS-Bot</span><span class="w"> </span><span class="err">-&gt;</span><span class="w"> </span><span class="err">Pepper</span><span class="w"> </span><span class="err">Data</span><span class="w"> </span><span class="err">Model)</span><span class="p">:</span><span class="w">
-</span><span class="p">{</span><span class="err">Not</span><span class="w"> </span><span class="err">mapped</span><span class="w"> </span><span class="err">yet;</span><span class="w"> </span><span class="err">future</span><span class="w"> </span><span class="err">feature...</span><span class="p">}</span><span class="w">
+Mapping (MS-Bot -&gt; Pepper Data Model):
+{Not mapped yet; future feature...}
 
 </span></code></pre></div>
           <h1 id="faq-limitations">FAQ &amp; Limitations</h1>
