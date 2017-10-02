@@ -332,7 +332,11 @@ given ChatBot to see what the accepted responses are for your ChatBot.
 
 
 ```msbot
-The following show the data models of various MS-Bot responses, followed by their mappings to the Pepper ChatBot data model:
+"""""""""""""""""""""""""""
+Supported MS-Bot Responses:
+"""""""""""""""""""""""""""
+The following show the data models of various MS-Bot responses, 
+followed by their mappings to the Pepper ChatBot data model:
 
 """""""""""""""""""""""""""""""""""
 Hero Card with Images and Choices
