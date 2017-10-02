@@ -2,6 +2,7 @@
 title: Pepper ChatBot API Reference
 
 language_tabs:
+  - satisfi
   - msbot
 
 
@@ -16,6 +17,16 @@ search: true
 
 # Pepper ChatBot API
 
+
+```satisfi
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Satisfi is the default bot used by our Pepper API. If a user doesn’t 
+hash their company with a different bot, they are allowed to use and 
+train our Satisfi bot with Utterances and Responses as they wish.
+
+To use a different bot, select from the tab options above.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+```
 
 ```msbot
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -51,6 +62,12 @@ You can view general integration instructions in this central, light blue sectio
 
 # Authentication
 
+```satisfi
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Authentication for our Satisfi bot is handled from within the CMS.
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+```
 
 ```msbot
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -326,385 +343,127 @@ A nullable string that contains the actionable value to be returned to the chat 
 Not all of a ChatBot's responses will necessarily be compatible with our Pepper ChatBot API.
 We will generally accept the subset of all ChatBot responses that coincide with the Pepper
 ChatBot API data model. Scroll the options to the right within the appropriate tab for your
-given ChatBot to see what the accepted responses are for your ChatBot.
+given ChatBot to see what the accepted responses are for your given ChatBot.
 
+```satisfi
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+All Satisfi responses are handled by default.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+```
 
 
 
 ```msbot
-The following show the data models of various MS-Bot responses, followed by their mappings to the Pepper ChatBot data model:
-
 """""""""""""""""""""""""""""""""""
 Hero Card with Images and Choices
 """""""""""""""""""""""""""""""""""
-MS-Bot response data model:
+
 {
   "type": "message",
   "attachmentLayout": "carousel",
-  "attachments": [{
+  "attachments": [
+    {
       "contentType": "application/vnd.microsoft.card.thumbnail",
       "content": {
-        "title": "Boxer",
+        "title": "Bulldog",
         "subtitle": "A breed of utility dog.",
-        "text": "The American boxer is a stocky, well built, strong-looking dog, with a large head and a muscular build. Its coat is short and generally smooth. The breed is a light to moderate shedder.",
-        "images": [{
-          "url": "https://static.pexels.com/photos/158682/snow-dog-de-bordeaux-158682.jpeg"
-        }],
-        "buttons": [{
-          "type": "imBack",
-          "value": "boxer",
-          "title": "Boxer"
-        }]
+        "text": "The American bulldog is a stocky, well built, strong-looking dog, with a large head and a muscular build. Its coat is short and generally smooth. The breed is a light to moderate shedder.",
+        "images": [
+          {
+            "url": "https://static.pexels.com/photos/158682/snow-dog-de-bordeaux-158682.jpeg"
+          }
+        ],
+        "buttons": [
+          {
+            "type": "imBack",
+            "value": "bulldog",
+            "title": "Bulldog"
+          }
+        ]
       }
     },
     {
       "contentType": "application/vnd.microsoft.card.thumbnail",
       "content": {
-        "title": "Akita",
+        "title": "Papillon",
         "subtitle": "Continental Toy Spaniel",
-        "text": "The Akita is a very intelligent and self-assured dog that has a very easy time learning new tricks. This dog can be sociable with children and strangers but is generally reserved around new people. ",
-        "images": [{
-          "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Papillon_Ears.jpg"
-        }],
-        "buttons": [{
-          "type": "imBack",
-          "value": "akita",
-          "title": "Akita"
-        }]
+        "text": "The Papillon is a very intelligent and self-assured dog that has a very easy time learning new tricks. This dog can be sociable with children and strangers but is generally reserved around new people. ",
+        "images": [
+          {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Papillon_Ears.jpg"
+          }
+        ],
+        "buttons": [
+          {
+            "type": "imBack",
+            "value": "papillon",
+            "title": "Papillon"
+          }
+        ]
       }
     }
   ],
   "locale": "en-US",
-  "localTimestamp": "2017-10-02T10:45:24-07:00",
+  "localTimestamp": "2017-09-21T20:43:18-07:00",
   "from": {
-    "id": "n5dm5eb6ldekh6a3",
+    "id": "7n77ehm8i7g704je6",
     "name": "Bot"
   },
   "recipient": {
     "id": "default-user"
   },
   "inputHint": "acceptingInput",
-  "replyToId": "dn58c2bfjd1089dkac",
-  "id": "nbdk7b69eb0j9j69",
+  "replyToId": "f2elbk5fm3n785gejc",
+  "id": "h6aj6d5iib0bk4al",
   "channelId": "emulator",
-  "timestamp": "2017-10-02T17:45:24.902Z",
+  "timestamp": "2017-09-22T03:43:18.660Z",
   "conversation": {
-    "id": "6ja3le587mmjbc4c"
+    "id": "8kmh7c4c87d3j7amgc"
   }
 }
-
-Mapping (MS-Bot -> Pepper Data Model):
-attachments ~> show.content
-attachments.title -> show.content.text
-attachments.subtitle -> **ABANDONED**
-attachments.text -> show.content.speak
-attachments.images.url -> show.content.contentURL
-attachments.buttons.value -> show.content.value
-
-ADDED
-speak: "Tap or Say one of the following"
-show.content.text: "Tap or Say one of the following"
-
-WHERE
-~> = loosely mapped
--> = strictly mapped
-
-Pepper ChatBot API Translation:
-{
-  "msgType": "chatbotresponse",
-  "data": "Tap or Say one of the following",
-  "type": "message",
-  "conversationID": "testgguid",
-  "uniqueID": "28e36552-b0d8-42e2-b495-65f61329ad69",
-  "utteranceID": "testutteranceID",
-  "sessionID": "testgguid",
-  "response": "Tap or Say one of the following",
-  "speak": "Tap or Say one of the following",
-  "show": {
-    "content": [{
-      "text": "Boxer",
-      "speak": "The American boxer is a stocky, well built, strong-looking dog, with a large head and a muscular build. Its coat is short and generally smooth. The breed is a light to moderate shedder.",
-      "contentURL": "https://static.pexels.com/photos/158682/snow-dog-de-bordeaux-158682.jpeg",
-      "value": "boxer"
-    }, {
-      "text": "Akita",
-      "speak": "The Akita is a very intelligent and self-assured dog that has a very easy time learning new tricks. This dog can be sociable with children and strangers but is generally reserved around new people. ",
-      "contentURL": "https://upload.wikimedia.org/wikipedia/commons/5/56/Papillon_Ears.jpg",
-      "value": "akita"
-    }],
-    "text": "Tap or Say one of the following"
-  }
-}
-
 
 """""""""""""""""""""""
 Hero Card with Choices
 """""""""""""""""""""""
-MS-Bot response data model:
+
 {
   "type": "message",
-  "attachments": [{
-    "contentType": "application/vnd.microsoft.card.hero",
-    "content": {
-      "title": "Do you want to know about Puppies?",
-      "buttons": [{
-          "type": "imBack",
-          "value": "Yes please",
-          "title": "Yes please"
-        },
-        {
-          "type": "imBack",
-          "value": "No thanks",
-          "title": "No thanks"
-        }
-      ]
-    }
-  }],
-  "locale": "en-US",
-  "localTimestamp": "2017-10-02T10:45:19-07:00",
-  "from": {
-    "id": "n5dm5eb6ldekh6a3",
-    "name": "Bot"
-  },
-  "recipient": {
-    "id": "default-user"
-  },
-  "inputHint": "acceptingInput",
-  "replyToId": "i0gn412d30ag423i",
-  "id": "j2j8245c6b9m12n3i",
-  "channelId": "emulator",
-  "timestamp": "2017-10-02T17:45:19.923Z",
-  "conversation": {
-    "id": "6ja3le587mmjbc4c"
-  }
-}
-
-Mapping (MS-Bot -> Pepper Data Model):
-attachments.content.buttons ~> show.content
-attachments.content.buttons.title -> show.content.text
-attachments.content.buttons.value -> show.content.value
-attachments.content.title -> show.text
-attachments.content.title -> speak
-
-WHERE
-~> = loosely mapped
--> = strictly mapped
-
-Pepper ChatBot API Translation:
-{
-  "msgType": "chatbotresponse",
-  "data": "Do you want to know about Puppies?",
-  "type": "message",
-  "conversationID": "testgguid",
-  "uniqueID": "28e36552-b0d8-42e2-b495-65f61329ad69",
-  "utteranceID": "testutteranceID",
-  "sessionID": "testgguid",
-  "response": "Do you want to know about Puppies?",
-  "speak": "Do you want to know about Puppies?",
-  "show": {
-    "content": [{
-      "text": "Yes please",
-      "value": "Yes please"
-    }, {
-      "text": "No thanks",
-      "value": "No thanks"
-    }],
-    "text": "Do you want to know about Puppies?"
-  }
-}
-
-
-"""""""""""""""""""""""""
-Image Attachments
-"""""""""""""""""""""""""
-
-MS-Bot response data model:
-{
-  "type": "message",
-  "attachments": [{
-      "contentUrl": "http://www.greathillpartners.com/wp-content/uploads/Golden-Puppy.jpg",
-      "contentType": "image/jpg",
-      "name": "Puppy pic 1"
-    },
+  "attachments": [
     {
-      "contentUrl": "https://i.ytimg.com/vi/VRiWE1l8KqI/maxresdefault.jpg",
-      "contentType": "image/jpg",
-      "name": "Puppy pic 2"
-    },
-    {
-      "contentUrl": "http://24.media.tumblr.com/53e3171e750c6c1028f8200ad73c8a53/tumblr_mkozt0qp3B1qiwf8po1_500.jpg",
-      "contentType": "image/jpg",
-      "name": "Puppy pic 1"
+      "contentType": "application/vnd.microsoft.card.hero",
+      "content": {
+        "title": "Do you want to know about Puppies?",
+        "buttons": [
+          {
+            "type": "imBack",
+            "value": "Yes",
+            "title": "Yes"
+          },
+          {
+            "type": "imBack",
+            "value": "No",
+            "title": "No"
+          }
+        ]
+      }
     }
   ],
-  "text": "Here are some puppies",
   "locale": "en-US",
-  "localTimestamp": "2017-10-02T11:01:51-07:00",
+  "localTimestamp": "2017-09-21T20:30:30-07:00",
   "from": {
-    "id": "default-bot",
-    "name": "Bot"
-  },
-  "recipient": {
-    "id": "default-user"
-  },
-  "inputHint": "ignoringInput",
-  "replyToId": "3j6714mfbl49hf1bac",
-  "id": "688k3bd50e8ifk364c",
-  "channelId": "emulator",
-  "timestamp": "2017-10-02T18:01:51.235Z",
-  "conversation": {
-    "id": "efj6c25bj3e43b0c9"
-  }
-}
-
-Mapping (MS-Bot -> Pepper Data Model):
-attachments ~> show.content
-attachments.contentUrl-> show.content. contentURL
-attachments.contentType-> show.content.contentType
-text -> speak
-text -> show.text
-
-WHERE
-~> = loosely mapped
--> = strictly mapped
-
-Pepper ChatBot API translation:
-{
-  "msgType": "chatbotresponse",
-  "data": "Puppy pic 1",
-  "type": "message",
-  "conversationID": "testgguid",
-  "uniqueID": "28e36552-b0d8-42e2-b495-65f61329ad69",
-  "utteranceID": "testutteranceID",
-  "sessionID": "testgguid",
-  "response": "Puppy pic 1",
-  "speak": "Here are some puppies",
-  "show": {
-    "content": [{
-      "contentURL": "http://24.media.tumblr.com/53e3171e750c6c1028f8200ad73c8a53/tumblr_mkozt0qp3B1qiwf8po1_500.jpg",
-      "contentType": "image/jpg"
-    }, {
-      "contentURL": "http://img-aws.ehowcdn.com/600x600p/photos.demandstudios.com/getty/article/154/20/87788187.jpg",
-      "contentType": "image/jpg"
-    }, {
-      "contentURL": "http://images2.fanpop.com/image/photos/13300000/Beautiful-Rottweiler-rottweiler-13378960-500-375.jpg",
-      "contentType": "image/jpg"
-    }],
-    "text": "Here are some puppies"
-  }
-}
-
-"""""""""""
-Text Only
-"""""""""""
-
-MS-Bot data model:
-{
-  "type": "message",
-  "text": "Duh, German Shepard Puppies tell the best jokes!",
-  "locale": "en-US",
-  "localTimestamp": "2017-10-02T11:11:52-07:00",
-  "from": {
-    "id": "default-bot",
+    "id": "7n77ehm8i7g704je6",
     "name": "Bot"
   },
   "recipient": {
     "id": "default-user"
   },
   "inputHint": "acceptingInput",
-  "replyToId": "9hecj33gj8mckk1m3",
-  "id": "48mj8inig8dmc9i39",
+  "replyToId": "dnc31h22amejd2847c",
+  "id": "m65fn3h9hfnk07cdc",
   "channelId": "emulator",
-  "timestamp": "2017-10-02T18:11:52.982Z",
+  "timestamp": "2017-09-22T03:30:30.970Z",
   "conversation": {
-    "id": "mb6c0bcdl2eclij9i"
-  }
-}
-
-Mapping (MS-Bot -> Pepper Data Model):
-text -> speak
-text -> show.text
-
-WHERE
--> = strictly mapped
-
-Pepper ChatBot API translation:
-{
-  "msgType": "chatbotresponse",
-  "data": "Duh, German Shepard Puppies tell the best jokes!",
-  "type": "message",
-  "conversationID": "testgguid",
-  "uniqueID": "28e36552-b0d8-42e2-b495-65f61329ad69",
-  "utteranceID": "testutteranceID",
-  "sessionID": "testgguid",
-  "response": "Duh, German Shepard Puppies tell the best jokes!",
-  "speak": "Duh, German Shepard Puppies tell the best jokes!",
-  "show": {
-    "text": "Duh, German Shepard Puppies tell the best jokes!"
-  }
-}
-
-""""""""""""""""""
-Video Attachments
-""""""""""""""""""
-
-MS-Bot data model:
-{
-  "type": "message",
-  "attachments": [{
-    "contentUrl": "https://pepperstoragedev.blob.core.windows.net/pepperstories/b68b2247-f74a-4f6b-b3ad-3e7e66c1e600.mp4?decache=QLT1MXCSF1A9",
-    "contentType": "video/mp4",
-    "name": "Puppy video"
-  }],
-  "text": "Here is a puppy video",
-  "locale": "en-US",
-  "localTimestamp": "2017-10-02T11:09:03-07:00",
-  "from": {
-    "id": "default-bot",
-    "name": "Bot"
-  },
-  "recipient": {
-    "id": "default-user"
-  },
-  "inputHint": "acceptingInput",
-  "replyToId": "f0igi03ln2f4fem94c",
-  "id": "ek9im8g5df0e305bf",
-  "channelId": "emulator",
-  "timestamp": "2017-10-02T18:09:03.318Z",
-  "conversation": {
-    "id": "mb6c0bcdl2eclij9i"
-  }
-}
-
-Mapping (MS-Bot -> Pepper Data Model):
-attachments ~> show.content
-attachments.contentUrl-> show.content. contentURL
-attachments.contentType-> show.content.contentType
-text -> speak
-text -> show.text
-
-WHERE
-~> = loosely mapped
--> = strictly mapped
-
-
-Pepper ChatBot API translation:
-{
-  "msgType": "chatbotresponse",
-  "data": "Here is a puppy video",
-  "type": "message",
-  "conversationID": "testgguid",
-  "uniqueID": "28e36552-b0d8-42e2-b495-65f61329ad69",
-  "utteranceID": "testutteranceID",
-  "sessionID": "testgguid",
-  "response": "Here is a puppy video",
-  "speak": "Here is a puppy video",
-  "show": {
-    "content": [{
-      "contentURL": "https://pepperstoragedev.blob.core.windows.net/pepperstories/b68b2247-f74a-4f6b-b3ad-3e7e66c1e600.mp4?decache=QLT1MXCSF1A9",
-      "contentType": "video/mp4"
-    }],
-    "text": "Here is a puppy video"
+    "id": "8kmh7c4c87d3j7amgc"
   }
 }
 
@@ -712,7 +471,7 @@ Pepper ChatBot API translation:
 Greeting
 """""""""
 
-MS-Bot response data model:
+
 {
   "text": "What's up with you homie?",
   "inputHint": "expectingInput",
@@ -729,7 +488,82 @@ MS-Bot response data model:
   "replyToId": "df2d0764lj5fhkn5ac"
 }
 
-Mapping (MS-Bot -> Pepper Data Model):
-{Not mapped yet; future feature...}
+"""""""""""""""""""""""""
+Waterfall Conversations
+"""""""""""""""""""""""""
+
+{
+  "key": {
+    "channelId": "emulator",
+    "conversationId": "1a54knkii792169k6",
+    "userId": "default-user"
+  },
+  "state": {
+    "eTag": "*",
+    "data": {
+      "BotBuilder.Data.SessionState": {
+        "callstack": [
+          {
+            "id": "*:puppyconvo",
+            "state": {
+              "BotBuilder.Data.WaterfallStep": 0
+            }
+          },
+          {
+            "id": "BotBuilder:prompt-text",
+            "state": {
+              "options": {
+                "prompt": "Do you like puppies more than chips?",
+                "promptAfterAction": true,
+                "libraryNamespace": "*"
+              },
+              "turns": 0,
+              "lastTurn": 1505155674017,
+              "isReprompt": false
+            }
+          }
+        ],
+        "lastAccess": 1505155673299,
+        "version": 0
+      }
+    }
+  }
+}
+
+"""""""""""
+Rich Cards
+"""""""""""
+
+{
+  "type": "message",
+  "attachments": [{
+    "contentType": "application/vnd.microsoft.card.thumbnail",
+    "content": {
+      "title": "Puppies make you proud!",
+      "subtitle": "Your Puppies — wherever your users are talking",
+      "text": "Connect intelligent puppies to interact more naturally wherever they are, from text/sms to Skype, Slack, Office 365 mail and other popular services.",
+      "images": [{
+        "url": "https://www.artsfon.com/pic/201511/1366x768/artsfon.com-77661.jpg"
+      }],
+      "buttons": [{
+        "type": "openUrl",
+        "value": "http://www.adoptapet.com/s/buy-a-puppy/",
+        "title": "Get Started"
+      }]
+    }
+  }],
+  "locale": "en-US",
+  "localTimestamp": "2017-09-11T18:12:53.892Z",
+  "from": {
+    "id": "n5dm5eb6ldekh6a3",
+    "name": "Bot"
+  },
+  "recipient": {
+    "id": "default-user",
+    "name": "User"
+  },
+  "inputHint": "acceptingInput",
+  "replyToId": "43fk1c49hdibb3kml"
+}
 
 ```
