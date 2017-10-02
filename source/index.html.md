@@ -334,15 +334,15 @@ given ChatBot to see what the accepted responses are for your ChatBot.
 ```msbot
 """""""""""""""""""""""""""
 Supported MS-Bot Responses:
-"""""""""""""""""""""""""""
+""""""""""""""""""""""""""
 The following show the data models of various MS-Bot responses, 
 followed by their mappings to the Pepper ChatBot data model:
 
-"""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""
 Hero Card with Images and Choices
-"""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""
 MS-Bot response data model:
-{
+"{
   "type": "message",
   "attachmentLayout": "carousel",
   "attachments": [{
@@ -395,7 +395,7 @@ MS-Bot response data model:
   "conversation": {
     "id": "6ja3le587mmjbc4c"
   }
-}
+}"
 
 Mapping (MS-Bot -> Pepper Data Model):
 attachments ~> show.content
@@ -406,15 +406,15 @@ attachments.images.url -> show.content.contentURL
 attachments.buttons.value -> show.content.value
 
 ADDED
-speak: "Tap or Say one of the following"
-show.content.text: "Tap or Say one of the following"
+speak: 'Tap or Say one of the following'
+show.content.text: 'Tap or Say one of the following'
 
 WHERE
 ~> = loosely mapped
 -> = strictly mapped
 
 Pepper ChatBot API Translation:
-{
+"{
   "msgType": "chatbotresponse",
   "data": "Tap or Say one of the following",
   "type": "message",
@@ -438,14 +438,14 @@ Pepper ChatBot API Translation:
     }],
     "text": "Tap or Say one of the following"
   }
-}
+}"
 
 
-"""""""""""""""""""""""
+""""""""""""""""""""""""
 Hero Card with Choices
-"""""""""""""""""""""""
+""""""""""""""""""""""""
 MS-Bot response data model:
-{
+"{
   "type": "message",
   "attachments": [{
     "contentType": "application/vnd.microsoft.card.hero",
@@ -481,7 +481,7 @@ MS-Bot response data model:
   "conversation": {
     "id": "6ja3le587mmjbc4c"
   }
-}
+}"
 
 Mapping (MS-Bot -> Pepper Data Model):
 attachments.content.buttons ~> show.content
@@ -495,7 +495,7 @@ WHERE
 -> = strictly mapped
 
 Pepper ChatBot API Translation:
-{
+"{
   "msgType": "chatbotresponse",
   "data": "Do you want to know about Puppies?",
   "type": "message",
@@ -515,15 +515,15 @@ Pepper ChatBot API Translation:
     }],
     "text": "Do you want to know about Puppies?"
   }
-}
+}"
 
 
-"""""""""""""""""""""""""
+""""""""""""""""""""""
 Image Attachments
-"""""""""""""""""""""""""
+""""""""""""""""""""""
 
 MS-Bot response data model:
-{
+"{
   "type": "message",
   "attachments": [{
       "contentUrl": "http://www.greathillpartners.com/wp-content/uploads/Golden-Puppy.jpg",
@@ -559,11 +559,11 @@ MS-Bot response data model:
   "conversation": {
     "id": "efj6c25bj3e43b0c9"
   }
-}
+}"
 
 Mapping (MS-Bot -> Pepper Data Model):
 attachments ~> show.content
-attachments.contentUrl-> show.content. contentURL
+attachments.contentUrl-> show.content.contentURL
 attachments.contentType-> show.content.contentType
 text -> speak
 text -> show.text
@@ -573,7 +573,7 @@ WHERE
 -> = strictly mapped
 
 Pepper ChatBot API translation:
-{
+"{
   "msgType": "chatbotresponse",
   "data": "Puppy pic 1",
   "type": "message",
@@ -600,10 +600,10 @@ Pepper ChatBot API translation:
 
 """""""""""
 Text Only
-"""""""""""
+""""""""""
 
 MS-Bot data model:
-{
+"{
   "type": "message",
   "text": "Duh, German Shepard Puppies tell the best jokes!",
   "locale": "en-US",
@@ -623,7 +623,7 @@ MS-Bot data model:
   "conversation": {
     "id": "mb6c0bcdl2eclij9i"
   }
-}
+}"
 
 Mapping (MS-Bot -> Pepper Data Model):
 text -> speak
@@ -633,7 +633,7 @@ WHERE
 -> = strictly mapped
 
 Pepper ChatBot API translation:
-{
+"{
   "msgType": "chatbotresponse",
   "data": "Duh, German Shepard Puppies tell the best jokes!",
   "type": "message",
@@ -646,14 +646,14 @@ Pepper ChatBot API translation:
   "show": {
     "text": "Duh, German Shepard Puppies tell the best jokes!"
   }
-}
+}"
 
 """"""""""""""""""
 Video Attachments
 """"""""""""""""""
 
 MS-Bot data model:
-{
+"{
   "type": "message",
   "attachments": [{
     "contentUrl": "https://pepperstoragedev.blob.core.windows.net/pepperstories/b68b2247-f74a-4f6b-b3ad-3e7e66c1e600.mp4?decache=QLT1MXCSF1A9",
@@ -678,7 +678,7 @@ MS-Bot data model:
   "conversation": {
     "id": "mb6c0bcdl2eclij9i"
   }
-}
+}"
 
 Mapping (MS-Bot -> Pepper Data Model):
 attachments ~> show.content
@@ -693,7 +693,7 @@ WHERE
 
 
 Pepper ChatBot API translation:
-{
+"{
   "msgType": "chatbotresponse",
   "data": "Here is a puppy video",
   "type": "message",
@@ -714,10 +714,10 @@ Pepper ChatBot API translation:
 
 """""""""
 Greeting
-"""""""""
+""""""""
 
 MS-Bot response data model:
-{
+"{
   "text": "What's up with you homie?",
   "inputHint": "expectingInput",
   "type": "message",
@@ -731,7 +731,7 @@ MS-Bot response data model:
     "name": "User"
   },
   "replyToId": "df2d0764lj5fhkn5ac"
-}
+}"
 
 Mapping (MS-Bot -> Pepper Data Model):
 {Not mapped yet; future feature...}
