@@ -147,6 +147,8 @@ A nullable string that contains the actionable value to be returned to the chat 
 
 ## Text Only Response
 
+> Pepper Data Model - Text Only Response
+
 ```json
 {
     msgType: "chatbotresponse",
@@ -169,6 +171,8 @@ A nullable string that contains the actionable value to be returned to the chat 
 
 ## Video Response
 
+> Pepper Data Model - Video Response
+
 ```json
 {
   utteranceId: "1234abcde",
@@ -188,6 +192,7 @@ A nullable string that contains the actionable value to be returned to the chat 
 
 ## Picture and Text Response (Non-actionable)
 
+> Pepper Data Model - Picture and Text Response
 ```json
 {
   utteranceId: "1234abcde",
@@ -217,6 +222,8 @@ A nullable string that contains the actionable value to be returned to the chat 
 
 ## Picture Only Response (Non-actionable)
 
+> Pepper Data Model - Picture Only Response (Non-actionable)
+
 ```json
 {
   utteranceId: "1234abcde",
@@ -236,6 +243,8 @@ A nullable string that contains the actionable value to be returned to the chat 
 <img src = "images/Pepper_Data_Model-Picture_Only_Response.png"/>
 
 ## Picture and Text Response (Actionable)
+
+> Pepper Data Model - Picture and Text Response (Actionable)
 
 ```json
 {
@@ -269,6 +278,8 @@ A nullable string that contains the actionable value to be returned to the chat 
 
 ## Picture Only Response (Actionable)
 
+> Pepper Data Model - Picture Only Response (Actionable)
+
 ```json
 {
   utteranceId: "1234abcde",
@@ -298,6 +309,8 @@ A nullable string that contains the actionable value to be returned to the chat 
 
 ## Text Bubbles Response (Actionable)
 
+> Pepper Data Model - Text Bubbles Response (Actionable)
+
 ```json
 {
   utteranceId: "1234abcde",
@@ -321,7 +334,7 @@ A nullable string that contains the actionable value to be returned to the chat 
 
 <img src = "images/Pepper_Data_Model-Text_Bubbles_Response.png"/>
 
-# Accepted ChatBot Responses
+# ChatBot Response Mappings
 
 Not all of a ChatBot's responses will necessarily be compatible with our Pepper ChatBot API.
 We will generally accept the subset of all ChatBot responses that coincide with the Pepper
