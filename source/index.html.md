@@ -147,7 +147,7 @@ A nullable string that contains the actionable value to be returned to the chat 
 
 ## Text Only Response
 
-> Pepper Data Model - Text Only Response
+> Pepper Data Model - Text Only Response:
 
 ```json
 {
@@ -171,7 +171,7 @@ A nullable string that contains the actionable value to be returned to the chat 
 
 ## Video Response
 
-> Pepper Data Model - Video Response
+> Pepper Data Model - Video Response:
 
 ```json
 {
@@ -192,7 +192,8 @@ A nullable string that contains the actionable value to be returned to the chat 
 
 ## Picture and Text Response (Non-actionable)
 
-> Pepper Data Model - Picture and Text Response
+> Pepper Data Model - Picture and Text Response:
+
 ```json
 {
   utteranceId: "1234abcde",
@@ -222,7 +223,7 @@ A nullable string that contains the actionable value to be returned to the chat 
 
 ## Picture Only Response (Non-actionable)
 
-> Pepper Data Model - Picture Only Response (Non-actionable)
+> Pepper Data Model - Picture Only Response (Non-actionable):
 
 ```json
 {
@@ -244,7 +245,7 @@ A nullable string that contains the actionable value to be returned to the chat 
 
 ## Picture and Text Response (Actionable)
 
-> Pepper Data Model - Picture and Text Response (Actionable)
+> Pepper Data Model - Picture and Text Response (Actionable):
 
 ```json
 {
@@ -278,7 +279,7 @@ A nullable string that contains the actionable value to be returned to the chat 
 
 ## Picture Only Response (Actionable)
 
-> Pepper Data Model - Picture Only Response (Actionable)
+> Pepper Data Model - Picture Only Response (Actionable):
 
 ```json
 {
@@ -309,7 +310,7 @@ A nullable string that contains the actionable value to be returned to the chat 
 
 ## Text Bubbles Response (Actionable)
 
-> Pepper Data Model - Text Bubbles Response (Actionable)
+> Pepper Data Model - Text Bubbles Response (Actionable):
 
 ```json
 {
