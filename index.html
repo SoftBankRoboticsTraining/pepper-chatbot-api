@@ -344,6 +344,10 @@ Step 6: Give the copied value (botToken) to the SBR Sales Engineer.
 <p>A nullable string that contains the actionable value to be returned to the chat bot upon content selection.</p>
 
 <h2 id="text-only-response">Text Only Response</h2>
+
+<blockquote>
+<p>Pepper Data Model - Text Only Response:</p>
+</blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="err">msgType</span><span class="p">:</span><span class="w"> </span><span class="s2">"chatbotresponse"</span><span class="p">,</span><span class="w">
     </span><span class="err">data</span><span class="p">:</span><span class="w"> </span><span class="s2">"Answer"</span><span class="p">,</span><span class="w">
@@ -361,7 +365,69 @@ Step 6: Give the copied value (botToken) to the SBR Sales Engineer.
 </span></code></pre></div>
 <p><img src = "images/Pepper_Data_Model-Text_Only_Response.png"/></p>
 
+<blockquote>
+<p>CHATBOT-SPECIFIC EXAMPLE:</p>
+</blockquote>
+
+<h3 id="example-text-only-response">Example: Text Only Response</h3>
+
+<p>(corresponds to ChatBot specific example →)</p>
+
+<p>Pepper ChatBot translation:</p>
+<div class="highlight"><pre class="highlight msbot tab-msbot"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+MS-Bot: Text Only response:
+"""""""""""""""""""""""""""""""""""""""""</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Duh, German Shepard Puppies tell the best jokes!"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"localTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T11:11:52-07:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-bot"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bot"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-user"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"inputHint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acceptingInput"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"replyToId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9hecj33gj8mckk1m3"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48mj8inig8dmc9i39"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"channelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emulator"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T18:11:52.982Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"conversation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mb6c0bcdl2eclij9i"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="s2">"""""""""""""MAPPING""""""""""""""""""""
+Mapping (MS-Bot -&gt; Pepper Data Model):
+text -&gt; speak
+text -&gt; show.text
+
+WHERE
+-&gt; = strictly mapped
+""""""""""""""""""""""""""""""""""""""""
+</span></code></pre></div>
+<p>{ <br>
+  &ldquo;msgType&rdquo;: &ldquo;chatbotresponse&rdquo;, <br>
+  &ldquo;data&rdquo;: &ldquo;Duh, German Shepard Puppies tell the best jokes!&rdquo;, <br>
+  &ldquo;type&rdquo;: &ldquo;message&rdquo;, <br>
+  &ldquo;conversationID&rdquo;: &ldquo;testgguid&rdquo;, <br>
+  &ldquo;uniqueID&rdquo;: &ldquo;28e36552-b0d8-42e2-b495-65f61329ad69&rdquo;,<br>
+  &ldquo;utteranceID&rdquo;: &ldquo;testutteranceID&rdquo;,<br>
+  &ldquo;sessionID&rdquo;: &ldquo;testgguid&rdquo;,<br>
+  &ldquo;response&rdquo;: &ldquo;Duh, German Shepard Puppies tell the best jokes!&rdquo;,<br>
+  &ldquo;speak&rdquo;: &ldquo;Duh, German Shepard Puppies tell the best jokes!&rdquo;,<br>
+  &ldquo;show&rdquo;: {<br>
+    &ldquo;text&rdquo;: &ldquo;Duh, German Shepard Puppies tell the best jokes!&rdquo;<br>
+  }<br>
+}<br></p>
+
 <h2 id="video-response">Video Response</h2>
+
+<blockquote>
+<p>Pepper Data Model - Video Response:</p>
+</blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="err">utteranceId</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234abcde"</span><span class="p">,</span><span class="w">
   </span><span class="err">sessionId</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcde1234"</span><span class="p">,</span><span class="w">
@@ -377,7 +443,82 @@ Step 6: Give the copied value (botToken) to the SBR Sales Engineer.
 </span></code></pre></div>
 <p><img src = "images/Pepper_Data_Model-Video_Response.png"/></p>
 
+<blockquote>
+<p>CHATBOT-SPECIFIC EXAMPLE:</p>
+</blockquote>
+
+<h3 id="example-video-only-response">Example: Video Only Response</h3>
+
+<p>(corresponds to ChatBot specific example →)</p>
+
+<p>Pepper ChatBot translation:</p>
+<div class="highlight"><pre class="highlight msbot tab-msbot"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+MS-Bot: Video Only response:
+"""""""""""""""""""""""""""""""""""""""""</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"contentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pepperstoragedev.blob.core.windows.net/pepperstories/b68b2247-f74a-4f6b-b3ad-3e7e66c1e600.mp4?decache=QLT1MXCSF1A9"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video/mp4"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puppy video"</span><span class="w">
+  </span><span class="p">}],</span><span class="w">
+  </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Here is a puppy video"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"localTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T11:09:03-07:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-bot"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bot"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-user"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"inputHint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acceptingInput"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"replyToId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f0igi03ln2f4fem94c"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ek9im8g5df0e305bf"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"channelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emulator"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T18:09:03.318Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"conversation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mb6c0bcdl2eclij9i"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="s2">"""""""""""""MAPPING""""""""""""""""""""
+Mapping (MS-Bot -&gt; Pepper Data Model):
+attachments ~&gt; show.content
+attachments.contentUrl-&gt; show.content. contentURL
+attachments.contentType-&gt; show.content.contentType
+text -&gt; speak
+text -&gt; show.text
+
+WHERE
+~&gt; = loosely mapped
+-&gt; = strictly mapped
+""""""""""""""""""""""""""""""""""""""""
+</span></code></pre></div>
+<p>{ <br>
+  &ldquo;msgType&rdquo;: &ldquo;chatbotresponse&rdquo;,<br>
+  &ldquo;data&rdquo;: &ldquo;Here is a puppy video&rdquo;,<br>
+  &ldquo;type&rdquo;: &ldquo;message&rdquo;,<br>
+  &ldquo;conversationID&rdquo;: &ldquo;testgguid&rdquo;,<br>
+  &ldquo;uniqueID&rdquo;: &ldquo;28e36552-b0d8-42e2-b495-65f61329ad69&rdquo;,<br>
+  &ldquo;utteranceID&rdquo;: &ldquo;testutteranceID&rdquo;,<br>
+  &ldquo;sessionID&rdquo;: &ldquo;testgguid&rdquo;,<br>
+  &ldquo;response&rdquo;: &ldquo;Here is a puppy video&rdquo;,<br>
+  &ldquo;speak&rdquo;: &ldquo;Here is a puppy video&rdquo;,<br>
+  &ldquo;show&rdquo;: {<br>
+    &ldquo;content&rdquo;: [{<br>
+      &ldquo;contentURL&rdquo;: &ldquo;https://pepperstoragedev.blob.core.windows.net/pepperstories/b68b2247-f74a-4f6b-b3ad-3e7e66c1e600.mp4?decache=QLT1MXCSF1A9&rdquo;,<br>
+      &ldquo;contentType&rdquo;: &ldquo;video/mp4&rdquo;<br>
+    }],<br>
+    &ldquo;text&rdquo;: &ldquo;Here is a puppy video&rdquo;<br>
+  }<br>
+}<br></p>
+
 <h2 id="picture-and-text-response-non-actionable">Picture and Text Response (Non-actionable)</h2>
+
+<blockquote>
+<p>Pepper Data Model - Picture and Text Response:</p>
+</blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="err">utteranceId</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234abcde"</span><span class="p">,</span><span class="w">
   </span><span class="err">sessionId</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcde1234"</span><span class="p">,</span><span class="w">
@@ -403,7 +544,99 @@ Step 6: Give the copied value (botToken) to the SBR Sales Engineer.
 </span></code></pre></div>
 <p><img src = "images/Pepper_Data_Model-Picture_And_Text_Response.png"/></p>
 
+<blockquote>
+<p>CHATBOT-SPECIFIC EXAMPLE:</p>
+</blockquote>
+
+<h3 id="example-picture-text-response">Example: Picture &amp; Text Response</h3>
+
+<p>(corresponds to ChatBot specific example →)</p>
+
+<p>Pepper ChatBot translation:</p>
+<div class="highlight"><pre class="highlight msbot tab-msbot"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+MS-Bot: Image Attachments response:
+"""""""""""""""""""""""""""""""""""""""""</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"contentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.greathillpartners.com/wp-content/uploads/Golden-Puppy.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puppy pic 1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"contentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://i.ytimg.com/vi/VRiWE1l8KqI/maxresdefault.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puppy pic 2"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"contentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://24.media.tumblr.com/53e3171e750c6c1028f8200ad73c8a53/tumblr_mkozt0qp3B1qiwf8po1_500.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puppy pic 1"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Here are some puppies"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"localTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T11:01:51-07:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-bot"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bot"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-user"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"inputHint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ignoringInput"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"replyToId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3j6714mfbl49hf1bac"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"688k3bd50e8ifk364c"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"channelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emulator"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T18:01:51.235Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"conversation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"efj6c25bj3e43b0c9"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="s2">"""""""""""""MAPPING""""""""""""""""""""
+Mapping (MS-Bot -&gt; Pepper Data Model):
+attachments ~&gt; show.content
+attachments.contentUrl-&gt; show.content.contentURL
+attachments.contentType-&gt; show.content.contentType
+text -&gt; speak
+text -&gt; show.text
+
+WHERE
+~&gt; = loosely mapped
+-&gt; = strictly mapped
+""""""""""""""""""""""""""""""""""""""""
+</span></code></pre></div>
+<p>{<br>
+  &ldquo;msgType&rdquo;: &ldquo;chatbotresponse&rdquo;,<br>
+  &ldquo;data&rdquo;: &ldquo;Puppy pic 1&rdquo;,<br>
+  &ldquo;type&rdquo;: &ldquo;message&rdquo;,<br>
+  &ldquo;conversationID&rdquo;: &ldquo;testgguid&rdquo;,<br>
+  &ldquo;uniqueID&rdquo;: &ldquo;28e36552-b0d8-42e2-b495-65f61329ad69&rdquo;,<br>
+  &ldquo;utteranceID&rdquo;: &ldquo;testutteranceID&rdquo;,<br>
+  &ldquo;sessionID&rdquo;: &ldquo;testgguid&rdquo;,<br>
+  &ldquo;response&rdquo;: &ldquo;Puppy pic 1&rdquo;,<br>
+  &ldquo;speak&rdquo;: &ldquo;Here are some puppies&rdquo;,<br>
+  &ldquo;show&rdquo;: {<br>
+    &ldquo;content&rdquo;: [{<br>
+      &ldquo;contentURL&rdquo;: &ldquo;http://24.media.tumblr.com/53e3171e750c6c1028f8200ad73c8a53/tumblr_mkozt0qp3B1qiwf8po1_500.jpg&rdquo;,<br>
+      &ldquo;contentType&rdquo;: &ldquo;image/jpg&rdquo;<br>
+    }, {<br>
+      &ldquo;contentURL&rdquo;: &ldquo;http://img-aws.ehowcdn.com/600x600p/photos.demandstudios.com/getty/article/154/20/87788187.jpg&rdquo;,<br>
+      &ldquo;contentType&rdquo;: &ldquo;image/jpg&rdquo;<br>
+    }, {<br>
+      &ldquo;contentURL&rdquo;: &ldquo;http://images2.fanpop.com/image/photos/13300000/Beautiful-Rottweiler-rottweiler-13378960-500-375.jpg&rdquo;,<br>
+      &ldquo;contentType&rdquo;: &ldquo;image/jpg&rdquo;<br>
+    }],<br>
+    &ldquo;text&rdquo;: &ldquo;Here are some puppies&rdquo;<br>
+  }<br>
+}<br></p>
+
 <h2 id="picture-only-response-non-actionable">Picture Only Response (Non-actionable)</h2>
+
+<blockquote>
+<p>Pepper Data Model - Picture Only Response (Non-actionable):</p>
+</blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="err">utteranceId</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234abcde"</span><span class="p">,</span><span class="w">
   </span><span class="err">sessionId</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcde1234"</span><span class="p">,</span><span class="w">
@@ -420,7 +653,99 @@ Step 6: Give the copied value (botToken) to the SBR Sales Engineer.
 </span></code></pre></div>
 <p><img src = "images/Pepper_Data_Model-Picture_Only_Response.png"/></p>
 
+<blockquote>
+<p>CHATBOT-SPECIFIC EXAMPLE:</p>
+</blockquote>
+
+<h3 id="example-picture-only-response">Example: Picture Only Response</h3>
+
+<p>(corresponds to ChatBot specific example →)</p>
+
+<p>Pepper ChatBot translation:</p>
+<div class="highlight"><pre class="highlight msbot tab-msbot"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+MS-Bot: Image Attachments response:
+"""""""""""""""""""""""""""""""""""""""""</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"contentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.greathillpartners.com/wp-content/uploads/Golden-Puppy.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puppy pic 1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"contentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://i.ytimg.com/vi/VRiWE1l8KqI/maxresdefault.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puppy pic 2"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"contentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://24.media.tumblr.com/53e3171e750c6c1028f8200ad73c8a53/tumblr_mkozt0qp3B1qiwf8po1_500.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puppy pic 1"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Here are some puppies"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"localTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T11:01:51-07:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-bot"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bot"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-user"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"inputHint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ignoringInput"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"replyToId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3j6714mfbl49hf1bac"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"688k3bd50e8ifk364c"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"channelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emulator"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T18:01:51.235Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"conversation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"efj6c25bj3e43b0c9"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="s2">"""""""""""""MAPPING""""""""""""""""""""
+Mapping (MS-Bot -&gt; Pepper Data Model):
+attachments ~&gt; show.content
+attachments.contentUrl-&gt; show.content.contentURL
+attachments.contentType-&gt; show.content.contentType
+text -&gt; speak
+text -&gt; show.text
+
+WHERE
+~&gt; = loosely mapped
+-&gt; = strictly mapped
+""""""""""""""""""""""""""""""""""""""""
+</span></code></pre></div>
+<p>{<br>
+  &ldquo;msgType&rdquo;: &ldquo;chatbotresponse&rdquo;,<br>
+  &ldquo;data&rdquo;: &ldquo;Puppy pic 1&rdquo;,<br>
+  &ldquo;type&rdquo;: &ldquo;message&rdquo;,<br>
+  &ldquo;conversationID&rdquo;: &ldquo;testgguid&rdquo;,<br>
+  &ldquo;uniqueID&rdquo;: &ldquo;28e36552-b0d8-42e2-b495-65f61329ad69&rdquo;,<br>
+  &ldquo;utteranceID&rdquo;: &ldquo;testutteranceID&rdquo;,<br>
+  &ldquo;sessionID&rdquo;: &ldquo;testgguid&rdquo;,<br>
+  &ldquo;response&rdquo;: &ldquo;Puppy pic 1&rdquo;,<br>
+  &ldquo;speak&rdquo;: &ldquo;Here are some puppies&rdquo;,<br>
+  &ldquo;show&rdquo;: {<br>
+    &ldquo;content&rdquo;: [{<br>
+      &ldquo;contentURL&rdquo;: &ldquo;http://24.media.tumblr.com/53e3171e750c6c1028f8200ad73c8a53/tumblr_mkozt0qp3B1qiwf8po1_500.jpg&rdquo;,<br>
+      &ldquo;contentType&rdquo;: &ldquo;image/jpg&rdquo;<br>
+    }, {<br>
+      &ldquo;contentURL&rdquo;: &ldquo;http://img-aws.ehowcdn.com/600x600p/photos.demandstudios.com/getty/article/154/20/87788187.jpg&rdquo;,<br>
+      &ldquo;contentType&rdquo;: &ldquo;image/jpg&rdquo;<br>
+    }, {<br>
+      &ldquo;contentURL&rdquo;: &ldquo;http://images2.fanpop.com/image/photos/13300000/Beautiful-Rottweiler-rottweiler-13378960-500-375.jpg&rdquo;,<br>
+      &ldquo;contentType&rdquo;: &ldquo;image/jpg&rdquo;<br>
+    }],<br>
+    &ldquo;text&rdquo;: &ldquo;Here are some puppies&rdquo;<br>
+  }<br>
+}<br></p>
+
 <h2 id="picture-and-text-response-actionable">Picture and Text Response (Actionable)</h2>
+
+<blockquote>
+<p>Pepper Data Model - Picture and Text Response (Actionable):</p>
+</blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="err">utteranceId</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234abcde"</span><span class="p">,</span><span class="w">
   </span><span class="err">sessionId</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcde1234"</span><span class="p">,</span><span class="w">
@@ -449,71 +774,19 @@ Step 6: Give the copied value (botToken) to the SBR Sales Engineer.
 </span></code></pre></div>
 <p><img src = "images/Pepper_Data_Model-Picture_And_Text_Response.png"/></p>
 
-<h2 id="picture-only-response-actionable">Picture Only Response (Actionable)</h2>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="err">utteranceId</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234abcde"</span><span class="p">,</span><span class="w">
-  </span><span class="err">sessionId</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcde1234"</span><span class="p">,</span><span class="w">
-        </span><span class="err">botConversationId</span><span class="p">:</span><span class="w"> </span><span class="s2">"a1b2c3d4e5"</span><span class="p">,</span><span class="w">
-  </span><span class="err">speak</span><span class="p">:</span><span class="w"> </span><span class="s2">"The weather in San Francisco today is a high of 66 degrees and a low of 48."</span><span class="p">,</span><span class="w">
-  </span><span class="err">show</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="err">text</span><span class="p">:</span><span class="w"> </span><span class="s2">"The weather in San Francisco today is a high of 66 degrees and a low of 48."</span><span class="p">,</span><span class="w">
-    </span><span class="err">content</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-        </span><span class="err">contentURL</span><span class="p">:</span><span class="w"> </span><span class="s2">"https.content.png"</span><span class="p">,</span><span class="w">
-        </span><span class="err">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"action1"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="err">contentURL</span><span class="p">:</span><span class="w"> </span><span class="s2">"https.content.jpeg"</span><span class="p">,</span><span class="w">
-        </span><span class="err">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"action2"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="err">contentURL</span><span class="p">:</span><span class="w"> </span><span class="s2">"https.content.gif"</span><span class="p">,</span><span class="w">
-        </span><span class="err">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"action3"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>&lt; No Image Provided in Luxoft Documentation &gt;</p>
+<blockquote>
+<p>CHATBOT-SPECIFIC EXAMPLE:</p>
+</blockquote>
 
-<h2 id="text-bubbles-response-actionable">Text Bubbles Response (Actionable)</h2>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="err">utteranceId</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234abcde"</span><span class="p">,</span><span class="w">
-  </span><span class="err">sessionId</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcde1234"</span><span class="p">,</span><span class="w">
-        </span><span class="err">botConversationId</span><span class="p">:</span><span class="w"> </span><span class="s2">"a1b2c3d4e5"</span><span class="p">,</span><span class="w">
-  </span><span class="err">speak</span><span class="p">:</span><span class="w"> </span><span class="s2">"The weather in San Francisco today is a high of 66 degrees and a low of 48."</span><span class="p">,</span><span class="w">
-  </span><span class="err">show</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="err">text</span><span class="p">:</span><span class="w"> </span><span class="s2">"The weather in San Francisco today is a high of 66 degrees and a low of 48."</span><span class="p">,</span><span class="w">
-    </span><span class="err">content</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-        </span><span class="err">text</span><span class="p">:</span><span class="w"> </span><span class="s2">"YES"</span><span class="p">,</span><span class="w">
-        </span><span class="err">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"yes"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="err">text</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO"</span><span class="p">,</span><span class="w">
-        </span><span class="err">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p><img src = "images/Pepper_Data_Model-Text_Bubbles_Response.png"/></p>
+<h3 id="example-picture-text-actionable-response">Example: Picture &amp; Text (Actionable) Response</h3>
 
-<h1 id="accepted-chatbot-responses">Accepted ChatBot Responses</h1>
+<p>(corresponds to ChatBot specific example →)</p>
 
-<p>Not all of a ChatBot&rsquo;s responses will necessarily be compatible with our Pepper ChatBot API.
-We will generally accept the subset of all ChatBot responses that coincide with the Pepper
-ChatBot API data model. Scroll the options to the right within the appropriate tab for your
-given ChatBot to see what the accepted responses are for your ChatBot.</p>
-<div class="highlight"><pre class="highlight msbot tab-msbot"><code><span class="s2">"""""""""""""""""""""""""""
-Supported MS-Bot Responses:
-""""""""""""""""""""""""""
-The following show the data models of various MS-Bot responses, 
-followed by their mappings to the Pepper ChatBot data model:
-
-""""""""""""""""""""""""""""""""""
-Hero Card with Images and Choices
-""""""""""""""""""""""""""""""""""
-MS-Bot response data model:
-"</span><span class="p">{</span><span class="w">
+<p>Pepper ChatBot translation:</p>
+<div class="highlight"><pre class="highlight msbot tab-msbot"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+MS-Bot: Hero Card with Images and Choices
+"""""""""""""""""""""""""""""""""""""""""</span><span class="w">
+</span><span class="p">{</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"attachmentLayout"</span><span class="p">:</span><span class="w"> </span><span class="s2">"carousel"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
@@ -566,8 +839,9 @@ MS-Bot response data model:
   </span><span class="s2">"conversation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6ja3le587mmjbc4c"</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="s2">"
+</span><span class="p">}</span><span class="w">
 
+</span><span class="s2">"""""""""""""MAPPING""""""""""""""""""""
 Mapping (MS-Bot -&gt; Pepper Data Model):
 attachments ~&gt; show.content
 attachments.title -&gt; show.content.text
@@ -583,40 +857,214 @@ show.content.text: 'Tap or Say one of the following'
 WHERE
 ~&gt; = loosely mapped
 -&gt; = strictly mapped
+""""""""""""""""""""""""""""""""""""""""
+</span></code></pre></div>
+<p>{<br>
+  &ldquo;msgType&rdquo;: &ldquo;chatbotresponse&rdquo;,<br>
+  &ldquo;data&rdquo;: &ldquo;Tap or Say one of the following&rdquo;,<br>
+  &ldquo;type&rdquo;: &ldquo;message&rdquo;,<br>
+  &ldquo;conversationID&rdquo;: &ldquo;testgguid&rdquo;,<br>
+  &ldquo;uniqueID&rdquo;: &ldquo;28e36552-b0d8-42e2-b495-65f61329ad69&rdquo;,<br>
+  &ldquo;utteranceID&rdquo;: &ldquo;testutteranceID&rdquo;,<br>
+  &ldquo;sessionID&rdquo;: &ldquo;testgguid&rdquo;,<br>
+  &ldquo;response&rdquo;: &ldquo;Tap or Say one of the following&rdquo;,<br>
+  &ldquo;speak&rdquo;: &ldquo;Tap or Say one of the following&rdquo;,<br>
+  &ldquo;show&rdquo;: {<br>
+    &ldquo;content&rdquo;: [{<br>
+      &ldquo;text&rdquo;: &ldquo;Boxer&rdquo;,<br>
+      &ldquo;speak&rdquo;: &ldquo;The American boxer is a stocky, well built, strong-looking dog, with a large head and a muscular build. Its coat is short and generally smooth. The breed is a light to moderate shedder.&rdquo;,<br>
+      &ldquo;contentURL&rdquo;: &ldquo;https://static.pexels.com/photos/158682/snow-dog-de-bordeaux-158682.jpeg&rdquo;,<br>
+      &ldquo;value&rdquo;: &ldquo;boxer&rdquo;<br>
+    }, {<br>
+      &ldquo;text&rdquo;: &ldquo;Akita&rdquo;,<br>
+      &ldquo;speak&rdquo;: &ldquo;The Akita is a very intelligent and self-assured dog that has a very easy time learning new tricks. This dog can be sociable with children and strangers but is generally reserved around new people. &rdquo;,<br>
+      &ldquo;contentURL&rdquo;: &ldquo;https://upload.wikimedia.org/wikipedia/commons/5/56/Papillon_Ears.jpg&rdquo;,<br>
+      &ldquo;value&rdquo;: &ldquo;akita&rdquo;<br>
+    }],<br>
+    &ldquo;text&rdquo;: &ldquo;Tap or Say one of the following&rdquo;<br>
+  }<br>
+}<br></p>
 
-Pepper ChatBot API Translation:
-"</span><span class="p">{</span><span class="w">
-  </span><span class="s2">"msgType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chatbotresponse"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tap or Say one of the following"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"conversationID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testgguid"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"uniqueID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28e36552-b0d8-42e2-b495-65f61329ad69"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"utteranceID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testutteranceID"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sessionID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testgguid"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tap or Say one of the following"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"speak"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tap or Say one of the following"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"show"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-      </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boxer"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"speak"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The American boxer is a stocky, well built, strong-looking dog, with a large head and a muscular build. Its coat is short and generally smooth. The breed is a light to moderate shedder."</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"contentURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://static.pexels.com/photos/158682/snow-dog-de-bordeaux-158682.jpeg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boxer"</span><span class="w">
-    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Akita"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"speak"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Akita is a very intelligent and self-assured dog that has a very easy time learning new tricks. This dog can be sociable with children and strangers but is generally reserved around new people. "</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"contentURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://upload.wikimedia.org/wikipedia/commons/5/56/Papillon_Ears.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"akita"</span><span class="w">
-    </span><span class="p">}],</span><span class="w">
-    </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tap or Say one of the following"</span><span class="w">
+<h2 id="picture-only-response-actionable">Picture Only Response (Actionable)</h2>
+
+<blockquote>
+<p>Pepper Data Model - Picture Only Response (Actionable):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="err">utteranceId</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234abcde"</span><span class="p">,</span><span class="w">
+  </span><span class="err">sessionId</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcde1234"</span><span class="p">,</span><span class="w">
+        </span><span class="err">botConversationId</span><span class="p">:</span><span class="w"> </span><span class="s2">"a1b2c3d4e5"</span><span class="p">,</span><span class="w">
+  </span><span class="err">speak</span><span class="p">:</span><span class="w"> </span><span class="s2">"The weather in San Francisco today is a high of 66 degrees and a low of 48."</span><span class="p">,</span><span class="w">
+  </span><span class="err">show</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">text</span><span class="p">:</span><span class="w"> </span><span class="s2">"The weather in San Francisco today is a high of 66 degrees and a low of 48."</span><span class="p">,</span><span class="w">
+    </span><span class="err">content</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="err">contentURL</span><span class="p">:</span><span class="w"> </span><span class="s2">"https.content.png"</span><span class="p">,</span><span class="w">
+        </span><span class="err">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"action1"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="err">contentURL</span><span class="p">:</span><span class="w"> </span><span class="s2">"https.content.jpeg"</span><span class="p">,</span><span class="w">
+        </span><span class="err">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"action2"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="err">contentURL</span><span class="p">:</span><span class="w"> </span><span class="s2">"https.content.gif"</span><span class="p">,</span><span class="w">
+        </span><span class="err">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"action3"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="s2">"
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><img src = "images/Pepper_Data_Model-Picture_And_Text_Response.png"/></p>
 
+<blockquote>
+<p>CHATBOT-SPECIFIC EXAMPLE:</p>
+</blockquote>
 
-""""""""""""""""""""""""
-Hero Card with Choices
-""""""""""""""""""""""""
-MS-Bot response data model:
-"</span><span class="p">{</span><span class="w">
+<h3 id="example-picture-only-actionable-response">Example: Picture Only (Actionable) Response</h3>
+
+<p>(corresponds to ChatBot specific example →)</p>
+
+<p>Pepper ChatBot translation:</p>
+<div class="highlight"><pre class="highlight msbot tab-msbot"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+MS-Bot: Hero Card with Images and Choices
+"""""""""""""""""""""""""""""""""""""""""</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"attachmentLayout"</span><span class="p">:</span><span class="w"> </span><span class="s2">"carousel"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/vnd.microsoft.card.thumbnail"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boxer"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"subtitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A breed of utility dog."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The American boxer is a stocky, well built, strong-looking dog, with a large head and a muscular build. Its coat is short and generally smooth. The breed is a light to moderate shedder."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+          </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://static.pexels.com/photos/158682/snow-dog-de-bordeaux-158682.jpeg"</span><span class="w">
+        </span><span class="p">}],</span><span class="w">
+        </span><span class="s2">"buttons"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imBack"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boxer"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boxer"</span><span class="w">
+        </span><span class="p">}]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/vnd.microsoft.card.thumbnail"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Akita"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"subtitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Continental Toy Spaniel"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Akita is a very intelligent and self-assured dog that has a very easy time learning new tricks. This dog can be sociable with children and strangers but is generally reserved around new people. "</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+          </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://upload.wikimedia.org/wikipedia/commons/5/56/Papillon_Ears.jpg"</span><span class="w">
+        </span><span class="p">}],</span><span class="w">
+        </span><span class="s2">"buttons"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imBack"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"akita"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Akita"</span><span class="w">
+        </span><span class="p">}]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"localTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T10:45:24-07:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"n5dm5eb6ldekh6a3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bot"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-user"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"inputHint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acceptingInput"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"replyToId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dn58c2bfjd1089dkac"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nbdk7b69eb0j9j69"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"channelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emulator"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T17:45:24.902Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"conversation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6ja3le587mmjbc4c"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="s2">"""""""""""""MAPPING""""""""""""""""""""
+Mapping (MS-Bot -&gt; Pepper Data Model):
+attachments ~&gt; show.content
+attachments.title -&gt; show.content.text
+attachments.subtitle -&gt; **ABANDONED**
+attachments.text -&gt; show.content.speak
+attachments.images.url -&gt; show.content.contentURL
+attachments.buttons.value -&gt; show.content.value
+
+ADDED
+speak: 'Tap or Say one of the following'
+show.content.text: 'Tap or Say one of the following'
+
+WHERE
+~&gt; = loosely mapped
+-&gt; = strictly mapped
+""""""""""""""""""""""""""""""""""""""""
+</span></code></pre></div>
+<p>{<br>
+  &ldquo;msgType&rdquo;: &ldquo;chatbotresponse&rdquo;,<br>
+  &ldquo;data&rdquo;: &ldquo;Tap or Say one of the following&rdquo;,<br>
+  &ldquo;type&rdquo;: &ldquo;message&rdquo;,<br>
+  &ldquo;conversationID&rdquo;: &ldquo;testgguid&rdquo;,<br>
+  &ldquo;uniqueID&rdquo;: &ldquo;28e36552-b0d8-42e2-b495-65f61329ad69&rdquo;,<br>
+  &ldquo;utteranceID&rdquo;: &ldquo;testutteranceID&rdquo;,<br>
+  &ldquo;sessionID&rdquo;: &ldquo;testgguid&rdquo;,<br>
+  &ldquo;response&rdquo;: &ldquo;Tap or Say one of the following&rdquo;,<br>
+  &ldquo;speak&rdquo;: &ldquo;Tap or Say one of the following&rdquo;,<br>
+  &ldquo;show&rdquo;: {<br>
+    &ldquo;content&rdquo;: [{<br>
+      &ldquo;text&rdquo;: &ldquo;Boxer&rdquo;,<br>
+      &ldquo;speak&rdquo;: &ldquo;The American boxer is a stocky, well built, strong-looking dog, with a large head and a muscular build. Its coat is short and generally smooth. The breed is a light to moderate shedder.&rdquo;,<br>
+      &ldquo;contentURL&rdquo;: &ldquo;https://static.pexels.com/photos/158682/snow-dog-de-bordeaux-158682.jpeg&rdquo;,<br>
+      &ldquo;value&rdquo;: &ldquo;boxer&rdquo;<br>
+    }, {<br>
+      &ldquo;text&rdquo;: &ldquo;Akita&rdquo;,<br>
+      &ldquo;speak&rdquo;: &ldquo;The Akita is a very intelligent and self-assured dog that has a very easy time learning new tricks. This dog can be sociable with children and strangers but is generally reserved around new people. &rdquo;,<br>
+      &ldquo;contentURL&rdquo;: &ldquo;https://upload.wikimedia.org/wikipedia/commons/5/56/Papillon_Ears.jpg&rdquo;,<br>
+      &ldquo;value&rdquo;: &ldquo;akita&rdquo;<br>
+    }],<br>
+    &ldquo;text&rdquo;: &ldquo;Tap or Say one of the following&rdquo;<br>
+  }<br>
+}<br></p>
+
+<h2 id="text-bubbles-response-actionable">Text Bubbles Response (Actionable)</h2>
+
+<blockquote>
+<p>Pepper Data Model - Text Bubbles Response (Actionable):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="err">utteranceId</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234abcde"</span><span class="p">,</span><span class="w">
+  </span><span class="err">sessionId</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcde1234"</span><span class="p">,</span><span class="w">
+        </span><span class="err">botConversationId</span><span class="p">:</span><span class="w"> </span><span class="s2">"a1b2c3d4e5"</span><span class="p">,</span><span class="w">
+  </span><span class="err">speak</span><span class="p">:</span><span class="w"> </span><span class="s2">"The weather in San Francisco today is a high of 66 degrees and a low of 48."</span><span class="p">,</span><span class="w">
+  </span><span class="err">show</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">text</span><span class="p">:</span><span class="w"> </span><span class="s2">"The weather in San Francisco today is a high of 66 degrees and a low of 48."</span><span class="p">,</span><span class="w">
+    </span><span class="err">content</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="err">text</span><span class="p">:</span><span class="w"> </span><span class="s2">"YES"</span><span class="p">,</span><span class="w">
+        </span><span class="err">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"yes"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="err">text</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO"</span><span class="p">,</span><span class="w">
+        </span><span class="err">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><img src = "images/Pepper_Data_Model-Text_Bubbles_Response.png"/></p>
+
+<blockquote>
+<p>CHATBOT-SPECIFIC EXAMPLE:</p>
+</blockquote>
+
+<h3 id="example-text-bubbles-actionable-response">Example: Text Bubbles (Actionable) Response</h3>
+
+<p>(corresponds to ChatBot specific example →)</p>
+
+<p>Pepper ChatBot translation:</p>
+<div class="highlight"><pre class="highlight msbot tab-msbot"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+MS-Bot: Hero Card with Choices
+"""""""""""""""""""""""""""""""""""""""""</span><span class="w">
+</span><span class="p">{</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
     </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/vnd.microsoft.card.hero"</span><span class="p">,</span><span class="w">
@@ -652,9 +1100,10 @@ MS-Bot response data model:
   </span><span class="s2">"conversation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6ja3le587mmjbc4c"</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="s2">"
+</span><span class="p">}</span><span class="w">
 
-Mapping (MS-Bot -&gt; Pepper Data Model):
+</span><span class="s2">"""""""""""""MAPPING""""""""""""""""""""
+Mapping (MS-Bot Hero Card w/ Choices -&gt; Pepper Data Model):
 attachments.content.buttons ~&gt; show.content
 attachments.content.buttons.title -&gt; show.content.text
 attachments.content.buttons.value -&gt; show.content.value
@@ -664,250 +1113,30 @@ attachments.content.title -&gt; speak
 WHERE
 ~&gt; = loosely mapped
 -&gt; = strictly mapped
-
-Pepper ChatBot API Translation:
-"</span><span class="p">{</span><span class="w">
-  </span><span class="s2">"msgType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chatbotresponse"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Do you want to know about Puppies?"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"conversationID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testgguid"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"uniqueID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28e36552-b0d8-42e2-b495-65f61329ad69"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"utteranceID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testutteranceID"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sessionID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testgguid"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Do you want to know about Puppies?"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"speak"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Do you want to know about Puppies?"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"show"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-      </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes please"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes please"</span><span class="w">
-    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No thanks"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No thanks"</span><span class="w">
-    </span><span class="p">}],</span><span class="w">
-    </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Do you want to know about Puppies?"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="s2">"
-
-
-""""""""""""""""""""""
-Image Attachments
-""""""""""""""""""""""
-
-MS-Bot response data model:
-"</span><span class="p">{</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-      </span><span class="s2">"contentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.greathillpartners.com/wp-content/uploads/Golden-Puppy.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puppy pic 1"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"contentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://i.ytimg.com/vi/VRiWE1l8KqI/maxresdefault.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puppy pic 2"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"contentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://24.media.tumblr.com/53e3171e750c6c1028f8200ad73c8a53/tumblr_mkozt0qp3B1qiwf8po1_500.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puppy pic 1"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Here are some puppies"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"localTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T11:01:51-07:00"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-bot"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bot"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-user"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"inputHint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ignoringInput"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"replyToId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3j6714mfbl49hf1bac"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"688k3bd50e8ifk364c"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"channelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emulator"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T18:01:51.235Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"conversation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"efj6c25bj3e43b0c9"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="s2">"
-
-Mapping (MS-Bot -&gt; Pepper Data Model):
-attachments ~&gt; show.content
-attachments.contentUrl-&gt; show.content.contentURL
-attachments.contentType-&gt; show.content.contentType
-text -&gt; speak
-text -&gt; show.text
-
-WHERE
-~&gt; = loosely mapped
--&gt; = strictly mapped
-
-Pepper ChatBot API translation:
-"</span><span class="p">{</span><span class="w">
-  </span><span class="s2">"msgType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chatbotresponse"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puppy pic 1"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"conversationID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testgguid"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"uniqueID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28e36552-b0d8-42e2-b495-65f61329ad69"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"utteranceID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testutteranceID"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sessionID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testgguid"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puppy pic 1"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"speak"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Here are some puppies"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"show"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-      </span><span class="s2">"contentURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://24.media.tumblr.com/53e3171e750c6c1028f8200ad73c8a53/tumblr_mkozt0qp3B1qiwf8po1_500.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpg"</span><span class="w">
-    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"contentURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://img-aws.ehowcdn.com/600x600p/photos.demandstudios.com/getty/article/154/20/87788187.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpg"</span><span class="w">
-    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"contentURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://images2.fanpop.com/image/photos/13300000/Beautiful-Rottweiler-rottweiler-13378960-500-375.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpg"</span><span class="w">
-    </span><span class="p">}],</span><span class="w">
-    </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Here are some puppies"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span><span class="s2">"""""""""""
-Text Only
-""""""""""
-
-MS-Bot data model:
-"</span><span class="p">{</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Duh, German Shepard Puppies tell the best jokes!"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"localTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T11:11:52-07:00"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-bot"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bot"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-user"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"inputHint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acceptingInput"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"replyToId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9hecj33gj8mckk1m3"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48mj8inig8dmc9i39"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"channelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emulator"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T18:11:52.982Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"conversation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mb6c0bcdl2eclij9i"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="s2">"
-
-Mapping (MS-Bot -&gt; Pepper Data Model):
-text -&gt; speak
-text -&gt; show.text
-
-WHERE
--&gt; = strictly mapped
-
-Pepper ChatBot API translation:
-"</span><span class="p">{</span><span class="w">
-  </span><span class="s2">"msgType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chatbotresponse"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Duh, German Shepard Puppies tell the best jokes!"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"conversationID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testgguid"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"uniqueID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28e36552-b0d8-42e2-b495-65f61329ad69"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"utteranceID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testutteranceID"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sessionID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testgguid"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Duh, German Shepard Puppies tell the best jokes!"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"speak"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Duh, German Shepard Puppies tell the best jokes!"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"show"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Duh, German Shepard Puppies tell the best jokes!"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="s2">"
-
-""""""""""""""""""
-Video Attachments
-""""""""""""""""""
-
-MS-Bot data model:
-"</span><span class="p">{</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-    </span><span class="s2">"contentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pepperstoragedev.blob.core.windows.net/pepperstories/b68b2247-f74a-4f6b-b3ad-3e7e66c1e600.mp4?decache=QLT1MXCSF1A9"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video/mp4"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puppy video"</span><span class="w">
-  </span><span class="p">}],</span><span class="w">
-  </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Here is a puppy video"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"localTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T11:09:03-07:00"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-bot"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bot"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-user"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"inputHint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acceptingInput"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"replyToId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f0igi03ln2f4fem94c"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ek9im8g5df0e305bf"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"channelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emulator"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T18:09:03.318Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"conversation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mb6c0bcdl2eclij9i"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="s2">"
-
-Mapping (MS-Bot -&gt; Pepper Data Model):
-attachments ~&gt; show.content
-attachments.contentUrl-&gt; show.content. contentURL
-attachments.contentType-&gt; show.content.contentType
-text -&gt; speak
-text -&gt; show.text
-
-WHERE
-~&gt; = loosely mapped
--&gt; = strictly mapped
-
-
-Pepper ChatBot API translation:
-"</span><span class="p">{</span><span class="w">
-  </span><span class="s2">"msgType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chatbotresponse"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Here is a puppy video"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"conversationID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testgguid"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"uniqueID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28e36552-b0d8-42e2-b495-65f61329ad69"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"utteranceID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testutteranceID"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sessionID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testgguid"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Here is a puppy video"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"speak"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Here is a puppy video"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"show"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-      </span><span class="s2">"contentURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pepperstoragedev.blob.core.windows.net/pepperstories/b68b2247-f74a-4f6b-b3ad-3e7e66c1e600.mp4?decache=QLT1MXCSF1A9"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video/mp4"</span><span class="w">
-    </span><span class="p">}],</span><span class="w">
-    </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Here is a puppy video"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span><span class="s2">"""""""""
-Greeting
-""""""""
-
-MS-Bot response data model:
-"</span><span class="p">{</span><span class="w">
-  </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What's up with you homie?"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"inputHint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expectingInput"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"localTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-22T03:27:11.411Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7n77ehm8i7g704je6"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bot"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-user"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"replyToId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"df2d0764lj5fhkn5ac"</span><span class="w">
-</span><span class="p">}</span><span class="s2">"
-
-Mapping (MS-Bot -&gt; Pepper Data Model):
-{Not mapped yet; future feature...}
-
+""""""""""""""""""""""""""""""""""""""""
 </span></code></pre></div>
+<p>{ <br>
+  &ldquo;msgType&rdquo;: &ldquo;chatbotresponse&rdquo;,<br>
+  &ldquo;data&rdquo;: &ldquo;Do you want to know about Puppies?&rdquo;,<br>
+  &ldquo;type&rdquo;: &ldquo;message&rdquo;,<br>
+  &ldquo;conversationID&rdquo;: &ldquo;testgguid&rdquo;,<br>
+  &ldquo;uniqueID&rdquo;: &ldquo;28e36552-b0d8-42e2-b495-65f61329ad69&rdquo;,<br>
+  &ldquo;utteranceID&rdquo;: &ldquo;testutteranceID&rdquo;,<br>
+  &ldquo;sessionID&rdquo;: &ldquo;testgguid&rdquo;,<br>
+  &ldquo;response&rdquo;: &ldquo;Do you want to know about Puppies?&rdquo;,<br>
+  &ldquo;speak&rdquo;: &ldquo;Do you want to know about Puppies?&rdquo;,<br>
+  &ldquo;show&rdquo;: {<br>
+    &ldquo;content&rdquo;: [{<br>
+      &ldquo;text&rdquo;: &ldquo;Yes please&rdquo;,<br>
+      &ldquo;value&rdquo;: &ldquo;Yes please&rdquo;<br>
+    }, {<br>
+      &ldquo;text&rdquo;: &ldquo;No thanks&rdquo;,<br>
+      &ldquo;value&rdquo;: &ldquo;No thanks&rdquo;<br>
+    }],<br>
+    &ldquo;text&rdquo;: &ldquo;Do you want to know about Puppies?&rdquo;<br>
+  }<br>
+}<br></p>
+
           <h1 id="faq-limitations">FAQ &amp; Limitations</h1>
 
 <p>General FAQ questions are listed below. ChatBot specific FAQ questions are listed to the right under its tab.
