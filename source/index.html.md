@@ -22,9 +22,9 @@ search: true
 The Microsoft Bot Framework (MS-Bot) facilitates the creation of 
 powerful chatbots to enhance your application's capabilities. Its open 
 source Bot Builder SDKs allow users to build simple to sophisticated 
-dialogs. Cognitive Services enable your bot to see, hear, interpret and 
-interact in more human ways. Ms-Bot is the first, 3rd-party ChatBot 
-integration that SoftBank Robotics supports.
+dialogs. Cognitive Services enable your bot to interpret and interact 
+in more human ways. Ms-Bot is the first, 3rd-party ChatBot integration 
+that SoftBank Robotics supports.
 
 To see a working example, download the emulator here:
     https://docs.microsoft.com/en-us/bot-framework/debug-bots-emulator
