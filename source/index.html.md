@@ -72,6 +72,8 @@ ChatBots use RESTful APIs with APP IDs, PASSWORDs, and/or ACCESS TOKENS to authe
 
 <code>https://{YOUR-CHATBOT'S-ENDPOINT}</code>
 
+SEE CHATBOT SPECIFIC SETUP INSTRUCTIONS TO THE RIGHT → 
+
 <aside class="notice">Authorization: Varies between chatbots, but typically requires your App ID and Password when configuring. We currently must work together with your   developers to set this up, but will soon provide a web interface for self service.</aside>
 
 
