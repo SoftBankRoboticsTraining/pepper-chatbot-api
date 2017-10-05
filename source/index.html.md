@@ -19,10 +19,12 @@ search: true
 
 ```msbot
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Microsoft's open source Bot Builder SDKs allow you to build simple
-to sophisticated dialogs; Cognitive Services enable your bot to see,
-hear, interpret and interact in more human ways. Ms-Bot is the first,
-3rd-party ChatBot integration that SoftBank Robotics supports.
+The Microsoft Bot Framework (MS-Bot) facilitates the creation of 
+powerful chatbots to enhance your application's capabilities. Its open 
+source Bot Builder SDKs allow users to build simple to sophisticated 
+dialogs. Cognitive Services enable your bot to see, hear, interpret and 
+interact in more human ways. Ms-Bot is the first, 3rd-party ChatBot 
+integration that SoftBank Robotics supports.
 
 To see a working example, download the emulator here:
     https://docs.microsoft.com/en-us/bot-framework/debug-bots-emulator
@@ -46,7 +48,7 @@ Welcome to the Pepper ChatBot API! You can use this API to access a 3rd party ch
 
 You can view general integration instructions in this central, light blue section. In the dark area to the right, you can see chatbot-specific code examples corresponding visually in line with each general section. Switch between different chatbot-specific code examples with the tabs in the top right.
 
-<aside class="notice">We currently only support integrations with our default chatbot service (satisfi) and the Microsoft Bot Framework (msbot), but this list is quickly growing, so check back soon or else get in touch with us directly if your chatbot platform does not appear on this list!</aside>
+<aside class="notice">We currently only support integrations with the Microsoft Bot Framework (msbot), but this list is quickly growing, so check back soon or else get in touch with us directly if your chatbot platform does not appear on this list!</aside>
 
 
 # Authentication
