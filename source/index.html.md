@@ -51,11 +51,12 @@ You can view general integration instructions in this central, light blue sectio
 <aside class="notice">We currently only support integrations with the Microsoft Bot Framework (msbot), but this list is quickly growing, so check back soon or else get in touch with us directly if your chatbot platform does not appear on this list!</aside>
 
 
-# Authentication
+# Authentication & Setup
 
 
 ```msbot
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+SETUP INSTRUCTIONS:
 Provide your 'botToken' to the SoftBank Robotics Sales Engineer assisting 
 you with setup. You can find your 'botToken' by following these steps:
 
