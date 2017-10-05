@@ -57,8 +57,9 @@ You can view general integration instructions in this central, light blue sectio
 ```msbot
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 SETUP INSTRUCTIONS:
-Provide your 'botToken' to the SoftBank Robotics Sales Engineer assisting 
-you with setup. You can find your 'botToken' by following these steps:
+For MS-Bots, setup consists of providing us with your bot's endpoint and
+a bot token. Provide your bot token to the SoftBank Robotics Sales Engineer 
+assisting you with setup. You can find your 'botToken' by following these steps:
 
 Step 1: Open your bot in Azure portal.
 Step 2: Select the CHANNELS tab.
@@ -71,10 +72,10 @@ Step 6: Give the copied value (botToken) to the SBR Sales Engineer.
 ChatBots use RESTful APIs with APP IDs, PASSWORDs, and/or ACCESS TOKENS to authenticate in order to retrieve chatbot data. Requests are made to the ChatBot from a single endpoint:
 
 <code>https://{YOUR-CHATBOT'S-ENDPOINT}</code>
+<br>
+SEE CHATBOT-SPECIFIC SETUP INSTRUCTIONS TO THE RIGHT → 
 
-SEE CHATBOT SPECIFIC SETUP INSTRUCTIONS TO THE RIGHT → 
-
-<aside class="notice">Authorization: Varies between chatbots, but typically requires your App ID and Password when configuring. We currently must work together with your   developers to set this up, but will soon provide a web interface for self service.</aside>
+<aside class="notice">Authorization and setup varies between chatbots, but typically requires your App ID and Password when configuring. We currently must work together with you or your developers to set this up, but we will soon provide a web interface for self service.</aside>
 
 
 # Pepper Data Model
