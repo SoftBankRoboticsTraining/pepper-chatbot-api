@@ -58,8 +58,9 @@ You can view general integration instructions in this central, light blue sectio
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 SETUP INSTRUCTIONS:
 For MS-Bots, setup consists of providing us with your bot's endpoint and
-a bot token. Provide your bot token to the SoftBank Robotics Sales Engineer 
-assisting you with setup. You can find your 'botToken' by following these steps:
+a bot token. Provide your endpoint and bot token to the SoftBank Robotics 
+Sales Engineer assisting you with setup. You can find your 'botToken' by 
+following these steps:
 
 Step 1: Open your bot in Azure portal.
 Step 2: Select the CHANNELS tab.
