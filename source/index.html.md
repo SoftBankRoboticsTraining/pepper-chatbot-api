@@ -73,7 +73,7 @@ Step 6: Give the copied value (botToken) to the SBR Sales Engineer.
 ChatBots use RESTful APIs with APP IDs, PASSWORDs, and/or ACCESS TOKENS to authenticate in order to retrieve chatbot data. Requests are made to the ChatBot from a single endpoint:
 
 <code>https://{YOUR-CHATBOT'S-ENDPOINT}</code>
-<br>
+<br><br><br>
 SEE CHATBOT-SPECIFIC SETUP INSTRUCTIONS TO THE RIGHT → 
 
 <aside class="notice">Authorization and setup varies between chatbots, but typically requires your App ID and Password when configuring. We currently must work together with you or your developers to set this up, but we will soon provide a web interface for self service.</aside>
