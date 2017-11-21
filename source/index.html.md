@@ -44,7 +44,7 @@ PuppyBot LUIS Endpoint:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ```
 
-Welcome to the Pepper ChatBot API! You can use this API to access a 3rd party chatbot's endpoints in order to integrate an existing chatbot with Pepper. 
+Welcome to the Pepper ChatBot API! You can use this API reference material to connect your 3rd party chatbot's endpoint to your Host account in order to integrate a new or existing chatbot with Pepper. 
 
 You can view general integration instructions in this central, light blue section. In the dark area to the right, you can see chatbot-specific code examples corresponding visually in line with each general section. Switch between different chatbot-specific code examples with the tabs in the top right.
 
