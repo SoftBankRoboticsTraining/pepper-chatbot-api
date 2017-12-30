@@ -26,7 +26,8 @@ for applications. Choose Dialogflow as an interface for Pepper to
 unlock your robot's latent conversational abilities.
 
 To see a working example:
-(1) Download the example .zip file here: https://github.com/SoftBankRoboticsTraining/pepper-dialogflow-chatbot-faq
+(1) Download the example .zip file here: 
+https://github.com/SoftBankRoboticsTraining/pepper-dialogflow-chatbot-faq
 (2) Create a free account at www.dialogflow.com;
 (3) Create a new agent;
 (4) Click the gear icon to access the agent's settings; 
@@ -220,6 +221,45 @@ A nullable string that contains the actionable value to be returned to the chat 
 (corresponds to ChatBot specific example →)
 
 Pepper ChatBot translation:
+```dialogflow
+For each intent within your agent, use the simple "Text response" 
+fields under the "Response" section to render a response.
+
+By default, Pepper will both speak and display whatever text you 
+write in these fields. That is oftentimes not desirable behavior;
+to have Pepper say one thing and display another, use double pipes
+(||), following this syntax:
+
+{What Pepper Says} || {What Pepper displays on the tablet}
+
+Ex. Hello, human || (｡◕‿◕｡)
+In this example, Pepper will say "Hello, human" while displaying
+an emoticon smiley face.
+
+Note that in the section of what Pepper says, QiChat is allowed:
+http://doc.aldebaran.com/2-5/naoqi/interaction/dialog/dialog-syntax_full.html#
+
+Here are some useful QiChat commands:
+
+Speech:
+\pau=1000\ = Inserts a pause (in milliseconds)
+\rspd=100\ = Speaking rate (in percentage)
+\vct=100\ = Pitch of voice (in percentage)
+
+Animations/Dances/Games:
+^run(animation_full_name*) = Animates Pepper w/ a given animation
+^start(animation_full_name*) = Animates Pepper w/ a given animation,
+while also continuing to speak whatever follows the command
+^run(app-id/behavior_name**) = Activates a given game/dance/etc
+
+* For a list of available animations, go here: 
+http://doc.aldebaran.com/2-5/naoqi/motion/alanimationplayer-advanced.html#animationplayer-list-behaviors-pepper
+
+** Connect to your robot using Choregraphe 
+(https://developer.softbankrobotics.com/us-en/downloads/pepper), and 
+use the Robot Applications panel to discover the App ID and Behavior 
+names of the games, dances, and other apps installed on your robot.
+```
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -299,6 +339,22 @@ WHERE
 (corresponds to ChatBot specific example →)
 
 Pepper ChatBot translation:
+
+```dialogflow
+"""""""""""""""""""""""""""""""""""""""""
+Dialogflow: Video Only response:
+"""""""""""""""""""""""""""""""""""""""""
+For a given intent within your agent, under the 'Response'
+section:
+1) Click the + icon next to 'Default'
+2) Select 'Google Assistant'
+3) Under the 'Google Assistant' tab, select 'Add Message Content'
+4) Select 'Basic Card'
+5) Enter the URL of the video
+6) In the Title field, enter what you want Pepper to say and display
+on its tablet according to the syntax described above ^^ in the 
+'Text Only Response' ({What Pepper Says} || {What Pepper displays})
+```
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -401,6 +457,22 @@ WHERE
 (corresponds to ChatBot specific example →)
 
 Pepper ChatBot translation:
+
+```dialogflow
+"""""""""""""""""""""""""""""""""""""""""
+Dialogflow: Picture & Text response:
+"""""""""""""""""""""""""""""""""""""""""
+For a given intent within your agent, under the 'Response'
+section:
+1) Click the + icon next to 'Default'
+2) Select 'Google Assistant'
+3) Under the 'Google Assistant' tab, select 'Add Message Content'
+4) Select 'Basic Card'
+5) Enter the URL of the picture
+6) In the Title field, enter what you want Pepper to say and display
+on its tablet according to the syntax described above ^^ in the 
+'Text Only Response' ({What Pepper Says} || {What Pepper displays})
+```
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -511,6 +583,21 @@ WHERE
 (corresponds to ChatBot specific example →)
 
 Pepper ChatBot translation:
+```dialogflow
+"""""""""""""""""""""""""""""""""""""""""
+Dialogflow: Picture Only response:
+"""""""""""""""""""""""""""""""""""""""""
+For a given intent within your agent, under the 'Response'
+section:
+1) Click the + icon next to 'Default'
+2) Select 'Google Assistant'
+3) Under the 'Google Assistant' tab, select 'Add Message Content'
+4) Select 'Basic Card'
+5) Enter the URL of the picture
+6) In the Title field, enter what you want Pepper to say and display
+on its tablet according to the syntax described above ^^ in the 
+'Text Only Response' ({What Pepper Says} || {What Pepper displays})
+```
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -633,6 +720,24 @@ WHERE
 (corresponds to ChatBot specific example →)
 
 Pepper ChatBot translation:
+```dialogflow
+"""""""""""""""""""""""""""""""""""""""""
+Dialogflow: Picture & Text response:
+"""""""""""""""""""""""""""""""""""""""""
+For a given intent within your agent, under the 'Response'
+section:
+1) Click the + icon next to 'Default'
+2) Select 'Google Assistant'
+3) Under the 'Google Assistant' tab, select 'Add Message Content'
+4) Select 'Basic Card'
+5) Enter the URL of the picture
+6) In the Title field, enter what you want Pepper to say and display
+on its tablet according to the syntax described above ^^ in the 
+'Text Only Response' ({What Pepper Says} || {What Pepper displays})
+7) In the field that says "Enter text...", enter a specific line of 
+text that will trigger another custom intent that you will need to
+create to receive the action
+```
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -775,6 +880,24 @@ WHERE
 (corresponds to ChatBot specific example →)
 
 Pepper ChatBot translation:
+```dialogflow
+"""""""""""""""""""""""""""""""""""""""""
+Dialogflow: Picture & Text response:
+"""""""""""""""""""""""""""""""""""""""""
+For a given intent within your agent, under the 'Response'
+section:
+1) Click the + icon next to 'Default'
+2) Select 'Google Assistant'
+3) Under the 'Google Assistant' tab, select 'Add Message Content'
+4) Select 'Basic Card'
+5) Enter the URL of the picture
+6) In the Title field, enter what you want Pepper to say and display
+on its tablet according to the syntax described above ^^ in the 
+'Text Only Response' ({What Pepper Says} || {What Pepper displays})
+7) In the field that says "Enter text...", enter a specific line of 
+text that will trigger another custom intent that you will need to
+create to receive the action
+```
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -915,6 +1038,24 @@ WHERE
 (corresponds to ChatBot specific example →)
 
 Pepper ChatBot translation:
+```dialogflow
+"""""""""""""""""""""""""""""""""""""""""
+Dialogflow: Picture & Text response:
+"""""""""""""""""""""""""""""""""""""""""
+For a given intent within your agent, under the 'Response'
+section:
+1) Click the + icon next to 'Default'
+2) Select 'Google Assistant'
+3) Under the 'Google Assistant' tab, select 'Add Message Content'
+4) Select 'List'
+5) Enter the URL of the picture
+6) In the Title field, enter what you want Pepper to say and display
+on its tablet according to the syntax described above ^^ in the 
+'Text Only Response' ({What Pepper Says} || {What Pepper displays})
+7) In the field that says "Enter option key...", enter a specific 
+line of text that will trigger another custom intent that you will 
+need to create to receive the action
+```
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
