@@ -85,7 +85,7 @@ the bot, navigate to our GitHub repo:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 MS BOT FRAMEWORK SETUP INSTRUCTIONS:
 For MS bots, setup consists of providing us with one of your bot's 
-DirectLine "Secret Keys". Provide this key to the SBR Sales Engineer 
+DirectLine 'Secret Keys'. Provide this key to the SBR Sales Engineer 
 assisting you with setup. You can find it by following these steps:
 
 Step 1: Open your bot in Azure portal (https://portal.azure.com).
@@ -194,36 +194,14 @@ A nullable string that contains the actionable value to be returned to the chat 
 
 ## Text Only Response
 
-> Pepper Data Model - Text Only Response:
+> TEXT ONLY RESPONSE:
 
-```json
-{
-    msgType: "chatbotresponse",
-    data: "Answer",
-    type: "message",
-    conversationID: "testgguid",
-    uniqueID: "b958c65a-3c9f-4f38-919d-0a4c70ae3e0d",
-    utteranceID: "testutteranceID",
-    sessionID: "testgguid",
-    response: "Answer",
-    speak: "Answer",
-    show: {
-        text: "Answer"
-    }
-}
-```
-
-<img src = "images/Pepper_Data_Model-Text_Only_Response.png"/>
-
-> CHATBOT-SPECIFIC EXAMPLE:
-
-### Example: Text Only Response 
-(corresponds to ChatBot specific example →)
-
-Pepper ChatBot translation:
 ```dialogflow
-For each intent within your agent, use the simple "Text response" 
-fields under the "Response" section to render a response.
+"""""""""""""""""""""""""""""""""""""""""
+Dialogflow:
+""""""""""""""""""""""""""""""""""""""""
+For each intent within your agent, use the simple 'Text response'
+fields under the 'Response' section to render a response.
 
 By default, Pepper will both speak and display whatever text you 
 write in these fields. That is oftentimes not desirable behavior;
@@ -233,7 +211,7 @@ to have Pepper say one thing and display another, use double pipes
 {What Pepper Says} || {What Pepper displays on the tablet}
 
 Ex. Hello, human || (｡◕‿◕｡)
-In this example, Pepper will say "Hello, human" while displaying
+In this example, Pepper will say 'Hello, human' while displaying
 an emoticon smiley face.
 
 Note that in the section of what Pepper says, QiChat is allowed:
@@ -260,6 +238,9 @@ http://doc.aldebaran.com/2-5/naoqi/motion/alanimationplayer-advanced.html#animat
 use the Robot Applications panel to discover the App ID and Behavior 
 names of the games, dances, and other apps installed on your robot.
 ```
+
+<img src = "images/Pepper_Data_Model-Text_Only_Response.png"/>
+
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -296,54 +277,16 @@ WHERE
 -> = strictly mapped
 """"""""""""""""""""""""""""""""""""""""
 ```
-{ <br>
-  "msgType": "chatbotresponse", <br>
-  "data": "Duh, German Shepard Puppies tell the best jokes!", <br>
-  "type": "message", <br>
-  "conversationID": "testgguid", <br>
-  "uniqueID": "28e36552-b0d8-42e2-b495-65f61329ad69",<br>
-  "utteranceID": "testutteranceID",<br>
-  "sessionID": "testgguid",<br>
-  "response": "Duh, German Shepard Puppies tell the best jokes!",<br>
-  "speak": "Duh, German Shepard Puppies tell the best jokes!",<br>
-  "show": {<br>
-    "text": "Duh, German Shepard Puppies tell the best jokes!"<br>
-  }<br>
-}<br>
 
 
 ## Video Response
 
-> Pepper Data Model - Video Response:
-
-```json
-{
-  utteranceId: "1234abcde",
-  sessionId: "abcde1234",
-        botConversationId: "a1b2c3d4e5",
-  speak: "Look at this cool video",
-  show: {
-    content: [{
-        contentURL: "https.content.mp4"
-      }
-    ]
-  }
-}
-```
-
-<img src = "images/Pepper_Data_Model-Video_Response.png"/>
-
-> CHATBOT-SPECIFIC EXAMPLE:
-
-### Example: Video Only Response 
-(corresponds to ChatBot specific example →)
-
-Pepper ChatBot translation:
+> VIDEO RESPONSE:
 
 ```dialogflow
 """""""""""""""""""""""""""""""""""""""""
-Dialogflow: Video Only response:
-"""""""""""""""""""""""""""""""""""""""""
+Dialogflow: 
+""""""""""""""""""""""""""""""""""""""""
 For a given intent within your agent, under the 'Response'
 section:
 1) Click the + icon next to 'Default'
@@ -355,6 +298,8 @@ section:
 on its tablet according to the syntax described above ^^ in the 
 'Text Only Response' ({What Pepper Says} || {What Pepper displays})
 ```
+
+<img src = "images/Pepper_Data_Model-Video_Response.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -401,67 +346,15 @@ WHERE
 """"""""""""""""""""""""""""""""""""""""
 ```
 
-{ <br>
-  "msgType": "chatbotresponse",<br>
-  "data": "Here is a puppy video",<br>
-  "type": "message",<br>
-  "conversationID": "testgguid",<br>
-  "uniqueID": "28e36552-b0d8-42e2-b495-65f61329ad69",<br>
-  "utteranceID": "testutteranceID",<br>
-  "sessionID": "testgguid",<br>
-  "response": "Here is a puppy video",<br>
-  "speak": "Here is a puppy video",<br>
-  "show": {<br>
-    "content": [{<br>
-      "contentURL": "https://pepperstoragedev.blob.core.windows.net/pepperstories/b68b2247-f74a-4f6b-b3ad-3e7e66c1e600.mp4?decache=QLT1MXCSF1A9",<br>
-      "contentType": "video/mp4"<br>
-    }],<br>
-    "text": "Here is a puppy video"<br>
-  }<br>
-}<br>
 
 ## Picture and Text Response (Non-actionable)
 
-> Pepper Data Model - Picture and Text Response:
-
-```json
-{
-  utteranceId: "1234abcde",
-  sessionId: "abcde1234",
-        botConversationId: "a1b2c3d4e5",
-  speak: "The weather in San Francisco today is a high of 66 degrees and a low of 48.",
-  show: {
-    text: "The weather in San Francisco today is a high of 66 degrees and a low of 48.",
-    content: [{
-        text: "Caption",
-        contentURL: "https.content.png"
-      },
-      {
-        text: "Caption",
-        contentURL: "https.content.jpeg"
-      },
-      {
-        text: "Caption",
-        contentURL: "https.content.gif"
-      }
-    ]
-  }
-}
-```
-
-<img src = "images/Pepper_Data_Model-Picture_And_Text_Response.png"/>
-
-> CHATBOT-SPECIFIC EXAMPLE:
-
-### Example: Picture & Text Response 
-(corresponds to ChatBot specific example →)
-
-Pepper ChatBot translation:
+> PICTURE & TEXT RESPONSE (NON-ACTIONABLE):
 
 ```dialogflow
 """""""""""""""""""""""""""""""""""""""""
-Dialogflow: Picture & Text response:
-"""""""""""""""""""""""""""""""""""""""""
+Dialogflow: 
+""""""""""""""""""""""""""""""""""""""""
 For a given intent within your agent, under the 'Response'
 section:
 1) Click the + icon next to 'Default'
@@ -473,6 +366,8 @@ section:
 on its tablet according to the syntax described above ^^ in the 
 'Text Only Response' ({What Pepper Says} || {What Pepper displays})
 ```
+
+<img src = "images/Pepper_Data_Model-Picture_And_Text_Response.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -530,75 +425,28 @@ WHERE
 """"""""""""""""""""""""""""""""""""""""
 ```
 
-{<br>
-  "msgType": "chatbotresponse",<br>
-  "data": "Puppy pic 1",<br>
-  "type": "message",<br>
-  "conversationID": "testgguid",<br>
-  "uniqueID": "28e36552-b0d8-42e2-b495-65f61329ad69",<br>
-  "utteranceID": "testutteranceID",<br>
-  "sessionID": "testgguid",<br>
-  "response": "Puppy pic 1",<br>
-  "speak": "Here are some puppies",<br>
-  "show": {<br>
-    "content": [{<br>
-      "contentURL": "http://24.media.tumblr.com/53e3171e750c6c1028f8200ad73c8a53/tumblr_mkozt0qp3B1qiwf8po1_500.jpg",<br>
-      "contentType": "image/jpg"<br>
-    }, {<br>
-      "contentURL": "http://img-aws.ehowcdn.com/600x600p/photos.demandstudios.com/getty/article/154/20/87788187.jpg",<br>
-      "contentType": "image/jpg"<br>
-    }, {<br>
-      "contentURL": "http://images2.fanpop.com/image/photos/13300000/Beautiful-Rottweiler-rottweiler-13378960-500-375.jpg",<br>
-      "contentType": "image/jpg"<br>
-    }],<br>
-    "text": "Here are some puppies"<br>
-  }<br>
-}<br>
-
 ## Picture Only Response (Non-actionable)
 
-> Pepper Data Model - Picture Only Response (Non-actionable):
+> PICTURE ONLY RESPONSE (NON-ACTIONABLE):
 
-```json
-{
-  utteranceId: "1234abcde",
-  sessionId: "abcde1234",
-        botConversationId: "a1b2c3d4e5",
-  speak: "Look at this cool pic",
-  show: {
-    text: "Look at this cool pic",
-    content: [{
-        contentURL: "https.content.png"
-      }
-    ]
-  }
-}
+```dialogflow
+"""""""""""""""""""""""""""""""""""""""""
+Dialogflow:
+""""""""""""""""""""""""""""""""""""""""
+For a given intent within your agent, under the 'Response'
+section:
+1) Click the + icon next to 'Default'
+2) Select 'Google Assistant'
+3) Under the 'Google Assistant' tab, select 'Add Message Content'
+4) Select 'Basic Card'
+5) Enter the URL of the picture
+6) In the Title field, enter what you want Pepper to say and display
+on its tablet according to the syntax described above ^^ in the 
+'Text Only Response' ({What Pepper Says} || {What Pepper displays})
 ```
 
 <img src = "images/Pepper_Data_Model-Picture_Only_Response.png"/>
 
-> CHATBOT-SPECIFIC EXAMPLE:
-
-### Example: Picture Only Response 
-(corresponds to ChatBot specific example →)
-
-Pepper ChatBot translation:
-```dialogflow
-"""""""""""""""""""""""""""""""""""""""""
-Dialogflow: Picture Only response:
-"""""""""""""""""""""""""""""""""""""""""
-For a given intent within your agent, under the 'Response'
-section:
-1) Click the + icon next to 'Default'
-2) Select 'Google Assistant'
-3) Under the 'Google Assistant' tab, select 'Add Message Content'
-4) Select 'Basic Card'
-5) Enter the URL of the picture
-6) In the Title field, enter what you want Pepper to say and display
-on its tablet according to the syntax described above ^^ in the 
-'Text Only Response' ({What Pepper Says} || {What Pepper displays})
-```
-
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
 MS-Bot: Image Attachments response:
@@ -655,75 +503,15 @@ WHERE
 """"""""""""""""""""""""""""""""""""""""
 ```
 
-{<br>
-  "msgType": "chatbotresponse",<br>
-  "data": "Puppy pic 1",<br>
-  "type": "message",<br>
-  "conversationID": "testgguid",<br>
-  "uniqueID": "28e36552-b0d8-42e2-b495-65f61329ad69",<br>
-  "utteranceID": "testutteranceID",<br>
-  "sessionID": "testgguid",<br>
-  "response": "Puppy pic 1",<br>
-  "speak": "Here are some puppies",<br>
-  "show": {<br>
-    "content": [{<br>
-      "contentURL": "http://24.media.tumblr.com/53e3171e750c6c1028f8200ad73c8a53/tumblr_mkozt0qp3B1qiwf8po1_500.jpg",<br>
-      "contentType": "image/jpg"<br>
-    }, {<br>
-      "contentURL": "http://img-aws.ehowcdn.com/600x600p/photos.demandstudios.com/getty/article/154/20/87788187.jpg",<br>
-      "contentType": "image/jpg"<br>
-    }, {<br>
-      "contentURL": "http://images2.fanpop.com/image/photos/13300000/Beautiful-Rottweiler-rottweiler-13378960-500-375.jpg",<br>
-      "contentType": "image/jpg"<br>
-    }],<br>
-    "text": "Here are some puppies"<br>
-  }<br>
-}<br>
 
-## Picture and Text Response (Actionable)
+## Picture & Text Response (Actionable)
 
-> Pepper Data Model - Picture and Text Response (Actionable):
+> PICTURE & TEXT RESPONSE (ACTIONABLE):
 
-```json
-{
-  utteranceId: "1234abcde",
-  sessionId: "abcde1234",
-        botConversationId: "a1b2c3d4e5",
-  speak: "The weather in San Francisco today is a high of 66 degrees and a low of 48.",
-  show: {
-    text: "The weather in San Francisco today is a high of 66 degrees and a low of 48.",
-    content: [{
-        text: "Caption",
-        contentURL: "https.content.png",
-        value: "action1"
-      },
-      {
-        text: "Caption",
-        contentURL: "https.content.jpeg",
-        value: "action2"
-      },
-      {
-        text: "Caption",
-        contentURL: "https.content.gif",
-        value: "action3"
-      }
-    ]
-  }
-}
-```
-
-<img src = "images/Pepper_Data_Model-Picture_And_Text_Response.png"/>
-
-> CHATBOT-SPECIFIC EXAMPLE:
-
-### Example: Picture & Text (Actionable) Response 
-(corresponds to ChatBot specific example →)
-
-Pepper ChatBot translation:
 ```dialogflow
 """""""""""""""""""""""""""""""""""""""""
-Dialogflow: Picture & Text response:
-"""""""""""""""""""""""""""""""""""""""""
+Dialogflow:
+""""""""""""""""""""""""""""""""""""""""
 For a given intent within your agent, under the 'Response'
 section:
 1) Click the + icon next to 'Default'
@@ -734,10 +522,23 @@ section:
 6) In the Title field, enter what you want Pepper to say and display
 on its tablet according to the syntax described above ^^ in the 
 'Text Only Response' ({What Pepper Says} || {What Pepper displays})
-7) In the field that says "Enter text...", enter a specific line of 
+7) In the field that says 'Enter text...', enter a specific line of 
 text that will trigger another custom intent that you will need to
 create to receive the action
+
+If you want to display multiple pictures, select 'List' in step 4, 
+then follow the steps below:
+5) Enter the URL of the picture
+6) In the Title field, enter what you want Pepper to say and display
+on its tablet according to the syntax described above ^^ in the 
+'Text Only Response' ({What Pepper Says} || {What Pepper displays})
+7) In the field that says 'Enter option key...', enter a specific 
+line of text that will trigger another custom intent that you will 
+need to create to receive the action
+8) Add as many list items as you want displayed
 ```
+
+<img src = "images/Pepper_Data_Model-Picture_And_Text_Response.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -817,73 +618,15 @@ WHERE
 """"""""""""""""""""""""""""""""""""""""
 ```
 
-{<br>
-  "msgType": "chatbotresponse",<br>
-  "data": "Tap or Say one of the following",<br>
-  "type": "message",<br>
-  "conversationID": "testgguid",<br>
-  "uniqueID": "28e36552-b0d8-42e2-b495-65f61329ad69",<br>
-  "utteranceID": "testutteranceID",<br>
-  "sessionID": "testgguid",<br>
-  "response": "Tap or Say one of the following",<br>
-  "speak": "Tap or Say one of the following",<br>
-  "show": {<br>
-    "content": [{<br>
-      "text": "Boxer",<br>
-      "speak": "The American boxer is a stocky, well built, strong-looking dog, with a large head and a muscular build. Its coat is short and generally smooth. The breed is a light to moderate shedder.",<br>
-      "contentURL": "https://static.pexels.com/photos/158682/snow-dog-de-bordeaux-158682.jpeg",<br>
-      "value": "boxer"<br>
-    }, {<br>
-      "text": "Akita",<br>
-      "speak": "The Akita is a very intelligent and self-assured dog that has a very easy time learning new tricks. This dog can be sociable with children and strangers but is generally reserved around new people. ",<br>
-      "contentURL": "https://upload.wikimedia.org/wikipedia/commons/5/56/Papillon_Ears.jpg",<br>
-      "value": "akita"<br>
-    }],<br>
-    "text": "Tap or Say one of the following"<br>
-  }<br>
-}<br>
 
 ## Picture Only Response (Actionable)
 
-> Pepper Data Model - Picture Only Response (Actionable):
+> PICTURE ONLY RESPONSE (ACTIONABLE):
 
-```json
-{
-  utteranceId: "1234abcde",
-  sessionId: "abcde1234",
-        botConversationId: "a1b2c3d4e5",
-  speak: "The weather in San Francisco today is a high of 66 degrees and a low of 48.",
-  show: {
-    text: "The weather in San Francisco today is a high of 66 degrees and a low of 48.",
-    content: [{
-        contentURL: "https.content.png",
-        value: "action1"
-      },
-      {
-        contentURL: "https.content.jpeg",
-        value: "action2"
-      },
-      {
-        contentURL: "https.content.gif",
-        value: "action3"
-      }
-    ]
-  }
-}
-```
-
-<img src = "images/Pepper_Data_Model-Picture_And_Text_Response.png"/>
-
-> CHATBOT-SPECIFIC EXAMPLE:
-
-### Example: Picture Only (Actionable) Response 
-(corresponds to ChatBot specific example →)
-
-Pepper ChatBot translation:
 ```dialogflow
 """""""""""""""""""""""""""""""""""""""""
-Dialogflow: Picture & Text response:
-"""""""""""""""""""""""""""""""""""""""""
+Dialogflow:
+""""""""""""""""""""""""""""""""""""""""
 For a given intent within your agent, under the 'Response'
 section:
 1) Click the + icon next to 'Default'
@@ -894,10 +637,23 @@ section:
 6) In the Title field, enter what you want Pepper to say and display
 on its tablet according to the syntax described above ^^ in the 
 'Text Only Response' ({What Pepper Says} || {What Pepper displays})
-7) In the field that says "Enter text...", enter a specific line of 
+7) In the field that says 'Enter text...', enter a specific line of 
 text that will trigger another custom intent that you will need to
 create to receive the action
+
+If you want to display multiple pictures, select 'List' in step 4, 
+then follow the steps below:
+5) Enter the URL of the picture
+6) In the Title field, enter what you want Pepper to say and display
+on its tablet according to the syntax described above ^^ in the 
+'Text Only Response' ({What Pepper Says} || {What Pepper displays})
+7) In the field that says 'Enter option key...', enter a specific 
+line of text that will trigger another custom intent that you will 
+need to create to receive the action
+8) Add as many list items as you want displayed
 ```
+
+<img src = "images/Pepper_Data_Model-Picture_And_Text_Response.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -978,84 +734,30 @@ WHERE
 ```
 
 
-{<br>
-  "msgType": "chatbotresponse",<br>
-  "data": "Tap or Say one of the following",<br>
-  "type": "message",<br>
-  "conversationID": "testgguid",<br>
-  "uniqueID": "28e36552-b0d8-42e2-b495-65f61329ad69",<br>
-  "utteranceID": "testutteranceID",<br>
-  "sessionID": "testgguid",<br>
-  "response": "Tap or Say one of the following",<br>
-  "speak": "Tap or Say one of the following",<br>
-  "show": {<br>
-    "content": [{<br>
-      "text": "Boxer",<br>
-      "speak": "The American boxer is a stocky, well built, strong-looking dog, with a large head and a muscular build. Its coat is short and generally smooth. The breed is a light to moderate shedder.",<br>
-      "contentURL": "https://static.pexels.com/photos/158682/snow-dog-de-bordeaux-158682.jpeg",<br>
-      "value": "boxer"<br>
-    }, {<br>
-      "text": "Akita",<br>
-      "speak": "The Akita is a very intelligent and self-assured dog that has a very easy time learning new tricks. This dog can be sociable with children and strangers but is generally reserved around new people. ",<br>
-      "contentURL": "https://upload.wikimedia.org/wikipedia/commons/5/56/Papillon_Ears.jpg",<br>
-      "value": "akita"<br>
-    }],<br>
-    "text": "Tap or Say one of the following"<br>
-  }<br>
-}<br>
+## Text Bubbles Response (Actionable):
 
+> TEXT BUBBLES RESPONSE (ACTIONABLE):
 
-## Text Bubbles Response (Actionable)
-
-> Pepper Data Model - Text Bubbles Response (Actionable):
-
-```json
-{
-  utteranceId: "1234abcde",
-  sessionId: "abcde1234",
-        botConversationId: "a1b2c3d4e5",
-  speak: "The weather in San Francisco today is a high of 66 degrees and a low of 48.",
-  show: {
-    text: "The weather in San Francisco today is a high of 66 degrees and a low of 48.",
-    content: [{
-        text: "YES",
-        value: "yes"
-      },
-      {
-        text: "NO",
-        value: "no"
-      }
-    ]
-  }
-}
-```
-
-<img src = "images/Pepper_Data_Model-Text_Bubbles_Response.png"/>
-
-> CHATBOT-SPECIFIC EXAMPLE:
-
-### Example: Text Bubbles (Actionable) Response 
-(corresponds to ChatBot specific example →)
-
-Pepper ChatBot translation:
 ```dialogflow
 """""""""""""""""""""""""""""""""""""""""
-Dialogflow: Picture & Text response:
-"""""""""""""""""""""""""""""""""""""""""
+Dialogflow: Text Bubbles response:
+""""""""""""""""""""""""""""""""""""""""
 For a given intent within your agent, under the 'Response'
 section:
 1) Click the + icon next to 'Default'
 2) Select 'Google Assistant'
 3) Under the 'Google Assistant' tab, select 'Add Message Content'
 4) Select 'List'
-5) Enter the URL of the picture
-6) In the Title field, enter what you want Pepper to say and display
+5) In the Title field, enter what you want Pepper to say and display
 on its tablet according to the syntax described above ^^ in the 
 'Text Only Response' ({What Pepper Says} || {What Pepper displays})
-7) In the field that says "Enter option key...", enter a specific 
+6) In the field that says 'Enter option key...', enter a specific 
 line of text that will trigger another custom intent that you will 
 need to create to receive the action
+7) Add as many list items as you want displayed
 ```
+
+<img src = "images/Pepper_Data_Model-Text_Bubbles_Response.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -1113,24 +815,3 @@ WHERE
 """"""""""""""""""""""""""""""""""""""""
 ```
 
-{ <br>
-  "msgType": "chatbotresponse",<br>
-  "data": "Do you want to know about Puppies?",<br>
-  "type": "message",<br>
-  "conversationID": "testgguid",<br>
-  "uniqueID": "28e36552-b0d8-42e2-b495-65f61329ad69",<br>
-  "utteranceID": "testutteranceID",<br>
-  "sessionID": "testgguid",<br>
-  "response": "Do you want to know about Puppies?",<br>
-  "speak": "Do you want to know about Puppies?",<br>
-  "show": {<br>
-    "content": [{<br>
-      "text": "Yes please",<br>
-      "value": "Yes please"<br>
-    }, {<br>
-      "text": "No thanks",<br>
-      "value": "No thanks"<br>
-    }],<br>
-    "text": "Do you want to know about Puppies?"<br>
-  }<br>
-}<br>
