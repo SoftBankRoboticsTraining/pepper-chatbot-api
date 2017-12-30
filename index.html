@@ -284,7 +284,7 @@ the bot, navigate to our GitHub repo:
 <div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 MS BOT FRAMEWORK SETUP INSTRUCTIONS:
 For MS bots, setup consists of providing us with one of your bot's 
-DirectLine "</span><span class="err">Secret</span><span class="w"> </span><span class="err">Keys</span><span class="s2">". Provide this key to the SBR Sales Engineer 
+DirectLine 'Secret Keys'. Provide this key to the SBR Sales Engineer 
 assisting you with setup. You can find it by following these steps:
 
 Step 1: Open your bot in Azure portal (https://portal.azure.com).
@@ -386,75 +386,50 @@ SEE CHATBOT-SPECIFIC SETUP INSTRUCTIONS TO THE RIGHT → </p>
 <h2 id="text-only-response">Text Only Response</h2>
 
 <blockquote>
-<p>Pepper Data Model - Text Only Response:</p>
+<p>TEXT ONLY RESPONSE:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="err">msgType</span><span class="p">:</span><span class="w"> </span><span class="s2">"chatbotresponse"</span><span class="p">,</span><span class="w">
-    </span><span class="err">data</span><span class="p">:</span><span class="w"> </span><span class="s2">"Answer"</span><span class="p">,</span><span class="w">
-    </span><span class="err">type</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
-    </span><span class="err">conversationID</span><span class="p">:</span><span class="w"> </span><span class="s2">"testgguid"</span><span class="p">,</span><span class="w">
-    </span><span class="err">uniqueID</span><span class="p">:</span><span class="w"> </span><span class="s2">"b958c65a-3c9f-4f38-919d-0a4c70ae3e0d"</span><span class="p">,</span><span class="w">
-    </span><span class="err">utteranceID</span><span class="p">:</span><span class="w"> </span><span class="s2">"testutteranceID"</span><span class="p">,</span><span class="w">
-    </span><span class="err">sessionID</span><span class="p">:</span><span class="w"> </span><span class="s2">"testgguid"</span><span class="p">,</span><span class="w">
-    </span><span class="err">response</span><span class="p">:</span><span class="w"> </span><span class="s2">"Answer"</span><span class="p">,</span><span class="w">
-    </span><span class="err">speak</span><span class="p">:</span><span class="w"> </span><span class="s2">"Answer"</span><span class="p">,</span><span class="w">
-    </span><span class="err">show</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="err">text</span><span class="p">:</span><span class="w"> </span><span class="s2">"Answer"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p><img src = "images/Pepper_Data_Model-Text_Only_Response.png"/></p>
+<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+Dialogflow:
+""""""""""""""""""""""""""""""""""""""""
+For each intent within your agent, use the simple 'Text response'
+fields under the 'Response' section to render a response.
 
-<blockquote>
-<p>CHATBOT-SPECIFIC EXAMPLE:</p>
-</blockquote>
-
-<h3 id="example-text-only-response">Example: Text Only Response</h3>
-
-<p>(corresponds to ChatBot specific example →)</p>
-
-<p>Pepper ChatBot translation:
-&ldquo;`dialogflow
-For each intent within your agent, use the simple &quot;Text response&rdquo; 
-fields under the &ldquo;Response&rdquo; section to render a response.</p>
-
-<p>By default, Pepper will both speak and display whatever text you 
+By default, Pepper will both speak and display whatever text you 
 write in these fields. That is oftentimes not desirable behavior;
 to have Pepper say one thing and display another, use double pipes
-(||), following this syntax:</p>
+(||), following this syntax:
 
-<p>{What Pepper Says} || {What Pepper displays on the tablet}</p>
+{What Pepper Says} || {What Pepper displays on the tablet}
 
-<p>Ex. Hello, human || (｡◕‿◕｡)
-In this example, Pepper will say &ldquo;Hello, human&rdquo; while displaying
-an emoticon smiley face.</p>
+Ex. Hello, human || (｡◕‿◕｡)
+In this example, Pepper will say 'Hello, human' while displaying
+an emoticon smiley face.
 
-<p>Note that in the section of what Pepper says, QiChat is allowed:
-http://doc.aldebaran.com/2-5/naoqi/interaction/dialog/dialog-syntax_full.html#</p>
+Note that in the section of what Pepper says, QiChat is allowed:
+http://doc.aldebaran.com/2-5/naoqi/interaction/dialog/dialog-syntax_full.html#
 
-<p>Here are some useful QiChat commands:</p>
+Here are some useful QiChat commands:
 
-<p>Speech:
-\pau=1000\ = Inserts a pause (in milliseconds)
-\rspd=100\ = Speaking rate (in percentage)
-\vct=100\ = Pitch of voice (in percentage)</p>
+Speech:
+</span><span class="se">\p</span><span class="s2">au=1000</span><span class="se">\ </span><span class="s2">= Inserts a pause (in milliseconds)
+</span><span class="se">\r</span><span class="s2">spd=100</span><span class="se">\ </span><span class="s2">= Speaking rate (in percentage)
+</span><span class="se">\v</span><span class="s2">ct=100</span><span class="se">\ </span><span class="s2">= Pitch of voice (in percentage)
 
-<p>Animations/Dances/Games:
+Animations/Dances/Games:
 ^run(animation_full_name*) = Animates Pepper w/ a given animation
 ^start(animation_full_name*) = Animates Pepper w/ a given animation,
 while also continuing to speak whatever follows the command
-^run(app-id/behavior_name**) = Activates a given game/dance/etc</p>
+^run(app-id/behavior_name**) = Activates a given game/dance/etc
 
-<ul>
-<li>For a list of available animations, go here: 
-http://doc.aldebaran.com/2-5/naoqi/motion/alanimationplayer-advanced.html#animationplayer-list-behaviors-pepper</li>
-</ul>
+* For a list of available animations, go here: 
+http://doc.aldebaran.com/2-5/naoqi/motion/alanimationplayer-advanced.html#animationplayer-list-behaviors-pepper
 
-<p>** Connect to your robot using Choregraphe 
+** Connect to your robot using Choregraphe 
 (https://developer.softbankrobotics.com/us-en/downloads/pepper), and 
 use the Robot Applications panel to discover the App ID and Behavior 
 names of the games, dances, and other apps installed on your robot.
-&ldquo;`</p>
+</span></code></pre></div>
+<p><img src = "images/Pepper_Data_Model-Text_Only_Response.png"/></p>
 <div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 MS-Bot: Text Only response:
 """""""""""""""""""""""""""""""""""""""""</span><span class="w">
@@ -489,64 +464,27 @@ WHERE
 -&gt; = strictly mapped
 """"""""""""""""""""""""""""""""""""""""
 </span></code></pre></div>
-<p>{ <br>
-  &quot;msgType&rdquo;: &ldquo;chatbotresponse&rdquo;, <br>
-  &ldquo;data&rdquo;: &ldquo;Duh, German Shepard Puppies tell the best jokes!&rdquo;, <br>
-  &ldquo;type&rdquo;: &ldquo;message&rdquo;, <br>
-  &ldquo;conversationID&rdquo;: &ldquo;testgguid&rdquo;, <br>
-  &ldquo;uniqueID&rdquo;: &ldquo;28e36552-b0d8-42e2-b495-65f61329ad69&rdquo;,<br>
-  &ldquo;utteranceID&rdquo;: &ldquo;testutteranceID&rdquo;,<br>
-  &ldquo;sessionID&rdquo;: &ldquo;testgguid&rdquo;,<br>
-  &ldquo;response&rdquo;: &ldquo;Duh, German Shepard Puppies tell the best jokes!&rdquo;,<br>
-  &ldquo;speak&rdquo;: &ldquo;Duh, German Shepard Puppies tell the best jokes!&rdquo;,<br>
-  &ldquo;show&rdquo;: {<br>
-    &ldquo;text&rdquo;: &ldquo;Duh, German Shepard Puppies tell the best jokes!&rdquo;<br>
-  }<br>
-}<br></p>
-
 <h2 id="video-response">Video Response</h2>
 
 <blockquote>
-<p>Pepper Data Model - Video Response:</p>
+<p>VIDEO RESPONSE:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="err">utteranceId</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234abcde"</span><span class="p">,</span><span class="w">
-  </span><span class="err">sessionId</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcde1234"</span><span class="p">,</span><span class="w">
-        </span><span class="err">botConversationId</span><span class="p">:</span><span class="w"> </span><span class="s2">"a1b2c3d4e5"</span><span class="p">,</span><span class="w">
-  </span><span class="err">speak</span><span class="p">:</span><span class="w"> </span><span class="s2">"Look at this cool video"</span><span class="p">,</span><span class="w">
-  </span><span class="err">show</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="err">content</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-        </span><span class="err">contentURL</span><span class="p">:</span><span class="w"> </span><span class="s2">"https.content.mp4"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+Dialogflow: 
+""""""""""""""""""""""""""""""""""""""""
+For a given intent within your agent, under the 'Response'
+section:
+1) Click the + icon next to 'Default'
+2) Select 'Google Assistant'
+3) Under the 'Google Assistant' tab, select 'Add Message Content'
+4) Select 'Basic Card'
+5) Enter the URL of the video
+6) In the Title field, enter what you want Pepper to say and display
+on its tablet according to the syntax described above ^^ in the 
+'Text Only Response' ({What Pepper Says} || {What Pepper displays})
 </span></code></pre></div>
 <p><img src = "images/Pepper_Data_Model-Video_Response.png"/></p>
-
-<blockquote>
-<p>CHATBOT-SPECIFIC EXAMPLE:</p>
-</blockquote>
-
-<h3 id="example-video-only-response">Example: Video Only Response</h3>
-
-<p>(corresponds to ChatBot specific example →)</p>
-
-<p>Pepper ChatBot translation:</p>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-Dialogflow: Video Only response:
-"""""""""""""""""""""""""""""""""""""""""</span><span class="w">
-</span><span class="err">For</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">given</span><span class="w"> </span><span class="err">intent</span><span class="w"> </span><span class="err">within</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">agent</span><span class="p">,</span><span class="w"> </span><span class="err">under</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">'Response'</span><span class="w">
-</span><span class="err">section</span><span class="p">:</span><span class="w">
-</span><span class="mi">1</span><span class="err">)</span><span class="w"> </span><span class="err">Click</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="err">icon</span><span class="w"> </span><span class="err">next</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">'Default'</span><span class="w">
-</span><span class="mi">2</span><span class="err">)</span><span class="w"> </span><span class="err">Select</span><span class="w"> </span><span class="err">'Google</span><span class="w"> </span><span class="err">Assistant'</span><span class="w">
-</span><span class="mi">3</span><span class="err">)</span><span class="w"> </span><span class="err">Under</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">'Google</span><span class="w"> </span><span class="err">Assistant'</span><span class="w"> </span><span class="err">tab</span><span class="p">,</span><span class="w"> </span><span class="err">select</span><span class="w"> </span><span class="err">'Add</span><span class="w"> </span><span class="err">Message</span><span class="w"> </span><span class="err">Content'</span><span class="w">
-</span><span class="mi">4</span><span class="err">)</span><span class="w"> </span><span class="err">Select</span><span class="w"> </span><span class="err">'Basic</span><span class="w"> </span><span class="err">Card'</span><span class="w">
-</span><span class="mi">5</span><span class="err">)</span><span class="w"> </span><span class="err">Enter</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">URL</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">video</span><span class="w">
-</span><span class="mi">6</span><span class="err">)</span><span class="w"> </span><span class="err">In</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">Title</span><span class="w"> </span><span class="err">field</span><span class="p">,</span><span class="w"> </span><span class="err">enter</span><span class="w"> </span><span class="err">what</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">want</span><span class="w"> </span><span class="err">Pepper</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">say</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">display</span><span class="w">
-</span><span class="err">on</span><span class="w"> </span><span class="err">its</span><span class="w"> </span><span class="err">tablet</span><span class="w"> </span><span class="err">according</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">syntax</span><span class="w"> </span><span class="err">described</span><span class="w"> </span><span class="err">above</span><span class="w"> </span><span class="err">^^</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">the</span><span class="w"> 
-</span><span class="err">'Text</span><span class="w"> </span><span class="err">Only</span><span class="w"> </span><span class="err">Response'</span><span class="w"> </span><span class="err">(</span><span class="p">{</span><span class="err">What</span><span class="w"> </span><span class="err">Pepper</span><span class="w"> </span><span class="err">Says</span><span class="p">}</span><span class="w"> </span><span class="err">||</span><span class="w"> </span><span class="p">{</span><span class="err">What</span><span class="w"> </span><span class="err">Pepper</span><span class="w"> </span><span class="err">displays</span><span class="p">}</span><span class="err">)</span><span class="w">
-</span></code></pre></div><div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 MS-Bot: Video Only response:
 """""""""""""""""""""""""""""""""""""""""</span><span class="w">
 </span><span class="p">{</span><span class="w">
@@ -589,78 +527,27 @@ WHERE
 -&gt; = strictly mapped
 """"""""""""""""""""""""""""""""""""""""
 </span></code></pre></div>
-<p>{ <br>
-  &ldquo;msgType&rdquo;: &ldquo;chatbotresponse&rdquo;,<br>
-  &ldquo;data&rdquo;: &ldquo;Here is a puppy video&rdquo;,<br>
-  &ldquo;type&rdquo;: &ldquo;message&rdquo;,<br>
-  &ldquo;conversationID&rdquo;: &ldquo;testgguid&rdquo;,<br>
-  &ldquo;uniqueID&rdquo;: &ldquo;28e36552-b0d8-42e2-b495-65f61329ad69&rdquo;,<br>
-  &ldquo;utteranceID&rdquo;: &ldquo;testutteranceID&rdquo;,<br>
-  &ldquo;sessionID&rdquo;: &ldquo;testgguid&rdquo;,<br>
-  &ldquo;response&rdquo;: &ldquo;Here is a puppy video&rdquo;,<br>
-  &ldquo;speak&rdquo;: &ldquo;Here is a puppy video&rdquo;,<br>
-  &ldquo;show&rdquo;: {<br>
-    &ldquo;content&rdquo;: [{<br>
-      &ldquo;contentURL&rdquo;: &ldquo;https://pepperstoragedev.blob.core.windows.net/pepperstories/b68b2247-f74a-4f6b-b3ad-3e7e66c1e600.mp4?decache=QLT1MXCSF1A9&rdquo;,<br>
-      &ldquo;contentType&rdquo;: &ldquo;video/mp4&rdquo;<br>
-    }],<br>
-    &ldquo;text&rdquo;: &ldquo;Here is a puppy video&rdquo;<br>
-  }<br>
-}<br></p>
-
 <h2 id="picture-and-text-response-non-actionable">Picture and Text Response (Non-actionable)</h2>
 
 <blockquote>
-<p>Pepper Data Model - Picture and Text Response:</p>
+<p>PICTURE &amp; TEXT RESPONSE (NON-ACTIONABLE):</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="err">utteranceId</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234abcde"</span><span class="p">,</span><span class="w">
-  </span><span class="err">sessionId</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcde1234"</span><span class="p">,</span><span class="w">
-        </span><span class="err">botConversationId</span><span class="p">:</span><span class="w"> </span><span class="s2">"a1b2c3d4e5"</span><span class="p">,</span><span class="w">
-  </span><span class="err">speak</span><span class="p">:</span><span class="w"> </span><span class="s2">"The weather in San Francisco today is a high of 66 degrees and a low of 48."</span><span class="p">,</span><span class="w">
-  </span><span class="err">show</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="err">text</span><span class="p">:</span><span class="w"> </span><span class="s2">"The weather in San Francisco today is a high of 66 degrees and a low of 48."</span><span class="p">,</span><span class="w">
-    </span><span class="err">content</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-        </span><span class="err">text</span><span class="p">:</span><span class="w"> </span><span class="s2">"Caption"</span><span class="p">,</span><span class="w">
-        </span><span class="err">contentURL</span><span class="p">:</span><span class="w"> </span><span class="s2">"https.content.png"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="err">text</span><span class="p">:</span><span class="w"> </span><span class="s2">"Caption"</span><span class="p">,</span><span class="w">
-        </span><span class="err">contentURL</span><span class="p">:</span><span class="w"> </span><span class="s2">"https.content.jpeg"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="err">text</span><span class="p">:</span><span class="w"> </span><span class="s2">"Caption"</span><span class="p">,</span><span class="w">
-        </span><span class="err">contentURL</span><span class="p">:</span><span class="w"> </span><span class="s2">"https.content.gif"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+Dialogflow: 
+""""""""""""""""""""""""""""""""""""""""
+For a given intent within your agent, under the 'Response'
+section:
+1) Click the + icon next to 'Default'
+2) Select 'Google Assistant'
+3) Under the 'Google Assistant' tab, select 'Add Message Content'
+4) Select 'Basic Card'
+5) Enter the URL of the picture
+6) In the Title field, enter what you want Pepper to say and display
+on its tablet according to the syntax described above ^^ in the 
+'Text Only Response' ({What Pepper Says} || {What Pepper displays})
 </span></code></pre></div>
 <p><img src = "images/Pepper_Data_Model-Picture_And_Text_Response.png"/></p>
-
-<blockquote>
-<p>CHATBOT-SPECIFIC EXAMPLE:</p>
-</blockquote>
-
-<h3 id="example-picture-text-response">Example: Picture &amp; Text Response</h3>
-
-<p>(corresponds to ChatBot specific example →)</p>
-
-<p>Pepper ChatBot translation:</p>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-Dialogflow: Picture &amp; Text response:
-"""""""""""""""""""""""""""""""""""""""""</span><span class="w">
-</span><span class="err">For</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">given</span><span class="w"> </span><span class="err">intent</span><span class="w"> </span><span class="err">within</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">agent</span><span class="p">,</span><span class="w"> </span><span class="err">under</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">'Response'</span><span class="w">
-</span><span class="err">section</span><span class="p">:</span><span class="w">
-</span><span class="mi">1</span><span class="err">)</span><span class="w"> </span><span class="err">Click</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="err">icon</span><span class="w"> </span><span class="err">next</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">'Default'</span><span class="w">
-</span><span class="mi">2</span><span class="err">)</span><span class="w"> </span><span class="err">Select</span><span class="w"> </span><span class="err">'Google</span><span class="w"> </span><span class="err">Assistant'</span><span class="w">
-</span><span class="mi">3</span><span class="err">)</span><span class="w"> </span><span class="err">Under</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">'Google</span><span class="w"> </span><span class="err">Assistant'</span><span class="w"> </span><span class="err">tab</span><span class="p">,</span><span class="w"> </span><span class="err">select</span><span class="w"> </span><span class="err">'Add</span><span class="w"> </span><span class="err">Message</span><span class="w"> </span><span class="err">Content'</span><span class="w">
-</span><span class="mi">4</span><span class="err">)</span><span class="w"> </span><span class="err">Select</span><span class="w"> </span><span class="err">'Basic</span><span class="w"> </span><span class="err">Card'</span><span class="w">
-</span><span class="mi">5</span><span class="err">)</span><span class="w"> </span><span class="err">Enter</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">URL</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">picture</span><span class="w">
-</span><span class="mi">6</span><span class="err">)</span><span class="w"> </span><span class="err">In</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">Title</span><span class="w"> </span><span class="err">field</span><span class="p">,</span><span class="w"> </span><span class="err">enter</span><span class="w"> </span><span class="err">what</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">want</span><span class="w"> </span><span class="err">Pepper</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">say</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">display</span><span class="w">
-</span><span class="err">on</span><span class="w"> </span><span class="err">its</span><span class="w"> </span><span class="err">tablet</span><span class="w"> </span><span class="err">according</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">syntax</span><span class="w"> </span><span class="err">described</span><span class="w"> </span><span class="err">above</span><span class="w"> </span><span class="err">^^</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">the</span><span class="w"> 
-</span><span class="err">'Text</span><span class="w"> </span><span class="err">Only</span><span class="w"> </span><span class="err">Response'</span><span class="w"> </span><span class="err">(</span><span class="p">{</span><span class="err">What</span><span class="w"> </span><span class="err">Pepper</span><span class="w"> </span><span class="err">Says</span><span class="p">}</span><span class="w"> </span><span class="err">||</span><span class="w"> </span><span class="p">{</span><span class="err">What</span><span class="w"> </span><span class="err">Pepper</span><span class="w"> </span><span class="err">displays</span><span class="p">}</span><span class="err">)</span><span class="w">
-</span></code></pre></div><div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 MS-Bot: Image Attachments response:
 """""""""""""""""""""""""""""""""""""""""</span><span class="w">
 </span><span class="p">{</span><span class="w">
@@ -714,76 +601,26 @@ WHERE
 -&gt; = strictly mapped
 """"""""""""""""""""""""""""""""""""""""
 </span></code></pre></div>
-<p>{<br>
-  &ldquo;msgType&rdquo;: &ldquo;chatbotresponse&rdquo;,<br>
-  &ldquo;data&rdquo;: &ldquo;Puppy pic 1&rdquo;,<br>
-  &ldquo;type&rdquo;: &ldquo;message&rdquo;,<br>
-  &ldquo;conversationID&rdquo;: &ldquo;testgguid&rdquo;,<br>
-  &ldquo;uniqueID&rdquo;: &ldquo;28e36552-b0d8-42e2-b495-65f61329ad69&rdquo;,<br>
-  &ldquo;utteranceID&rdquo;: &ldquo;testutteranceID&rdquo;,<br>
-  &ldquo;sessionID&rdquo;: &ldquo;testgguid&rdquo;,<br>
-  &ldquo;response&rdquo;: &ldquo;Puppy pic 1&rdquo;,<br>
-  &ldquo;speak&rdquo;: &ldquo;Here are some puppies&rdquo;,<br>
-  &ldquo;show&rdquo;: {<br>
-    &ldquo;content&rdquo;: [{<br>
-      &ldquo;contentURL&rdquo;: &ldquo;http://24.media.tumblr.com/53e3171e750c6c1028f8200ad73c8a53/tumblr_mkozt0qp3B1qiwf8po1_500.jpg&rdquo;,<br>
-      &ldquo;contentType&rdquo;: &ldquo;image/jpg&rdquo;<br>
-    }, {<br>
-      &ldquo;contentURL&rdquo;: &ldquo;http://img-aws.ehowcdn.com/600x600p/photos.demandstudios.com/getty/article/154/20/87788187.jpg&rdquo;,<br>
-      &ldquo;contentType&rdquo;: &ldquo;image/jpg&rdquo;<br>
-    }, {<br>
-      &ldquo;contentURL&rdquo;: &ldquo;http://images2.fanpop.com/image/photos/13300000/Beautiful-Rottweiler-rottweiler-13378960-500-375.jpg&rdquo;,<br>
-      &ldquo;contentType&rdquo;: &ldquo;image/jpg&rdquo;<br>
-    }],<br>
-    &ldquo;text&rdquo;: &ldquo;Here are some puppies&rdquo;<br>
-  }<br>
-}<br></p>
-
 <h2 id="picture-only-response-non-actionable">Picture Only Response (Non-actionable)</h2>
 
 <blockquote>
-<p>Pepper Data Model - Picture Only Response (Non-actionable):</p>
+<p>PICTURE ONLY RESPONSE (NON-ACTIONABLE):</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="err">utteranceId</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234abcde"</span><span class="p">,</span><span class="w">
-  </span><span class="err">sessionId</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcde1234"</span><span class="p">,</span><span class="w">
-        </span><span class="err">botConversationId</span><span class="p">:</span><span class="w"> </span><span class="s2">"a1b2c3d4e5"</span><span class="p">,</span><span class="w">
-  </span><span class="err">speak</span><span class="p">:</span><span class="w"> </span><span class="s2">"Look at this cool pic"</span><span class="p">,</span><span class="w">
-  </span><span class="err">show</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="err">text</span><span class="p">:</span><span class="w"> </span><span class="s2">"Look at this cool pic"</span><span class="p">,</span><span class="w">
-    </span><span class="err">content</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-        </span><span class="err">contentURL</span><span class="p">:</span><span class="w"> </span><span class="s2">"https.content.png"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p><img src = "images/Pepper_Data_Model-Picture_Only_Response.png"/></p>
-
-<blockquote>
-<p>CHATBOT-SPECIFIC EXAMPLE:</p>
-</blockquote>
-
-<h3 id="example-picture-only-response">Example: Picture Only Response</h3>
-
-<p>(corresponds to ChatBot specific example →)</p>
-
-<p>Pepper ChatBot translation:
-<code class="prettyprint">dialogflow
-&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
-Dialogflow: Picture Only response:
-&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
-For a given intent within your agent, under the &#39;Response&#39;
+<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+Dialogflow:
+""""""""""""""""""""""""""""""""""""""""
+For a given intent within your agent, under the 'Response'
 section:
-1) Click the + icon next to &#39;Default&#39;
-2) Select &#39;Google Assistant&#39;
-3) Under the &#39;Google Assistant&#39; tab, select &#39;Add Message Content&#39;
-4) Select &#39;Basic Card&#39;
+1) Click the + icon next to 'Default'
+2) Select 'Google Assistant'
+3) Under the 'Google Assistant' tab, select 'Add Message Content'
+4) Select 'Basic Card'
 5) Enter the URL of the picture
 6) In the Title field, enter what you want Pepper to say and display
 on its tablet according to the syntax described above ^^ in the 
-&#39;Text Only Response&#39; ({What Pepper Says} || {What Pepper displays})
-</code></p>
+'Text Only Response' ({What Pepper Says} || {What Pepper displays})
+</span></code></pre></div>
+<p><img src = "images/Pepper_Data_Model-Picture_Only_Response.png"/></p>
 <div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 MS-Bot: Image Attachments response:
 """""""""""""""""""""""""""""""""""""""""</span><span class="w">
@@ -838,91 +675,40 @@ WHERE
 -&gt; = strictly mapped
 """"""""""""""""""""""""""""""""""""""""
 </span></code></pre></div>
-<p>{<br>
-  &ldquo;msgType&rdquo;: &ldquo;chatbotresponse&rdquo;,<br>
-  &ldquo;data&rdquo;: &ldquo;Puppy pic 1&rdquo;,<br>
-  &ldquo;type&rdquo;: &ldquo;message&rdquo;,<br>
-  &ldquo;conversationID&rdquo;: &ldquo;testgguid&rdquo;,<br>
-  &ldquo;uniqueID&rdquo;: &ldquo;28e36552-b0d8-42e2-b495-65f61329ad69&rdquo;,<br>
-  &ldquo;utteranceID&rdquo;: &ldquo;testutteranceID&rdquo;,<br>
-  &ldquo;sessionID&rdquo;: &ldquo;testgguid&rdquo;,<br>
-  &ldquo;response&rdquo;: &ldquo;Puppy pic 1&rdquo;,<br>
-  &ldquo;speak&rdquo;: &ldquo;Here are some puppies&rdquo;,<br>
-  &ldquo;show&rdquo;: {<br>
-    &ldquo;content&rdquo;: [{<br>
-      &ldquo;contentURL&rdquo;: &ldquo;http://24.media.tumblr.com/53e3171e750c6c1028f8200ad73c8a53/tumblr_mkozt0qp3B1qiwf8po1_500.jpg&rdquo;,<br>
-      &ldquo;contentType&rdquo;: &ldquo;image/jpg&rdquo;<br>
-    }, {<br>
-      &ldquo;contentURL&rdquo;: &ldquo;http://img-aws.ehowcdn.com/600x600p/photos.demandstudios.com/getty/article/154/20/87788187.jpg&rdquo;,<br>
-      &ldquo;contentType&rdquo;: &ldquo;image/jpg&rdquo;<br>
-    }, {<br>
-      &ldquo;contentURL&rdquo;: &ldquo;http://images2.fanpop.com/image/photos/13300000/Beautiful-Rottweiler-rottweiler-13378960-500-375.jpg&rdquo;,<br>
-      &ldquo;contentType&rdquo;: &ldquo;image/jpg&rdquo;<br>
-    }],<br>
-    &ldquo;text&rdquo;: &ldquo;Here are some puppies&rdquo;<br>
-  }<br>
-}<br></p>
-
-<h2 id="picture-and-text-response-actionable">Picture and Text Response (Actionable)</h2>
+<h2 id="picture-text-response-actionable">Picture &amp; Text Response (Actionable)</h2>
 
 <blockquote>
-<p>Pepper Data Model - Picture and Text Response (Actionable):</p>
+<p>PICTURE &amp; TEXT RESPONSE (ACTIONABLE):</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="err">utteranceId</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234abcde"</span><span class="p">,</span><span class="w">
-  </span><span class="err">sessionId</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcde1234"</span><span class="p">,</span><span class="w">
-        </span><span class="err">botConversationId</span><span class="p">:</span><span class="w"> </span><span class="s2">"a1b2c3d4e5"</span><span class="p">,</span><span class="w">
-  </span><span class="err">speak</span><span class="p">:</span><span class="w"> </span><span class="s2">"The weather in San Francisco today is a high of 66 degrees and a low of 48."</span><span class="p">,</span><span class="w">
-  </span><span class="err">show</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="err">text</span><span class="p">:</span><span class="w"> </span><span class="s2">"The weather in San Francisco today is a high of 66 degrees and a low of 48."</span><span class="p">,</span><span class="w">
-    </span><span class="err">content</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-        </span><span class="err">text</span><span class="p">:</span><span class="w"> </span><span class="s2">"Caption"</span><span class="p">,</span><span class="w">
-        </span><span class="err">contentURL</span><span class="p">:</span><span class="w"> </span><span class="s2">"https.content.png"</span><span class="p">,</span><span class="w">
-        </span><span class="err">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"action1"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="err">text</span><span class="p">:</span><span class="w"> </span><span class="s2">"Caption"</span><span class="p">,</span><span class="w">
-        </span><span class="err">contentURL</span><span class="p">:</span><span class="w"> </span><span class="s2">"https.content.jpeg"</span><span class="p">,</span><span class="w">
-        </span><span class="err">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"action2"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="err">text</span><span class="p">:</span><span class="w"> </span><span class="s2">"Caption"</span><span class="p">,</span><span class="w">
-        </span><span class="err">contentURL</span><span class="p">:</span><span class="w"> </span><span class="s2">"https.content.gif"</span><span class="p">,</span><span class="w">
-        </span><span class="err">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"action3"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p><img src = "images/Pepper_Data_Model-Picture_And_Text_Response.png"/></p>
-
-<blockquote>
-<p>CHATBOT-SPECIFIC EXAMPLE:</p>
-</blockquote>
-
-<h3 id="example-picture-text-actionable-response">Example: Picture &amp; Text (Actionable) Response</h3>
-
-<p>(corresponds to ChatBot specific example →)</p>
-
-<p>Pepper ChatBot translation:
-<code class="prettyprint">dialogflow
-&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
-Dialogflow: Picture &amp; Text response:
-&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
-For a given intent within your agent, under the &#39;Response&#39;
+<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+Dialogflow:
+""""""""""""""""""""""""""""""""""""""""
+For a given intent within your agent, under the 'Response'
 section:
-1) Click the + icon next to &#39;Default&#39;
-2) Select &#39;Google Assistant&#39;
-3) Under the &#39;Google Assistant&#39; tab, select &#39;Add Message Content&#39;
-4) Select &#39;Basic Card&#39;
+1) Click the + icon next to 'Default'
+2) Select 'Google Assistant'
+3) Under the 'Google Assistant' tab, select 'Add Message Content'
+4) Select 'Basic Card'
 5) Enter the URL of the picture
 6) In the Title field, enter what you want Pepper to say and display
 on its tablet according to the syntax described above ^^ in the 
-&#39;Text Only Response&#39; ({What Pepper Says} || {What Pepper displays})
-7) In the field that says &quot;Enter text...&quot;, enter a specific line of 
+'Text Only Response' ({What Pepper Says} || {What Pepper displays})
+7) In the field that says 'Enter text...', enter a specific line of 
 text that will trigger another custom intent that you will need to
 create to receive the action
-</code></p>
+
+If you want to display multiple pictures, select 'List' in step 4, 
+then follow the steps below:
+5) Enter the URL of the picture
+6) In the Title field, enter what you want Pepper to say and display
+on its tablet according to the syntax described above ^^ in the 
+'Text Only Response' ({What Pepper Says} || {What Pepper displays})
+7) In the field that says 'Enter option key...', enter a specific 
+line of text that will trigger another custom intent that you will 
+need to create to receive the action
+8) Add as many list items as you want displayed
+</span></code></pre></div>
+<p><img src = "images/Pepper_Data_Model-Picture_And_Text_Response.png"/></p>
 <div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 MS-Bot: Hero Card with Images and Choices
 """""""""""""""""""""""""""""""""""""""""</span><span class="w">
@@ -999,89 +785,40 @@ WHERE
 -&gt; = strictly mapped
 """"""""""""""""""""""""""""""""""""""""
 </span></code></pre></div>
-<p>{<br>
-  &ldquo;msgType&rdquo;: &ldquo;chatbotresponse&rdquo;,<br>
-  &ldquo;data&rdquo;: &ldquo;Tap or Say one of the following&rdquo;,<br>
-  &ldquo;type&rdquo;: &ldquo;message&rdquo;,<br>
-  &ldquo;conversationID&rdquo;: &ldquo;testgguid&rdquo;,<br>
-  &ldquo;uniqueID&rdquo;: &ldquo;28e36552-b0d8-42e2-b495-65f61329ad69&rdquo;,<br>
-  &ldquo;utteranceID&rdquo;: &ldquo;testutteranceID&rdquo;,<br>
-  &ldquo;sessionID&rdquo;: &ldquo;testgguid&rdquo;,<br>
-  &ldquo;response&rdquo;: &ldquo;Tap or Say one of the following&rdquo;,<br>
-  &ldquo;speak&rdquo;: &ldquo;Tap or Say one of the following&rdquo;,<br>
-  &ldquo;show&rdquo;: {<br>
-    &ldquo;content&rdquo;: [{<br>
-      &ldquo;text&rdquo;: &ldquo;Boxer&rdquo;,<br>
-      &ldquo;speak&rdquo;: &ldquo;The American boxer is a stocky, well built, strong-looking dog, with a large head and a muscular build. Its coat is short and generally smooth. The breed is a light to moderate shedder.&rdquo;,<br>
-      &ldquo;contentURL&rdquo;: &ldquo;https://static.pexels.com/photos/158682/snow-dog-de-bordeaux-158682.jpeg&rdquo;,<br>
-      &ldquo;value&rdquo;: &ldquo;boxer&rdquo;<br>
-    }, {<br>
-      &ldquo;text&rdquo;: &ldquo;Akita&rdquo;,<br>
-      &ldquo;speak&rdquo;: &ldquo;The Akita is a very intelligent and self-assured dog that has a very easy time learning new tricks. This dog can be sociable with children and strangers but is generally reserved around new people. &rdquo;,<br>
-      &ldquo;contentURL&rdquo;: &ldquo;https://upload.wikimedia.org/wikipedia/commons/5/56/Papillon_Ears.jpg&rdquo;,<br>
-      &ldquo;value&rdquo;: &ldquo;akita&rdquo;<br>
-    }],<br>
-    &ldquo;text&rdquo;: &ldquo;Tap or Say one of the following&rdquo;<br>
-  }<br>
-}<br></p>
-
 <h2 id="picture-only-response-actionable">Picture Only Response (Actionable)</h2>
 
 <blockquote>
-<p>Pepper Data Model - Picture Only Response (Actionable):</p>
+<p>PICTURE ONLY RESPONSE (ACTIONABLE):</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="err">utteranceId</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234abcde"</span><span class="p">,</span><span class="w">
-  </span><span class="err">sessionId</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcde1234"</span><span class="p">,</span><span class="w">
-        </span><span class="err">botConversationId</span><span class="p">:</span><span class="w"> </span><span class="s2">"a1b2c3d4e5"</span><span class="p">,</span><span class="w">
-  </span><span class="err">speak</span><span class="p">:</span><span class="w"> </span><span class="s2">"The weather in San Francisco today is a high of 66 degrees and a low of 48."</span><span class="p">,</span><span class="w">
-  </span><span class="err">show</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="err">text</span><span class="p">:</span><span class="w"> </span><span class="s2">"The weather in San Francisco today is a high of 66 degrees and a low of 48."</span><span class="p">,</span><span class="w">
-    </span><span class="err">content</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-        </span><span class="err">contentURL</span><span class="p">:</span><span class="w"> </span><span class="s2">"https.content.png"</span><span class="p">,</span><span class="w">
-        </span><span class="err">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"action1"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="err">contentURL</span><span class="p">:</span><span class="w"> </span><span class="s2">"https.content.jpeg"</span><span class="p">,</span><span class="w">
-        </span><span class="err">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"action2"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="err">contentURL</span><span class="p">:</span><span class="w"> </span><span class="s2">"https.content.gif"</span><span class="p">,</span><span class="w">
-        </span><span class="err">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"action3"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p><img src = "images/Pepper_Data_Model-Picture_And_Text_Response.png"/></p>
-
-<blockquote>
-<p>CHATBOT-SPECIFIC EXAMPLE:</p>
-</blockquote>
-
-<h3 id="example-picture-only-actionable-response">Example: Picture Only (Actionable) Response</h3>
-
-<p>(corresponds to ChatBot specific example →)</p>
-
-<p>Pepper ChatBot translation:
-<code class="prettyprint">dialogflow
-&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
-Dialogflow: Picture &amp; Text response:
-&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
-For a given intent within your agent, under the &#39;Response&#39;
+<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+Dialogflow:
+""""""""""""""""""""""""""""""""""""""""
+For a given intent within your agent, under the 'Response'
 section:
-1) Click the + icon next to &#39;Default&#39;
-2) Select &#39;Google Assistant&#39;
-3) Under the &#39;Google Assistant&#39; tab, select &#39;Add Message Content&#39;
-4) Select &#39;Basic Card&#39;
+1) Click the + icon next to 'Default'
+2) Select 'Google Assistant'
+3) Under the 'Google Assistant' tab, select 'Add Message Content'
+4) Select 'Basic Card'
 5) Enter the URL of the picture
 6) In the Title field, enter what you want Pepper to say and display
 on its tablet according to the syntax described above ^^ in the 
-&#39;Text Only Response&#39; ({What Pepper Says} || {What Pepper displays})
-7) In the field that says &quot;Enter text...&quot;, enter a specific line of 
+'Text Only Response' ({What Pepper Says} || {What Pepper displays})
+7) In the field that says 'Enter text...', enter a specific line of 
 text that will trigger another custom intent that you will need to
 create to receive the action
-</code></p>
+
+If you want to display multiple pictures, select 'List' in step 4, 
+then follow the steps below:
+5) Enter the URL of the picture
+6) In the Title field, enter what you want Pepper to say and display
+on its tablet according to the syntax described above ^^ in the 
+'Text Only Response' ({What Pepper Says} || {What Pepper displays})
+7) In the field that says 'Enter option key...', enter a specific 
+line of text that will trigger another custom intent that you will 
+need to create to receive the action
+8) Add as many list items as you want displayed
+</span></code></pre></div>
+<p><img src = "images/Pepper_Data_Model-Picture_And_Text_Response.png"/></p>
 <div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 MS-Bot: Hero Card with Images and Choices
 """""""""""""""""""""""""""""""""""""""""</span><span class="w">
@@ -1158,85 +895,29 @@ WHERE
 -&gt; = strictly mapped
 """"""""""""""""""""""""""""""""""""""""
 </span></code></pre></div>
-<p>{<br>
-  &ldquo;msgType&rdquo;: &ldquo;chatbotresponse&rdquo;,<br>
-  &ldquo;data&rdquo;: &ldquo;Tap or Say one of the following&rdquo;,<br>
-  &ldquo;type&rdquo;: &ldquo;message&rdquo;,<br>
-  &ldquo;conversationID&rdquo;: &ldquo;testgguid&rdquo;,<br>
-  &ldquo;uniqueID&rdquo;: &ldquo;28e36552-b0d8-42e2-b495-65f61329ad69&rdquo;,<br>
-  &ldquo;utteranceID&rdquo;: &ldquo;testutteranceID&rdquo;,<br>
-  &ldquo;sessionID&rdquo;: &ldquo;testgguid&rdquo;,<br>
-  &ldquo;response&rdquo;: &ldquo;Tap or Say one of the following&rdquo;,<br>
-  &ldquo;speak&rdquo;: &ldquo;Tap or Say one of the following&rdquo;,<br>
-  &ldquo;show&rdquo;: {<br>
-    &ldquo;content&rdquo;: [{<br>
-      &ldquo;text&rdquo;: &ldquo;Boxer&rdquo;,<br>
-      &ldquo;speak&rdquo;: &ldquo;The American boxer is a stocky, well built, strong-looking dog, with a large head and a muscular build. Its coat is short and generally smooth. The breed is a light to moderate shedder.&rdquo;,<br>
-      &ldquo;contentURL&rdquo;: &ldquo;https://static.pexels.com/photos/158682/snow-dog-de-bordeaux-158682.jpeg&rdquo;,<br>
-      &ldquo;value&rdquo;: &ldquo;boxer&rdquo;<br>
-    }, {<br>
-      &ldquo;text&rdquo;: &ldquo;Akita&rdquo;,<br>
-      &ldquo;speak&rdquo;: &ldquo;The Akita is a very intelligent and self-assured dog that has a very easy time learning new tricks. This dog can be sociable with children and strangers but is generally reserved around new people. &rdquo;,<br>
-      &ldquo;contentURL&rdquo;: &ldquo;https://upload.wikimedia.org/wikipedia/commons/5/56/Papillon_Ears.jpg&rdquo;,<br>
-      &ldquo;value&rdquo;: &ldquo;akita&rdquo;<br>
-    }],<br>
-    &ldquo;text&rdquo;: &ldquo;Tap or Say one of the following&rdquo;<br>
-  }<br>
-}<br></p>
-
-<h2 id="text-bubbles-response-actionable">Text Bubbles Response (Actionable)</h2>
+<h2 id="text-bubbles-response-actionable">Text Bubbles Response (Actionable):</h2>
 
 <blockquote>
-<p>Pepper Data Model - Text Bubbles Response (Actionable):</p>
+<p>TEXT BUBBLES RESPONSE (ACTIONABLE):</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="err">utteranceId</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234abcde"</span><span class="p">,</span><span class="w">
-  </span><span class="err">sessionId</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcde1234"</span><span class="p">,</span><span class="w">
-        </span><span class="err">botConversationId</span><span class="p">:</span><span class="w"> </span><span class="s2">"a1b2c3d4e5"</span><span class="p">,</span><span class="w">
-  </span><span class="err">speak</span><span class="p">:</span><span class="w"> </span><span class="s2">"The weather in San Francisco today is a high of 66 degrees and a low of 48."</span><span class="p">,</span><span class="w">
-  </span><span class="err">show</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="err">text</span><span class="p">:</span><span class="w"> </span><span class="s2">"The weather in San Francisco today is a high of 66 degrees and a low of 48."</span><span class="p">,</span><span class="w">
-    </span><span class="err">content</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-        </span><span class="err">text</span><span class="p">:</span><span class="w"> </span><span class="s2">"YES"</span><span class="p">,</span><span class="w">
-        </span><span class="err">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"yes"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="err">text</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO"</span><span class="p">,</span><span class="w">
-        </span><span class="err">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p><img src = "images/Pepper_Data_Model-Text_Bubbles_Response.png"/></p>
-
-<blockquote>
-<p>CHATBOT-SPECIFIC EXAMPLE:</p>
-</blockquote>
-
-<h3 id="example-text-bubbles-actionable-response">Example: Text Bubbles (Actionable) Response</h3>
-
-<p>(corresponds to ChatBot specific example →)</p>
-
-<p>Pepper ChatBot translation:
-<code class="prettyprint">dialogflow
-&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
-Dialogflow: Picture &amp; Text response:
-&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
-For a given intent within your agent, under the &#39;Response&#39;
+<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+Dialogflow: Text Bubbles response:
+""""""""""""""""""""""""""""""""""""""""
+For a given intent within your agent, under the 'Response'
 section:
-1) Click the + icon next to &#39;Default&#39;
-2) Select &#39;Google Assistant&#39;
-3) Under the &#39;Google Assistant&#39; tab, select &#39;Add Message Content&#39;
-4) Select &#39;List&#39;
-5) Enter the URL of the picture
-6) In the Title field, enter what you want Pepper to say and display
+1) Click the + icon next to 'Default'
+2) Select 'Google Assistant'
+3) Under the 'Google Assistant' tab, select 'Add Message Content'
+4) Select 'List'
+5) In the Title field, enter what you want Pepper to say and display
 on its tablet according to the syntax described above ^^ in the 
-&#39;Text Only Response&#39; ({What Pepper Says} || {What Pepper displays})
-7) In the field that says &quot;Enter option key...&quot;, enter a specific 
+'Text Only Response' ({What Pepper Says} || {What Pepper displays})
+6) In the field that says 'Enter option key...', enter a specific 
 line of text that will trigger another custom intent that you will 
 need to create to receive the action
-</code></p>
+7) Add as many list items as you want displayed
+</span></code></pre></div>
+<p><img src = "images/Pepper_Data_Model-Text_Bubbles_Response.png"/></p>
 <div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 MS-Bot: Hero Card with Choices
 """""""""""""""""""""""""""""""""""""""""</span><span class="w">
@@ -1291,28 +972,6 @@ WHERE
 -&gt; = strictly mapped
 """"""""""""""""""""""""""""""""""""""""
 </span></code></pre></div>
-<p>{ <br>
-  &ldquo;msgType&rdquo;: &ldquo;chatbotresponse&rdquo;,<br>
-  &ldquo;data&rdquo;: &ldquo;Do you want to know about Puppies?&rdquo;,<br>
-  &ldquo;type&rdquo;: &ldquo;message&rdquo;,<br>
-  &ldquo;conversationID&rdquo;: &ldquo;testgguid&rdquo;,<br>
-  &ldquo;uniqueID&rdquo;: &ldquo;28e36552-b0d8-42e2-b495-65f61329ad69&rdquo;,<br>
-  &ldquo;utteranceID&rdquo;: &ldquo;testutteranceID&rdquo;,<br>
-  &ldquo;sessionID&rdquo;: &ldquo;testgguid&rdquo;,<br>
-  &ldquo;response&rdquo;: &ldquo;Do you want to know about Puppies?&rdquo;,<br>
-  &ldquo;speak&rdquo;: &ldquo;Do you want to know about Puppies?&rdquo;,<br>
-  &ldquo;show&rdquo;: {<br>
-    &ldquo;content&rdquo;: [{<br>
-      &ldquo;text&rdquo;: &ldquo;Yes please&rdquo;,<br>
-      &ldquo;value&rdquo;: &ldquo;Yes please&rdquo;<br>
-    }, {<br>
-      &ldquo;text&rdquo;: &ldquo;No thanks&rdquo;,<br>
-      &ldquo;value&rdquo;: &ldquo;No thanks&rdquo;<br>
-    }],<br>
-    &ldquo;text&rdquo;: &ldquo;Do you want to know about Puppies?&rdquo;<br>
-  }<br>
-}<br></p>
-
           <h1 id="faq-limitations">FAQ &amp; Limitations</h1>
 
 <p>General FAQ questions are listed below. ChatBot specific FAQ questions are listed to the right under its tab.
