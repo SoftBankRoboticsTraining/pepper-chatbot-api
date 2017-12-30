@@ -18,13 +18,12 @@ search: true
 # Pepper ChatBot API
 ```dialogflow
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-DialogFlow (previously API.AI) is a highly popular chatbot platform. 
-It's Google's entry into the ChatBot scene and its answer to the 
-conversational agency problem-space. Before Google acquired API.AI (and  
-subsequently renamed it to Dialogflow), it was used primarily
-as an SDK to allow developers to create voice interfaces for mobile apps.
-Choose Dialogflow as an interface for Pepper to unlock his latent
-conversational abilities today!
+DialogFlow (previously API.AI) is a popular chatbot platform. It's 
+also Google's entry into the conversational agency space. Before 
+Google acquired API.AI (and subsequently renamed it to Dialogflow), 
+it was used primarily to allow developers to create voice interfaces 
+for applications. Choose Dialogflow as an interface for Pepper to 
+unlock your robot's latent conversational abilities.
 
 To see a working example:
 (1) Download the example .zip file here: https://github.com/SoftBankRoboticsTraining/pepper-dialogflow-chatbot-faq
