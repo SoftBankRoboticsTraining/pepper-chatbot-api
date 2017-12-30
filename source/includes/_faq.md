@@ -8,7 +8,7 @@ Q. Can a ChatBot send two JSON responses in sequence?
 A. Yes. In fact, that is actually the best practice way of preventing a user from getting stuck on a non-actionable
    image. It is recommended to follow it up with another JSON response.
 
-```msbot
+```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Q. Can Pepper say one string and show another?
 

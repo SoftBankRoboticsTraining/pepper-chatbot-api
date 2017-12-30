@@ -2,7 +2,8 @@
 title: Pepper ChatBot API Reference
 
 language_tabs:
-  - msbot
+  - dialogflow 
+  - ms_bot_framework
 
 
 toc_footers:
@@ -15,19 +16,44 @@ search: true
 ---
 
 # Pepper ChatBot API
-
-
-```msbot
+```dialogflow
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-The Microsoft Bot Framework (MS-Bot) facilitates the creation of 
+DialogFlow (previously API.AI) is a highly popular chatbot platform. 
+It's Google's entry into the ChatBot scene and its answer to the 
+conversational agency problem-space. Before Google acquired API.AI (and  
+subsequently renamed it to Dialogflow), it was used primarily
+as an SDK to allow developers to create voice interfaces for mobile apps.
+Choose Dialogflow as an interface for Pepper to unlock his latent
+conversational abilities today!
+
+To see a working example:
+(1) Download the example .zip file here: https://github.com/SoftBankRoboticsTraining/pepper-dialogflow-chatbot-faq
+(2) Create a free account at www.dialogflow.com;
+(3) Create a new agent;
+(4) Click the gear icon to access the agent's settings; 
+(5) Select the 'Export and Import' tab;
+(5) Upload the .zip file from Step 1.
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+```
+
+
+Welcome to the Pepper ChatBot API! You can use this API reference material to connect your 3rd party chatbot's endpoint to your Host account in order to integrate a new or existing chatbot with Pepper. 
+
+You can view general integration instructions in this central, light blue section. In the dark area to the right, you can see chatbot-specific code examples corresponding visually in line with each general section. Switch between different chatbot-specific code examples with the tabs in the top right. 
+
+
+```ms_bot_framework
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+The Microsoft Bot Framework facilitates the creation of 
 powerful chatbots to enhance your application's capabilities. Its open 
 source Bot Builder SDKs allow users to build simple to sophisticated 
 dialogs. Cognitive Services enable your bot to interpret and interact 
-in more human ways. Ms-Bot is the first, 3rd-party ChatBot integration 
-that SoftBank Robotics supports.
+in more human ways. The MS Bot Framework is one of the two 3rd-party 
+chatbot integrations that Pepper for Host currently supports.
 
 To see a working example, download the emulator here:
-    https://docs.microsoft.com/en-us/bot-framework/debug-bots-emulator
+    https://docs.microsoft.com/en-us/bot-framework/bot-service-debug-emulator
 and use the following sample PuppyBot information to set up your emulator:
 
 MS Bot Endpoint:
@@ -41,41 +67,56 @@ PuppyBot Password:
 
 PuppyBot LUIS Endpoint:
    https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/4e4b1c46-5d6d-4035-9905-eef921df734f?subscription-key=37e463e0ae22427abc606d076dafbdd3&timezoneOffset=-480&verbose=true&spellCheck=true&q=
+
+For the PuppyBot's source code and a list of sample utterances to ask 
+the bot, navigate to our GitHub repo:
+   https://github.com/SoftBankRoboticsTraining/msbot-puppy-bot/
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ```
 
-Welcome to the Pepper ChatBot API! You can use this API reference material to connect your 3rd party chatbot's endpoint to your Host account in order to integrate a new or existing chatbot with Pepper. 
+<aside class="notice">We currently only support integrations with Microsoft's <a href="https://dev.botframework.com/"> Bot Framework</a> and Google's <a href="https://dialogflow.com/">Dialogflow</a>, but this list is quickly growing, so check back soon or else get in touch with us directly if your chatbot platform of choice does not appear on this list!</aside>
 
-You can view general integration instructions in this central, light blue section. In the dark area to the right, you can see chatbot-specific code examples corresponding visually in line with each general section. Switch between different chatbot-specific code examples with the tabs in the top right.
-
-<aside class="notice">We currently only support integrations with the Microsoft Bot Framework (msbot), but this list is quickly growing, so check back soon or else get in touch with us directly if your chatbot platform does not appear on this list!</aside>
 
 
 # Authentication & Setup
 
 
-```msbot
+```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-SETUP INSTRUCTIONS:
-For MS-Bots, setup consists of providing us with your bot token. Provide 
-your bot token to the SoftBank Robotics Sales Engineer assisting you with 
-setup. You can find your 'botToken' by following these steps:
+MS BOT FRAMEWORK SETUP INSTRUCTIONS:
+For MS bots, setup consists of providing us with one of your bot's 
+DirectLine "Secret Keys". Provide this key to the SBR Sales Engineer 
+assisting you with setup. You can find it by following these steps:
 
-Step 1: Open your bot in Azure portal.
+Step 1: Open your bot in Azure portal (https://portal.azure.com).
 Step 2: Select the CHANNELS tab.
 Step 3: Add DirectLine to your bot.
 Step 4: Click on Edit.
 Step 5: Copy one of the Secret Keys that was generated.
-Step 6: Give the copied value (botToken) to the SBR Sales Engineer.
+Step 6: Give the copied value to the SBR Sales Engineer.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ```
-ChatBots use RESTful APIs with APP IDs, PASSWORDs, and/or ACCESS TOKENS to authenticate in order to retrieve chatbot data. Requests are made to the ChatBot from a single endpoint:
+
+```dialogflow
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+DIALOGFLOW SETUP INSTRUCTIONS:
+For Dialogflow bots, setup consists of providing us with your Client 
+Access Token. Provide the token to the SBR Sales Engineer assisting you 
+with setup. You can find your Client Access Token by following these steps:
+
+Step 1: Open your bot in Dialogflow (https://console.dialogflow.com/)
+Step 2: Click on the gear icon to the right of your selected agent.
+Step 3: Under the General tab (default), copy the Client Access Token value.
+Step 4: Give the copied value to the SBR Sales Engineer.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+```
+ChatBots use RESTful APIs with APP IDs, PASSWORDs, and/or ACCESS TOKENS to authenticate in order to send and retrieve text & multimedia session data. Requests are made to the ChatBot via a single endpoint:
 
 <code>https://{YOUR-CHATBOT'S-ENDPOINT}</code>
 <br><br><br>
 SEE CHATBOT-SPECIFIC SETUP INSTRUCTIONS TO THE RIGHT → 
 
-<aside class="notice">Authorization and setup varies between chatbots, but typically requires your App ID and Password when configuring. We currently must work together with you or your developers to set this up, but we will soon provide a web interface for self service.</aside>
+<aside class="notice">Authorization and setup varies between chatbots, but typically requires just providing us with an access token for identifying and authenticating your chatbot. We currently must work together (via <a href="tel:1-844‑737‑7371.">phone</a> or <a href="mailto:training@softbankrobotics.com">email</a>) with you or your developers to set this up, but we will soon provide a web interface for self service. </aside>
 
 
 # Pepper Data Model
@@ -181,7 +222,7 @@ A nullable string that contains the actionable value to be returned to the chat 
 
 Pepper ChatBot translation:
 
-```msbot
+```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
 MS-Bot: Text Only response:
 """""""""""""""""""""""""""""""""""""""""
@@ -260,7 +301,7 @@ WHERE
 
 Pepper ChatBot translation:
 
-```msbot
+```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
 MS-Bot: Video Only response:
 """""""""""""""""""""""""""""""""""""""""
@@ -362,7 +403,7 @@ WHERE
 
 Pepper ChatBot translation:
 
-```msbot
+```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
 MS-Bot: Image Attachments response:
 """""""""""""""""""""""""""""""""""""""""
@@ -472,7 +513,7 @@ WHERE
 
 Pepper ChatBot translation:
 
-```msbot
+```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
 MS-Bot: Image Attachments response:
 """""""""""""""""""""""""""""""""""""""""
@@ -594,7 +635,7 @@ WHERE
 
 Pepper ChatBot translation:
 
-```msbot
+```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
 MS-Bot: Hero Card with Images and Choices
 """""""""""""""""""""""""""""""""""""""""
@@ -736,7 +777,7 @@ WHERE
 
 Pepper ChatBot translation:
 
-```msbot
+```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
 MS-Bot: Hero Card with Images and Choices
 """""""""""""""""""""""""""""""""""""""""
@@ -876,7 +917,7 @@ WHERE
 
 Pepper ChatBot translation:
 
-```msbot
+```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
 MS-Bot: Hero Card with Choices
 """""""""""""""""""""""""""""""""""""""""

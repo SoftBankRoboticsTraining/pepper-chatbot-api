@@ -7,9 +7,9 @@ GIT
 
 GIT
   remote: https://github.com/DanieltheYogi/rouge.git
-  revision: c7803a339d2c6f440763cb608ba6b48431c8d5a0
+  revision: 1de962420a8605458906ccd9bb255da5931b3f27
   specs:
-    rouge (3.0.0)
+    rouge (3.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -33,7 +33,11 @@ GEM
     concurrent-ruby (1.0.4)
     contracts (0.13.0)
     dotenv (2.2.0)
+    em-websocket (0.5.1)
+      eventmachine (>= 0.12.9)
+      http_parser.rb (~> 0.6.0)
     erubis (2.7.0)
+    eventmachine (1.2.5)
     execjs (2.7.0)
     fast_blank (1.0.0)
     fastimage (2.0.1)
@@ -44,6 +48,7 @@ GEM
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
     hashie (3.5.1)
+    http_parser.rb (0.6.0)
     i18n (0.7.0)
     kramdown (1.13.2)
     listen (3.0.8)
@@ -86,6 +91,10 @@ GEM
       servolux
       tilt (~> 2.0)
       uglifier (~> 3.0)
+    middleman-livereload (3.4.6)
+      em-websocket (~> 0.5.1)
+      middleman-core (>= 3.3)
+      rack-livereload (~> 0.3.15)
     middleman-sprockets (4.1.0)
       middleman-core (~> 4.0)
       sprockets (>= 3.0)
@@ -99,6 +108,8 @@ GEM
     parallel (1.10.0)
     public_suffix (2.0.5)
     rack (2.0.1)
+    rack-livereload (0.3.16)
+      rack
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
@@ -122,6 +133,7 @@ PLATFORMS
 DEPENDENCIES
   middleman (~> 4.2.1)
   middleman-autoprefixer (~> 2.7.0)
+  middleman-livereload
   middleman-sprockets (~> 4.1.0)
   middleman-syntax!
   redcarpet (~> 3.4.0)
