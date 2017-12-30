@@ -236,7 +236,8 @@ for applications. Choose Dialogflow as an interface for Pepper to
 unlock your robot's latent conversational abilities.
 
 To see a working example:
-(1) Download the example .zip file here: https://github.com/SoftBankRoboticsTraining/pepper-dialogflow-chatbot-faq
+(1) Download the example .zip file here: 
+https://github.com/SoftBankRoboticsTraining/pepper-dialogflow-chatbot-faq
 (2) Create a free account at www.dialogflow.com;
 (3) Create a new agent;
 (4) Click the gear icon to access the agent's settings; 
@@ -412,7 +413,48 @@ SEE CHATBOT-SPECIFIC SETUP INSTRUCTIONS TO THE RIGHT → </p>
 
 <p>(corresponds to ChatBot specific example →)</p>
 
-<p>Pepper ChatBot translation:</p>
+<p>Pepper ChatBot translation:
+&ldquo;`dialogflow
+For each intent within your agent, use the simple &quot;Text response&rdquo; 
+fields under the &ldquo;Response&rdquo; section to render a response.</p>
+
+<p>By default, Pepper will both speak and display whatever text you 
+write in these fields. That is oftentimes not desirable behavior;
+to have Pepper say one thing and display another, use double pipes
+(||), following this syntax:</p>
+
+<p>{What Pepper Says} || {What Pepper displays on the tablet}</p>
+
+<p>Ex. Hello, human || (｡◕‿◕｡)
+In this example, Pepper will say &ldquo;Hello, human&rdquo; while displaying
+an emoticon smiley face.</p>
+
+<p>Note that in the section of what Pepper says, QiChat is allowed:
+http://doc.aldebaran.com/2-5/naoqi/interaction/dialog/dialog-syntax_full.html#</p>
+
+<p>Here are some useful QiChat commands:</p>
+
+<p>Speech:
+\pau=1000\ = Inserts a pause (in milliseconds)
+\rspd=100\ = Speaking rate (in percentage)
+\vct=100\ = Pitch of voice (in percentage)</p>
+
+<p>Animations/Dances/Games:
+^run(animation_full_name*) = Animates Pepper w/ a given animation
+^start(animation_full_name*) = Animates Pepper w/ a given animation,
+while also continuing to speak whatever follows the command
+^run(app-id/behavior_name**) = Activates a given game/dance/etc</p>
+
+<ul>
+<li>For a list of available animations, go here: 
+http://doc.aldebaran.com/2-5/naoqi/motion/alanimationplayer-advanced.html#animationplayer-list-behaviors-pepper</li>
+</ul>
+
+<p>** Connect to your robot using Choregraphe 
+(https://developer.softbankrobotics.com/us-en/downloads/pepper), and 
+use the Robot Applications panel to discover the App ID and Behavior 
+names of the games, dances, and other apps installed on your robot.
+&ldquo;`</p>
 <div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 MS-Bot: Text Only response:
 """""""""""""""""""""""""""""""""""""""""</span><span class="w">
@@ -448,7 +490,7 @@ WHERE
 """"""""""""""""""""""""""""""""""""""""
 </span></code></pre></div>
 <p>{ <br>
-  &ldquo;msgType&rdquo;: &ldquo;chatbotresponse&rdquo;, <br>
+  &quot;msgType&rdquo;: &ldquo;chatbotresponse&rdquo;, <br>
   &ldquo;data&rdquo;: &ldquo;Duh, German Shepard Puppies tell the best jokes!&rdquo;, <br>
   &ldquo;type&rdquo;: &ldquo;message&rdquo;, <br>
   &ldquo;conversationID&rdquo;: &ldquo;testgguid&rdquo;, <br>
@@ -491,7 +533,20 @@ WHERE
 <p>(corresponds to ChatBot specific example →)</p>
 
 <p>Pepper ChatBot translation:</p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+Dialogflow: Video Only response:
+"""""""""""""""""""""""""""""""""""""""""</span><span class="w">
+</span><span class="err">For</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">given</span><span class="w"> </span><span class="err">intent</span><span class="w"> </span><span class="err">within</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">agent</span><span class="p">,</span><span class="w"> </span><span class="err">under</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">'Response'</span><span class="w">
+</span><span class="err">section</span><span class="p">:</span><span class="w">
+</span><span class="mi">1</span><span class="err">)</span><span class="w"> </span><span class="err">Click</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="err">icon</span><span class="w"> </span><span class="err">next</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">'Default'</span><span class="w">
+</span><span class="mi">2</span><span class="err">)</span><span class="w"> </span><span class="err">Select</span><span class="w"> </span><span class="err">'Google</span><span class="w"> </span><span class="err">Assistant'</span><span class="w">
+</span><span class="mi">3</span><span class="err">)</span><span class="w"> </span><span class="err">Under</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">'Google</span><span class="w"> </span><span class="err">Assistant'</span><span class="w"> </span><span class="err">tab</span><span class="p">,</span><span class="w"> </span><span class="err">select</span><span class="w"> </span><span class="err">'Add</span><span class="w"> </span><span class="err">Message</span><span class="w"> </span><span class="err">Content'</span><span class="w">
+</span><span class="mi">4</span><span class="err">)</span><span class="w"> </span><span class="err">Select</span><span class="w"> </span><span class="err">'Basic</span><span class="w"> </span><span class="err">Card'</span><span class="w">
+</span><span class="mi">5</span><span class="err">)</span><span class="w"> </span><span class="err">Enter</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">URL</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">video</span><span class="w">
+</span><span class="mi">6</span><span class="err">)</span><span class="w"> </span><span class="err">In</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">Title</span><span class="w"> </span><span class="err">field</span><span class="p">,</span><span class="w"> </span><span class="err">enter</span><span class="w"> </span><span class="err">what</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">want</span><span class="w"> </span><span class="err">Pepper</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">say</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">display</span><span class="w">
+</span><span class="err">on</span><span class="w"> </span><span class="err">its</span><span class="w"> </span><span class="err">tablet</span><span class="w"> </span><span class="err">according</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">syntax</span><span class="w"> </span><span class="err">described</span><span class="w"> </span><span class="err">above</span><span class="w"> </span><span class="err">^^</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">the</span><span class="w"> 
+</span><span class="err">'Text</span><span class="w"> </span><span class="err">Only</span><span class="w"> </span><span class="err">Response'</span><span class="w"> </span><span class="err">(</span><span class="p">{</span><span class="err">What</span><span class="w"> </span><span class="err">Pepper</span><span class="w"> </span><span class="err">Says</span><span class="p">}</span><span class="w"> </span><span class="err">||</span><span class="w"> </span><span class="p">{</span><span class="err">What</span><span class="w"> </span><span class="err">Pepper</span><span class="w"> </span><span class="err">displays</span><span class="p">}</span><span class="err">)</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 MS-Bot: Video Only response:
 """""""""""""""""""""""""""""""""""""""""</span><span class="w">
 </span><span class="p">{</span><span class="w">
@@ -592,7 +647,20 @@ WHERE
 <p>(corresponds to ChatBot specific example →)</p>
 
 <p>Pepper ChatBot translation:</p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+Dialogflow: Picture &amp; Text response:
+"""""""""""""""""""""""""""""""""""""""""</span><span class="w">
+</span><span class="err">For</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">given</span><span class="w"> </span><span class="err">intent</span><span class="w"> </span><span class="err">within</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">agent</span><span class="p">,</span><span class="w"> </span><span class="err">under</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">'Response'</span><span class="w">
+</span><span class="err">section</span><span class="p">:</span><span class="w">
+</span><span class="mi">1</span><span class="err">)</span><span class="w"> </span><span class="err">Click</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="err">icon</span><span class="w"> </span><span class="err">next</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">'Default'</span><span class="w">
+</span><span class="mi">2</span><span class="err">)</span><span class="w"> </span><span class="err">Select</span><span class="w"> </span><span class="err">'Google</span><span class="w"> </span><span class="err">Assistant'</span><span class="w">
+</span><span class="mi">3</span><span class="err">)</span><span class="w"> </span><span class="err">Under</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">'Google</span><span class="w"> </span><span class="err">Assistant'</span><span class="w"> </span><span class="err">tab</span><span class="p">,</span><span class="w"> </span><span class="err">select</span><span class="w"> </span><span class="err">'Add</span><span class="w"> </span><span class="err">Message</span><span class="w"> </span><span class="err">Content'</span><span class="w">
+</span><span class="mi">4</span><span class="err">)</span><span class="w"> </span><span class="err">Select</span><span class="w"> </span><span class="err">'Basic</span><span class="w"> </span><span class="err">Card'</span><span class="w">
+</span><span class="mi">5</span><span class="err">)</span><span class="w"> </span><span class="err">Enter</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">URL</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">picture</span><span class="w">
+</span><span class="mi">6</span><span class="err">)</span><span class="w"> </span><span class="err">In</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">Title</span><span class="w"> </span><span class="err">field</span><span class="p">,</span><span class="w"> </span><span class="err">enter</span><span class="w"> </span><span class="err">what</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">want</span><span class="w"> </span><span class="err">Pepper</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">say</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">display</span><span class="w">
+</span><span class="err">on</span><span class="w"> </span><span class="err">its</span><span class="w"> </span><span class="err">tablet</span><span class="w"> </span><span class="err">according</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">syntax</span><span class="w"> </span><span class="err">described</span><span class="w"> </span><span class="err">above</span><span class="w"> </span><span class="err">^^</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">the</span><span class="w"> 
+</span><span class="err">'Text</span><span class="w"> </span><span class="err">Only</span><span class="w"> </span><span class="err">Response'</span><span class="w"> </span><span class="err">(</span><span class="p">{</span><span class="err">What</span><span class="w"> </span><span class="err">Pepper</span><span class="w"> </span><span class="err">Says</span><span class="p">}</span><span class="w"> </span><span class="err">||</span><span class="w"> </span><span class="p">{</span><span class="err">What</span><span class="w"> </span><span class="err">Pepper</span><span class="w"> </span><span class="err">displays</span><span class="p">}</span><span class="err">)</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 MS-Bot: Image Attachments response:
 """""""""""""""""""""""""""""""""""""""""</span><span class="w">
 </span><span class="p">{</span><span class="w">
@@ -700,7 +768,22 @@ WHERE
 
 <p>(corresponds to ChatBot specific example →)</p>
 
-<p>Pepper ChatBot translation:</p>
+<p>Pepper ChatBot translation:
+<code class="prettyprint">dialogflow
+&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+Dialogflow: Picture Only response:
+&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+For a given intent within your agent, under the &#39;Response&#39;
+section:
+1) Click the + icon next to &#39;Default&#39;
+2) Select &#39;Google Assistant&#39;
+3) Under the &#39;Google Assistant&#39; tab, select &#39;Add Message Content&#39;
+4) Select &#39;Basic Card&#39;
+5) Enter the URL of the picture
+6) In the Title field, enter what you want Pepper to say and display
+on its tablet according to the syntax described above ^^ in the 
+&#39;Text Only Response&#39; ({What Pepper Says} || {What Pepper displays})
+</code></p>
 <div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 MS-Bot: Image Attachments response:
 """""""""""""""""""""""""""""""""""""""""</span><span class="w">
@@ -821,7 +904,25 @@ WHERE
 
 <p>(corresponds to ChatBot specific example →)</p>
 
-<p>Pepper ChatBot translation:</p>
+<p>Pepper ChatBot translation:
+<code class="prettyprint">dialogflow
+&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+Dialogflow: Picture &amp; Text response:
+&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+For a given intent within your agent, under the &#39;Response&#39;
+section:
+1) Click the + icon next to &#39;Default&#39;
+2) Select &#39;Google Assistant&#39;
+3) Under the &#39;Google Assistant&#39; tab, select &#39;Add Message Content&#39;
+4) Select &#39;Basic Card&#39;
+5) Enter the URL of the picture
+6) In the Title field, enter what you want Pepper to say and display
+on its tablet according to the syntax described above ^^ in the 
+&#39;Text Only Response&#39; ({What Pepper Says} || {What Pepper displays})
+7) In the field that says &quot;Enter text...&quot;, enter a specific line of 
+text that will trigger another custom intent that you will need to
+create to receive the action
+</code></p>
 <div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 MS-Bot: Hero Card with Images and Choices
 """""""""""""""""""""""""""""""""""""""""</span><span class="w">
@@ -962,7 +1063,25 @@ WHERE
 
 <p>(corresponds to ChatBot specific example →)</p>
 
-<p>Pepper ChatBot translation:</p>
+<p>Pepper ChatBot translation:
+<code class="prettyprint">dialogflow
+&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+Dialogflow: Picture &amp; Text response:
+&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+For a given intent within your agent, under the &#39;Response&#39;
+section:
+1) Click the + icon next to &#39;Default&#39;
+2) Select &#39;Google Assistant&#39;
+3) Under the &#39;Google Assistant&#39; tab, select &#39;Add Message Content&#39;
+4) Select &#39;Basic Card&#39;
+5) Enter the URL of the picture
+6) In the Title field, enter what you want Pepper to say and display
+on its tablet according to the syntax described above ^^ in the 
+&#39;Text Only Response&#39; ({What Pepper Says} || {What Pepper displays})
+7) In the field that says &quot;Enter text...&quot;, enter a specific line of 
+text that will trigger another custom intent that you will need to
+create to receive the action
+</code></p>
 <div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 MS-Bot: Hero Card with Images and Choices
 """""""""""""""""""""""""""""""""""""""""</span><span class="w">
@@ -1099,7 +1218,25 @@ WHERE
 
 <p>(corresponds to ChatBot specific example →)</p>
 
-<p>Pepper ChatBot translation:</p>
+<p>Pepper ChatBot translation:
+<code class="prettyprint">dialogflow
+&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+Dialogflow: Picture &amp; Text response:
+&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+For a given intent within your agent, under the &#39;Response&#39;
+section:
+1) Click the + icon next to &#39;Default&#39;
+2) Select &#39;Google Assistant&#39;
+3) Under the &#39;Google Assistant&#39; tab, select &#39;Add Message Content&#39;
+4) Select &#39;List&#39;
+5) Enter the URL of the picture
+6) In the Title field, enter what you want Pepper to say and display
+on its tablet according to the syntax described above ^^ in the 
+&#39;Text Only Response&#39; ({What Pepper Says} || {What Pepper displays})
+7) In the field that says &quot;Enter option key...&quot;, enter a specific 
+line of text that will trigger another custom intent that you will 
+need to create to receive the action
+</code></p>
 <div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 MS-Bot: Hero Card with Choices
 """""""""""""""""""""""""""""""""""""""""</span><span class="w">
