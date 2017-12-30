@@ -34,6 +34,8 @@ https://github.com/SoftBankRoboticsTraining/pepper-dialogflow-chatbot-faq
 (5) Select the 'Export and Import' tab;
 (5) Upload the .zip file from Step 1.
 
+For a quick tutorial: www.youtube.com/watch?v=B8PrcwENCJg
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ```
 
