@@ -366,7 +366,7 @@ section, select 'Custom Payload' and enter the following:
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
 MS-Bot: Full Screen Image response:
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""
 
 Not yet available in MS-Bot
 ```
