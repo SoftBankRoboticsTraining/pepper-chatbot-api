@@ -764,7 +764,7 @@ WHERE
 
 ```dialogflow
 """""""""""""""""""""""""""""""""""""""""
-Dialogflow: Text Bubbles response:
+Dialogflow:
 """"""""""""""""""""""""""""""""""""""""
 For a given intent within your agent, under the 'Response'
 section:
@@ -839,3 +839,28 @@ WHERE
 """"""""""""""""""""""""""""""""""""""""
 ```
 
+## Actions - Show Keyboard (Actionable):
+
+> ACTIONS - SHOW KEYBOARD (ACTIONABLE):
+
+```dialogflow
+"""""""""""""""""""""""""""""""""""""""""
+Dialogflow: 
+""""""""""""""""""""""""""""""""""""""""
+For a given intent within your agent, under the 'Response'
+section, select 'Custom Payload' and enter the following:
+{
+  "speak": "Please type your confirmation number using the keyboard."
+  "action": "showKeyboard"
+}
+```
+
+Not pictured.
+
+```ms_bot_framework
+"""""""""""""""""""""""""""""""""""""""""
+MS-Bot: Full Screen Image response:
+""""""""""""""""""""""""""""""""""""""""
+
+Not yet available in MS-Bot
+```
