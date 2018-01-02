@@ -223,8 +223,13 @@ Here are some useful QiChat commands:
 
 Speech:
 \pau=1000\ = Inserts a pause (in milliseconds)
-\rspd=100\ = Speaking rate (in percentage)
-\vct=100\ = Pitch of voice (in percentage)
+\rspd=100\ = Speed of voice (in percentage, 50-400)
+\vct=100\ = Pitch of voice (in percentage, 50=200)
+\vol=100\ = Volume of voice (in percentage, 0-100)
+\style=joyful\ = Joyful intonation
+\style=neutral\ = Normal intonation
+\style=didactic\ = Didactic intonation
+\rst\ = Resets control sequences
 
 Animations/Dances/Games:
 ^run(animation_full_name*) = Animates Pepper w/ a given animation
