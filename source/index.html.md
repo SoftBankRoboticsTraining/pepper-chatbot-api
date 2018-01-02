@@ -855,7 +855,7 @@ section, select 'Custom Payload' and enter the following:
 }
 ```
 
-Not pictured.
+<img src = "images/Pepper_Data_Model-Keyboard.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
