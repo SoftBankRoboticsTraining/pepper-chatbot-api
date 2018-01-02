@@ -290,15 +290,12 @@ WHERE
 Dialogflow: 
 """"""""""""""""""""""""""""""""""""""""
 For a given intent within your agent, under the 'Response'
-section:
-1) Click the + icon next to 'Default'
-2) Select 'Google Assistant'
-3) Under the 'Google Assistant' tab, select 'Add Message Content'
-4) Select 'Basic Card'
-5) Enter the URL of the video
-6) In the Title field, enter what you want Pepper to say and display
-on its tablet according to the syntax described above ^^ in the 
-'Text Only Response' ({What Pepper Says} || {What Pepper displays})
+section, select 'Custom Payload' and enter the following:
+{
+  "videoURL": "https://url-of-your-video-file.mp4",
+  "contentType": "video/mp4",
+  "speak": "Here is a short video that is relevant to your utterance..."
+}
 ```
 
 <img src = "images/Pepper_Data_Model-Video_Response.png"/>
@@ -348,6 +345,31 @@ WHERE
 """"""""""""""""""""""""""""""""""""""""
 ```
 
+## Full Screen Image Response
+
+> FULL SCREEN IMAGE RESPONSE:
+
+```dialogflow
+"""""""""""""""""""""""""""""""""""""""""
+Dialogflow: 
+""""""""""""""""""""""""""""""""""""""""
+For a given intent within your agent, under the 'Response'
+section, select 'Custom Payload' and enter the following:
+{
+  "imageURL": "https://url-of-your-image-file.jpg",
+  "speak": "Look at this beautiful image that is relevant to your utterance..."
+}
+```
+
+<img src = "images/Pepper_Data_Model-Full_Screen_Picture_Response.png"/>
+
+```ms_bot_framework
+"""""""""""""""""""""""""""""""""""""""""
+MS-Bot: Full Screen Image response:
+"""""""""""""""""""""""""""""""""""""""""
+
+Not yet available in MS-Bot
+```
 
 ## Picture and Text Response (Non-actionable)
 
