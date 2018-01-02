@@ -475,15 +475,12 @@ WHERE
 Dialogflow: 
 """"""""""""""""""""""""""""""""""""""""
 For a given intent within your agent, under the 'Response'
-section:
-1) Click the + icon next to 'Default'
-2) Select 'Google Assistant'
-3) Under the 'Google Assistant' tab, select 'Add Message Content'
-4) Select 'Basic Card'
-5) Enter the URL of the video
-6) In the Title field, enter what you want Pepper to say and display
-on its tablet according to the syntax described above ^^ in the 
-'Text Only Response' ({What Pepper Says} || {What Pepper displays})
+section, select 'Custom Payload' and enter the following:
+{
+  "</span><span class="err">videoURL</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//url-of-your-video-file.mp</span><span class="mi">4</span><span class="s2">",
+  "</span><span class="err">contentType</span><span class="s2">": "</span><span class="err">video/mp</span><span class="mi">4</span><span class="s2">",
+  "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Here</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">short</span><span class="w"> </span><span class="err">video</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">relevant</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">utterance...</span><span class="s2">"
+}
 </span></code></pre></div>
 <p><img src = "images/Pepper_Data_Model-Video_Response.png"/></p>
 <div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
@@ -528,6 +525,28 @@ WHERE
 ~&gt; = loosely mapped
 -&gt; = strictly mapped
 """"""""""""""""""""""""""""""""""""""""
+</span></code></pre></div>
+<h2 id="full-screen-image-response">Full Screen Image Response</h2>
+
+<blockquote>
+<p>FULL SCREEN IMAGE RESPONSE:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+Dialogflow: 
+""""""""""""""""""""""""""""""""""""""""
+For a given intent within your agent, under the 'Response'
+section, select 'Custom Payload' and enter the following:
+{
+  "</span><span class="err">imageURL</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//url-of-your-image-file.jpg</span><span class="s2">",
+  "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Look</span><span class="w"> </span><span class="err">at</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">beautiful</span><span class="w"> </span><span class="err">image</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">relevant</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">utterance...</span><span class="s2">"
+}
+</span></code></pre></div>
+<p><img src = "images/Pepper_Data_Model-Full_Screen_Picture_Response.png"/></p>
+<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+MS-Bot: Full Screen Image response:
+""""""""""""""""""""""""""""""""""""""""
+
+Not yet available in MS-Bot
 </span></code></pre></div>
 <h2 id="picture-and-text-response-non-actionable">Picture and Text Response (Non-actionable)</h2>
 
