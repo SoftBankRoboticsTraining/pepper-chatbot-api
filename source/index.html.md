@@ -110,6 +110,12 @@ Step 1: Open your bot in Dialogflow (https://console.dialogflow.com/)
 Step 2: Click on the gear icon to the right of your selected agent.
 Step 3: Under the General tab (default), copy the Client Access Token value.
 Step 4: Give the copied value to the SBR Sales Engineer.
+
+AGENT SETUP INSTRUCTIONS:
+To setup a welcome intent on Pepper in your agent, set up a new intent 
+with the text "init1234" as the only utterance. You may use any type of 
+response listed below for your welcome intent. You can also choose not to
+have a welcome intent, although this is not recommended.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ```
 ChatBots use RESTful APIs with APP IDs, PASSWORDs, and/or ACCESS TOKENS to authenticate in order to send and retrieve text & multimedia session data. Requests are made to the ChatBot via a single endpoint:
