@@ -113,7 +113,7 @@ Step 4: Give the copied value to the SBR Sales Engineer.
 
 AGENT SETUP INSTRUCTIONS:
 To setup a welcome intent on Pepper in your agent, set up a new intent 
-with the text "init1234" as the only utterance. You may use any type of 
+with the text 'init1234' as the only utterance. You may use any type of 
 response listed below for your welcome intent. You can also choose not to
 have a welcome intent, although this is not recommended.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
