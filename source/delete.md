@@ -1,279 +1,3 @@
----
-title: Pepper Chat Technical Reference
-
-language_tabs:
-  - dialogflow 
-  - ms_bot_framework
-
-
-toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-
-includes:
-  - faq
-
-search: true
----
-
-# Pepper Chat
-##A Conversational UX Humanoid Robot Platform
-```dialogflow
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-DialogFlow (previously API.AI) is a popular chatbot platform. It's 
-also Google's entry into the conversational agency space. Before 
-Google acquired API.AI (and subsequently renamed it to Dialogflow), 
-it was used primarily to allow developers to create voice interfaces 
-for applications. Choose Dialogflow as an interface for Pepper to 
-unlock your robot's latent conversational abilities.
-
-To see a working example:
-(1) Download the example .zip file here: 
-https://github.com/SoftBankRoboticsTraining/pepper-dialogflow-chatbot-faq
-(2) Create a free account at www.dialogflow.com;
-(3) Create a new agent;
-(4) Click the gear icon to access the agent's settings; 
-(5) Select the 'Export and Import' tab;
-(5) Upload the .zip file from Step 1.
-
-For a quick tutorial: www.youtube.com/watch?v=B8PrcwENCJg
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-```
-
-
-Welcome to the Pepper Chat platform! This technical reference is for Pepper owners running the Pepper-As-A-Host solution, who would like to connect their Pepper to a 3rd party chatbot (Dialogflow & MS Bot Framework platforms supported) in order to unlock Pepper's latent conversational abilities. It is an exciting evolution of Pepper's repertoire of capabilities. 
-
-Given the overwhelming success of the "chatbot feature" of the Host product, which was historically an optional upgrade that would replace the standard "FAQ" feature of the Host product, SBRA decided to build out and open up the Pepper Chat platform to its broader customer base. Pepper Chat allows customers who want to take more control over Pepper's speech, animations, tablet display and overall interactions can now do so using this solution, all with a conversational-focused, web-based, user interface. Teaming up with Google and Microsoft to bring our customers world-class NLP and Conversational AI technologies, we are proud and excited to provide our customers with a conversation-based Pepper platform that is dynamic, smart, and immersively fun!
-
-NAVIGATING THIS REFERENCE:
-You can view general integration instructions in this central, light blue section. In the dark area to the right, you can see chatbot-specific code examples corresponding visually in line with each general section. Switch between different chatbot-specific code examples with the tabs in the top right.
-
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-The Microsoft Bot Framework facilitates the creation of 
-powerful chatbots to enhance your application's capabilities. Its open 
-source Bot Builder SDKs allow users to build simple to sophisticated 
-dialogs. Cognitive Services enable your bot to interpret and interact 
-in more human ways. The MS Bot Framework is one of the two 3rd-party 
-chatbot integrations that Pepper for Host currently supports.
-
-To see a working example, download the emulator here:
-    https://docs.microsoft.com/en-us/bot-framework/bot-service-debug-emulator
-and use the following sample PuppyBot information to set up your emulator:
-
-MS Bot Endpoint:
-   https://pepper-msbot.azurewebsites.net/api/messages?code=e3fa60oaOlabQUptT63DYSWPxrdG0pS9zFrADLT1xX9iGx6FxAG7pw==
-
-PuppyBot App Id:
-   808ad83e-3876-40fd-b0e8-a616e014fc6f
-
-PuppyBot Password:
-   9nHp8QNcwQJcNDHHjBCnoj7
-
-PuppyBot LUIS Endpoint:
-   https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/4e4b1c46-5d6d-4035-9905-eef921df734f?subscription-key=37e463e0ae22427abc606d076dafbdd3&timezoneOffset=-480&verbose=true&spellCheck=true&q=
-
-For the PuppyBot's source code and a list of sample utterances to ask 
-the bot, navigate to our GitHub repo:
-   https://github.com/SoftBankRoboticsTraining/msbot-puppy-bot/
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-```
-
-<aside class="notice">We currently only support integrations with Microsoft's <a href="https://dev.botframework.com/"> Bot Framework</a> and Google's <a href="https://dialogflow.com/">Dialogflow</a>, but this list is quickly growing, so check back soon or else get in touch with us directly if your chatbot platform of choice does not appear on this list!</aside>
-
-# Getting Started
-
-> SBRA offers professional services to assist in the creation of your Chatbot. If you are interested, please email sales@softbankrobotics.com. Otherwise you can use the remainder of this documentation to create your own Chatbot for Pepper.
-
-Building a successful chatbot for deployment on Pepper requires a large amount of time, patience, and cross-disciplinary creative expertise. For this reason, SBRA offers professional services to assist in the creation of your Chatbot for Pepper. If you are interested, <a href="mailto:sales@softbankrobotics.com">send us an email</a>.
-
-# → Authentication & Setup
-
-
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-MS BOT FRAMEWORK SETUP INSTRUCTIONS:
-For MS bots, setup consists of providing us with one of your bot's 
-DirectLine 'Secret Keys'. Provide this key to the SBR Sales Engineer 
-assisting you with setup. You can find it by following these steps:
-
-Step 1: Open your bot in Azure portal (https://portal.azure.com).
-Step 2: Select the CHANNELS tab.
-Step 3: Add DirectLine to your bot.
-Step 4: Click on Edit.
-Step 5: Copy one of the Secret Keys that was generated.
-Step 6: Give the copied value to the SBR Sales Engineer.
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-```
-
-```dialogflow
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-DIALOGFLOW SETUP INSTRUCTIONS:
-For Dialogflow bots, setup consists of providing us with your Client 
-Access Token. Provide the token to the SBR Sales Engineer assisting you 
-with setup. You can find your Client Access Token by following these steps:
-
-Step 1: Open your bot in Dialogflow (https://console.dialogflow.com/)
-Step 2: Click on the gear icon to the right of your selected agent.
-Step 3: Under the General tab (default), copy the Client Access Token value.
-Step 4: [Input token into Pepper Chat --> See central panel for instructions]
-
-AGENT SETUP INSTRUCTIONS:
-To setup a welcome intent on Pepper in your agent, set up a new intent 
-with the text 'init1234' as the only utterance. You may use any type of 
-response from the options below for your welcome intent response. 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-```
-
-ChatBots use RESTful APIs with APP IDs, PASSWORDs, and/or ACCESS TOKENS to authenticate in order to send and retrieve text & multimedia session data. 
-
-With SoftBank Robotics America's new Pepper ChatBot API and the Pepper Chat platform built on top of it, connecting your <a href="www.dialogflow.com">Dialogflow</a> or <a href="https://dev.botframework.com/">Microsoft Bot Framework</a> chatbot is as easy as it possibly can be. Simply log in to <a href="https://pepperchat.azurewebsites.net">Pepper Chat CMS</a> (Content Management System) and provide the platform with a friendly name for your bot and your bot's client access token.
-
-I.) CHATBOT INSTRUCTIONS:
-<br>
-→ SEE CHATBOT-SPECIFIC SETUP INSTRUCTIONS TO THE RIGHT → 
-<br>
-
-II.) PEPPER CHAT INSTRUCTIONS: 
-<br>
-1) Using your existing Host credentials, log in to the <a href="https://pepperchat.azurewebsites.net">Pepper Chat CMS</a>
-<br>
-2) Add a new chatbot to your account from within the CHATBOTS tab, using the 'Add A Chatbot' button; 
-<br>
-3) Complete the setup wizard, supplying the token you obtained from part I.
-
-<img src = "images/PEPPER_CHAT.Add_A_Robot.png"/>
-
-<aside class="info">NOTE: In order to have your Pepper launch directly into your chatbot, you will need to disable all other features in Host except for the FAQ. This will give launch priority directly to your chatbot! </aside>
-<br>
-
-<aside class="warning"> WARNING: It should be noted that activating your own custom chatbot will REPLACE the standard FAQ feature from Host.</aside>
-
-<aside class="warning"> WARNING: Activating a chatbot from within Pepper Chat for a given Host account will activate the chatbot for ALL ROBOTS ON THE ACCOUNT! </aside>
-
-<aside class="warning"> WARNING: The Pepper Chat platform is still in beta (testing/active development). There are some known usability and scalability features currently missing from the platform (such as multi-robot, fleet management functionality, localization, etc.) that will be coming in our next releases. In the meantime, the lack of some of these features has implications in the form of restrictions of fleet configurations and of account management limitations with robot owners who have many robots. Again, however, most of these limitations will be unlocked in our April and May releases.</aside>
-
-
-# →  Voice Shaping Commands
-
-> Pepper Voice Shaping Commands - <br><br>"Did you know? <br>💡💡💡💡💡💡💡💡💡💡💡💡💡<br> QiChat is Pepper's native language.
-
-Below are some useful voice commands a chatbot creator can use to control Pepper's delivery of certain lines or words. These commands are used as a markup language throughout a chatbot to wrap a word (or a series of words) in order to change the intonation and speed of Pepper's voice as he speaks the word(s)! 
-<br><br>
-##QiChat voice commands * | * * :
-<code>\pau=1000\ </code> = Inserts a pause (in milliseconds)<br>
-<code>\rspd=100\ </code> = Speed of voice (in percentage, 50-400)<br>
-<code>\vct=100\ </code> = Pitch of voice (in percentage, 50=200)<br>
-<code>\vol=100\ </code> = Volume of voice (in percentage, 0-100)<br>
-<code>\style=joyful\ </code> = Joyful intonation<br>
-<code>\style=neutral\ </code> = Normal intonation<br>
-<code>\style=didactic\ </code> = Didactic intonation<br>
-<code>\rst\ </code> = Resets control sequences<br>
-
-<aside class='info'> * When using JSON syntax (Custom Payloads, etc.), QiChat commands must be double-escaped (\\).</aside>
-
-<aside class='warning'> * * WARNING: The Pepper Chat Simulator (available in web-based <a href="https://pepper-chat.azurewebsites.net">Pepper Chat CMS</a>) does not support QiChat codes at this point!</aside>
-<br>
-
-
-# →  Spoken vs Displayed Text
-
-### ? PEPPER SPEAKS VS ? PEPPER DISPLAYS ON TABLET:
-
-To make your life simpler, we opted for the design decision that
-by default, Pepper will both speak and display whatever text you 
-write in the simple text field. That is oftentimes not desirable 
-behavior. For instance, you may want Pepper to display the opposite
-of what he is saying as part of a game or survey. By using the 
-following convention in your chatbot responses, you can make Pepper 
-say one thing and display another. Simply use double pipes (||), 
-according to the following syntax:
-<br>
-{What Pepper Says} || {What Pepper displays on the tablet}
-<br>
-> Ex: Hello, human || Hello <br>
-In this example, Pepper will say 'Hello, human' while only displaying
-'Hello'.
-
-> Ex: ig pay atin lay ample xay || Pig Latin example <br>
-I think you see what I did there  ^^ ;) 
-
-
-# →  Pepper Animations
-You have access to Pepper's full library of animations! Take advantage of them by first becoming familiar with the various animations in the library by playing them live on your Pepper from within Choregraphe (see instructions to the right → )
-<br>
-> 1) Install Choregraphe (free) from our website: https://developer.softbankrobotics.com/us-en/downloads/pepper
-<br>
-2) Connect to your robot from within Choregraphe using its IP address
-<br>
-3) Find (and activate if not activated) the Robot Applications panel
-<br>
-4) Find application called "Animation Library" and uncollapse it
-<br>
-5) Demo and animation by pressing its play icon in the Robot Applications panel
-
-##Animation Playback Modes
-
-When playing an animation, you have to choose one of two options for how the animation should be played:<br><br>
-> Ex.) Dialogflow - Pepper's response: <br> Hi! ^run(animations/Stand/Emotions/Positive/Happy_4) It's great to see you!
-
-<br>
-
->Ex.) Dialogflow - Pepper's response: <br> Hi! ^start(animations/Stand/Emotions/Positive/Excited_1) I'm so excited to see you! ^wait(animations/Stand/Emotions/Positive/Excited_1) It's nice to see you in our store again!
-
-###RUN mode:
-<ul>
-  <li> Stops the speech until the animation has finished </li>
-  <li>^run(...robot-animation-1)</li>
-</ul>
-
-###START mode:
-<ul>
-   <li>Start the animation and allow it to play, but allow the speech to continue while the animation is playing</li>
-   <li>^start(...robot-animation-2)</li>
-</ul>
-
-<br>
-
-
-# →  Tablet Display Options
-
-> TABLET DISPLAY OPTIONS:
-
-The section below shows all the various options that can be displayed on Pepper's tablet. Generally speaking, here are the following options:
-
-###TEXT:
-<ul>
-  <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#text-only">TEXT (ONLY)</a> - Non-selectable text response</li>
-  <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#text-bubbles">TEXT BUBBLES</a> - Selectable, Scrollable (1-4 max on tablet at a time) - variable size</li>
-</ul>
-###IMAGES:
-<ul>
-  <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#image-carousel-captioned">IMAGES - Carousel, Captioned</a> - Selectable, Scrollable (n>2; 3 max on tablet at a time) - 360w x 341t ea.</li>
-  <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#image-carousel-uncaptioned">IMAGES - Carousel, Uncaptioned</a> - Selectable, Scrollable (n>2; 3 max on tablet at a time) - 360w x 341t ea.</li>
-  <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#image-1-6-icon-layouts">IMAGE(S) - 1-6-Icon Layouts</a> - Selectable, Non-Scrollable (1-6 max total) - 280w x 225t ea.</li>
-  <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#image-basic-card">IMAGE - Basic Card</a> - Non-Selectable, Non-Scrollable (1-6 max total) - 280w x 225t ea.</li>
-  <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#image-fullscreen-image">IMAGE - Fullscreen</a> - Selectable, Non-Scrollable - 1280w x 800t</li>
-</ul>
-###VIDEO:
-<ul>
-  <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#video-fullscreen-video">VIDEO - Fullscreen</a> - Skippable - 1280w x 800t - .mp4 format required *</li>
-</ul>
-###WEBPAGE:
-<ul>
-  <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#webpage-show-webpage">WEBPAGE - Fullscreen</a> - Skippable - 1280w x 800t - Will only work for embeddable sites - Does not allow pop-up windows *</li>
-</ul>
-###USER INPUT:
-<uL>
-  <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#user-input-show-keyboard">SHOW KEYBOARD</a> - Display the keyboard for the user to type in information.</li>
-  <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#user-input-privacy-policy">PRIVACY POLICY - Checkbox</a> - Keyboard with checked box with Privacy Policy displayed (for CTA) - .PDF format only</li>
-  <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#user-input-privacy-policy">PRIVACY POLICY - Modal Pop-up</a> - Modal window pops up with Privacy Policy displayed (for CTA) - .PDF format only</li>
-</ul>
-###TABLET UI SETTINGS:
-<uL>
-  <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#tablet-ui-settings-update-chatbot-style">UPDATE CHATBOT STYLE</a> - Update your chatbot's default UI settings </li>
-</uL>
-
 
 
 <aside type="info"> * NOTE: .MOVs do not display reliably on Pepper's tablet </aside>
@@ -316,7 +40,7 @@ display different text from what he speaks.
 
 ```
 
-<img src = "images/TABLET.TEXT.png"/>
+<img src = "images/Pepper_Data_Model-Text_Only_Response.png"/>
 
 
 ```ms_bot_framework
@@ -396,9 +120,7 @@ There are two ways to display Text Bubbles within Dialogflow:
 
 ```
 
-<img src = "images/TABLET.TEXT_BUBBLES.png"/>
-<img src = "images/TABLET.TEXT_BUBBLES.Long.png"/>
-
+<img src = "images/Pepper_Data_Model-Text_Bubbles_Response.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -487,7 +209,7 @@ need to create to receive the action
 
 ```
 
-<img src = "images/TABLET.IMAGE.Carousel.Captioned.png"/>
+<img src = "images/Pepper_Data_Model-Picture_And_Text_Response.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -609,7 +331,7 @@ section, select 'Custom Payload' and enter the following:
 }
 ```
 
-<img src = "images/TABLET.IMAGE.Carousel.Uncaptioned.png"/>
+<img src = "images/Pepper_Data_Model-Picture_And_Text_Response.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -679,13 +401,7 @@ section, select 'Custom Payload' and enter the following:
 }
 ```
 
-<img src = "images/TABLET.IMAGE.1-6-ICON.1_icon.png"/>
-<img src = "images/TABLET.IMAGE.1-6-ICON.2_icon.png"/>
-<img src = "images/TABLET.IMAGE.1-6-ICON.3_icon.png"/>
-<img src = "images/TABLET.IMAGE.1-6-ICON.4_icon.png"/>
-<img src = "images/TABLET.IMAGE.1-6-ICON.5_icon.png"/>
-<img src = "images/TABLET.IMAGE.1-6-ICON.6_icon.png"/>
-<img src = "images/TABLET.IMAGE.1-6-ICON.6_icon_example.png"/>
+<img src = "images/Pepper_Data_Model-Picture_And_Text_Response.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -728,8 +444,7 @@ simply combine the Basic Card with the Google Assistant Suggestion Chips.
 
 ```
 
-<img src = "images/TABLET.IMAGE.Basic-Card-Landscape.png"/>
-<img src = "images/TABLET.IMAGE.Basic-Card-Portrait.png"/>
+<img src = "images/Pepper_Data_Model-Image_And_Text_Response.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -828,7 +543,7 @@ B) When using JSON (^^), any QiChat commands must be double-escaped (\\).
 
 ```
 
-<img src = "images/TABLET.IMAGE.Full_Screen.png"/>
+<img src = "images/Pepper_Data_Model-Full_Screen_Picture_Response.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -853,7 +568,7 @@ To create a non-actionable sequence of (full screen) images, use the
 Payloads together, one after another, to create a story.
 ```
 
-<img src = "images/TABLET.IMAGE.Full_Screen.png"/>
+<img src = "images/Pepper_Data_Model-Full_Screen_Picture_Response.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -938,7 +653,7 @@ Note: When using JSON (^^), any QiChat commands must be double-escaped (\\).
 
 ```
 
-<img src = "images/TABLET.VIDEO.Full_Screen.png"/>
+<img src = "images/Pepper_Data_Model-Video_Response.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -1011,8 +726,7 @@ and copy and paste the following:
 
 ```
 
-<img src = "images/TABLET.WEBPAGE.png"/>
-<img src = "images/TABLET.WEBPAGE.Keyboard.png"/>
+<img src = "images/Pepper_Data_Model-Play_A_Game.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -1039,7 +753,7 @@ section, select 'Custom Payload' and enter the following:
 }
 ```
 
-<img src = "images/TABLET.USER-INPUT.Show-Keyboard.png"/>
+<img src = "images/Pepper_Data_Model-Keyboard.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -1079,8 +793,7 @@ simply combine the Basic Card with the Google Assistant Suggestion Chips.
 
 ```
 
-<img src = "images/TABLET.USER_INPUT.PRIVACY-POLICY.Checked.png"/>
-<img src = "images/TABLET.USER_INPUT.PRIVACY-POLICY.Unchecked.png"/>
+<img src = "images/Pepper_Data_Model-Full_Screen_Picture_Response.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -1118,8 +831,7 @@ simply combine the Basic Card with the Google Assistant Suggestion Chips.
 
 ```
 
-<img src = "images/TABLET.USER_INPUT.PRIVACY-POLICY.Modal.png"/>
-<img src = "images/TABLET.USER_INPUT.PRIVACY-POLICY.Yes_Or_Not.png"/>
+<img src = "images/Pepper_Data_Model-Full_Screen_Picture_Response.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -1174,7 +886,7 @@ chatbot style is restored every time chatbot session is restarted.
 
 
 
-<img src = "images/TABLET.SETTINGS.Style.png"/>
+<img src = "images/Pepper_Data_Model-Play_A_Game.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -1204,7 +916,7 @@ section, select 'Custom Payload' and enter the following:
 
 
 
-<img src = "images/TABLET.BACKGROUND.COLOR.png"/>
+<img src = "images/Pepper_Data_Model-Play_A_Game.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -1232,7 +944,7 @@ section, select 'Custom Payload' and enter the following:
 ```
 
 
-<img src = "images/TABLET.BACKGROUND.IMAGE.png"/>
+<img src = "images/Pepper_Data_Model-Play_A_Game.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -1287,7 +999,7 @@ section, select 'Custom Payload' and enter the following:
 
 ```
 
-<img src = "images/ACTIONS.RUN-APPLICATION.png"/>
+<img src = "images/Pepper_Data_Model-Keyboard.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -1333,7 +1045,7 @@ I.) UI:
 
 ```
 
-<img src = "images/ACTIONS.PLAY-A-GAME.png"/>
+<img src = "images/Pepper_Data_Model-Play_A_Game.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -1370,7 +1082,7 @@ section, select 'Custom Payload' and enter the following:
 
 ```
 
-<img src = "images/ACTIONS.TRIGGER-INTENT.png"/>
+<img src = "images/Pepper_Data_Model-Play_A_Game.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -1407,7 +1119,7 @@ By setting the 'style' payload, you can use the 'nextUtterance' feature to trigg
 
 ```
 
-<img src = "images/ACTIONS.SWITCH-LANGUAGE.png"/>
+<img src = "images/Pepper_Data_Model-Play_A_Game.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
@@ -1438,7 +1150,7 @@ section, select 'Custom Payload' and enter the following:
 
 ```
 
-<img src = "images/ACTIONS.GET-ROBOT-LOCATION.png"/>
+<img src = "images/Pepper_Data_Model-Play_A_Game.png"/>
 
 ```ms_bot_framework
 """""""""""""""""""""""""""""""""""""""""
