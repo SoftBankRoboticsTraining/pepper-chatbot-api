@@ -1527,6 +1527,21 @@ Not yet available in MS-Bot
 
 <p>{COMING SOON - AVAILABLE TODAY ONLY IN DOGFOOD} Changes the language Pepper is using. </p>
 
+<p>supportedLanguages: [
+            &lsquo;English&rsquo;,
+            &lsquo;Spanish&rsquo;,
+            &lsquo;French&rsquo;,
+            &lsquo;Japanese&rsquo;,
+            &lsquo;Chinese&rsquo;
+        ],
+        dialogFlow: {
+            English: &lsquo;en&rsquo;,
+            Spanish: &lsquo;es&rsquo;,
+            French: &lsquo;fr&rsquo;,
+            Japanese: &lsquo;ja&rsquo;,
+            Chinese: &lsquo;zh-CN&rsquo;
+        }</p>
+
 <aside type='info'>NOTE: Requires that you have a multilingual Dialogflow agent. Also note that this will change the language for the entire communication system involving Pepper.  This includes Pepper&rsquo;s language, the transcription service language, and the Dialogflow agent.  </aside>
 <div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 Dialogflow:  SWITCH THE LANGUAGE
@@ -1534,13 +1549,9 @@ Dialogflow:  SWITCH THE LANGUAGE
 I.) UI: 
 By setting the 'style' payload, you can use the 'nextUtterance' feature to trigger a new intent. For a given intent within your agent, under the 'Response' section, select 'Custom Payload' and enter the following:
 {
-  "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Setting</span><span class="w"> </span><span class="err">background</span><span class="w"> </span><span class="err">image</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">color</span><span class="w"> </span><span class="err">||</span><span class="s2">",
-  "</span><span class="err">action</span><span class="s2">": "</span><span class="err">setStyle</span><span class="s2">",
+  "</span><span class="err">action</span><span class="s2">": "</span><span class="err">setLanguage</span><span class="s2">",
   "</span><span class="err">action_parameters</span><span class="s2">": {
-    "</span><span class="err">backgroundColor</span><span class="s2">": "</span><span class="err">#ebc</span><span class="mi">6</span><span class="err">eb</span><span class="s2">",
-    "</span><span class="err">backgroundImage</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//pepperstoragedev.blob.core.windows.net/pepperdrive/</span><span class="mi">41092</span><span class="err">db</span><span class="mi">5</span><span class="err">-ee</span><span class="mi">34-424</span><span class="err">a-bdf</span><span class="mi">3-6</span><span class="err">bca</span><span class="mi">579180</span><span class="err">afbd</span><span class="mi">2</span><span class="err">dcbc</span><span class="mi">8</span><span class="err">-f</span><span class="mi">435-4615</span><span class="err">-b</span><span class="mi">63</span><span class="err">c</span><span class="mi">-4274</span><span class="err">d</span><span class="mi">66</span><span class="err">d</span><span class="mi">7993</span><span class="err">.png</span><span class="s2">",
-    "</span><span class="err">restoreDefault</span><span class="s2">": false,
-    "</span><span class="err">nextUtterance</span><span class="s2">": "</span><span class="err">Start</span><span class="s2">"
+    "</span><span class="err">language</span><span class="s2">": "</span><span class="err">Spanish</span><span class="s2">"
   }
 }
 
