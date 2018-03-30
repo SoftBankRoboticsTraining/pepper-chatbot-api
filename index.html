@@ -295,7 +295,7 @@ the bot, navigate to our GitHub repo:
 
 <p>Building a successful chatbot for deployment on Pepper requires a large amount of time, patience, and cross-disciplinary creative expertise. For this reason, SBRA offers professional services to assist in the creation of your Chatbot for Pepper. If you are interested, <a href="mailto:sales@softbankrobotics.com">send us an email</a>.</p>
 
-<h1 id="authentication-setup">→ Authentication &amp; Setup</h1>
+<h1 id="authentication-setup">Authentication &amp; Setup</h1>
 <div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 MS BOT FRAMEWORK SETUP INSTRUCTIONS:
 For MS bots, setup consists of providing us with one of your bot's 
@@ -355,108 +355,16 @@ response from the options below for your welcome intent response.
 
 <aside class="warning"> WARNING: The Pepper Chat platform is still in beta (testing/active development). There are some known usability and scalability features currently missing from the platform (such as multi-robot, fleet management functionality, localization, etc.) that will be coming in our next releases. In the meantime, the lack of some of these features has implications in the form of restrictions of fleet configurations and of account management limitations with robot owners who have many robots. Again, however, most of these limitations will be unlocked in our April and May releases.</aside>
 
-<h1 id="voice-shaping-commands">→  Voice Shaping Commands</h1>
+<h1 id="building-your-chatbot">BUILDING YOUR CHATBOT:</h1>
+
+<h1 id="types-of-responses">→ Types of Responses</h1>
+
+<p>A Chatbot is essentially a collection of responses that are designed to be triggered by vocal- or text-based, user input.  With the Host + Pepper Chat platform, you can choose from the following type of responses that include both what Pepper speaks as well as renders on his tablet:</p>
+
+<h2 id="speech-tablet-display-options">SPEECH + TABLET DISPLAY OPTIONS:</h2>
 
 <blockquote>
-<p>Pepper Voice Shaping Commands - <br><br>&ldquo;Did you know? <br>💡💡💡💡💡💡💡💡💡💡💡💡💡<br> QiChat is Pepper&rsquo;s native language.</p>
-</blockquote>
-
-<p>Below are some useful voice commands a chatbot creator can use to control Pepper&rsquo;s delivery of certain lines or words. These commands are used as a markup language throughout a chatbot to wrap a word (or a series of words) in order to change the intonation and speed of Pepper&rsquo;s voice as he speaks the word(s)! 
-<br><br></p>
-
-<h2 id="qichat-voice-commands">QiChat voice commands * | * * :</h2>
-
-<p><code>\pau=1000\ </code> = Inserts a pause (in milliseconds)<br>
-<code>\rspd=100\ </code> = Speed of voice (in percentage, 50-400)<br>
-<code>\vct=100\ </code> = Pitch of voice (in percentage, 50=200)<br>
-<code>\vol=100\ </code> = Volume of voice (in percentage, 0-100)<br>
-<code>\style=joyful\ </code> = Joyful intonation<br>
-<code>\style=neutral\ </code> = Normal intonation<br>
-<code>\style=didactic\ </code> = Didactic intonation<br>
-<code>\rst\ </code> = Resets control sequences<br></p>
-
-<aside class='info'> * When using JSON syntax (Custom Payloads, etc.), QiChat commands must be double-escaped (\).</aside>
-
-<aside class='warning'> * * WARNING: The Pepper Chat Simulator (available in web-based <a href="https://pepper-chat.azurewebsites.net">Pepper Chat CMS</a>) does not support QiChat codes at this point!</aside>
-
-<p><br></p>
-
-<h1 id="spoken-vs-displayed-text">→  Spoken vs Displayed Text</h1>
-
-<h3 id="pepper-speaks-vs-pepper-displays-on-tablet">? PEPPER SPEAKS VS ? PEPPER DISPLAYS ON TABLET:</h3>
-
-<p>To make your life simpler, we opted for the design decision that
-by default, Pepper will both speak and display whatever text you 
-write in the simple text field. That is oftentimes not desirable 
-behavior. For instance, you may want Pepper to display the opposite
-of what he is saying as part of a game or survey. By using the 
-following convention in your chatbot responses, you can make Pepper 
-say one thing and display another. Simply use double pipes (||), 
-according to the following syntax:
-<br>
-{What Pepper Says} || {What Pepper displays on the tablet}
-<br></p>
-
-<blockquote>
-<p>Ex: Hello, human || Hello <br>
-In this example, Pepper will say &lsquo;Hello, human&rsquo; while only displaying
-&lsquo;Hello&rsquo;.</p>
-
-<p>Ex: ig pay atin lay ample xay || Pig Latin example <br>
-I think you see what I did there  ^^ ;) </p>
-</blockquote>
-
-<h1 id="pepper-animations">→  Pepper Animations</h1>
-
-<p>You have access to Pepper&rsquo;s full library of animations! Take advantage of them by first becoming familiar with the various animations in the library by playing them live on your Pepper from within Choregraphe (see instructions to the right → )
-<br></p>
-
-<blockquote>
-<p>1) Install Choregraphe (free) from our website: https://developer.softbankrobotics.com/us-en/downloads/pepper
-<br>
-2) Connect to your robot from within Choregraphe using its IP address
-<br>
-3) Find (and activate if not activated) the Robot Applications panel
-<br>
-4) Find application called &quot;Animation Library&rdquo; and uncollapse it
-<br>
-5) Demo and animation by pressing its play icon in the Robot Applications panel</p>
-</blockquote>
-
-<h2 id="animation-playback-modes">Animation Playback Modes</h2>
-
-<p>When playing an animation, you have to choose one of two options for how the animation should be played:<br><br></p>
-
-<blockquote>
-<p>Ex.) Dialogflow - Pepper&rsquo;s response: <br> Hi! ^run(animations/Stand/Emotions/Positive/Happy_4) It&rsquo;s great to see you!</p>
-</blockquote>
-
-<p><br></p>
-
-<blockquote>
-<p>Ex.) Dialogflow - Pepper&rsquo;s response: <br> Hi! ^start(animations/Stand/Emotions/Positive/Excited_1) I&rsquo;m so excited to see you! ^wait(animations/Stand/Emotions/Positive/Excited_1) It&rsquo;s nice to see you in our store again!</p>
-</blockquote>
-
-<h3 id="run-mode">RUN mode:</h3>
-
-<ul>
-  <li> Stops the speech until the animation has finished </li>
-  <li>^run(&hellip;robot-animation-1)</li>
-</ul>
-
-<h3 id="start-mode">START mode:</h3>
-
-<ul>
-   <li>Start the animation and allow it to play, but allow the speech to continue while the animation is playing</li>
-   <li>^start(&hellip;robot-animation-2)</li>
-</ul>
-
-<p><br></p>
-
-<h1 id="tablet-display-options">→  Tablet Display Options</h1>
-
-<blockquote>
-<p>TABLET DISPLAY OPTIONS:</p>
+<p>SPEECH + TABLET DISPLAY OPTIONS:</p>
 </blockquote>
 
 <p>The section below shows all the various options that can be displayed on Pepper&rsquo;s tablet. Generally speaking, here are the following options:</p>
@@ -464,8 +372,8 @@ I think you see what I did there  ^^ ;) </p>
 <h3 id="text">TEXT:</h3>
 
 <ul>
-  <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#text-only">TEXT (ONLY)</a> - Non-selectable text response</li>
-  <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#text-bubbles">TEXT BUBBLES</a> - Selectable, Scrollable (1-4 max on tablet at a time) - variable size</li>
+  <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#text-only">TEXT (ONLY)</a> - Non-selectable text response; Pepper says the text as well as rendering the text on its tablet</li>
+  <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#text-bubbles">TEXT BUBBLES</a> - Selectable, Scrollable Text Bubbles(1-4 max on tablet at a time) - size of bubble varies according to the length of the response</li>
 </ul>
 
 <h3 id="images">IMAGES:</h3>
@@ -1370,6 +1278,124 @@ MS-Bot: SET BACKGROUND IMAGE
 
 Not yet available in MS-Bot
 </span></code></pre></div>
+<h1 id="voice-shaping-commands">→  Voice Shaping Commands</h1>
+
+<blockquote>
+<p>Pepper Voice Shaping Commands - <br><br>&ldquo;Did you know? <br>💡💡💡💡💡💡💡💡💡💡💡💡💡<br> QiChat is Pepper&rsquo;s native language.</p>
+</blockquote>
+
+<p>Below are some useful voice commands a chatbot creator can use to control Pepper&rsquo;s delivery of certain lines or words. These commands are used as a markup language throughout a chatbot to wrap a word (or a series of words) in order to change the intonation and speed of Pepper&rsquo;s voice as he speaks the word(s)! </p>
+
+<p><br><br></p>
+
+<h2 id="qichat-voice-commands">QiChat voice commands * | * * :</h2>
+
+<p><code>\pau=1000\ </code> = Inserts a pause (in milliseconds)<br>
+<code>\rspd=100\ </code> = Speed of voice (in percentage, 50-400)<br>
+<code>\vct=100\ </code> = Pitch of voice (in percentage, 50=200)<br>
+<code>\vol=100\ </code> = Volume of voice (in percentage, 0-100)<br>
+<code>\style=joyful\ </code> = Joyful intonation<br>
+<code>\style=neutral\ </code> = Normal intonation<br>
+<code>\style=didactic\ </code> = Didactic intonation<br>
+<code>\rst\ </code> = Resets control sequences<br></p>
+
+<blockquote>
+<p>Ex. Usage: To imitate an emotional response <br>
+User: Pepper you&rsquo;re fired! <br>
+Pepper: \style=joyful\ No! \pau=100\ Please! \pau=500\ I need this job. \style=neutral\  &hellip; </p>
+
+<p>Ex. Usages: (1) To pause for dramatic effect; (2) to emphasize a word or syllable (puns)<br>
+Want to hear a joke about a piece of paper? \pau=800\ Never <br>
+mind \pau=400\ it&rsquo;s \pau=300\ \rspd=50\ tearable. \rspd=100\</p>
+</blockquote>
+
+<aside class='info'> * When using JSON syntax (Custom Payloads, etc.), QiChat commands must be double-escaped (\).</aside>
+
+<aside class='warning'> * * WARNING: The Pepper Chat Simulator (available in web-based <a href="https://pepper-chat.azurewebsites.net">Pepper Chat CMS</a>) does not support QiChat codes at this point!</aside>
+
+<p><br></p>
+
+<h1 id="spoken-vs-displayed-text">→  Spoken vs Displayed Text</h1>
+
+<h3 id="what-pepper-speaks-vs-what-pepper-displays-on-tablet">WHAT PEPPER SPEAKS vs. WHAT PEPPER DISPLAYS ON TABLET:</h3>
+
+<p>By default, Pepper both speaks and displays on his tablet the text 
+written in the response field. That is oftentimes not desirable 
+behavior. For instance, you may want Pepper to display the opposite
+of what he is saying as part of a game or survey. By using the 
+following convention in your chatbot responses, you can make Pepper 
+say one thing and display another. Simply use double pipes (||), 
+according to the following syntax:</p>
+
+<h3 id="pepper-what-pepper-says-what-pepper-displays-on-the-tablet">Pepper: {What Pepper Says} || {What Pepper displays on the tablet}</h3>
+
+<blockquote>
+<p>Ex: Hello, human! || 😃 <br>
+In this example, Pepper will say &lsquo;Hello, human!&rsquo; while displaying
+an emoji smiley face: 😃.</p>
+
+<p>Ex: ig pay atin lay ample xay || Pig Latin example <br>
+I think you see what I did there  ^^ ;) </p>
+</blockquote>
+
+<p><br>
+Examples:
+<br>
+User: Hello, robot! <br>
+Pepper: {What Pepper Says} || {What Pepper displays on the tablet} <br>
+→ View how to do it → <br>
+<br>
+User: Can you speak Pig Latin, Pepper? <br>
+Pepper: {What Pepper Says} || {What Pepper displays on the tablet} <br>
+→ View how to do it → <br></p>
+
+<h1 id="pepper-animations">→  Pepper Animations</h1>
+
+<p>You have access to Pepper&rsquo;s full library of animations! Take advantage of them by first becoming familiar with the various animations in the library by playing them live on your Pepper from within Choregraphe (see instructions to the right → )
+<br></p>
+
+<blockquote>
+<p>1) Install Choregraphe (free) from our website: https://developer.softbankrobotics.com/us-en/downloads/pepper
+<br>
+2) Connect to your robot from within Choregraphe using its IP address
+<br>
+3) Find (and activate if not activated) the Robot Applications panel
+<br>
+4) Find application called &quot;Animation Library&rdquo; and uncollapse it
+<br>
+5) Demo and animation by pressing its play icon in the Robot Applications panel</p>
+</blockquote>
+
+<h2 id="animation-playback-modes">Animation Playback Modes</h2>
+
+<p>When playing an animation, you have to choose one of two options for how the animation should be played:<br><br></p>
+
+<blockquote>
+<p>Ex.) Dialogflow - Pepper&rsquo;s response: <br> Hi! ^run(animations/Stand/Emotions/Positive/Happy_4) It&rsquo;s great to see you!</p>
+</blockquote>
+
+<p><br></p>
+
+<blockquote>
+<p>Ex.) Dialogflow - Pepper&rsquo;s response: <br> Hi! ^start(animations/Stand/Emotions/Positive/Excited_1) I&rsquo;m so excited to see you! ^wait(animations/Stand/Emotions/Positive/Excited_1) It&rsquo;s nice to see you in our store again!</p>
+</blockquote>
+
+<h3 id="run-mode">RUN mode:</h3>
+
+<ul>
+  <li> Stops the speech until the animation has finished </li>
+  <li>^run(&hellip;robot-animation-1)</li>
+</ul>
+
+<h3 id="start-mode">START mode:</h3>
+
+<ul>
+   <li>Start the animation and allow it to play, but allow the speech to continue while the animation is playing</li>
+   <li>^start(&hellip;robot-animation-2)</li>
+</ul>
+
+<p><br></p>
+
 <h1 id="actions">→ Actions</h1>
 
 <p>The section below shows all the various actions that can be performed within a Chatbot context:</p>
@@ -1466,7 +1492,8 @@ Not yet available in MS-Bot
 <p>ACTIONS - TRIGGER AN INTENT</p>
 </blockquote>
 
-<p>Provide an utterance to an intent you want to trigger</p>
+<p>HACK: Using the &lsquo;Update Chatbot Style&rsquo; action payload, you can actually trigger another intent. 
+Provide an utterance to an intent you want to trigger</p>
 <div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 Dialogflow:  TRIGGER AN INTENT
 """"""""""""""""""""""""""""""""""""""""
@@ -1498,7 +1525,7 @@ Not yet available in MS-Bot
 <p>ACTIONS - SWITCH LANGUAGE</p>
 </blockquote>
 
-<p>Changes the language Pepper is using. </p>
+<p>{COMING SOON - AVAILABLE TODAY ONLY IN DOGFOOD} Changes the language Pepper is using. </p>
 
 <aside type='info'>NOTE: Requires that you have a multilingual Dialogflow agent. Also note that this will change the language for the entire communication system involving Pepper.  This includes Pepper&rsquo;s language, the transcription service language, and the Dialogflow agent.  </aside>
 <div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
@@ -1531,7 +1558,27 @@ Not yet available in MS-Bot
 <p>ACTIONS - GET ROBOT LOCATION</p>
 </blockquote>
 
-<p>Returns geo-location of robot</p>
+<p>{COMING SOON - AVAILABLE TODAY ONLY IN DOGFOOD} Returns geo-location of robot. </p>
+
+<aside type="info"> Mozilla API and/or Google API keys need to be added into the Robot Profile:<br>
+<table color="#c6dde9">
+  <tr>
+    <td>Domain</td>
+    <td>Key</td>
+    <td>Value</td>
+  </tr>
+  <tr>
+    <td>com.aldebaran.geoloc</td>
+    <td>google_api_key</td>
+    <td>{insert key value here}</td>
+  </tr>
+  <tr>
+    <td>com.aldebaran.geoloc</td>
+    <td>mozilla_api_key</td>
+    <td>{insert key value here}</td>
+  </tr>
+</table>
+</aside>
 <div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 Dialogflow:  GET ROBOT LOCATION
 """"""""""""""""""""""""""""""""""""""""
