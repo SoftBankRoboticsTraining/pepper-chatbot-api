@@ -913,6 +913,13 @@ WHERE
 
 > WEBPAGE - SHOW WEBPAGE:
 
+You may now display webpages on Pepper through your chatbot! The webpage allows scrolling and a convenient exit icon in the upper righthand corner. 
+
+
+<aside class="success">Feature Details: <br>• To prevent undesired end user navigation to other websites, no URL bar is displayed. <br>• Hyperlinks can be followed, so long as they do not create a new tab. The href target attribute "self" needs to be specified for the hyperlink; this opens the linked document in the same window as it was clicked (this is default). </aside> 
+
+<aside class="notice">Limitations: <br>• One important limitation to this feature is that the website must allow embedding within an iFrame. If the website does not allow embedding, it will produce an "X-Frame Origin Error" and will display a blank screen on Pepper. <br> • Additionally, all pop-up windows, including modal windows, will be blocked from display. </aside>
+
 
 
 ```dialogflow
