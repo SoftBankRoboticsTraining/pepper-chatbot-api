@@ -1415,6 +1415,21 @@ Not yet available in MS-Bot
 
 {COMING SOON - AVAILABLE TODAY ONLY IN DOGFOOD} Changes the language Pepper is using. 
 
+supportedLanguages: [
+            'English',
+            'Spanish',
+            'French',
+            'Japanese',
+            'Chinese'
+        ],
+        dialogFlow: {
+            English: 'en',
+            Spanish: 'es',
+            French: 'fr',
+            Japanese: 'ja',
+            Chinese: 'zh-CN'
+        }
+
 <aside type='info'>NOTE: Requires that you have a multilingual Dialogflow agent. Also note that this will change the language for the entire communication system involving Pepper.  This includes Pepper's language, the transcription service language, and the Dialogflow agent.  </aside>
 
 ```dialogflow
@@ -1424,13 +1439,9 @@ Dialogflow:  SWITCH THE LANGUAGE
 I.) UI: 
 By setting the 'style' payload, you can use the 'nextUtterance' feature to trigger a new intent. For a given intent within your agent, under the 'Response' section, select 'Custom Payload' and enter the following:
 {
-  "speak": "Setting background image and color ||",
-  "action": "setStyle",
+  "action": "setLanguage",
   "action_parameters": {
-    "backgroundColor": "#ebc6eb",
-    "backgroundImage": "https://pepperstoragedev.blob.core.windows.net/pepperdrive/41092db5-ee34-424a-bdf3-6bca579180afbd2dcbc8-f435-4615-b63c-4274d66d7993.png",
-    "restoreDefault": false,
-    "nextUtterance": "Start"
+    "language": "Spanish"
   }
 }
 
