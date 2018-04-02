@@ -1174,40 +1174,6 @@ Not yet available in MS-Bot
 
 
 
-# →  Voice Shaping Commands
-
-> Pepper Voice Shaping Commands - <br><br>"Did you know? <br>💡💡💡💡💡💡💡💡💡💡💡💡💡<br> QiChat is Pepper's native language.
-
-Below are some useful voice commands a chatbot creator can use to control Pepper's delivery of certain lines or words. These commands are used as a markup language throughout a chatbot to wrap a word (or a series of words) in order to change the intonation and speed of Pepper's voice as he speaks the word(s)! 
-
-<br><br>
-##QiChat voice commands * | * * :
-<code>\pau=1000\ </code> = Inserts a pause (in milliseconds)<br>
-<code>\rspd=100\ </code> = Speed of voice (in percentage, 50-400)<br>
-<code>\vct=100\ </code> = Pitch of voice (in percentage, 50=200)<br>
-<code>\vol=100\ </code> = Volume of voice (in percentage, 0-100)<br>
-<code>\style=joyful\ </code> = Joyful intonation<br>
-<code>\style=neutral\ </code> = Normal intonation<br>
-<code>\style=didactic\ </code> = Didactic intonation<br>
-<code>\rst\ </code> = Resets control sequences<br>
-
-> 
-Ex. Usage: To imitate an emotional response <br>
-User: Pepper you're fired! <br>
-Pepper: \style=joyful\ No! \pau=100\ Please! \pau=500\ I need this job. \style=neutral\  ... 
-
->
-Ex. Usages: (1) To pause for dramatic effect; (2) to emphasize a word or syllable (puns)<br>
-Want to hear a joke about a piece of paper? \pau=800\ Never <br>
-mind \pau=400\ it's \pau=300\ \rspd=50\ tearable. \rspd=100\
-
-<aside class='info'> * When using JSON syntax (Custom Payloads, etc.), QiChat commands must be double-escaped (\\).</aside>
-
-<aside class='warning'> * * WARNING: The Pepper Chat Simulator (available in web-based <a href="https://pepper-chat.azurewebsites.net">Pepper Chat CMS</a>) does not support QiChat codes at this point!</aside>
-<br>
-
-
-
 # →  Spoken vs Displayed Text
 
 ### WHAT PEPPER SPEAKS vs. WHAT PEPPER DISPLAYS ON TABLET:
@@ -1238,6 +1204,56 @@ Pepper: {What Pepper Says} || {What Pepper displays on the tablet} <br>
 User: Can you speak Pig Latin, Pepper? <br>
 Pepper: {What Pepper Says} || {What Pepper displays on the tablet} <br>
 → View how to do it → <br>
+
+
+
+
+
+
+
+
+
+
+
+# →  Voice Shaping Commands
+
+> Pepper Voice Shaping Commands - <br><br>"Did you know? <br>💡💡💡💡💡💡💡💡💡💡💡💡💡<br> QiChat is Pepper's native language.
+
+Below are some useful voice commands a chatbot creator can use to control Pepper's delivery of certain lines or words. These commands are used as a markup language throughout a chatbot to wrap a word (or a series of words) in order to change the intonation and speed of Pepper's voice as he speaks the word(s)! In order to use these commands, you must end the sentence with the double pipes (||) and provide a clean, non QiChat version of the text.
+
+<br><br>
+##QiChat voice commands * | * * :
+<code>\pau=1000\ </code> = Inserts a pause (in milliseconds)<br>
+<code>\rspd=100\ </code> = Speed of voice (in percentage, 50-400)<br>
+<code>\vct=100\ </code> = Pitch of voice (in percentage, 50=200)<br>
+<code>\vol=100\ </code> = Volume of voice (in percentage, 0-100)<br>
+<code>\style=joyful\ </code> = Joyful intonation<br>
+<code>\style=neutral\ </code> = Normal intonation<br>
+<code>\style=didactic\ </code> = Didactic intonation<br>
+<code>\rst\ </code> = Resets control sequences<br>
+
+> 
+Ex. Usage: To imitate an emotional response <br>
+User: Pepper you're fired! <br>
+Pepper: \style=joyful\ No! \pau=100\ Please! \pau=500\ I need this job. \style=neutral\ ||  No!  Please! I need this job. ... 
+
+>
+Ex. Usages: (1) To pause for dramatic effect; (2) to emphasize a word or syllable (puns)<br>
+Pepper: Want to hear a joke about a piece of paper? \pau=800\ Never <br>
+mind \pau=400\ it's \pau=300\ \rspd=50\ tearable. \rspd=100\ || Want to hear a joke about a piece of paper? Nevermind. It's terrible.
+
+<aside class='info'> * When using JSON syntax (Custom Payloads, etc.), QiChat commands must be double-escaped (\\).</aside>
+
+<aside class='warning'> * * WARNING: The Pepper Chat Simulator (available in web-based <a href="https://pepper-chat.azurewebsites.net">Pepper Chat CMS</a>) does not support QiChat codes at this point!</aside>
+<br>
+
+
+
+
+
+
+
+
 
 
 
@@ -1276,6 +1292,26 @@ When playing an animation, you have to choose one of two options for how the ani
 </ul>
 
 <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # → Actions
