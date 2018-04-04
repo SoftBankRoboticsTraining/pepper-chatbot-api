@@ -136,7 +136,7 @@ I.) CHATBOT INSTRUCTIONS:
 
 II.) PEPPER CHAT INSTRUCTIONS: 
 <br>
-1) Using your existing Host credentials, log in to the <a href="https://pepperchat.azurewebsites.net">Pepper Chat CMS</a>
+1) Using your existing Host credentials, log in to the <a href="https://pepper-chat.azurewebsites.net">Pepper Chat CMS</a>
 <br>
 2) Add a new chatbot to your account from within the CHATBOTS tab, using the 'Add A Chatbot' button; 
 <br>
