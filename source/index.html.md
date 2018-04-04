@@ -127,7 +127,7 @@ response from the options below for your welcome intent response.
 
 ChatBots use RESTful APIs with APP IDs, PASSWORDs, and/or ACCESS TOKENS to authenticate in order to send and retrieve text & multimedia session data. 
 
-With SoftBank Robotics America's new Pepper ChatBot API and the Pepper Chat platform built on top of it, connecting your <a href="www.dialogflow.com">Dialogflow</a> or <a href="https://dev.botframework.com/">Microsoft Bot Framework</a> chatbot is as easy as it possibly can be. Simply log in to <a href="https://pepperchat.azurewebsites.net">Pepper Chat CMS</a> (Content Management System) and provide the platform with a friendly name for your bot and your bot's client access token.
+With SoftBank Robotics America's new Pepper ChatBot API and the Pepper Chat platform built on top of it, connecting your <a href="www.dialogflow.com">Dialogflow</a> or <a href="https://dev.botframework.com/">Microsoft Bot Framework</a> chatbot is as easy as it possibly can be. Simply log in to <a href="https://pepper-chat.azurewebsites.net">Pepper Chat CMS</a> (Content Management System) and provide the platform with a friendly name for your bot and your bot's client access token.
 
 I.) CHATBOT INSTRUCTIONS:
 <br>
