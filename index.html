@@ -246,7 +246,10 @@ https://github.com/SoftBankRoboticsTraining/pepper-dialogflow-chatbot-faq
 (5) Select the 'Export and Import' tab;
 (5) Upload the .zip file from Step 1.
 
-For a quick tutorial: www.youtube.com/watch?v=B8PrcwENCJg
+For a quick tutorial: 
+  → www.youtube.com/watch?v=B8PrcwENCJg
+For the full eLearning course: 
+  → https://www.udemy.com/learn-conversational-ux-on-pepper-the-robot/
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""</span><span class="w">
 </span></code></pre></div>
@@ -290,10 +293,12 @@ the bot, navigate to our GitHub repo:
 <h1 id="getting-started">Getting Started</h1>
 
 <blockquote>
-<p>SBRA offers professional services to assist in the creation of your Chatbot. If you are interested, please email sales@softbankrobotics.com. Otherwise you can use the remainder of this documentation to create your own Chatbot for Pepper.</p>
+<p>SBRA offers professional services to assist in the creation of your Chatbot. If you are interested, please email sales_us@softbankrobotics.com. Otherwise you can use the remainder of this documentation to create your own Chatbot for Pepper.</p>
 </blockquote>
 
-<p>Building a successful chatbot for deployment on Pepper requires a large amount of time, patience, and cross-disciplinary creative expertise. For this reason, SBRA offers professional services to assist in the creation of your Chatbot for Pepper. If you are interested, <a href="mailto:sales@softbankrobotics.com">send us an email</a>.</p>
+<p>Building a successful chatbot for deployment on Pepper requires a large amount of time, patience, and cross-disciplinary creative expertise. For this reason, SBRA offers professional services to assist in the creation of your Chatbot for Pepper. If you are interested, <a href="mailto:sales_us@softbankrobotics.com">send us an email</a>. </p>
+
+<p>If you would like to learn and build on your own, you can take our free, <a href="https://www.udemy.com/learn-conversational-ux-on-pepper-the-robot/">2.5-hour, eLearning course on Udemy course</a> and use this documentation to get started.</p>
 
 <h1 id="authentication-setup">Authentication &amp; Setup</h1>
 <div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -311,24 +316,37 @@ Step 6: Give the copied value to the SBR Sales Engineer.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""</span><span class="w">
 </span></code></pre></div><div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 DIALOGFLOW SETUP INSTRUCTIONS:
-For Dialogflow bots, setup consists of providing us with your Client 
-Access Token. Provide the token to the SBR Sales Engineer assisting you 
-with setup. You can find your Client Access Token by following these steps:
+For Dialogflow bots, setup varies based on which agent version your bot is. 
+For V1 agents, setup consists of providing us with your Client Access Token. 
+You can find your Client Access Token by following the below steps.
 
+V1 Instructions: 
 Step 1: Open your bot in Dialogflow (https://console.dialogflow.com/)
 Step 2: Click on the gear icon to the right of your selected agent.
 Step 3: Under the General tab (default), copy the Client Access Token value.
-Step 4: [Input token into Pepper Chat --&gt; See central panel for instructions]
+Step 3-b (optional): If you want to provide the Pepper Chat CMS the ability 
+to edit your agent, you can also copy the Developer Access Token value.
+Step 4: [Input token into Pepper Chat → See central panel for instructions]
+
+For V2 agents, setup consists of providing us with your keypath file.
+
+V2 Instructions:
+Follow the instructions here to download your keypath file:
+    → https://dialogflow.com/docs/reference/v2-auth-setup
+
+
+↓ !IMPORTANT! ↓ 
 
 AGENT SETUP INSTRUCTIONS:
-To setup a welcome intent on Pepper in your agent, set up a new intent 
-with the text 'init1234' as the only utterance. You may use any type of 
-response from the options below for your welcome intent response. 
+To set up a welcome intent on Pepper in your agent, reconfigure the default 
+Welcome Intent or else set up a new intent with the text 'init1234' as the 
+only Training Phrase. You may use any type of response from the options 
+below for your welcome intent's response. 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""</span><span class="w">
 </span></code></pre></div>
-<p>ChatBots use RESTful APIs with APP IDs, PASSWORDs, and/or ACCESS TOKENS to authenticate in order to send and retrieve text &amp; multimedia session data. </p>
+<p>ChatBots use RESTful APIs with some form of credentials (typically KEY FILES, ACCESS TOKENS, APP IDs, PASSWORDS, etc.) to authenticate in order to send and retrieve text &amp; multimedia session data. </p>
 
-<p>With SoftBank Robotics America&rsquo;s new Pepper ChatBot API and the Pepper Chat platform built on top of it, connecting your <a href="www.dialogflow.com">Dialogflow</a> or <a href="https://dev.botframework.com/">Microsoft Bot Framework</a> chatbot is as easy as it possibly can be. Simply log in to <a href="https://pepper-chat.azurewebsites.net">Pepper Chat CMS</a> (Content Management System) and provide the platform with a friendly name for your bot and your bot&rsquo;s client access token.</p>
+<p>With SoftBank Robotics America&rsquo;s new Pepper ChatBot API and the Pepper Chat platform built on top of it, connecting your <a href="www.dialogflow.com">Dialogflow</a> or <a href="https://dev.botframework.com/">Microsoft Bot Framework</a> chatbot is as easy as it possibly can be. Simply log in to <a href="https://pepper-chat.azurewebsites.net">Pepper Chat CMS</a> (Content Management System) and provide the platform with a friendly name for your bot and either your bot&rsquo;s client access token or else a key file.</p>
 
 <p>I.) CHATBOT INSTRUCTIONS:
 <br>
@@ -339,27 +357,37 @@ response from the options below for your welcome intent response.
 <br>
 1) Using your existing Host credentials, log in to the <a href="https://pepper-chat.azurewebsites.net">Pepper Chat CMS</a>
 <br>
-2) Add a new chatbot to your account from within the CHATBOTS tab, using the &lsquo;Add A Chatbot&rsquo; button; 
+2) Add a new chatbot to your account from within the CHATBOTS tab, using the &lsquo;+ Add Chatbot&rsquo; button; 
 <br>
-3) Complete the setup wizard, supplying the token you obtained from part I.</p>
+3) Complete the setup wizard, supplying either the token or the keypath file you obtained from part I.</p>
 
-<p><img src = "images/PEPPER_CHAT.Add_A_Robot.png"/></p>
+<aside class="info">V1 requires a Client Token to authenticate: </aside>
+
+<p><img src = "images/PEPPER_CHAT.V1.Authentication.Add_A_Robot.png"/></p>
+
+<aside class="info">V2 requires a KeyPath file to authenticate:</aside>
+
+<p><img src = "images/PEPPER_CHAT.V2.Authentication.Add_A_Robot.png"/></p>
 
 <aside class="info">NOTE: In order to have your Pepper launch directly into your chatbot, you will need to disable all other features in Host except for the FAQ. This will give launch priority directly to your chatbot! </aside>
 
 <p><br></p>
 
-<aside class="warning"> WARNING: It should be noted that activating your own custom chatbot will REPLACE the standard FAQ feature from Host.</aside>
+<aside class="warning"> WARNING: The Pepper Chat platform is still in beta (testing/active development). There may be occasional bugs that you discover in the platform that will require patience until we can resolve them. Please <a href="mailto:ccnamlam@softbankrobotics.com">let us know</a> if you discover a bug.</aside>
 
-<aside class="warning"> WARNING: Activating a chatbot from within Pepper Chat for a given Host account will activate the chatbot for ALL ROBOTS ON THE ACCOUNT! </aside>
+<h1 id="build-your-chatbot">BUILD YOUR CHATBOT:</h1>
 
-<aside class="warning"> WARNING: The Pepper Chat platform is still in beta (testing/active development). There are some known usability and scalability features currently missing from the platform (such as multi-robot, fleet management functionality, localization, etc.) that will be coming in our next releases. In the meantime, the lack of some of these features has implications in the form of restrictions of fleet configurations and of account management limitations with robot owners who have many robots. Again, however, most of these limitations will be unlocked in our April and May releases.</aside>
+<p>Now it&rsquo;s time to build your Pepper chatbot! Remember these guidelines in order to create a positive, memorable experience with Pepper for your customers.</p>
 
-<h1 id="building-your-chatbot">BUILDING YOUR CHATBOT:</h1>
+<p>1.) Use tablet menus throughout the conversation - it&rsquo;s easy for a user to get lost in a conversational UX experience <br>
+2.) Let Pepper lead the conversation - Pepper always asks the follow-ups <br>
+3.) Don&rsquo;t let a user dead-end - it&rsquo;s always better to have your ending conversational branches loop back around to an entry point into another conversational branch <br>
+4.) Make the conversation truly interactive - Pepper can learn bits of information from the user and use them in the conversation<br>
+5.) Make it fun and light - give Pepper a sense of humor and keep the conversation moving</p>
 
 <h1 id="types-of-responses">→ Types of Responses</h1>
 
-<p>A Chatbot is essentially a collection of responses that are designed to be triggered by vocal- or text-based, user input.  With the Host + Pepper Chat platform, you can choose from the following type of responses that include both what Pepper speaks as well as renders on his tablet:</p>
+<p>A Chatbot is essentially a collection of responses that are designed to be triggered by vocal- or text-based, user input.  With the Host + Pepper Chat platform, you can choose from the following type of responses that include both what Pepper speaks as well as renders on his tablet.</p>
 
 <h2 id="speech-tablet-display-options">SPEECH + TABLET DISPLAY OPTIONS:</h2>
 
@@ -367,7 +395,7 @@ response from the options below for your welcome intent response.
 <p>SPEECH + TABLET DISPLAY OPTIONS:</p>
 </blockquote>
 
-<p>The section below shows all the various options that can be displayed on Pepper&rsquo;s tablet. Generally speaking, here are the following options:</p>
+<p>The section below shows all the various options that can be displayed on Pepper&rsquo;s tablet:</p>
 
 <h3 id="text">TEXT:</h3>
 
@@ -490,15 +518,72 @@ Dialogflow:
 """"""""""""""""""""""""""""""""""""""""
 I.) UI: 
 There are two ways to display Text Bubbles within Dialogflow:
-  A.) Google Assistant &gt; Suggestion Cards:
-    Under the 'Response' section:
-      1) Click the + icon next to 'Default'
-      2) Select 'Google Assistant'
-      3) Under the 'Google Assistant' tab, select 'Add Message 
-      Content'
-      4) Select 'Suggestion Card'
-      5) Input suggestions, which become Text Bubbles
-  B.) Google Assistant &gt; List:
+A.) For a given intent within your agent, under the 'Response'
+section, select 'Custom Payload' and enter the following:
+
+Without style/formatting:
+{
+  "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Tap</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">Say</span><span class="w"> </span><span class="err">one</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">following</span><span class="s2">",
+  "</span><span class="err">randomBubbles</span><span class="s2">": [
+    {
+      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">1</span><span class="s2">",
+      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">1</span><span class="s2">",
+      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Button</span><span class="mi">1</span><span class="s2">"
+    },
+    {
+      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">2</span><span class="s2">",
+      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">2</span><span class="s2">",
+      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Button</span><span class="mi">2</span><span class="s2">"
+    },
+    {
+      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">3</span><span class="s2">",
+      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">3</span><span class="s2">",
+      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Button</span><span class="mi">3</span><span class="s2">"
+    },
+    {
+      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">4</span><span class="s2">",
+      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">4</span><span class="s2">",
+      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Button</span><span class="mi">4</span><span class="s2">"
+    }]
+  }
+
+With style/formatting:
+{
+  "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Tap</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">Say</span><span class="w"> </span><span class="err">one</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">following</span><span class="s2">",
+  "</span><span class="err">randomize</span><span class="s2">": false,
+  "</span><span class="err">backgroundColor</span><span class="s2">": "</span><span class="err">#ccccff</span><span class="s2">",
+  "</span><span class="err">backgroundImage</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//pepperstoragedev.blob.core.windows.net/pepperdrive/</span><span class="mi">41092</span><span class="err">db</span><span class="mi">5</span><span class="err">-ee</span><span class="mi">34-424</span><span class="err">a-bdf</span><span class="mi">3-6</span><span class="err">bca</span><span class="mi">579180</span><span class="err">af</span><span class="mi">57646</span><span class="err">fd</span><span class="mi">2-3e12-48</span><span class="err">db-bc</span><span class="mi">23-36e597</span><span class="err">b</span><span class="mi">697</span><span class="err">ef.png</span><span class="s2">",
+  "</span><span class="err">textColor</span><span class="s2">": "</span><span class="err">red</span><span class="s2">",
+  "</span><span class="err">font</span><span class="s2">": "</span><span class="err">Courier</span><span class="w"> </span><span class="err">New</span><span class="s2">",
+  "</span><span class="err">bubbleColor</span><span class="s2">": "</span><span class="err">green</span><span class="s2">",
+  "</span><span class="err">bubbleTextColor</span><span class="s2">": "</span><span class="err">yellow</span><span class="s2">",
+  "</span><span class="err">bubbleFont</span><span class="s2">": "</span><span class="err">Fantasy</span><span class="s2">",
+  "</span><span class="err">randomBubbles</span><span class="s2">": [
+    {
+      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">1</span><span class="s2">",
+      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">1</span><span class="s2">",
+      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Button</span><span class="mi">1</span><span class="s2">"
+    },
+    {
+      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">2</span><span class="s2">",
+      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">2</span><span class="s2">",
+      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Button</span><span class="mi">2</span><span class="s2">"
+    },
+    {
+      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">3</span><span class="s2">",
+      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">3</span><span class="s2">",
+      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Button</span><span class="mi">3</span><span class="s2">"
+    },
+    {
+      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">4</span><span class="s2">",
+      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">4</span><span class="s2">",
+      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Button</span><span class="mi">4</span><span class="s2">"
+    }]
+  }
+
+Note: each style parameter (font, textColor, etc.) ^^ is optional!
+
+B.) Google Assistant &gt; List:
     Under the 'Response' section:
       1) Click the + icon next to 'Default'
       2) Select 'Google Assistant'
@@ -1070,7 +1155,7 @@ WHERE
 <p>WEBPAGE - SHOW WEBPAGE:</p>
 </blockquote>
 
-<p>You may now display webpages on Pepper through your chatbot! The webpage allows scrolling and a convenient exit icon in the upper righthand corner. </p>
+<p>You may now display webpages on Pepper through your chatbot! The webpage allows scrolling and a convenient exit icon in the upper righthand corner. It is recommended to build custom HTML pages specifically for Pepper and to host them via <a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#pepper-drive">Pepper Drive</a>.</p>
 
 <aside class="success">Feature Details: <br>• To prevent undesired end user navigation to other websites, no URL bar is displayed. <br>• Hyperlinks can be followed, so long as they do not create a new tab. The href target attribute &ldquo;self&rdquo; needs to be specified for the hyperlink; this opens the linked document in the same window as it was clicked (this is default). </aside> 
 
@@ -1193,19 +1278,18 @@ MS-Bot: PRIVACY POLICY
 """"""""""""""""""""""""""""""""""""""""
 Not yet available in MS-Bot
 </span></code></pre></div>
-<h2 id="tablet-ui-settings">TABLET UI SETTINGS</h2>
+<h1 id="styling">→ Styling</h1>
+
+<h3 id="tablet-ui-settings">TABLET UI SETTINGS</h3>
 
 <blockquote>
 <p>TABLET UI SETTINGS - UPDATE CHATBOT STYLE</p>
 </blockquote>
 
 <p>Configures style and settings for the chatbot&rsquo;s UI.</p>
-
-<h3 id="update-chatbot-style">UPDATE CHATBOT STYLE</h3>
 <div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 Dialogflow:  UPDATE CHATBOT STYLE
 """"""""""""""""""""""""""""""""""""""""
-I.) UI: 
 For a given intent within your agent, under the 'Response'
 section, select 'Custom Payload' and enter the following:
 {
@@ -1220,29 +1304,25 @@ section, select 'Custom Payload' and enter the following:
 }
 
 Notes:
+- "</span><span class="err">speak</span><span class="s2">" property is optional. 
+- "</span><span class="err">action</span><span class="s2">" property is required to set the style (value = "</span><span class="err">setStyle</span><span class="s2">")
 - Set "</span><span class="err">restoreDefault</span><span class="s2">" to true to restore the original (default)
  chatbot screen style. "</span><span class="err">backgroundColor</span><span class="s2">" and "</span><span class="err">backgroundImage</span><span class="s2">" 
- parameters can be omitted in this case (ignored if present).
-"</span><span class="err">speak</span><span class="s2">" parameter is optional. 
+ properties can be omitted in this case (ignored if present).
 - Use it if you want Pepper to say something when chatbot style 
 is updated.
-- "</span><span class="err">nextUtterance</span><span class="s2">" parameter is also optional. You can trigger 
+- "</span><span class="err">nextUtterance</span><span class="s2">" property is also optional. You can trigger 
 next chatbot intent automatically after changing the style by 
-assigning one of intent phrases to this parameter.
-- Use "</span><span class="err">default</span><span class="s2">" as "</span><span class="err">backgroundColor</span><span class="s2">"or "</span><span class="err">backgroundImage</span><span class="s2">" value 
-to restore the original state of corresponding parameter
+assigning one of intent phrases to this property.
+- Use "</span><span class="err">default</span><span class="s2">" as "</span><span class="err">backgroundColor</span><span class="s2">" or "</span><span class="err">backgroundImage</span><span class="s2">" value 
+to restore the original state of corresponding property
 - Use "</span><span class="err">none</span><span class="s2">" as "</span><span class="err">backgroundImage</span><span class="s2">" to remove the image
-- Style changes persist till the end of chatbot session. Original 
+- Style changes persist until the end of chatbot session. Original 
 chatbot style is restored every time chatbot session is restarted.
 
 </span></code></pre></div>
 <p><img src = "images/TABLET.SETTINGS.Style.png"/></p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: UPDATE CHATBOT STYLE
-""""""""""""""""""""""""""""""""""""""""
 
-Not yet available in MS-Bot
-</span></code></pre></div>
 <h3 id="background-set-color">BACKGROUND - SET COLOR</h3>
 <div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 Dialogflow:  SET BACKGROUND COLOR
@@ -1284,6 +1364,40 @@ MS-Bot: SET BACKGROUND IMAGE
 
 Not yet available in MS-Bot
 </span></code></pre></div>
+<h3 id="other-ui-settings">OTHER UI SETTINGS</h3>
+
+<blockquote>
+<p>CUSTOM PAYLOADS:
+You can generally insert any of the following properties (here listed with sample values) into any response that takes a custom payload (although some may not render successfully with some custom payloads): <br>
+  &ldquo;backgroundColor&rdquo;: &ldquo;#ccccff&rdquo;,<br>
+  &ldquo;backgroundImage&rdquo;: &ldquo;https://pepperstoragedev.blob.core.windows.net/pepperdrive/41092db5-ee34-424a-bdf3-6bca579180af57646fd2-3e12-48db-bc23-36e597b697ef.png&rdquo;,<br>
+  &ldquo;textColor&rdquo;: &ldquo;red&rdquo;,<br>
+  &ldquo;font&rdquo;: &ldquo;Courier New&rdquo;,<br>
+  &ldquo;bubbleColor&rdquo;: &ldquo;green&rdquo;,<br>
+  &ldquo;bubbleTextColor&rdquo;: &ldquo;yellow&rdquo;,<br>
+  &ldquo;bubbleFont&rdquo;: &ldquo;Fantasy&rdquo;<br></p>
+</blockquote>
+
+<p><img src = "images/TABLET_UI.Other_UI_Settings.png"/></p>
+<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+MS-Bot: UPDATE CHATBOT STYLE
+""""""""""""""""""""""""""""""""""""""""
+
+Not yet available in MS-Bot
+</span></code></pre></div>
+<h1 id="pepper-drive">→  Pepper Drive</h1>
+
+<h3 id="pepper-drive">Pepper Drive</h3>
+
+<p>The Pepper Chat CMS comes equipped with its own file webserver for all your chatbot&rsquo;s assets, including its image, video, PDF (privacy policies, etc.) and HTML (basic websites) files.</p>
+
+<blockquote>
+<p>LEVERAGE PEPPER DRIVE <br>
+Level up your Pepper experience by including multimedia and interactive HTML pages in Pepper&rsquo;s responses!</p>
+</blockquote>
+
+<p><img src = "images/PEPPER_CHAT.Pepper_Drive.png"/></p>
+
 <h1 id="spoken-vs-displayed-text">→  Spoken vs Displayed Text</h1>
 
 <h3 id="what-pepper-speaks-vs-what-pepper-displays-on-tablet">WHAT PEPPER SPEAKS vs. WHAT PEPPER DISPLAYS ON TABLET:</h3>
@@ -1507,12 +1621,8 @@ I.) UI:
 For a given intent within your agent, under the 'Response'
 section, select 'Custom Payload' and enter the following:
 {
-  "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Setting</span><span class="w"> </span><span class="err">background</span><span class="w"> </span><span class="err">image</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">color</span><span class="w"> </span><span class="err">||</span><span class="s2">",
   "</span><span class="err">action</span><span class="s2">": "</span><span class="err">setStyle</span><span class="s2">",
   "</span><span class="err">action_parameters</span><span class="s2">": {
-    "</span><span class="err">backgroundColor</span><span class="s2">": "</span><span class="err">#ebc</span><span class="mi">6</span><span class="err">eb</span><span class="s2">",
-    "</span><span class="err">backgroundImage</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//pepperstoragedev.blob.core.windows.net/pepperdrive/</span><span class="mi">41092</span><span class="err">db</span><span class="mi">5</span><span class="err">-ee</span><span class="mi">34-424</span><span class="err">a-bdf</span><span class="mi">3-6</span><span class="err">bca</span><span class="mi">579180</span><span class="err">afbd</span><span class="mi">2</span><span class="err">dcbc</span><span class="mi">8</span><span class="err">-f</span><span class="mi">435-4615</span><span class="err">-b</span><span class="mi">63</span><span class="err">c</span><span class="mi">-4274</span><span class="err">d</span><span class="mi">66</span><span class="err">d</span><span class="mi">7993</span><span class="err">.png</span><span class="s2">",
-    "</span><span class="err">restoreDefault</span><span class="s2">": false,
     "</span><span class="err">nextUtterance</span><span class="s2">": "</span><span class="err">Start</span><span class="s2">"
   }
 }
@@ -1531,7 +1641,7 @@ Not yet available in MS-Bot
 <p>ACTIONS - SWITCH LANGUAGE</p>
 </blockquote>
 
-<p>{COMING SOON - AVAILABLE TODAY ONLY IN DOGFOOD} Changes the language Pepper is using. </p>
+<p>Changes the language Pepper is using. </p>
 
 <p>supportedLanguages: [
             &lsquo;English&rsquo;,
@@ -1548,12 +1658,12 @@ Not yet available in MS-Bot
             Chinese: &lsquo;zh-CN&rsquo;
         }</p>
 
-<aside type='info'>NOTE: Requires that you have a multilingual Dialogflow agent. Also note that this will change the language for the entire communication system involving Pepper.  This includes Pepper&rsquo;s language, the transcription service language, and the Dialogflow agent.  </aside>
+<aside type='info'>NOTE: Requires that you have a multilingual agent. Also note that this will change the language for the entire communication system involving Pepper.  This includes Pepper&rsquo;s language, the transcription service language, and the agent&rsquo;s language.  </aside>
 <div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 Dialogflow:  SWITCH THE LANGUAGE
 """"""""""""""""""""""""""""""""""""""""
 I.) UI: 
-By setting the 'style' payload, you can use the 'nextUtterance' feature to trigger a new intent. For a given intent within your agent, under the 'Response' section, select 'Custom Payload' and enter the following:
+Setting the language requires your Dialogflow agent be multilingual. For a given intent within your agent, under the 'Response' section, select 'Custom Payload' and enter the following:
 {
   "</span><span class="err">action</span><span class="s2">": "</span><span class="err">setLanguage</span><span class="s2">",
   "</span><span class="err">action_parameters</span><span class="s2">": {
@@ -1615,6 +1725,62 @@ MS-Bot: GET ROBOT LOCATION
 
 Not yet available in MS-Bot
 </span></code></pre></div>
+<h1 id="localization">→ Localization</h1>
+
+<p>If you have more than one Pepper, you may want to use the same chatbot on multiple Peppers, but have certain greetings, phrases, direction sets, or other types of responses differ from location to location and Pepper to Pepper. This can be accomplished by using parameters!</p>
+
+<p><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/images/PEPPER_CHAT.PARAMETERS.Overview.jpg"><img src = "images/PEPPER_CHAT.PARAMETERS.Overview.jpg"/></a>
+Click ↑ to open an enlarged view!</p>
+
+<h3 id="parameters-global-vs-local">PARAMETERS - Global vs. Local</h3>
+
+<p>Parameters are essentially variables that you can set from within the Pepper Chat CMS and can be used throughout your chatbot. They are very powerful, and can be used to create  localized experiences on a per robot level.</p>
+
+<p>So how does one employ the use of parameters within a chatbot?</p>
+
+<p>Generally, the steps are to first decide what areas of the chatbot to localize. Then, create names for those placeholders called GLOBAL parameters. Their values should simply be tooltips to describe what should fill that placeholder. Once the global parameters for a chatbot have all been specified in the Pepper Chat CMS, then one can assign actual, localized values to a robot that will override the global parameter&rsquo;s tooltip value.</p>
+
+<p>DETAILED STEPS:<br>
+1.) First, when creating the chatbot for your company, think about all the areas of the chatbot that lend itself to having localized information. Replace the value in the chatbot with a descriptive name prefixed by &lsquo;#local.&rsquo; For example, let&rsquo;s say we want to customize Pepper&rsquo;s greeting on a per location basis. =&gt; If &lsquo;pepper_greeting&rsquo; is the descriptive name we choose for the greeting, then in the chatbot we would specify &lsquo;#local.pepper_greeting&rsquo;<br>
+2.) Then, in the Pepper Chat CMS on the Chatbot tab, click the icon to edit the parameters for the given chatbot (assuming it has already been added to the CMS) &ndash; simply add the descriptive name from step 1, in this case just the text &lsquo;pepper_greeting&rsquo; as a GLOBAL PARAMETER. For the value of the global parameter, put a text tooltip, i.e. &lsquo;This is where you put your greeting&hellip;&rsquo;. Click save.<br>
+<img src = "images/PEPPER_CHAT.PARAMETERS.CMS_View.png"/></p>
+
+<p><img src = "images/PEPPER_CHAT.PARAMETERS.Global_Parameters.png"/></p>
+
+<p>3.) Now, on the robots tab, select the robot for which you want to apply localized values for these parameters; click on the edit icon in order to provide the localized values.<br>
+<img src = "images/PEPPER_CHAT.PARAMETERS.Local_Parameters.png"/></p>
+
+<p>4.) Et voila! Your robot is now localized! You can also click on the hyperlink for the robot to test the localized values in the Pepper Simulator.<br>
+<br>
+Ex.) The following example shows how this might look in practice:<br>
+ Pepper: #local.pepper_greeting and welcome to #local.location_name!<br>
+              ↓  ↓  ↓  converts to  ↓  ↓  ↓ <br>
+    Pepper: Hello, humans and welcome to our Manhattan branch!</p>
+
+<h1 id="configure-your-chatbot">CONFIGURE YOUR CHATBOT</h1>
+
+<h1 id="attracting-end-users">→ Attracting End Users</h1>
+
+<p>You can use the Pepper Chat CMS to create rules for what Pepper says and when to passersby. To use this advanced feature, it requires that the chatbot&rsquo;s Developer Access Key be provided to the Pepper Chat CMS. Use the builder to create rules for time of day and day of year.</p>
+
+<p><img src = "images/PEPPER_CHAT.ATTRACT.Builder.png"/></p>
+
+<aside type="info">NOTE: If the robot is set to &ldquo;LESS ACTIVE&rdquo; mode, please consider that your robot&rsquo;s speech engine will be disabled. Any speech you have in your custom attracts will not be spoken. </aside>
+
+<h1 id="test-your-chatbot">TEST YOUR CHATBOT</h1>
+
+<h1 id="the-pepper-simulator">→ The Pepper Simulator</h1>
+
+<p>Most of your robot&rsquo;s functionality can be tested virtually from within the Pepper Chat CMS via the Pepper Simulator. You can access the simulator by clicking on a chatbot that you have added. Please note that at this time, you have to manually toggle the Mute buttons throughout the conversation for the simulator to work as intended.</p>
+
+<p><img src = "images/PEPPER_CHAT.Simulator.png"/></p>
+
+<aside type="info">NOTE: If you are using parameters for localization of your chatbot, you can test each localization by clicking on that localization from the Robot Page. </aside>
+
+<aside type="warning">LIMITATIONS: The Pepper Simulator does not support any voice shaping commands at this time. Additionally, it also does not support animations, certain actions, certain click commands, etc.</aside>
+
+<aside type="warning">PERFORMANCE DIFFERENCES: There are minor differences in performance between the simulator and your Pepper. To ensure an experience will actually work as expected on Pepper, please test your experience on an actual Pepper.</aside>
+
           <h1 id="faq-limitations">FAQ &amp; Limitations</h1>
 
 <p>General FAQ questions are listed below. ChatBot specific FAQ questions are listed to the right under its tab.
@@ -1629,6 +1795,49 @@ Q. Can Pepper say one string and show another?
 
 A. Currently NO, Pepper will say and show the same string. However 
    we are working towards this functionality soon.
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Q. How many hero cards will Pepper show?
+
+A. As many as you like. Pepper will simply allow the user to scroll 
+   through them, three at a time. It might not be very user friendly, 
+   so we suggest keeping the number of cards under 10.
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Q. Can Pepper respond to an utterance with a picture or video?
+
+A. Yes, Pepper can show either a landscape or a portrait photo. It
+   can also respond with a fullscreen video.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""</span><span class="w">
+
+</span></code></pre></div><div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Q. How do I upgrade an agent from V1 to V2?
+
+A. If you are looking to migrate your bot to V2, or how to integrate 
+your V2 bot into the Pepper Chat system, you've come to the right 
+place!
+
+Be advised: Pepper Chat treats V1 and V2 bots completely differently, 
+so if you want to upgrade an existing bot you need to make a new bot 
+in our system.
+
+First, from within the Dialogflow Console, you need to make sure your 
+bot is upgraded to Dialogflow V2 under the 'API VERSION' under the 
+Settings tab within your agent. Simply click on the V2 API radial 
+button.
+
+Great! Now under the 'GOOGLE PROJECT' section of Settings, click on 
+the hyperlinked value under 'Service Account'.
+
+Awesome! Now you should be within the Google Cloud Platform console. 
+Navigate to Service Accounts. Click on the ellipsis for the service 
+account called Dialogflow Integrations. Select 'Create key' and select
+JSON as the Key Type.
+
+Now save that document! Pepper Chat will need it when you create the 
+new Dialogflow bot.
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
