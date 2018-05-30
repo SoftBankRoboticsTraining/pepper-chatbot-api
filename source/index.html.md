@@ -90,7 +90,9 @@ the bot, navigate to our GitHub repo:
 
 Building a successful chatbot for deployment on Pepper requires a large amount of time, patience, and cross-disciplinary creative expertise. For this reason, SBRA offers professional services to assist in the creation of your Chatbot for Pepper. If you are interested, <a href="mailto:sales_us@softbankrobotics.com">send us an email</a>. 
 
+
 If you would like to learn and build on your own, you can take our free, <a href="https://www.udemy.com/learn-conversational-ux-on-pepper-the-robot/">2.5-hour, eLearning course on Udemy course</a> and use this documentation to get started.
+<a href="https://www.udemy.com/learn-conversational-ux-on-pepper-the-robot/"><img src="images/PEPPER_CHAT_PLATFORM.Udemy_Course.png"></a>
 
 # Authentication & Setup
 
