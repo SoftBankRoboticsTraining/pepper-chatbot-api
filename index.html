@@ -1193,7 +1193,8 @@ Not yet available in MS-Bot
 <div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 Dialogflow: 
 """"""""""""""""""""""""""""""""""""""""
-For a given intent within your agent, under the 'Response'
+A keyboard can be shown to receive any type of input. To do so,
+for a given intent within your agent, under the 'Response'
 section, select 'Custom Payload' and enter the following:
 {
   "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Type</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">confirmation</span><span class="w"> </span><span class="err">number</span><span class="w"> </span><span class="err">using</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">keyboard.</span><span class="s2">"
@@ -1232,6 +1233,8 @@ and copy and paste the following:
   }
 }
 
+The value of "</span><span class="err">inputType</span><span class="s2">" can be either 'phone number' or 'email'.
+
 Note: With non-actionable images, it is recommended to keep the conversation
 alive with a follow-up message. To prompt the user for another action, 
 simply combine the Basic Card with the Google Assistant Suggestion Chips.
@@ -1267,6 +1270,8 @@ and copy and paste the following:
   }
 }
 
+The value of "</span><span class="err">inputType</span><span class="s2">" can be either 'phone number' or 'email'.
+
 Note: With non-actionable images, it is recommended to keep the conversation
 alive with a follow-up message. To prompt the user for another action, 
 simply combine the Basic Card with the Google Assistant Suggestion Chips.
@@ -1300,7 +1305,7 @@ section, select 'Custom Payload' and enter the following:
     "</span><span class="err">backgroundColor</span><span class="s2">": "</span><span class="err">#ebc</span><span class="mi">6</span><span class="err">eb</span><span class="s2">",
     "</span><span class="err">backgroundImage</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//pepperstoragedev.blob.core.windows.net/pepperdrive/</span><span class="mi">41092</span><span class="err">db</span><span class="mi">5</span><span class="err">-ee</span><span class="mi">34-424</span><span class="err">a-bdf</span><span class="mi">3-6</span><span class="err">bca</span><span class="mi">579180</span><span class="err">afbd</span><span class="mi">2</span><span class="err">dcbc</span><span class="mi">8</span><span class="err">-f</span><span class="mi">435-4615</span><span class="err">-b</span><span class="mi">63</span><span class="err">c</span><span class="mi">-4274</span><span class="err">d</span><span class="mi">66</span><span class="err">d</span><span class="mi">7993</span><span class="err">.png</span><span class="s2">",
     "</span><span class="err">restoreDefault</span><span class="s2">": false,
-    "</span><span class="err">nextUtterance</span><span class="s2">": "</span><span class="err">Start</span><span class="s2">"
+    "</span><span class="err">nextUtterance</span><span class="s2">": "</span><span class="p">{</span><span class="err">Insert</span><span class="w"> </span><span class="err">any</span><span class="w"> </span><span class="err">Intent's</span><span class="w"> </span><span class="err">Training</span><span class="w"> </span><span class="err">Phrase</span><span class="w"> </span><span class="err">here...</span><span class="p">}</span><span class="s2">"
   }
 }
 
@@ -1464,7 +1469,7 @@ Pepper: Want to hear a joke about a piece of paper? \pau=800\ Never <br>
 mind \pau=400\ it&rsquo;s \pau=300\ \rspd=50\ tearable. \rspd=100\ || Want to hear a joke about a piece of paper? Nevermind. It&rsquo;s terrible.</p>
 </blockquote>
 
-<aside class='info'> * When using JSON syntax (Custom Payloads, etc.), QiChat commands must be double-escaped (\).</aside>
+<aside class='info'> * When using JSON syntax (Custom Payloads, etc.), QiChat commands must be double-escaped (\\).</aside>
 
 <aside class='warning'> * * WARNING: The Pepper Chat Simulator (available in web-based <a href="https://pepper-chat.azurewebsites.net">Pepper Chat CMS</a>) does not support QiChat codes at this point!</aside>
 
@@ -1545,12 +1550,22 @@ mind \pau=400\ it&rsquo;s \pau=300\ \rspd=50\ tearable. \rspd=100\ || Want to he
 <p>ACTIONS - RUN APPLICATION</p>
 </blockquote>
 
-<p>Launches external application - maintains chatbot session persistence</p>
+<p>Launches a locally installed, <a href='http://doc.aldebaran.com/2-5/naoqi/index.html'>NAOqi</a> application - and meanwhile maintains chatbot session persistence. NAOqi applications can be built with <a href='http://doc.aldebaran.com/2-5/software/choregraphe/index.html'>Choregraphe</a> or with our Python SDK and the <a href='http://doc.aldebaran.com/2-5/dev/libqi/api/python/index.html#py-api-index'>qi Framework</a> via one of our <a href='https://github.com/pepperhacking/robot-jumpstarter'>Robot Jumpstarter templates</a>.</p>
 <div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 Dialogflow: RUN AN APPLICATION
 """"""""""""""""""""""""""""""""""""""""
 For a given intent within your agent, under the 'Response'
 section, select 'Custom Payload' and enter the following:
+Syntax:
+{
+  "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Insert</span><span class="w"> </span><span class="err">what</span><span class="w"> </span><span class="err">Pepper</span><span class="w"> </span><span class="err">should</span><span class="w"> </span><span class="err">speak</span><span class="w"> </span><span class="err">here...</span><span class="s2">",
+  "</span><span class="err">action</span><span class="s2">": "</span><span class="err">startApp</span><span class="s2">",
+  "</span><span class="err">action_parameters</span><span class="s2">": {
+    "</span><span class="err">appId</span><span class="s2">": "</span><span class="p">{</span><span class="err">APP-ID</span><span class="w"> </span><span class="err">HERE</span><span class="p">}</span><span class="err">/</span><span class="p">{</span><span class="err">BEHAVIOR-TO-RUN</span><span class="w"> </span><span class="err">HERE</span><span class="p">}</span><span class="s2">"
+  }
+}
+
+Ex.
 {
   "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Launching</span><span class="w"> </span><span class="err">Survey</span><span class="w"> </span><span class="err">application</span><span class="s2">",
   "</span><span class="err">action</span><span class="s2">": "</span><span class="err">startApp</span><span class="s2">",
@@ -1558,6 +1573,9 @@ section, select 'Custom Payload' and enter the following:
     "</span><span class="err">appId</span><span class="s2">": "</span><span class="err">pepper-survey/.</span><span class="s2">"
   }
 }
+
+** The "</span><span class="err">.</span><span class="s2">" in the example above will launch the main behavior
+of the "</span><span class="err">pepper-survey</span><span class="s2">" app.
 
 </span></code></pre></div>
 <p><img src = "images/ACTIONS.RUN-APPLICATION.png"/></p>
