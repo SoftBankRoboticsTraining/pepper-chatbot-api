@@ -1046,7 +1046,8 @@ Not yet available in MS-Bot
 """""""""""""""""""""""""""""""""""""""""
 Dialogflow: 
 """"""""""""""""""""""""""""""""""""""""
-For a given intent within your agent, under the 'Response'
+A keyboard can be shown to receive any type of input. To do so,
+for a given intent within your agent, under the 'Response'
 section, select 'Custom Payload' and enter the following:
 {
   "speak": "Type your confirmation number using the keyboard."
@@ -1088,6 +1089,8 @@ and copy and paste the following:
   }
 }
 
+The value of "inputType" can be either 'phone number' or 'email'.
+
 Note: With non-actionable images, it is recommended to keep the conversation
 alive with a follow-up message. To prompt the user for another action, 
 simply combine the Basic Card with the Google Assistant Suggestion Chips.
@@ -1127,6 +1130,8 @@ and copy and paste the following:
   }
 }
 
+The value of "inputType" can be either 'phone number' or 'email'.
+
 Note: With non-actionable images, it is recommended to keep the conversation
 alive with a follow-up message. To prompt the user for another action, 
 simply combine the Basic Card with the Google Assistant Suggestion Chips.
@@ -1164,7 +1169,7 @@ section, select 'Custom Payload' and enter the following:
     "backgroundColor": "#ebc6eb",
     "backgroundImage": "https://pepperstoragedev.blob.core.windows.net/pepperdrive/41092db5-ee34-424a-bdf3-6bca579180afbd2dcbc8-f435-4615-b63c-4274d66d7993.png",
     "restoreDefault": false,
-    "nextUtterance": "Start"
+    "nextUtterance": "{Insert any Intent's Training Phrase here...}"
   }
 }
 
@@ -1351,7 +1356,7 @@ Ex. Usages: (1) To pause for dramatic effect; (2) to emphasize a word or syllabl
 Pepper: Want to hear a joke about a piece of paper? \pau=800\ Never <br>
 mind \pau=400\ it's \pau=300\ \rspd=50\ tearable. \rspd=100\ || Want to hear a joke about a piece of paper? Nevermind. It's terrible.
 
-<aside class='info'> * When using JSON syntax (Custom Payloads, etc.), QiChat commands must be double-escaped (\\).</aside>
+<aside class='info'> * When using JSON syntax (Custom Payloads, etc.), QiChat commands must be double-escaped (\\\\).</aside>
 
 <aside class='warning'> * * WARNING: The Pepper Chat Simulator (available in web-based <a href="https://pepper-chat.azurewebsites.net">Pepper Chat CMS</a>) does not support QiChat codes at this point!</aside>
 <br>
@@ -1448,7 +1453,7 @@ The section below shows all the various actions that can be performed within a C
 
 > ACTIONS - RUN APPLICATION
 
-Launches external application - maintains chatbot session persistence
+Launches a locally installed, <a href='http://doc.aldebaran.com/2-5/naoqi/index.html'>NAOqi</a> application - and meanwhile maintains chatbot session persistence. NAOqi applications can be built with <a href='http://doc.aldebaran.com/2-5/software/choregraphe/index.html'>Choregraphe</a> or with our Python SDK and the <a href='http://doc.aldebaran.com/2-5/dev/libqi/api/python/index.html#py-api-index'>qi Framework</a> via one of our <a href='https://github.com/pepperhacking/robot-jumpstarter'>Robot Jumpstarter templates</a>.
 
 
 ```dialogflow
@@ -1457,6 +1462,16 @@ Dialogflow: RUN AN APPLICATION
 """"""""""""""""""""""""""""""""""""""""
 For a given intent within your agent, under the 'Response'
 section, select 'Custom Payload' and enter the following:
+Syntax:
+{
+  "speak": "Insert what Pepper should speak here...",
+  "action": "startApp",
+  "action_parameters": {
+    "appId": "{APP-ID HERE}/{BEHAVIOR-TO-RUN HERE}"
+  }
+}
+
+Ex.
 {
   "speak": "Launching Survey application",
   "action": "startApp",
@@ -1464,6 +1479,9 @@ section, select 'Custom Payload' and enter the following:
     "appId": "pepper-survey/."
   }
 }
+
+** The "." in the example above will launch the main behavior
+of the "pepper-survey" app.
 
 ```
 
