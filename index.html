@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;dialogflow&quot;,&quot;ms_bot_framework&quot;]">
+  <body class="index" data-languages="[&quot;dialogflow&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -212,7 +212,6 @@
       <img src="images/white_logo.png" alt="White logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="dialogflow">dialogflow</a>
-              <a href="#" data-language-name="ms_bot_framework">ms_bot_framework</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -254,42 +253,14 @@ For the full eLearning course:
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""</span><span class="w">
 </span></code></pre></div>
-<p>Welcome to the Pepper Chat platform! This technical reference is for Pepper owners running the Pepper-As-A-Host solution, who would like to connect their Pepper to a 3rd party chatbot (Dialogflow &amp; MS Bot Framework platforms supported) in order to unlock Pepper&rsquo;s latent conversational abilities. It is an exciting evolution of Pepper&rsquo;s repertoire of capabilities. </p>
+<p>Welcome to the Pepper Chat platform! This technical reference is for Pepper owners running the Pepper-As-A-Host solution, who would like to connect their Pepper to a 3rd party chatbot (only Google&rsquo;s Dialogflow platform supported at this time) in order to unlock Pepper&rsquo;s latent conversational abilities. It is an exciting evolution of Pepper&rsquo;s repertoire of capabilities. </p>
 
-<p>Given the overwhelming success of the &ldquo;chatbot feature&rdquo; of the Host product, which was historically an optional upgrade that would replace the standard &ldquo;FAQ&rdquo; feature of the Host product, SBRA decided to build out and open up the Pepper Chat platform to its broader customer base. Pepper Chat allows customers who want to take more control over Pepper&rsquo;s speech, animations, tablet display and overall interactions can now do so using this solution, all with a conversational-focused, web-based, user interface. Teaming up with Google and Microsoft to bring our customers world-class NLP and Conversational AI technologies, we are proud and excited to provide our customers with a conversation-based Pepper platform that is dynamic, smart, and immersively fun!</p>
+<p>Given the overwhelming success of the &ldquo;chatbot feature&rdquo; of the Host product, which was historically an optional upgrade that would replace the standard &ldquo;FAQ&rdquo; feature of the Host product, SBRA decided to build out and open up the Pepper Chat platform to its broader customer base. Pepper Chat allows customers who want to take more control over Pepper&rsquo;s speech, animations, tablet display and overall interactions can now do so using this solution, all with a conversational-focused, web-based, user interface. Teaming up with Google to bring our customers world-class NLP and Conversational AI technologies, we are proud and excited to provide our customers with a conversation-based Pepper platform that is dynamic, smart, and immersively fun!</p>
 
 <p>NAVIGATING THIS REFERENCE:
-You can view general integration instructions in this central, light blue section. In the dark area to the right, you can see chatbot-specific code examples corresponding visually in line with each general section. Switch between different chatbot-specific code examples with the tabs in the top right.</p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-The Microsoft Bot Framework facilitates the creation of 
-powerful chatbots to enhance your application's capabilities. Its open 
-source Bot Builder SDKs allow users to build simple to sophisticated 
-dialogs. Cognitive Services enable your bot to interpret and interact 
-in more human ways. The MS Bot Framework is one of the two 3rd-party 
-chatbot integrations that Pepper for Host currently supports.
+You can view general integration instructions in this central, light blue section. In the dark area to the right, you can see Dialogflow-specific code examples corresponding visually in line with each general section. </p>
 
-To see a working example, download the emulator here:
-    https://docs.microsoft.com/en-us/bot-framework/bot-service-debug-emulator
-and use the following sample PuppyBot information to set up your emulator:
-
-MS Bot Endpoint:
-   https://pepper-msbot.azurewebsites.net/api/messages?code=e3fa60oaOlabQUptT63DYSWPxrdG0pS9zFrADLT1xX9iGx6FxAG7pw==
-
-PuppyBot App Id:
-   808ad83e-3876-40fd-b0e8-a616e014fc6f
-
-PuppyBot Password:
-   9nHp8QNcwQJcNDHHjBCnoj7
-
-PuppyBot LUIS Endpoint:
-   https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/4e4b1c46-5d6d-4035-9905-eef921df734f?subscription-key=37e463e0ae22427abc606d076dafbdd3&amp;timezoneOffset=-480&amp;verbose=true&amp;spellCheck=true&amp;q=
-
-For the PuppyBot's source code and a list of sample utterances to ask 
-the bot, navigate to our GitHub repo:
-   https://github.com/SoftBankRoboticsTraining/msbot-puppy-bot/
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""</span><span class="w">
-</span></code></pre></div>
-<aside class="notice">We currently only support integrations with Microsoft&rsquo;s <a href="https://dev.botframework.com/"> Bot Framework</a> and Google&rsquo;s <a href="https://dialogflow.com/">Dialogflow</a>, but this list is quickly growing, so check back soon or else get in touch with us directly if your chatbot platform of choice does not appear on this list!</aside>
+<aside class="notice">We currently only support integrations with Google&rsquo;s <a href="https://dialogflow.com/">Dialogflow</a>, but this list is quickly growing, so check back soon or else get in touch with us directly if your chatbot platform of choice does not appear on this list!</aside>
 
 <h1 id="getting-started">Getting Started</h1>
 
@@ -303,20 +274,7 @@ the bot, navigate to our GitHub repo:
 <a href="https://www.udemy.com/learn-conversational-ux-on-pepper-the-robot/"><img src="images/PEPPER_CHAT_PLATFORM.Udemy_Course.png"></a></p>
 
 <h1 id="authentication-setup">Authentication &amp; Setup</h1>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-MS BOT FRAMEWORK SETUP INSTRUCTIONS:
-For MS bots, setup consists of providing us with one of your bot's 
-DirectLine 'Secret Keys'. Provide this key to the SBR Sales Engineer 
-assisting you with setup. You can find it by following these steps:
-
-Step 1: Open your bot in Azure portal (https://portal.azure.com).
-Step 2: Select the CHANNELS tab.
-Step 3: Add DirectLine to your bot.
-Step 4: Click on Edit.
-Step 5: Copy one of the Secret Keys that was generated.
-Step 6: Give the copied value to the SBR Sales Engineer.
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""</span><span class="w">
-</span></code></pre></div><div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 DIALOGFLOW SETUP INSTRUCTIONS:
 For Dialogflow bots, setup varies based on which agent version your bot is. 
 For V1 agents, setup consists of providing us with your Client Access Token. 
@@ -450,10 +408,6 @@ I.) For each section, there is a UI and a Fulfillment section
       a.) UI - indicates the instruction set that follows is 
           relevant to the Dialogflow User Interface; 
       b.) FULFILLMENT - coming soon...
-</span></code></pre></div><div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS Bot Framework:
-""""""""""""""""""""""""""""""""""""""""
-I.) Our MS Bot Framework is limited in comparison to our Dialogflow integration. For a more robust experience, please use Dialogflow.
 </span></code></pre></div>
 <h2 id="text-only">TEXT ONLY</h2>
 
@@ -474,40 +428,7 @@ display different text from what he speaks.
 
 </span></code></pre></div>
 <p><img src = "images/TABLET.TEXT.png"/></p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: Text Only response:
-"""""""""""""""""""""""""""""""""""""""""</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Duh, German Shepard Puppies tell the best jokes!"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"localTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T11:11:52-07:00"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-bot"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bot"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-user"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"inputHint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acceptingInput"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"replyToId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9hecj33gj8mckk1m3"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48mj8inig8dmc9i39"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"channelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emulator"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T18:11:52.982Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"conversation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mb6c0bcdl2eclij9i"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
 
-</span><span class="s2">"""""""""""""MAPPING""""""""""""""""""""
-Mapping (MS-Bot -&gt; Pepper Data Model):
-text -&gt; speak
-text -&gt; show.text
-
-WHERE
--&gt; = strictly mapped
-""""""""""""""""""""""""""""""""""""""""
-</span></code></pre></div>
 <h2 id="text-bubbles">TEXT BUBBLES</h2>
 
 <blockquote>
@@ -605,60 +526,7 @@ B.) Google Assistant &gt; List:
 </span></code></pre></div>
 <p><img src = "images/TABLET.TEXT_BUBBLES.png"/>
 <img src = "images/TABLET.TEXT_BUBBLES.Long.png"/></p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: Hero Card with Choices
-"""""""""""""""""""""""""""""""""""""""""</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-    </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/vnd.microsoft.card.hero"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Do you want to know about Puppies?"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"buttons"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imBack"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes please"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes please"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imBack"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No thanks"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No thanks"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}],</span><span class="w">
-  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"localTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T10:45:19-07:00"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"n5dm5eb6ldekh6a3"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bot"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-user"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"inputHint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acceptingInput"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"replyToId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"i0gn412d30ag423i"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"j2j8245c6b9m12n3i"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"channelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emulator"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T17:45:19.923Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"conversation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6ja3le587mmjbc4c"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
 
-</span><span class="s2">"""""""""""""MAPPING""""""""""""""""""""
-Mapping (MS-Bot Hero Card w/ Choices -&gt; Pepper Data Model):
-attachments.content.buttons ~&gt; show.content
-attachments.content.buttons.title -&gt; show.content.text
-attachments.content.buttons.value -&gt; show.content.value
-attachments.content.title -&gt; show.text
-attachments.content.title -&gt; speak
-
-WHERE
-~&gt; = loosely mapped
--&gt; = strictly mapped
-""""""""""""""""""""""""""""""""""""""""
-</span></code></pre></div>
 <h2 id="image-carousel-captioned">IMAGE - Carousel, Captioned</h2>
 
 <blockquote>
@@ -690,82 +558,7 @@ need to create to receive the action
 
 </span></code></pre></div>
 <p><img src = "images/TABLET.IMAGE.Carousel.Captioned.png"/></p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: Hero Card with Images and Choices
-"""""""""""""""""""""""""""""""""""""""""</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"attachmentLayout"</span><span class="p">:</span><span class="w"> </span><span class="s2">"carousel"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/vnd.microsoft.card.thumbnail"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boxer"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"subtitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A breed of utility dog."</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The American boxer is a stocky, well built, strong-looking dog, with a large head and a muscular build. Its coat is short and generally smooth. The breed is a light to moderate shedder."</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-          </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://static.pexels.com/photos/158682/snow-dog-de-bordeaux-158682.jpeg"</span><span class="w">
-        </span><span class="p">}],</span><span class="w">
-        </span><span class="s2">"buttons"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imBack"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boxer"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boxer"</span><span class="w">
-        </span><span class="p">}]</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/vnd.microsoft.card.thumbnail"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Akita"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"subtitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Continental Toy Spaniel"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Akita is a very intelligent and self-assured dog that has a very easy time learning new tricks. This dog can be sociable with children and strangers but is generally reserved around new people. "</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-          </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://upload.wikimedia.org/wikipedia/commons/5/56/Papillon_Ears.jpg"</span><span class="w">
-        </span><span class="p">}],</span><span class="w">
-        </span><span class="s2">"buttons"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imBack"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"akita"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Akita"</span><span class="w">
-        </span><span class="p">}]</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"localTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T10:45:24-07:00"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"n5dm5eb6ldekh6a3"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bot"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-user"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"inputHint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acceptingInput"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"replyToId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dn58c2bfjd1089dkac"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nbdk7b69eb0j9j69"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"channelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emulator"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T17:45:24.902Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"conversation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6ja3le587mmjbc4c"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
 
-</span><span class="s2">"""""""""""""MAPPING""""""""""""""""""""
-Mapping (MS-Bot -&gt; Pepper Data Model):
-attachments ~&gt; show.content
-attachments.title -&gt; show.content.text
-attachments.subtitle -&gt; **ABANDONED**
-attachments.text -&gt; show.content.speak
-attachments.images.url -&gt; show.content.contentURL
-attachments.buttons.value -&gt; show.content.value
-
-ADDED
-speak: 'Tap or Say one of the following'
-show.content.text: 'Tap or Say one of the following'
-
-WHERE
-~&gt; = loosely mapped
--&gt; = strictly mapped
-""""""""""""""""""""""""""""""""""""""""
-</span></code></pre></div>
 <h2 id="image-carousel-uncaptioned">IMAGE - Carousel, Uncaptioned</h2>
 
 <blockquote>
@@ -807,11 +600,7 @@ section, select 'Custom Payload' and enter the following:
 }
 </span></code></pre></div>
 <p><img src = "images/TABLET.IMAGE.Carousel.Uncaptioned.png"/></p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: N/A
-"""""""""""""""""""""""""""""""""""""""""</span><span class="w">
-</span><span class="err">Not</span><span class="w"> </span><span class="err">available</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">MS-Bot</span><span class="w">
-</span></code></pre></div>
+
 <h2 id="image-1-6-icon-layouts">IMAGE - 1-6-Icon Layouts</h2>
 
 <blockquote>
@@ -879,11 +668,7 @@ section, select 'Custom Payload' and enter the following:
 <img src = "images/TABLET.IMAGE.1-6-ICON.5_icon.png"/>
 <img src = "images/TABLET.IMAGE.1-6-ICON.6_icon.png"/>
 <img src = "images/TABLET.IMAGE.1-6-ICON.6_icon_example.png"/></p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: N/A
-"""""""""""""""""""""""""""""""""""""""""</span><span class="w">
-</span><span class="err">Not</span><span class="w"> </span><span class="err">available</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">MS-Bot</span><span class="w">
-</span></code></pre></div>
+
 <h2 id="image-basic-card">IMAGE - Basic Card</h2>
 
 <blockquote>
@@ -918,60 +703,7 @@ simply combine the Basic Card with the Google Assistant Suggestion Chips.
 </span></code></pre></div>
 <p><img src = "images/TABLET.IMAGE.Basic-Card-Landscape.png"/>
 <img src = "images/TABLET.IMAGE.Basic-Card-Portrait.png"/></p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: Image Attachments response:
-"""""""""""""""""""""""""""""""""""""""""</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-      </span><span class="s2">"contentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.greathillpartners.com/wp-content/uploads/Golden-Puppy.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puppy pic 1"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"contentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://i.ytimg.com/vi/VRiWE1l8KqI/maxresdefault.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puppy pic 2"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"contentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://24.media.tumblr.com/53e3171e750c6c1028f8200ad73c8a53/tumblr_mkozt0qp3B1qiwf8po1_500.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puppy pic 1"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Here are some puppies"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"localTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T11:01:51-07:00"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-bot"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bot"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-user"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"inputHint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ignoringInput"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"replyToId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3j6714mfbl49hf1bac"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"688k3bd50e8ifk364c"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"channelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emulator"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T18:01:51.235Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"conversation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"efj6c25bj3e43b0c9"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
 
-</span><span class="s2">"""""""""""""MAPPING""""""""""""""""""""
-Mapping (MS-Bot -&gt; Pepper Data Model):
-attachments ~&gt; show.content
-attachments.contentUrl-&gt; show.content.contentURL
-attachments.contentType-&gt; show.content.contentType
-text -&gt; speak
-text -&gt; show.text
-
-WHERE
-~&gt; = loosely mapped
--&gt; = strictly mapped
-""""""""""""""""""""""""""""""""""""""""
-</span></code></pre></div>
 <h2 id="image-fullscreen-image">IMAGE - Fullscreen Image</h2>
 
 <blockquote>
@@ -1010,12 +742,7 @@ B) When using JSON (^^), any QiChat commands must be double-escaped (</span><spa
 
 </span></code></pre></div>
 <p><img src = "images/TABLET.IMAGE.Full_Screen.png"/></p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: Full Screen Image response:
-""""""""""""""""""""""""""""""""""""""""
 
-Not yet available in MS-Bot
-</span></code></pre></div>
 <h2 id="image-sequence-of-images">IMAGE - Sequence of Images</h2>
 
 <blockquote>
@@ -1029,60 +756,7 @@ To create a non-actionable sequence of (full screen) images, use the
 Payloads together, one after another, to create a story.
 </span></code></pre></div>
 <p><img src = "images/TABLET.IMAGE.Full_Screen.png"/></p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: Image Attachments response:
-"""""""""""""""""""""""""""""""""""""""""</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-      </span><span class="s2">"contentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.greathillpartners.com/wp-content/uploads/Golden-Puppy.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puppy pic 1"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"contentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://i.ytimg.com/vi/VRiWE1l8KqI/maxresdefault.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puppy pic 2"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"contentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://24.media.tumblr.com/53e3171e750c6c1028f8200ad73c8a53/tumblr_mkozt0qp3B1qiwf8po1_500.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puppy pic 1"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Here are some puppies"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"localTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T11:01:51-07:00"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-bot"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bot"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-user"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"inputHint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ignoringInput"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"replyToId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3j6714mfbl49hf1bac"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"688k3bd50e8ifk364c"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"channelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emulator"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T18:01:51.235Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"conversation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"efj6c25bj3e43b0c9"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
 
-</span><span class="s2">"""""""""""""MAPPING""""""""""""""""""""
-Mapping (MS-Bot -&gt; Pepper Data Model):
-attachments ~&gt; show.content
-attachments.contentUrl-&gt; show.content.contentURL
-attachments.contentType-&gt; show.content.contentType
-text -&gt; speak
-text -&gt; show.text
-
-WHERE
-~&gt; = loosely mapped
--&gt; = strictly mapped
-""""""""""""""""""""""""""""""""""""""""
-</span></code></pre></div>
 <h2 id="video-fullscreen-video">VIDEO - Fullscreen Video</h2>
 
 <blockquote>
@@ -1108,49 +782,7 @@ Note: When using JSON (^^), any QiChat commands must be double-escaped (</span><
 
 </span></code></pre></div>
 <p><img src = "images/TABLET.VIDEO.Full_Screen.png"/></p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: Video Only response:
-"""""""""""""""""""""""""""""""""""""""""</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-    </span><span class="s2">"contentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pepperstoragedev.blob.core.windows.net/pepperstories/b68b2247-f74a-4f6b-b3ad-3e7e66c1e600.mp4?decache=QLT1MXCSF1A9"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video/mp4"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puppy video"</span><span class="w">
-  </span><span class="p">}],</span><span class="w">
-  </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Here is a puppy video"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"localTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T11:09:03-07:00"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-bot"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bot"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default-user"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"inputHint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acceptingInput"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"replyToId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f0igi03ln2f4fem94c"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ek9im8g5df0e305bf"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"channelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emulator"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-02T18:09:03.318Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"conversation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mb6c0bcdl2eclij9i"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
 
-</span><span class="s2">"""""""""""""MAPPING""""""""""""""""""""
-Mapping (MS-Bot -&gt; Pepper Data Model):
-attachments ~&gt; show.content
-attachments.contentUrl-&gt; show.content. contentURL
-attachments.contentType-&gt; show.content.contentType
-text -&gt; speak
-text -&gt; show.text
-
-WHERE
-~&gt; = loosely mapped
--&gt; = strictly mapped
-""""""""""""""""""""""""""""""""""""""""
-</span></code></pre></div>
 <h2 id="webpage-show-webpage">WEBPAGE - Show Webpage</h2>
 
 <blockquote>
@@ -1181,11 +813,7 @@ and copy and paste the following:
 </span></code></pre></div>
 <p><img src = "images/TABLET.WEBPAGE.png"/>
 <img src = "images/TABLET.WEBPAGE.Keyboard.png"/></p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: Show a webpage
-""""""""""""""""""""""""""""""""""""""""
-Not yet available in MS-Bot
-</span></code></pre></div>
+
 <h2 id="user-input-show-keyboard">USER INPUT - SHOW KEYBOARD</h2>
 
 <blockquote>
@@ -1203,12 +831,7 @@ section, select 'Custom Payload' and enter the following:
 }
 </span></code></pre></div>
 <p><img src = "images/TABLET.USER-INPUT.Show-Keyboard.png"/></p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: Show Keyboard response:
-""""""""""""""""""""""""""""""""""""""""
 
-Not yet available in MS-Bot
-</span></code></pre></div>
 <h2 id="user-input-privacy-policy">USER INPUT - PRIVACY POLICY</h2>
 
 <blockquote>
@@ -1243,11 +866,7 @@ simply combine the Basic Card with the Google Assistant Suggestion Chips.
 </span></code></pre></div>
 <p><img src = "images/TABLET.USER_INPUT.PRIVACY-POLICY.Checked.png"/>
 <img src = "images/TABLET.USER_INPUT.PRIVACY-POLICY.Unchecked.png"/></p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: PRIVACY POLICY
-""""""""""""""""""""""""""""""""""""""""
-Not yet available in MS-Bot
-</span></code></pre></div>
+
 <h3 id="modal-dialog-pop-up">MODAL DIALOG POP-UP</h3>
 
 <blockquote>
@@ -1280,11 +899,7 @@ simply combine the Basic Card with the Google Assistant Suggestion Chips.
 </span></code></pre></div>
 <p><img src = "images/TABLET.USER_INPUT.PRIVACY-POLICY.Modal.png"/>
 <img src = "images/TABLET.USER_INPUT.PRIVACY-POLICY.Yes_Or_Not.png"/></p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: PRIVACY POLICY
-""""""""""""""""""""""""""""""""""""""""
-Not yet available in MS-Bot
-</span></code></pre></div>
+
 <h1 id="styling">→ Styling</h1>
 
 <h3 id="tablet-ui-settings">TABLET UI SETTINGS</h3>
@@ -1344,12 +959,7 @@ section, select 'Custom Payload' and enter the following:
 
 </span></code></pre></div>
 <p><img src = "images/TABLET.BACKGROUND.COLOR.png"/></p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: SET BACKGROUND COLOR
-""""""""""""""""""""""""""""""""""""""""
 
-Not yet available in MS-Bot
-</span></code></pre></div>
 <h3 id="background-set-image">BACKGROUND - SET IMAGE</h3>
 <div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 Dialogflow:  SET BACKGROUND IMAGE
@@ -1365,12 +975,7 @@ section, select 'Custom Payload' and enter the following:
 
 </span></code></pre></div>
 <p><img src = "images/TABLET.BACKGROUND.IMAGE.png"/></p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: SET BACKGROUND IMAGE
-""""""""""""""""""""""""""""""""""""""""
 
-Not yet available in MS-Bot
-</span></code></pre></div>
 <h3 id="other-ui-settings">OTHER UI SETTINGS</h3>
 
 <blockquote>
@@ -1386,12 +991,7 @@ You can generally insert any of the following properties (here listed with sampl
 </blockquote>
 
 <p><img src = "images/TABLET_UI.Other_UI_Settings.png"/></p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: UPDATE CHATBOT STYLE
-""""""""""""""""""""""""""""""""""""""""
 
-Not yet available in MS-Bot
-</span></code></pre></div>
 <h1 id="pepper-drive">→  Pepper Drive</h1>
 
 <h3 id="pepper-drive">Pepper Drive</h3>
@@ -1580,11 +1180,7 @@ of the "</span><span class="err">pepper-survey</span><span class="s2">" app.
 
 </span></code></pre></div>
 <p><img src = "images/ACTIONS.RUN-APPLICATION.png"/></p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: RUN APPLICATION
-""""""""""""""""""""""""""""""""""""""""
-Not yet available in MS-Bot
-</span></code></pre></div>
+
 <h2 id="actions-play-a-game">ACTIONS - PLAY A GAME</h2>
 
 <blockquote>
@@ -1620,12 +1216,7 @@ I.) UI:
 
 </span></code></pre></div>
 <p><img src = "images/ACTIONS.PLAY-A-GAME.png"/></p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: Play a Game response:
-""""""""""""""""""""""""""""""""""""""""
 
-Not yet available in MS-Bot
-</span></code></pre></div>
 <h2 id="actions-trigger-an-intent">ACTIONS - TRIGGER AN INTENT</h2>
 
 <blockquote>
@@ -1649,12 +1240,7 @@ section, select 'Custom Payload' and enter the following:
 
 </span></code></pre></div>
 <p><img src = "images/ACTIONS.TRIGGER-INTENT.png"/></p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: TRIGGER AN INTENT
-""""""""""""""""""""""""""""""""""""""""
 
-Not yet available in MS-Bot
-</span></code></pre></div>
 <h2 id="actions-switch-language">ACTIONS - SWITCH LANGUAGE</h2>
 
 <blockquote>
@@ -1693,12 +1279,7 @@ Setting the language requires your Dialogflow agent be multilingual. For a given
 
 </span></code></pre></div>
 <p><img src = "images/ACTIONS.SWITCH-LANGUAGE.png"/></p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: SWITCH THE LANGUAGE
-""""""""""""""""""""""""""""""""""""""""
 
-Not yet available in MS-Bot
-</span></code></pre></div>
 <h2 id="actions-get-robot-location">ACTIONS - GET ROBOT LOCATION</h2>
 
 <blockquote>
@@ -1739,12 +1320,7 @@ section, select 'Custom Payload' and enter the following:
 
 </span></code></pre></div>
 <p><img src = "images/ACTIONS.GET-ROBOT-LOCATION.png"/></p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: GET ROBOT LOCATION
-""""""""""""""""""""""""""""""""""""""""
 
-Not yet available in MS-Bot
-</span></code></pre></div>
 <h1 id="localization">→ Localization</h1>
 
 <p>If you have more than one Pepper, you may want to use the same chatbot on multiple Peppers, but have certain greetings, phrases, direction sets, or other types of responses differ from location to location and Pepper to Pepper. This can be accomplished by using parameters!</p>
@@ -1803,83 +1379,61 @@ Ex.) The following example shows how this might look in practice:<br>
 
           <h1 id="faq-limitations">FAQ &amp; Limitations</h1>
 
-<p>General FAQ questions are listed below. ChatBot specific FAQ questions are listed to the right under its tab.
-<aside class="notice">If you have a question not on our FAQ, please contact us at training@softbankrobotics.com</aside></p>
+<aside class="notice">General FAQ questions are listed below. If you have a question not on our FAQ, please contact us at training@softbankrobotics.com</aside>
 
 <p>Q. Can a ChatBot send two JSON responses in sequence?</p>
 
 <p>A. Yes. In fact, that is actually the best practice way of preventing a user from getting stuck on a non-actionable
    image. It is recommended to follow it up with another JSON response.</p>
-<div class="highlight"><pre class="highlight ms_bot_framework tab-ms_bot_framework"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Q. Can Pepper say one string and show another?
 
-A. Currently NO, Pepper will say and show the same string. However 
-   we are working towards this functionality soon.
+<p>&ndash;</p>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+<p>Q. How do I upgrade an agent from V1 to V2?</p>
 
-Q. How many hero cards will Pepper show?
+<p>A. Please do not upgrade agents to V2 yet. Our integration with V2
+is not yet the preferred integration. </p>
 
-A. As many as you like. Pepper will simply allow the user to scroll 
-   through them, three at a time. It might not be very user friendly, 
-   so we suggest keeping the number of cards under 10.
+<p>That being said, if you are looking to migrate your bot to V2, or 
+how to integrate your V2 bot into the Pepper Chat system, you&rsquo;ve come 
+to the right place!</p>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Q. Can Pepper respond to an utterance with a picture or video?
-
-A. Yes, Pepper can show either a landscape or a portrait photo. It
-   can also respond with a fullscreen video.
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""</span><span class="w">
-
-</span></code></pre></div><div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Q. How do I upgrade an agent from V1 to V2?
-
-A. If you are looking to migrate your bot to V2, or how to integrate 
-your V2 bot into the Pepper Chat system, you've come to the right 
-place!
-
-Be advised: Pepper Chat treats V1 and V2 bots completely differently, 
+<p>Be advised: Pepper Chat treats V1 and V2 bots completely differently, 
 so if you want to upgrade an existing bot you need to make a new bot 
-in our system.
+in our system.</p>
 
-First, from within the Dialogflow Console, you need to make sure your 
-bot is upgraded to Dialogflow V2 under the 'API VERSION' under the 
+<p>First, from within the Dialogflow Console, you need to make sure your 
+bot is upgraded to Dialogflow V2 under the &lsquo;API VERSION&rsquo; under the 
 Settings tab within your agent. Simply click on the V2 API radial 
-button.
+button.</p>
 
-Great! Now under the 'GOOGLE PROJECT' section of Settings, click on 
-the hyperlinked value under 'Service Account'.
+<p>Great! Now under the &lsquo;GOOGLE PROJECT&rsquo; section of Settings, click on 
+the hyperlinked value under &lsquo;Service Account&rsquo;.</p>
 
-Awesome! Now you should be within the Google Cloud Platform console. 
+<p>Awesome! Now you should be within the Google Cloud Platform console. 
 Navigate to Service Accounts. Click on the ellipsis for the service 
-account called Dialogflow Integrations. Select 'Create key' and select
-JSON as the Key Type.
+account called Dialogflow Integrations. Select &lsquo;Create key&rsquo; and select
+JSON as the Key Type.</p>
 
-Now save that document! Pepper Chat will need it when you create the 
-new Dialogflow bot.
+<p>Now save that document! Pepper Chat will need it when you create the 
+new Dialogflow bot.</p>
 
+<p>&ndash;</p>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+<p>Q. How many scrollable carousel images will Pepper show?</p>
 
-Q. How many hero cards will Pepper show?
+<p>A. We suggest keeping the number of cards under 10.</p>
 
-A. As many as you like. Pepper will simply allow the user to scroll 
-   through them, three at a time. It might not be very user friendly, 
-   so we suggest keeping the number of cards under 10.
+<p>&ndash;</p>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Q. Can Pepper respond to an utterance with a picture or video?
+<p>Q. Can Pepper respond to an utterance with a picture or video?</p>
 
-A. Yes, Pepper can show either a landscape or a portrait photo. It
-   can also respond with a fullscreen video.
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""</span><span class="w">
+<p>A. Yes, Pepper can show either a landscape or a portrait photo. It
+   can also respond with a fullscreen video.</p>
 
-</span></code></pre></div>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="dialogflow">Dialogflow</a>
-                <a href="#" data-language-name="ms_bot_framework">MS Bot Framework</a>
           </div>
       </div>
     </div>
