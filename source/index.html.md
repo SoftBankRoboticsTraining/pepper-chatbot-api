@@ -3,7 +3,7 @@ title: Pepper Chat Technical Reference
 
 language_tabs:
   - dialogflow 
-  - ms_bot_framework
+
 
 
 toc_footers:
@@ -44,45 +44,15 @@ For the full eLearning course:
 ```
 
 
-Welcome to the Pepper Chat platform! This technical reference is for Pepper owners running the Pepper-As-A-Host solution, who would like to connect their Pepper to a 3rd party chatbot (Dialogflow & MS Bot Framework platforms supported) in order to unlock Pepper's latent conversational abilities. It is an exciting evolution of Pepper's repertoire of capabilities. 
+Welcome to the Pepper Chat platform! This technical reference is for Pepper owners running the Pepper-As-A-Host solution, who would like to connect their Pepper to a 3rd party chatbot (only Google's Dialogflow platform supported at this time) in order to unlock Pepper's latent conversational abilities. It is an exciting evolution of Pepper's repertoire of capabilities. 
 
-Given the overwhelming success of the "chatbot feature" of the Host product, which was historically an optional upgrade that would replace the standard "FAQ" feature of the Host product, SBRA decided to build out and open up the Pepper Chat platform to its broader customer base. Pepper Chat allows customers who want to take more control over Pepper's speech, animations, tablet display and overall interactions can now do so using this solution, all with a conversational-focused, web-based, user interface. Teaming up with Google and Microsoft to bring our customers world-class NLP and Conversational AI technologies, we are proud and excited to provide our customers with a conversation-based Pepper platform that is dynamic, smart, and immersively fun!
+Given the overwhelming success of the "chatbot feature" of the Host product, which was historically an optional upgrade that would replace the standard "FAQ" feature of the Host product, SBRA decided to build out and open up the Pepper Chat platform to its broader customer base. Pepper Chat allows customers who want to take more control over Pepper's speech, animations, tablet display and overall interactions can now do so using this solution, all with a conversational-focused, web-based, user interface. Teaming up with Google to bring our customers world-class NLP and Conversational AI technologies, we are proud and excited to provide our customers with a conversation-based Pepper platform that is dynamic, smart, and immersively fun!
 
 NAVIGATING THIS REFERENCE:
-You can view general integration instructions in this central, light blue section. In the dark area to the right, you can see chatbot-specific code examples corresponding visually in line with each general section. Switch between different chatbot-specific code examples with the tabs in the top right.
+You can view general integration instructions in this central, light blue section. In the dark area to the right, you can see Dialogflow-specific code examples corresponding visually in line with each general section. 
 
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-The Microsoft Bot Framework facilitates the creation of 
-powerful chatbots to enhance your application's capabilities. Its open 
-source Bot Builder SDKs allow users to build simple to sophisticated 
-dialogs. Cognitive Services enable your bot to interpret and interact 
-in more human ways. The MS Bot Framework is one of the two 3rd-party 
-chatbot integrations that Pepper for Host currently supports.
 
-To see a working example, download the emulator here:
-    https://docs.microsoft.com/en-us/bot-framework/bot-service-debug-emulator
-and use the following sample PuppyBot information to set up your emulator:
-
-MS Bot Endpoint:
-   https://pepper-msbot.azurewebsites.net/api/messages?code=e3fa60oaOlabQUptT63DYSWPxrdG0pS9zFrADLT1xX9iGx6FxAG7pw==
-
-PuppyBot App Id:
-   808ad83e-3876-40fd-b0e8-a616e014fc6f
-
-PuppyBot Password:
-   9nHp8QNcwQJcNDHHjBCnoj7
-
-PuppyBot LUIS Endpoint:
-   https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/4e4b1c46-5d6d-4035-9905-eef921df734f?subscription-key=37e463e0ae22427abc606d076dafbdd3&timezoneOffset=-480&verbose=true&spellCheck=true&q=
-
-For the PuppyBot's source code and a list of sample utterances to ask 
-the bot, navigate to our GitHub repo:
-   https://github.com/SoftBankRoboticsTraining/msbot-puppy-bot/
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-```
-
-<aside class="notice">We currently only support integrations with Microsoft's <a href="https://dev.botframework.com/"> Bot Framework</a> and Google's <a href="https://dialogflow.com/">Dialogflow</a>, but this list is quickly growing, so check back soon or else get in touch with us directly if your chatbot platform of choice does not appear on this list!</aside>
+<aside class="notice">We currently only support integrations with Google's <a href="https://dialogflow.com/">Dialogflow</a>, but this list is quickly growing, so check back soon or else get in touch with us directly if your chatbot platform of choice does not appear on this list!</aside>
 
 # Getting Started
 
@@ -96,22 +66,6 @@ If you would like to learn and build on your own, you can take our free, <a href
 
 # Authentication & Setup
 
-
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-MS BOT FRAMEWORK SETUP INSTRUCTIONS:
-For MS bots, setup consists of providing us with one of your bot's 
-DirectLine 'Secret Keys'. Provide this key to the SBR Sales Engineer 
-assisting you with setup. You can find it by following these steps:
-
-Step 1: Open your bot in Azure portal (https://portal.azure.com).
-Step 2: Select the CHANNELS tab.
-Step 3: Add DirectLine to your bot.
-Step 4: Click on Edit.
-Step 5: Copy one of the Secret Keys that was generated.
-Step 6: Give the copied value to the SBR Sales Engineer.
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-```
 
 ```dialogflow
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -239,12 +193,6 @@ I.) For each section, there is a UI and a Fulfillment section
       b.) FULFILLMENT - coming soon...
 ```
 
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""
-MS Bot Framework:
-""""""""""""""""""""""""""""""""""""""""
-I.) Our MS Bot Framework is limited in comparison to our Dialogflow integration. For a more robust experience, please use Dialogflow.
-```
 
 
 
@@ -270,41 +218,6 @@ display different text from what he speaks.
 <img src = "images/TABLET.TEXT.png"/>
 
 
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: Text Only response:
-"""""""""""""""""""""""""""""""""""""""""
-{
-  "type": "message",
-  "text": "Duh, German Shepard Puppies tell the best jokes!",
-  "locale": "en-US",
-  "localTimestamp": "2017-10-02T11:11:52-07:00",
-  "from": {
-    "id": "default-bot",
-    "name": "Bot"
-  },
-  "recipient": {
-    "id": "default-user"
-  },
-  "inputHint": "acceptingInput",
-  "replyToId": "9hecj33gj8mckk1m3",
-  "id": "48mj8inig8dmc9i39",
-  "channelId": "emulator",
-  "timestamp": "2017-10-02T18:11:52.982Z",
-  "conversation": {
-    "id": "mb6c0bcdl2eclij9i"
-  }
-}
-
-"""""""""""""MAPPING""""""""""""""""""""
-Mapping (MS-Bot -> Pepper Data Model):
-text -> speak
-text -> show.text
-
-WHERE
--> = strictly mapped
-""""""""""""""""""""""""""""""""""""""""
-```
 
 
 ## TEXT BUBBLES
@@ -408,61 +321,6 @@ B.) Google Assistant > List:
 <img src = "images/TABLET.TEXT_BUBBLES.Long.png"/>
 
 
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: Hero Card with Choices
-"""""""""""""""""""""""""""""""""""""""""
-{
-  "type": "message",
-  "attachments": [{
-    "contentType": "application/vnd.microsoft.card.hero",
-    "content": {
-      "title": "Do you want to know about Puppies?",
-      "buttons": [{
-          "type": "imBack",
-          "value": "Yes please",
-          "title": "Yes please"
-        },
-        {
-          "type": "imBack",
-          "value": "No thanks",
-          "title": "No thanks"
-        }
-      ]
-    }
-  }],
-  "locale": "en-US",
-  "localTimestamp": "2017-10-02T10:45:19-07:00",
-  "from": {
-    "id": "n5dm5eb6ldekh6a3",
-    "name": "Bot"
-  },
-  "recipient": {
-    "id": "default-user"
-  },
-  "inputHint": "acceptingInput",
-  "replyToId": "i0gn412d30ag423i",
-  "id": "j2j8245c6b9m12n3i",
-  "channelId": "emulator",
-  "timestamp": "2017-10-02T17:45:19.923Z",
-  "conversation": {
-    "id": "6ja3le587mmjbc4c"
-  }
-}
-
-"""""""""""""MAPPING""""""""""""""""""""
-Mapping (MS-Bot Hero Card w/ Choices -> Pepper Data Model):
-attachments.content.buttons ~> show.content
-attachments.content.buttons.title -> show.content.text
-attachments.content.buttons.value -> show.content.value
-attachments.content.title -> show.text
-attachments.content.title -> speak
-
-WHERE
-~> = loosely mapped
--> = strictly mapped
-""""""""""""""""""""""""""""""""""""""""
-```
 
 ## IMAGE - Carousel, Captioned
 
@@ -496,84 +354,6 @@ need to create to receive the action
 ```
 
 <img src = "images/TABLET.IMAGE.Carousel.Captioned.png"/>
-
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: Hero Card with Images and Choices
-"""""""""""""""""""""""""""""""""""""""""
-{
-  "type": "message",
-  "attachmentLayout": "carousel",
-  "attachments": [{
-      "contentType": "application/vnd.microsoft.card.thumbnail",
-      "content": {
-        "title": "Boxer",
-        "subtitle": "A breed of utility dog.",
-        "text": "The American boxer is a stocky, well built, strong-looking dog, with a large head and a muscular build. Its coat is short and generally smooth. The breed is a light to moderate shedder.",
-        "images": [{
-          "url": "https://static.pexels.com/photos/158682/snow-dog-de-bordeaux-158682.jpeg"
-        }],
-        "buttons": [{
-          "type": "imBack",
-          "value": "boxer",
-          "title": "Boxer"
-        }]
-      }
-    },
-    {
-      "contentType": "application/vnd.microsoft.card.thumbnail",
-      "content": {
-        "title": "Akita",
-        "subtitle": "Continental Toy Spaniel",
-        "text": "The Akita is a very intelligent and self-assured dog that has a very easy time learning new tricks. This dog can be sociable with children and strangers but is generally reserved around new people. ",
-        "images": [{
-          "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Papillon_Ears.jpg"
-        }],
-        "buttons": [{
-          "type": "imBack",
-          "value": "akita",
-          "title": "Akita"
-        }]
-      }
-    }
-  ],
-  "locale": "en-US",
-  "localTimestamp": "2017-10-02T10:45:24-07:00",
-  "from": {
-    "id": "n5dm5eb6ldekh6a3",
-    "name": "Bot"
-  },
-  "recipient": {
-    "id": "default-user"
-  },
-  "inputHint": "acceptingInput",
-  "replyToId": "dn58c2bfjd1089dkac",
-  "id": "nbdk7b69eb0j9j69",
-  "channelId": "emulator",
-  "timestamp": "2017-10-02T17:45:24.902Z",
-  "conversation": {
-    "id": "6ja3le587mmjbc4c"
-  }
-}
-
-"""""""""""""MAPPING""""""""""""""""""""
-Mapping (MS-Bot -> Pepper Data Model):
-attachments ~> show.content
-attachments.title -> show.content.text
-attachments.subtitle -> **ABANDONED**
-attachments.text -> show.content.speak
-attachments.images.url -> show.content.contentURL
-attachments.buttons.value -> show.content.value
-
-ADDED
-speak: 'Tap or Say one of the following'
-show.content.text: 'Tap or Say one of the following'
-
-WHERE
-~> = loosely mapped
--> = strictly mapped
-""""""""""""""""""""""""""""""""""""""""
-```
 
 
 ## IMAGE - Carousel, Uncaptioned
@@ -619,12 +399,7 @@ section, select 'Custom Payload' and enter the following:
 
 <img src = "images/TABLET.IMAGE.Carousel.Uncaptioned.png"/>
 
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: N/A
-"""""""""""""""""""""""""""""""""""""""""
-Not available in MS-Bot
-```
+
 
 ## IMAGE - 1-6-Icon Layouts
 
@@ -695,12 +470,6 @@ section, select 'Custom Payload' and enter the following:
 <img src = "images/TABLET.IMAGE.1-6-ICON.6_icon.png"/>
 <img src = "images/TABLET.IMAGE.1-6-ICON.6_icon_example.png"/>
 
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: N/A
-"""""""""""""""""""""""""""""""""""""""""
-Not available in MS-Bot
-```
 
 
 ## IMAGE - Basic Card
@@ -739,61 +508,6 @@ simply combine the Basic Card with the Google Assistant Suggestion Chips.
 <img src = "images/TABLET.IMAGE.Basic-Card-Landscape.png"/>
 <img src = "images/TABLET.IMAGE.Basic-Card-Portrait.png"/>
 
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: Image Attachments response:
-"""""""""""""""""""""""""""""""""""""""""
-{
-  "type": "message",
-  "attachments": [{
-      "contentUrl": "http://www.greathillpartners.com/wp-content/uploads/Golden-Puppy.jpg",
-      "contentType": "image/jpg",
-      "name": "Puppy pic 1"
-    },
-    {
-      "contentUrl": "https://i.ytimg.com/vi/VRiWE1l8KqI/maxresdefault.jpg",
-      "contentType": "image/jpg",
-      "name": "Puppy pic 2"
-    },
-    {
-      "contentUrl": "http://24.media.tumblr.com/53e3171e750c6c1028f8200ad73c8a53/tumblr_mkozt0qp3B1qiwf8po1_500.jpg",
-      "contentType": "image/jpg",
-      "name": "Puppy pic 1"
-    }
-  ],
-  "text": "Here are some puppies",
-  "locale": "en-US",
-  "localTimestamp": "2017-10-02T11:01:51-07:00",
-  "from": {
-    "id": "default-bot",
-    "name": "Bot"
-  },
-  "recipient": {
-    "id": "default-user"
-  },
-  "inputHint": "ignoringInput",
-  "replyToId": "3j6714mfbl49hf1bac",
-  "id": "688k3bd50e8ifk364c",
-  "channelId": "emulator",
-  "timestamp": "2017-10-02T18:01:51.235Z",
-  "conversation": {
-    "id": "efj6c25bj3e43b0c9"
-  }
-}
-
-"""""""""""""MAPPING""""""""""""""""""""
-Mapping (MS-Bot -> Pepper Data Model):
-attachments ~> show.content
-attachments.contentUrl-> show.content.contentURL
-attachments.contentType-> show.content.contentType
-text -> speak
-text -> show.text
-
-WHERE
-~> = loosely mapped
--> = strictly mapped
-""""""""""""""""""""""""""""""""""""""""
-```
 
 
 
@@ -838,13 +552,6 @@ B) When using JSON (^^), any QiChat commands must be double-escaped (\\).
 
 <img src = "images/TABLET.IMAGE.Full_Screen.png"/>
 
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: Full Screen Image response:
-""""""""""""""""""""""""""""""""""""""""
-
-Not yet available in MS-Bot
-```
 
 
 
@@ -863,61 +570,6 @@ Payloads together, one after another, to create a story.
 
 <img src = "images/TABLET.IMAGE.Full_Screen.png"/>
 
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: Image Attachments response:
-"""""""""""""""""""""""""""""""""""""""""
-{
-  "type": "message",
-  "attachments": [{
-      "contentUrl": "http://www.greathillpartners.com/wp-content/uploads/Golden-Puppy.jpg",
-      "contentType": "image/jpg",
-      "name": "Puppy pic 1"
-    },
-    {
-      "contentUrl": "https://i.ytimg.com/vi/VRiWE1l8KqI/maxresdefault.jpg",
-      "contentType": "image/jpg",
-      "name": "Puppy pic 2"
-    },
-    {
-      "contentUrl": "http://24.media.tumblr.com/53e3171e750c6c1028f8200ad73c8a53/tumblr_mkozt0qp3B1qiwf8po1_500.jpg",
-      "contentType": "image/jpg",
-      "name": "Puppy pic 1"
-    }
-  ],
-  "text": "Here are some puppies",
-  "locale": "en-US",
-  "localTimestamp": "2017-10-02T11:01:51-07:00",
-  "from": {
-    "id": "default-bot",
-    "name": "Bot"
-  },
-  "recipient": {
-    "id": "default-user"
-  },
-  "inputHint": "ignoringInput",
-  "replyToId": "3j6714mfbl49hf1bac",
-  "id": "688k3bd50e8ifk364c",
-  "channelId": "emulator",
-  "timestamp": "2017-10-02T18:01:51.235Z",
-  "conversation": {
-    "id": "efj6c25bj3e43b0c9"
-  }
-}
-
-"""""""""""""MAPPING""""""""""""""""""""
-Mapping (MS-Bot -> Pepper Data Model):
-attachments ~> show.content
-attachments.contentUrl-> show.content.contentURL
-attachments.contentType-> show.content.contentType
-text -> speak
-text -> show.text
-
-WHERE
-~> = loosely mapped
--> = strictly mapped
-""""""""""""""""""""""""""""""""""""""""
-```
 
 
 
@@ -948,50 +600,6 @@ Note: When using JSON (^^), any QiChat commands must be double-escaped (\\).
 
 <img src = "images/TABLET.VIDEO.Full_Screen.png"/>
 
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: Video Only response:
-"""""""""""""""""""""""""""""""""""""""""
-{
-  "type": "message",
-  "attachments": [{
-    "contentUrl": "https://pepperstoragedev.blob.core.windows.net/pepperstories/b68b2247-f74a-4f6b-b3ad-3e7e66c1e600.mp4?decache=QLT1MXCSF1A9",
-    "contentType": "video/mp4",
-    "name": "Puppy video"
-  }],
-  "text": "Here is a puppy video",
-  "locale": "en-US",
-  "localTimestamp": "2017-10-02T11:09:03-07:00",
-  "from": {
-    "id": "default-bot",
-    "name": "Bot"
-  },
-  "recipient": {
-    "id": "default-user"
-  },
-  "inputHint": "acceptingInput",
-  "replyToId": "f0igi03ln2f4fem94c",
-  "id": "ek9im8g5df0e305bf",
-  "channelId": "emulator",
-  "timestamp": "2017-10-02T18:09:03.318Z",
-  "conversation": {
-    "id": "mb6c0bcdl2eclij9i"
-  }
-}
-
-"""""""""""""MAPPING""""""""""""""""""""
-Mapping (MS-Bot -> Pepper Data Model):
-attachments ~> show.content
-attachments.contentUrl-> show.content. contentURL
-attachments.contentType-> show.content.contentType
-text -> speak
-text -> show.text
-
-WHERE
-~> = loosely mapped
--> = strictly mapped
-""""""""""""""""""""""""""""""""""""""""
-```
 
 
 ## WEBPAGE - Show Webpage
@@ -1029,13 +637,6 @@ and copy and paste the following:
 <img src = "images/TABLET.WEBPAGE.png"/>
 <img src = "images/TABLET.WEBPAGE.Keyboard.png"/>
 
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: Show a webpage
-""""""""""""""""""""""""""""""""""""""""
-Not yet available in MS-Bot
-```
-
 
 
 ## USER INPUT - SHOW KEYBOARD
@@ -1057,13 +658,7 @@ section, select 'Custom Payload' and enter the following:
 
 <img src = "images/TABLET.USER-INPUT.Show-Keyboard.png"/>
 
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: Show Keyboard response:
-""""""""""""""""""""""""""""""""""""""""
 
-Not yet available in MS-Bot
-```
 
 ##  USER INPUT - PRIVACY POLICY
 
@@ -1100,12 +695,6 @@ simply combine the Basic Card with the Google Assistant Suggestion Chips.
 <img src = "images/TABLET.USER_INPUT.PRIVACY-POLICY.Checked.png"/>
 <img src = "images/TABLET.USER_INPUT.PRIVACY-POLICY.Unchecked.png"/>
 
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: PRIVACY POLICY
-""""""""""""""""""""""""""""""""""""""""
-Not yet available in MS-Bot
-```
 
 ###MODAL DIALOG POP-UP
 
@@ -1141,12 +730,6 @@ simply combine the Basic Card with the Google Assistant Suggestion Chips.
 <img src = "images/TABLET.USER_INPUT.PRIVACY-POLICY.Modal.png"/>
 <img src = "images/TABLET.USER_INPUT.PRIVACY-POLICY.Yes_Or_Not.png"/>
 
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: PRIVACY POLICY
-""""""""""""""""""""""""""""""""""""""""
-Not yet available in MS-Bot
-```
 
 # → Styling
 
@@ -1216,13 +799,7 @@ section, select 'Custom Payload' and enter the following:
 
 <img src = "images/TABLET.BACKGROUND.COLOR.png"/>
 
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: SET BACKGROUND COLOR
-""""""""""""""""""""""""""""""""""""""""
 
-Not yet available in MS-Bot
-```
 
 ### BACKGROUND - SET IMAGE
 
@@ -1244,13 +821,7 @@ section, select 'Custom Payload' and enter the following:
 
 <img src = "images/TABLET.BACKGROUND.IMAGE.png"/>
 
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: SET BACKGROUND IMAGE
-""""""""""""""""""""""""""""""""""""""""
 
-Not yet available in MS-Bot
-```
 
 ### OTHER UI SETTINGS
 > CUSTOM PAYLOADS:
@@ -1264,15 +835,6 @@ You can generally insert any of the following properties (here listed with sampl
   "bubbleFont": "Fantasy"<br>
 
 <img src = "images/TABLET_UI.Other_UI_Settings.png"/>
-
-
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: UPDATE CHATBOT STYLE
-""""""""""""""""""""""""""""""""""""""""
-
-Not yet available in MS-Bot
-```
 
 
 
@@ -1487,13 +1049,6 @@ of the "pepper-survey" app.
 
 <img src = "images/ACTIONS.RUN-APPLICATION.png"/>
 
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: RUN APPLICATION
-""""""""""""""""""""""""""""""""""""""""
-Not yet available in MS-Bot
-```
-
 
 
 ## ACTIONS - PLAY A GAME
@@ -1533,13 +1088,6 @@ I.) UI:
 
 <img src = "images/ACTIONS.PLAY-A-GAME.png"/>
 
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: Play a Game response:
-""""""""""""""""""""""""""""""""""""""""
-
-Not yet available in MS-Bot
-```
 
 
 ## ACTIONS - TRIGGER AN INTENT
@@ -1567,13 +1115,6 @@ section, select 'Custom Payload' and enter the following:
 
 <img src = "images/ACTIONS.TRIGGER-INTENT.png"/>
 
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: TRIGGER AN INTENT
-""""""""""""""""""""""""""""""""""""""""
-
-Not yet available in MS-Bot
-```
 
 ## ACTIONS - SWITCH LANGUAGE
 
@@ -1615,13 +1156,6 @@ Setting the language requires your Dialogflow agent be multilingual. For a given
 
 <img src = "images/ACTIONS.SWITCH-LANGUAGE.png"/>
 
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: SWITCH THE LANGUAGE
-""""""""""""""""""""""""""""""""""""""""
-
-Not yet available in MS-Bot
-```
 
 
 ## ACTIONS - GET ROBOT LOCATION
@@ -1666,13 +1200,6 @@ section, select 'Custom Payload' and enter the following:
 
 <img src = "images/ACTIONS.GET-ROBOT-LOCATION.png"/>
 
-```ms_bot_framework
-"""""""""""""""""""""""""""""""""""""""""
-MS-Bot: GET ROBOT LOCATION
-""""""""""""""""""""""""""""""""""""""""
-
-Not yet available in MS-Bot
-```
 
 # → Localization
 
