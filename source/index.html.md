@@ -335,11 +335,11 @@ Dimensions: 360w x 341t ea.
 Dialogflow:
 """"""""""""""""""""""""""""""""""""""""
 I.) UI:
-For a given intent within your agent, under the 'Response'
+For a given intent within your agent, under the 'Responses'
 section:
 1) Click the + icon next to 'Default'
 2) Select 'Google Assistant'
-3) Under the 'Google Assistant' tab, select 'Add Message Content'
+3) Under the 'Google Assistant' tab, select 'ADD RESPONSES'
 4) Select 'List'
 5) Enter the URL of the picture
 6) In the Title field, enter what you want Pepper to say and display
@@ -368,7 +368,7 @@ Dimensions: 360w x 361t ea.
 """""""""""""""""""""""""""""""""""""""""
 Dialogflow: 
 """"""""""""""""""""""""""""""""""""""""
-For a given intent within your agent, under the 'Response'
+For a given intent within your agent, under the 'Responses'
 section, select 'Custom Payload' and enter the following:
 {
   "title": "Tap or Say one of the following",
@@ -414,7 +414,7 @@ Dimensions: 280w x 225t ea.
 """""""""""""""""""""""""""""""""""""""""
 Dialogflow: 
 """"""""""""""""""""""""""""""""""""""""
-For a given intent within your agent, under the 'Response'
+For a given intent within your agent, under the 'Responses'
 section, select 'Custom Payload' and enter the following:
 {
   "backgroundColor": "#d7d7d7",
@@ -487,11 +487,11 @@ Dimensions: <br>
 Dialogflow: Non-actionable Images (with follow-up buttons)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 I.) UI:
-For a given intent within your agent, under the 'Response'
+For a given intent within your agent, under the 'Responses'
 section:
 1) Click the + icon next to 'Default'
 2) Select 'Google Assistant'
-3) Under the 'Google Assistant' tab, select 'Add Message Content'
+3) Under the 'Google Assistant' tab, select 'ADD RESPONSES'
 4) Select 'Basic Card'
 5) Enter the URL of the picture
 6) In the 'Title' field, enter what you want Pepper to say and display
@@ -524,8 +524,8 @@ Dialogflow:
 """"""""""""""""""""""""""""""""""""""""
 I.) UI:
 A.) Selectable:
-For a given intent within your agent, under the 'Response'
-section, click 'Add Message Content', select 'Custom Payload' 
+For a given intent within your agent, under the 'Responses'
+section, click 'ADD RESPONSES', select 'Custom Payload' 
 and copy and paste the following:
 {
   "backgroundColor": "#d7d7d7",
@@ -585,8 +585,8 @@ YouTube / Vimeo / etc. video links do not work
 Dialogflow: VIDEO RESPONSE
 """"""""""""""""""""""""""""""""""""""""
 I.) UI:
-For a given intent within your agent, under the 'Response'
-section, click 'Add Message Content', select 'Custom Payload'
+For a given intent within your agent, under the 'Responses'
+section, click 'ADD RESPONSES', select 'Custom Payload'
 and copy and paste the following:
 {
   "videoURL": "https://url-of-your-video-file.mp4",
@@ -620,8 +620,8 @@ You may now display webpages on Pepper through your chatbot! The webpage allows 
 Dialogflow: 
 """"""""""""""""""""""""""""""""""""""""
 I.) UI:
-For a given intent within your agent, under the 'Response'
-section, click 'Add Message Content', select 'Custom Payload'
+For a given intent within your agent, under the 'Responses'
+section, click 'ADD RESPONSES', select 'Custom Payload'
 and copy and paste the following:
 {
   "speak": "Here is a webpage ||",
@@ -648,7 +648,7 @@ and copy and paste the following:
 Dialogflow: 
 """"""""""""""""""""""""""""""""""""""""
 A keyboard can be shown to receive any type of input. To do so,
-for a given intent within your agent, under the 'Response'
+for a given intent within your agent, under the 'Responses'
 section, select 'Custom Payload' and enter the following:
 {
   "speak": "Type your confirmation number using the keyboard."
@@ -672,8 +672,8 @@ Keyboard with checked box with Privacy Policy displayed (for CTA) - .PDF format 
 Dialogflow: PRIVACY POLICY - CHECKBOX
 """"""""""""""""""""""""""""""""""""""""
 I.) UI: 
-For a given intent within your agent, under the 'Response'
-section, click 'Add Message Content', select 'Custom Payload'
+For a given intent within your agent, under the 'Responses'
+section, click 'ADD RESPONSES', select 'Custom Payload'
 and copy and paste the following:
 {
   "speak": "Please type in your email and agree to our privacy policy to continue",
@@ -707,8 +707,8 @@ Modal window pops up with Privacy Policy displayed (for CTA) - .PDF format only
 Dialogflow: PRIVACY POLICY - Modal Dialog Pop-up
 """"""""""""""""""""""""""""""""""""""""
 I.) UI:
-For a given intent within your agent, under the 'Response'
-section, click 'Add Message Content', select 'Custom Payload'
+For a given intent within your agent, under the 'Responses'
+section, click 'ADD RESPONSES', select 'Custom Payload'
 and copy and paste the following:
 {
   "speak": "Please enter your email",
@@ -743,7 +743,7 @@ Configures style and settings for the chatbot's UI.
 """""""""""""""""""""""""""""""""""""""""
 Dialogflow:  UPDATE CHATBOT STYLE
 """"""""""""""""""""""""""""""""""""""""
-For a given intent within your agent, under the 'Response'
+For a given intent within your agent, under the 'Responses'
 section, select 'Custom Payload' and enter the following:
 {
   "speak": "Setting background image and color ||",
@@ -786,7 +786,7 @@ chatbot style is restored every time chatbot session is restarted.
 Dialogflow:  SET BACKGROUND COLOR
 """"""""""""""""""""""""""""""""""""""""
 I.) UI: 
-For a given intent within your agent, under the 'Response'
+For a given intent within your agent, under the 'Responses'
 section, select 'Custom Payload' and enter the following:
 {
   "backgroundColor": "#d7d7d7",
@@ -808,7 +808,7 @@ section, select 'Custom Payload' and enter the following:
 Dialogflow:  SET BACKGROUND IMAGE
 """"""""""""""""""""""""""""""""""""""""
 I.) UI: 
-For a given intent within your agent, under the 'Response'
+For a given intent within your agent, under the 'Responses'
 section, select 'Custom Payload' and enter the following:
 {
   "backgroundColor": "#d7d7d7",
@@ -1022,7 +1022,7 @@ Launches a locally installed, <a href='http://doc.aldebaran.com/2-5/naoqi/index.
 """""""""""""""""""""""""""""""""""""""""
 Dialogflow: RUN AN APPLICATION
 """"""""""""""""""""""""""""""""""""""""
-For a given intent within your agent, under the 'Response'
+For a given intent within your agent, under the 'Responses'
 section, select 'Custom Payload' and enter the following:
 Syntax:
 {
@@ -1060,7 +1060,7 @@ of the "pepper-survey" app.
 Dialogflow: PLAY A GAME
 """"""""""""""""""""""""""""""""""""""""
 I.) UI:
-  A.) To initiate a specific game, under the 'Response' section, 
+  A.) To initiate a specific game, under the 'Responses' section, 
   select 'Custom Payload' and enter the following:
   {
     "speak": "Initiating selfie mode."
@@ -1077,7 +1077,7 @@ I.) UI:
     - 'Music Boxes'
     - 'Arcadia dance' - CURRENTLY UNAVAILABLE
 
-  B.) To initiate a random game, under the 'Response' section, 
+  B.) To initiate a random game, under the 'Responses' section, 
   select 'Custom Payload' and enter the following:
   { 
     "payloadType": "action",
@@ -1102,7 +1102,7 @@ Provide an utterance to an intent you want to trigger
 Dialogflow:  TRIGGER AN INTENT
 """"""""""""""""""""""""""""""""""""""""
 I.) UI: 
-For a given intent within your agent, under the 'Response'
+For a given intent within your agent, under the 'Responses'
 section, select 'Custom Payload' and enter the following:
 {
   "action": "setStyle",
@@ -1144,7 +1144,7 @@ supportedLanguages: [
 Dialogflow:  SWITCH THE LANGUAGE
 """"""""""""""""""""""""""""""""""""""""
 I.) UI: 
-Setting the language requires your Dialogflow agent be multilingual. For a given intent within your agent, under the 'Response' section, select 'Custom Payload' and enter the following:
+Setting the language requires your Dialogflow agent be multilingual. For a given intent within your agent, under the 'Responses' section, select 'Custom Payload' and enter the following:
 {
   "action": "setLanguage",
   "action_parameters": {
