@@ -5,10 +5,6 @@ language_tabs:
   - dialogflow 
 
 
-
-toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-
 includes:
   - faq
 
@@ -651,7 +647,7 @@ A keyboard can be shown to receive any type of input. To do so,
 for a given intent within your agent, under the 'Response'
 section, select 'Custom Payload' and enter the following:
 {
-  "speak": "Type your confirmation number using the keyboard."
+  "speak": "If you type in your email I'll send you a photo."
   "action": "showKeyboard"
 }
 ```
@@ -664,8 +660,17 @@ section, select 'Custom Payload' and enter the following:
 
 > PRIVACY POLICY - Checkbox:
 
+If you would like to save user input for later use for CTA (Call-to-Action) purposes, you must supply your company's privacy policy in PDF format for how you will use customer data, to which users must agree. 
+
+There are two options, listed below for collecting CTA information, via: <br>
+&nbsp; -  Checkbox; & <br> &nbsp; -  Modal Dialog
+
+<img src = "images/PEPPER_CHAT.Chatbots.CTA.Download_CSV.png"/>
+Fig. - Pepper Chat CMS ^^ - Download CTA results from within the Pepper Chat CMS, in the Chatbots tab, by clicking on the '+' icon beside the specific chatbot that collected the CTA results. Then, beside 'Gathered Data', click on 'Download CSV.' 
+
 ###CHECKBOX
-Keyboard with checked box with Privacy Policy displayed (for CTA) - .PDF format only
+Keyboard with checked box with Privacy Policy displayed (for CTA) - .PDF format only.
+
 
 ```dialogflow
 """""""""""""""""""""""""""""""""""""""""
