@@ -219,9 +219,6 @@
         <ul class="search-results"></ul>
       <div id="toc">
       </div>
-        <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
@@ -826,7 +823,7 @@ A keyboard can be shown to receive any type of input. To do so,
 for a given intent within your agent, under the 'Response'
 section, select 'Custom Payload' and enter the following:
 {
-  "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Type</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">confirmation</span><span class="w"> </span><span class="err">number</span><span class="w"> </span><span class="err">using</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">keyboard.</span><span class="s2">"
+  "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">If</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">type</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">email</span><span class="w"> </span><span class="err">I'll</span><span class="w"> </span><span class="err">send</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">photo.</span><span class="s2">"
   "</span><span class="err">action</span><span class="s2">": "</span><span class="err">showKeyboard</span><span class="s2">"
 }
 </span></code></pre></div>
@@ -838,9 +835,17 @@ section, select 'Custom Payload' and enter the following:
 <p>PRIVACY POLICY - Checkbox:</p>
 </blockquote>
 
+<p>If you would like to save user input for later use for CTA (Call-to-Action) purposes, you must supply your company&rsquo;s privacy policy in PDF format for how you will use customer data, to which users must agree. </p>
+
+<p>There are two options, listed below for collecting CTA information, via: <br>
+&nbsp; -  Checkbox; &amp; <br> &nbsp; -  Modal Dialog</p>
+
+<p><img src = "images/PEPPER_CHAT.Chatbots.CTA.Download_CSV.png"/>
+Fig. - Pepper Chat CMS ^^ - Download CTA results from within the Pepper Chat CMS, in the Chatbots tab, by clicking on the &lsquo;+&rsquo; icon beside the specific chatbot that collected the CTA results. Then, beside &lsquo;Gathered Data&rsquo;, click on &lsquo;Download CSV.&rsquo; </p>
+
 <h3 id="checkbox">CHECKBOX</h3>
 
-<p>Keyboard with checked box with Privacy Policy displayed (for CTA) - .PDF format only</p>
+<p>Keyboard with checked box with Privacy Policy displayed (for CTA) - .PDF format only.</p>
 <div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 Dialogflow: PRIVACY POLICY - CHECKBOX
 """"""""""""""""""""""""""""""""""""""""
