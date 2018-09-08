@@ -4,6 +4,12 @@
 <aside class="notice">General FAQ questions are listed below. If you have a question not on our FAQ, please contact us at training@softbankrobotics.com</aside>
 
 
+Q. Can I send the different response types using fulfillment?
+
+A. Yes. In fact, we have created an easy-to-use, Pepper Chat Dialogflow fulfillment library to form the correct JSON responses for you: <a href="https://github.com/softbank-robotics-america/pepper-dialogflow-markup-library">https://github.com/softbank-robotics-america/pepper-dialogflow-markup-library</a>.
+
+--
+
 Q. Can a ChatBot send two JSON responses in sequence?
 
 A. Yes. In fact, that is actually the best practice way of preventing a user from getting stuck on a non-actionable
@@ -54,3 +60,5 @@ Q. Can Pepper respond to an utterance with a picture or video?
 
 A. Yes, Pepper can show either a landscape or a portrait photo. It
    can also respond with a fullscreen video.
+
+

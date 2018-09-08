@@ -36,6 +36,12 @@ For a quick tutorial:
 For the full eLearning course: 
   → https://www.udemy.com/learn-conversational-ux-on-pepper-the-robot/
 
+Advanced:
+If you are working with fulfillment and want to return rich responses, 
+you can use this fulfillment library in your project to make it easier
+to form valid Pepper responses (also includes a demo project):
+https://github.com/softbank-robotics-america/pepper-dialogflow-markup-library/blob/master/README.md
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ```
 
@@ -78,7 +84,10 @@ Step 3-b (optional): If you want to provide the Pepper Chat CMS the ability
 to edit your agent, you can also copy the Developer Access Token value.
 Step 4: [Input token into Pepper Chat → See central panel for instructions]
 
-For V2 agents, setup consists of providing us with your keypath file.
+For now, please do not use V2 agents.
+
+BETA:
+V2 agents, setup consists of providing us with your keypath file.
 
 V2 Instructions:
 Follow the instructions here to download your keypath file:
@@ -110,13 +119,18 @@ II.) PEPPER CHAT INSTRUCTIONS:
 <br>
 2) Add a new chatbot to your account from within the CHATBOTS tab, using the '+ Add Chatbot' button; 
 <br>
-3) Complete the setup wizard, supplying either the token or the keypath file you obtained from part I.
+3) Complete the setup wizard, supplying either the token (or the keypath file for V2 agents) you obtained from part I.
+<br>
+4) Activate the chatbot for the desired robot(s) by clicking on the Robots tab and selecting the chatbot from the dropdown menu.
+<br>
+5) Disable the standard Host menu by logging into the standard <a href="www.pepperreception.azurewebsites.net">Host CMS</a> and turning off Notify, Company Stories, & Entertainment, while ensuring that the FAQ feature remains on.
 
 <aside class="info">V1 requires a Client Token to authenticate: </aside>
 <img src = "images/PEPPER_CHAT.V1.Authentication.Add_A_Robot.png"/>
 
 <aside class="info">V2 requires a KeyPath file to authenticate:</aside>
-<img src = "images/PEPPER_CHAT.V2.Authentication.Add_A_Robot.png"/>
+<img src = "images/PEPPER_CHAT.V2.Authentication.Add_A_Robot.png"/><br><br>
+
 
 <aside class="info">NOTE: In order to have your Pepper launch directly into your chatbot, you will need to disable all other features in Host except for the FAQ. This will give launch priority directly to your chatbot! </aside>
 <br>
@@ -154,7 +168,8 @@ The section below shows all the various options that can be displayed on Pepper'
   <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#image-carousel-uncaptioned">IMAGES - Carousel, Uncaptioned</a> - Selectable, Scrollable (n>2; 3 max on tablet at a time) - 360w x 341t ea.</li>
   <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#image-1-6-icon-layouts">IMAGE(S) - 1-6-Icon Layouts</a> - Selectable, Non-Scrollable (1-6 max total) - 280w x 225t ea.</li>
   <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#image-basic-card">IMAGE - Basic Card</a> - Non-Selectable, Non-Scrollable (1-6 max total) - 280w x 225t ea.</li>
-  <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#image-fullscreen-image">IMAGE - Fullscreen</a> - Selectable, Non-Scrollable - 1280w x 800t</li>
+  <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#image-fullscreen-image">IMAGE - Fullscreen</a> - Non-Selectable, Non-Scrollable - 1280w x 800t</li>
+  <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#image-background-image">IMAGE - Background Image</a> - Non-Selectable, Non-Scrollable - 1280w x 800t</li>
 </ul>
 ###VIDEO:
 <ul>
@@ -505,7 +520,37 @@ simply combine the Basic Card with the Google Assistant Suggestion Chips.
 <img src = "images/TABLET.IMAGE.Basic-Card-Portrait.png"/>
 
 
+##  IMAGE - Background Image
 
+> IMAGE RESPONSE - Background Image:
+
+Selectable, Non-Scrollable - 1280w x 800t
+
+```dialogflow
+"""""""""""""""""""""""""""""""""""""""""
+Dialogflow: 
+""""""""""""""""""""""""""""""""""""""""
+I.) UI:
+A.) Selectable:
+For a given intent within your agent, under the 'Response'
+section, click 'Add Message Content', select 'Custom Payload' 
+and copy and paste the following:
+{
+  "backgroundImage": "https://pepperstoragedev.blob.core.windows.net/pepperdrive/c8f7061d-cd26-4807-8113-209cf7f574738baae0ca-27e1-4998-8732-7042c66e12ad.jpg",
+  "speak": "Here is an persistent background image ||"
+}
+
+Notes: 
+
+A) With non-actionable images, it is recommended to keep the conversation
+alive with a follow-up message. To prompt the user for another action, 
+simply combine the Basic Card with the Google Assistant Suggestion Chips.
+
+B) When using JSON (^^), any QiChat commands must be double-escaped (\\).
+
+
+```
+<img src = "images/TABLET_UI.Other_UI_Settings.png"/>
 
 
 ##  IMAGE - Fullscreen Image
@@ -523,12 +568,7 @@ A.) Selectable:
 For a given intent within your agent, under the 'Response'
 section, click 'Add Message Content', select 'Custom Payload' 
 and copy and paste the following:
-{
-  "backgroundColor": "#d7d7d7",
-  "backgroundImage": "https://pepperstoragedev.blob.core.windows.net/pepperdrive/c8f7061d-cd26-4807-8113-209cf7f574738baae0ca-27e1-4998-8732-7042c66e12ad.jpg",
-  "speak": "Here is an actionable background image ||"
-}
-B.) Non-selectable:
+
 {
   "imageURL": "https://pepperstoragedev.blob.core.windows.net/files/Default_Story_1.jpg",
   "speak": "Hi, I dont know how much you know about me, but I am here to be your host.",
@@ -658,7 +698,6 @@ section, select 'Custom Payload' and enter the following:
 
 ##  USER INPUT - PRIVACY POLICY
 
-> PRIVACY POLICY - Checkbox:
 
 If you would like to save user input for later use for CTA (Call-to-Action) purposes, you must supply your company's privacy policy in PDF format for how you will use customer data, to which users must agree. 
 
@@ -667,6 +706,8 @@ There are two options, listed below for collecting CTA information, via: <br>
 
 <img src = "images/PEPPER_CHAT.Chatbots.CTA.Download_CSV.png"/>
 Fig. - Pepper Chat CMS ^^ - Download CTA results from within the Pepper Chat CMS, in the Chatbots tab, by clicking on the '+' icon beside the specific chatbot that collected the CTA results. Then, beside 'Gathered Data', click on 'Download CSV.' 
+
+> PRIVACY POLICY - Checkbox:
 
 ###CHECKBOX
 Keyboard with checked box with Privacy Policy displayed (for CTA) - .PDF format only.
@@ -757,6 +798,7 @@ section, select 'Custom Payload' and enter the following:
     "backgroundColor": "#ebc6eb",
     "backgroundImage": "https://pepperstoragedev.blob.core.windows.net/pepperdrive/41092db5-ee34-424a-bdf3-6bca579180afbd2dcbc8-f435-4615-b63c-4274d66d7993.png",
     "restoreDefault": false,
+    "listenBarLocation": "top", 
     "nextUtterance": "{Insert any Intent's Training Phrase here...}"
   }
 }
@@ -769,9 +811,10 @@ Notes:
  properties can be omitted in this case (ignored if present).
 - Use it if you want Pepper to say something when chatbot style 
 is updated.
+- "listenBarLocation" values can be 'top'|'bottom'|'invisible'
 - "nextUtterance" property is also optional. You can trigger 
 next chatbot intent automatically after changing the style by 
-assigning one of intent phrases to this property.
+assigning one of an intent's training phrases to this property.
 - Use "default" as "backgroundColor" or "backgroundImage" value 
 to restore the original state of corresponding property
 - Use "none" as "backgroundImage" to remove the image
@@ -1020,7 +1063,7 @@ The section below shows all the various actions that can be performed within a C
 
 > ACTIONS - RUN APPLICATION
 
-Launches a locally installed, <a href='http://doc.aldebaran.com/2-5/naoqi/index.html'>NAOqi</a> application - and meanwhile maintains chatbot session persistence. NAOqi applications can be built with <a href='http://doc.aldebaran.com/2-5/software/choregraphe/index.html'>Choregraphe</a> or with our Python SDK and the <a href='http://doc.aldebaran.com/2-5/dev/libqi/api/python/index.html#py-api-index'>qi Framework</a> via one of our <a href='https://github.com/pepperhacking/robot-jumpstarter'>Robot Jumpstarter templates</a>.
+Launches a locally installed, <a href='http://doc.aldebaran.com/2-5/naoqi/index.html'>NAOqi</a> application - and meanwhile maintains chatbot session persistence. NAOqi applications can be built with <a href='http://doc.aldebaran.com/2-5/software/choregraphe/index.html'>Choregraphe</a> or with our Python SDK and the <a href='http://doc.aldebaran.com/2-5/dev/libqi/api/python/index.html#py-api-index'>qi Framework</a> via one of our <a href='https://github.com/pepperhacking/robot-jumpstarter'>Robot Jumpstarter templates</a>. <a href="https://community.ald.softbankrobotics.com/en/resources/software/language/en-gb">Download Choregraphe here</a> (requires creating a SBR community account). Launching a custom NAOqi application from Dialogflow requires knowing the application's APP ID, which can be found in the Properties of the Choregraphe project.
 
 
 ```dialogflow
@@ -1149,7 +1192,24 @@ supportedLanguages: [
 Dialogflow:  SWITCH THE LANGUAGE
 """"""""""""""""""""""""""""""""""""""""
 I.) UI: 
-Setting the language requires your Dialogflow agent be multilingual. For a given intent within your agent, under the 'Response' section, select 'Custom Payload' and enter the following:
+Setting the language requires your Dialogflow agent be multilingual. Read 
+Dialogflow documentation here: https://dialogflow.com/docs/multi-language. 
+Once your agent is multilingual, it is recommended to use selectable buttons
+(icons, carousel, etc.) in order to select a language. Each button should 
+map to an intent whose purpose is to change the language. For each of these 
+given intents within your agent, under the 'Response' section, select 'Custom 
+Payload' and enter the following:
+
+General Syntax:
+{
+  "action": "setLanguage",
+  "action_parameters": {
+    "language": "Spanish"|"English"|"Spanish"|"French"|"Japanese"| "Chinese" 
+                (↑↑ only provide one of these options↑↑)
+  }
+}
+
+Ex.
 {
   "action": "setLanguage",
   "action_parameters": {
@@ -1258,6 +1318,6 @@ Most of your robot's functionality can be tested virtually from within the Peppe
 
 <aside type="info">NOTE: If you are using parameters for localization of your chatbot, you can test each localization by clicking on that localization from the Robot Page. </aside>
 
-<aside type="warning">LIMITATIONS: The Pepper Simulator does not support any voice shaping commands at this time. Additionally, it also does not support animations, certain actions, certain click commands, etc.</aside>
+<aside type="warning">LIMITATIONS: The Pepper Simulator does not support any voice shaping commands at this time. Additionally, it also does not support animations, ALL actions, certain click commands, etc.</aside>
 
 <aside type="warning">PERFORMANCE DIFFERENCES: There are minor differences in performance between the simulator and your Pepper. To ensure an experience will actually work as expected on Pepper, please test your experience on an actual Pepper.</aside>
