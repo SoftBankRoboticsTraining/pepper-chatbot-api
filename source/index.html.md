@@ -54,8 +54,6 @@ NAVIGATING THIS REFERENCE:
 You can view general integration instructions in this central, light blue section. In the dark area to the right, you can see Dialogflow-specific code examples corresponding visually in line with each general section. 
 
 
-<aside class="notice">We currently only support integrations with Google's <a href="https://dialogflow.com/">Dialogflow</a>, but this list is quickly growing, so check back soon or else get in touch with us directly if your chatbot platform of choice does not appear on this list!</aside>
-
 # Getting Started
 
 > SBRA offers professional services to assist in the creation of your Chatbot. If you are interested, please email sales_us@softbankrobotics.com. Otherwise you can use the remainder of this documentation to create your own Chatbot for Pepper.
@@ -106,7 +104,7 @@ below for your welcome intent's response.
 
 ChatBots use RESTful APIs with some form of credentials (typically KEY FILES, ACCESS TOKENS, APP IDs, PASSWORDS, etc.) to authenticate in order to send and retrieve text & multimedia session data. 
 
-With SoftBank Robotics America's new Pepper ChatBot API and the Pepper Chat platform built on top of it, connecting your <a href="www.dialogflow.com">Dialogflow</a> or <a href="https://dev.botframework.com/">Microsoft Bot Framework</a> chatbot is as easy as it possibly can be. Simply log in to <a href="https://pepper-chat.azurewebsites.net">Pepper Chat CMS</a> (Content Management System) and provide the platform with a friendly name for your bot and either your bot's client access token or else a key file.
+With SoftBank Robotics America's new Pepper ChatBot API and the Pepper Chat platform built on top of it, connecting your <a href="www.dialogflow.com">Dialogflow chatbot is as easy as it possibly can be. Simply log in to <a href="https://pepper-chat.azurewebsites.net">Pepper Chat CMS</a> (Content Management System) and provide the platform with a friendly name for your bot and either your bot's client access token or else a key file.
 
 I.) CHATBOT INSTRUCTIONS:
 <br>
@@ -124,11 +122,14 @@ II.) PEPPER CHAT INSTRUCTIONS:
 4) Activate the chatbot for the desired robot(s) by clicking on the Robots tab and selecting the chatbot from the dropdown menu.
 <br>
 5) Disable the standard Host menu by logging into the standard <a href="www.pepperreception.azurewebsites.net">Host CMS</a> and turning off Notify, Company Stories, & Entertainment, while ensuring that the FAQ feature remains on.
+<br>
+6) Within your Dialogflow agent, to set up a Welcome intent, use the training phrase "init1234". The "init1234" training phrase will activate this intent as the entry point to every interaction. NOTE: If you do not set up an intent with this training phrase, then the system will still send the "init1234" message, and as a result, Pepper will start every interaction with your default Fallback intent's response.
+<br>
 
-<aside class="info">V1 requires a Client Token to authenticate: </aside>
+<aside class="info">Dialogflow V1 agents require a Client Token to authenticate: </aside>
 <img src = "images/PEPPER_CHAT.V1.Authentication.Add_A_Robot.png"/>
 
-<aside class="info">V2 requires a KeyPath file to authenticate:</aside>
+<aside class="info">(BETA: Unstable) Dialogflow V2 agents require a KeyPath file to authenticate:</aside>
 <img src = "images/PEPPER_CHAT.V2.Authentication.Add_A_Robot.png"/><br><br>
 
 
@@ -1111,7 +1112,7 @@ I.) UI:
   A.) To initiate a specific game, under the 'Response' section, 
   select 'Custom Payload' and enter the following:
   {
-    "speak": "Initiating selfie mode."
+    "speak": "Initiating selfie mode.",
     "action": "playGame",
     "action_parameters": {
       "gameName": "Take a Selfie"
