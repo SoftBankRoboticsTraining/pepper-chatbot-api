@@ -411,8 +411,6 @@ below for your welcome intent's response.
 <uL>
   <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#tablet-ui-settings-update-chatbot-style">UPDATE CHATBOT STYLE</a> - Update your chatbot&rsquo;s default UI settings </li>
 </uL>
-
-<aside type="info"> * NOTE: .MOVs do not display reliably on Pepper&rsquo;s tablet </aside>
 <div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""
 Dialogflow:
 """"""""""""""""""
@@ -461,24 +459,24 @@ Without style/formatting:
   "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Tap</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">Say</span><span class="w"> </span><span class="err">one</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">following</span><span class="s2">",
   "</span><span class="err">randomBubbles</span><span class="s2">": [
     {
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">1</span><span class="s2">",
-      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">1</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Button</span><span class="mi">1</span><span class="s2">"
+      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">1</span><span class="s2">",
+      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">1</span><span class="s2">",
+      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Bubble</span><span class="mi">1</span><span class="s2">"
     },
     {
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">2</span><span class="s2">",
-      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">2</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Button</span><span class="mi">2</span><span class="s2">"
+      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">2</span><span class="s2">",
+      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">2</span><span class="s2">",
+      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Bubble</span><span class="w"> </span><span class="mi">2</span><span class="s2">"
     },
     {
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">3</span><span class="s2">",
-      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">3</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Button</span><span class="mi">3</span><span class="s2">"
+      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">3</span><span class="s2">",
+      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">3</span><span class="s2">",
+      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Bubble</span><span class="w"> </span><span class="mi">3</span><span class="s2">"
     },
     {
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">4</span><span class="s2">",
-      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">4</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Button</span><span class="mi">4</span><span class="s2">"
+      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">4</span><span class="s2">",
+      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">4</span><span class="s2">",
+      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Bubble</span><span class="w"> </span><span class="mi">4</span><span class="s2">"
     }]
   }
 
@@ -495,24 +493,24 @@ With style/formatting:
   "</span><span class="err">bubbleFont</span><span class="s2">": "</span><span class="err">Fantasy</span><span class="s2">",
   "</span><span class="err">randomBubbles</span><span class="s2">": [
     {
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">1</span><span class="s2">",
-      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">1</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Button</span><span class="mi">1</span><span class="s2">"
+      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">1</span><span class="s2">",
+      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">1</span><span class="s2">",
+      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Bubble</span><span class="w"> </span><span class="mi">1</span><span class="s2">"
     },
     {
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">2</span><span class="s2">",
-      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">2</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Button</span><span class="mi">2</span><span class="s2">"
+      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">2</span><span class="s2">",
+      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">2</span><span class="s2">",
+      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Bubble</span><span class="w"> </span><span class="mi">2</span><span class="s2">"
     },
     {
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">3</span><span class="s2">",
-      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">3</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Button</span><span class="mi">3</span><span class="s2">"
+      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">3</span><span class="s2">",
+      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">3</span><span class="s2">",
+      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Bubble</span><span class="w"> </span><span class="mi">3</span><span class="s2">"
     },
     {
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">4</span><span class="s2">",
-      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Button</span><span class="w"> </span><span class="mi">4</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Button</span><span class="mi">4</span><span class="s2">"
+      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">4</span><span class="s2">",
+      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">4</span><span class="s2">",
+      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Bubble</span><span class="w"> </span><span class="mi">4</span><span class="s2">"
     }]
   }
 
@@ -722,7 +720,7 @@ simply combine the Basic Card with the Google Assistant Suggestion Chips.
 <p>IMAGE RESPONSE - Background Image:</p>
 </blockquote>
 
-<p>Selectable, Non-Scrollable - 1280w x 800t</p>
+<p>Non-selectable, Non-Scrollable, Persistent (once displayed, the image will remain throughout the rest of the interaction unless or until a new background image is set) - 1280w x 800t</p>
 <div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 Dialogflow: 
 """"""""""""""""""""""""""""""""""""""""
@@ -754,7 +752,7 @@ B) When using JSON (^^), any QiChat commands must be double-escaped (</span><spa
 <p>IMAGE RESPONSE - Fullscreen Image:</p>
 </blockquote>
 
-<p>Selectable, Non-Scrollable - 1280w x 800t</p>
+<p>Non-selectable, Non-Scrollable, Skippable - 1280w x 800t</p>
 <div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 Dialogflow: 
 """"""""""""""""""""""""""""""""""""""""
@@ -787,6 +785,8 @@ B) When using JSON (^^), any QiChat commands must be double-escaped (</span><spa
 <blockquote>
 <p>IMAGE RESPONSE - Sequence of Images</p>
 </blockquote>
+
+<p>Images can be chained together for the effect of Pepper telling a story, similar to a slide-show presentation. For this, it is recommended to use a sequence of Full Screen Images.</p>
 <div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 Dialogflow: IMAGE RESPONSE
 """"""""""""""""""""""""""""""""""""""""
@@ -802,8 +802,20 @@ Payloads together, one after another, to create a story.
 <p>VIDEO RESPONSE:</p>
 </blockquote>
 
-<p>Skippable - 1280w x 800t - .mp4 format required
-YouTube / Vimeo / etc. video links do not work</p>
+<p>Skippable
+<br>
+<br>
+Technical Specs: <br>
+<ul>
+  <li> resolution - 1280w x 800t </li>
+  <li> format - .mp4 or .mov format </li>
+  <li> size - &lt; 8-10MB for optimal performance </li>
+  <li> bitrate - no recommendation, but lower bitrates will load faster </li>
+  <li> streaming - not supported (YouTube/Vimeo/etc. video links do not work) </li>
+</ul>
+<br></p>
+
+<p>Note: If video file is uploaded/served from Pepper Drive, Pepper will actually locally cache the video for faster display upon subsequent views.</p>
 <div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 Dialogflow: VIDEO RESPONSE
 """"""""""""""""""""""""""""""""""""""""
@@ -956,6 +968,8 @@ simply combine the Basic Card with the Google Assistant Suggestion Chips.
 </blockquote>
 
 <p>Configures style and settings for the chatbot&rsquo;s UI.</p>
+
+<aside class="notice">Note: In order for a style to take effect and be persistent, the style must not only be specified in the response of an intent but must be implemented as well. For example, if you would like to change the  font of all the tablet text in your Pepper experience, you must first specify the font style, but then you must in the same response also provide a response type that renders text on the tablet, thus implementing the style.</aside>
 <div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
 Dialogflow:  UPDATE CHATBOT STYLE
 """"""""""""""""""""""""""""""""""""""""
@@ -1039,7 +1053,78 @@ You can generally insert any of the following properties (here listed with sampl
   &ldquo;bubbleFont&rdquo;: &ldquo;Fantasy&rdquo;<br></p>
 </blockquote>
 
-<p><img src = "images/TABLET_UI.Other_UI_Settings.png"/></p>
+<p><img src = "images/TABLET_UI.Other_UI_Settings.png"/>
+<br>
+List of recommended fonts: <br>
+<link rel="stylesheet" type="text/css" href='//fonts.googleapis.com/css?family=Roboto' />
+<link rel="stylesheet" type="text/css" href='//fonts.googleapis.com/css?family=Roboto Condensed' />
+<link rel="stylesheet" type="text/css" href='//fonts.googleapis.com/css?family=Roboto Mono' />
+<link rel="stylesheet" type="text/css" href='//fonts.googleapis.com/css?family=Cutive Mono' />
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif" />
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Indie+Flower" />
+<table>
+  <tr>
+    <td style="background:lightgrey"> <b> Font Name </b> </td>
+    <td style="background:lightgrey"> <b> Pepper Chat Font Code </b> </td>
+  </tr>
+  <tr>
+    <td style="font: sans-serif; font-weight: 100"> Roboto Thin </font> </td>
+    <td> sans-serif-thin </td>
+  </tr>
+  <tr>
+    <td style="font: sans-serif; font-weight: 300">Roboto Light </font> </td>
+    <td> sans-serif-light </td>
+  </tr>
+  <tr>
+    <td style="font: sans-serif; font-weight: 400">Roboto Regular </font> </td>
+    <td> sans-serif </td>
+  </tr>
+  <tr>
+    <td style="font: sans-serif; font-weight: 600"> Roboto Medium </font> </td>
+    <td> sans-serif-medium </td>
+  </tr>
+  <tr>
+    <td style="font: sans-serif; font-weight: 900">Roboto Black </font> </td>
+    <td> sans-serif-black </td>
+  </tr>
+  <tr>
+    <td style="font: sans-serif; font-weight: 300; font-stretch: ultra-condensed">Roboto Condensed Light </font> </td>
+    <td> sans-serif-condensed-light </td>
+  </tr>
+  <tr> 
+    <td style="font: sans-serif; font-weight: 400; font-stretch: ultra-condensed">Roboto Condensed Regular </font> </td>
+    <td> sans-serif-condensed </td>
+  </tr>
+  <tr>
+    <td style="font: sans-serif; font-weight: 600; font-stretch: ultra-condensed">Roboto Condensed Medium </font> </td>
+    <td> sans-serif-condensed-medium </td>
+  </tr>
+  <tr>
+    <td style="font-family: 'Noto Serif', serif; font-weight: 400">Noto Serif </font> </td>
+    <td> serif </td>
+  </tr>
+  <tr>
+    <td> <font face="monospace">Droid Sans Mono </font> </td>
+    <td> monospace </td>
+  </tr>
+  <tr> 
+    <td style="font-family: 'Open Sans'; font-weight: 300; font-stretch: ultra-condensed">Cutive Mono </font> </td>
+    <td> serif-monospace </td>
+  </tr>
+  <tr> 
+    <td style="font-family: 'Indie Flower', cursive">Casual </font> </td>
+    <td> casual </td>
+  </tr>
+  <tr>
+    <td> <font face="cursive">Dancing Script </font> </td>
+    <td> cursive </td>
+  </tr>
+  <tr> 
+    <td style="font: sans-serif; font-variant: small-caps"> <font face="sans-serif-smallcaps">Carrois Gothic SC </font> </td>
+    <td> sans-serif-smallcaps </td>
+  </tr>
+</table></p>
 
 <h1 id="pepper-drive">→  Pepper Drive</h1>
 
@@ -1250,7 +1335,6 @@ I.) UI:
   }
 
     Current Game Options:
-    - 'Mindfulness Minute'
     - 'Freestyle dance'
     - 'Take a Selfie'
     - 'Music Boxes'
