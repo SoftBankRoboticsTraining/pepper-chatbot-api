@@ -226,7 +226,7 @@
         <h1 id="pepper-chat">Pepper Chat</h1>
 
 <h2 id="a-conversational-ux-humanoid-robot-platform">A Conversational UX Humanoid Robot Platform</h2>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 DialogFlow (previously API.AI) is a popular chatbot platform. It's 
 also Google's entry into the conversational agency space. Before 
 Google acquired API.AI (and subsequently renamed it to Dialogflow), 
@@ -254,8 +254,8 @@ you can use this fulfillment library in your project to make it easier
 to form valid Pepper responses (also includes a demo project):
 https://github.com/softbank-robotics-america/pepper-chat-dialogflow-fulfillment-library/blob/master/package.json
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""</span><span class="w">
-</span></code></pre></div>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+</code></pre></div>
 <p>Welcome to the Pepper Chat platform! This technical reference is for Pepper owners running the Pepper-As-A-Host solution, who would like to connect their Pepper to a 3rd party chatbot (only Google&rsquo;s Dialogflow platform supported at this time) in order to unlock Pepper&rsquo;s latent conversational abilities. It is an exciting evolution of Pepper&rsquo;s repertoire of capabilities. </p>
 
 <p>Given the overwhelming success of the &ldquo;chatbot feature&rdquo; of the Host product, which was historically an optional upgrade that would replace the standard &ldquo;FAQ&rdquo; feature of the Host product, SBRA decided to build out and open up the Pepper Chat platform to its broader customer base. Pepper Chat allows customers who want to take more control over Pepper&rsquo;s speech, animations, tablet display and overall interactions can now do so using this solution, all with a conversational-focused, web-based, user interface. Teaming up with Google to bring our customers world-class NLP and Conversational AI technologies, we are proud and excited to provide our customers with a conversation-based Pepper platform that is dynamic, smart, and immersively fun!</p>
@@ -266,16 +266,16 @@ You can view general integration instructions in this central, light blue sectio
 <h1 id="getting-started">Getting Started</h1>
 
 <blockquote>
-<p>SBRA offers professional services to assist in the creation of your Chatbot. If you are interested, please email sales_us@softbankrobotics.com. Otherwise you can use the remainder of this documentation to create your own Chatbot for Pepper.</p>
+<p>SBRA offers professional services to assist in the creation of your Chatbot. If you are interested, please email support@softbankrobotics.com. Otherwise you can use the remainder of this documentation to create your own Chatbot for Pepper.</p>
 </blockquote>
 
-<p>Building a successful chatbot for deployment on Pepper requires a large amount of time, patience, and cross-disciplinary creative expertise. For this reason, SBRA offers professional services to assist in the creation of your Chatbot for Pepper. If you are interested, <a href="mailto:sales_us@softbankrobotics.com">send us an email</a>. </p>
+<p>Building a successful chatbot for deployment on Pepper requires a large amount of time, patience, and cross-disciplinary creative expertise. For this reason, SBRA offers professional services to assist in the creation of your Chatbot for Pepper. If you are interested, <a href="mailto:support@softbankrobotics.com">send us an email</a>. </p>
 
 <p>If you would like to learn and build on your own, you can take our free, <a href="https://www.udemy.com/learn-conversational-ux-on-pepper-the-robot/">2.5-hour, eLearning course on Udemy course</a> and use this documentation to get started.
 <a href="https://www.udemy.com/learn-conversational-ux-on-pepper-the-robot/"><img src="images/PEPPER_CHAT_PLATFORM.Udemy_Course.png"></a></p>
 
 <h1 id="authentication-setup">Authentication &amp; Setup</h1>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 DIALOGFLOW SETUP INSTRUCTIONS:
 For Dialogflow bots, setup varies based on which agent version your bot is. 
 For V1 agents, setup consists of providing us with your Client Access Token. 
@@ -306,8 +306,8 @@ To set up a welcome intent on Pepper in your agent, reconfigure the default
 Welcome Intent or else set up a new intent with the text 'init1234' as the 
 only Training Phrase. You may use any type of response from the options 
 below for your welcome intent's response. 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""</span><span class="w">
-</span></code></pre></div>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+</code></pre></div>
 <p>ChatBots use RESTful APIs with some form of credentials (typically KEY FILES, ACCESS TOKENS, APP IDs, PASSWORDS, etc.) to authenticate in order to send and retrieve text &amp; multimedia session data. </p>
 
 <p>With SoftBank Robotics America&rsquo;s new Pepper ChatBot API and the Pepper Chat platform built on top of it, connecting your <a href="www.dialogflow.com">Dialogflow chatbot is as easy as it possibly can be. Simply log in to <a href="https://pepper-chat.azurewebsites.net">Pepper Chat CMS</a> (Content Management System) and provide the platform with a friendly name for your bot and either your bot&rsquo;s client access token or else a key file.</p>
@@ -411,14 +411,14 @@ below for your welcome intent's response.
 <uL>
   <li><a href="https://softbankroboticstraining.github.io/pepper-chatbot-api/#tablet-ui-settings-update-chatbot-style">UPDATE CHATBOT STYLE</a> - Update your chatbot&rsquo;s default UI settings </li>
 </uL>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""
 Dialogflow:
 """"""""""""""""""
 I.) For each section, there is a UI and a Fulfillment section
       a.) UI - indicates the instruction set that follows is 
           relevant to the Dialogflow User Interface; 
       b.) FULFILLMENT - coming soon...
-</span></code></pre></div>
+</code></pre></div>
 <h2 id="text-only">TEXT ONLY</h2>
 
 <blockquote>
@@ -426,7 +426,7 @@ I.) For each section, there is a UI and a Fulfillment section
 </blockquote>
 
 <p>Simple, non-selectable, text response</p>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""
 Dialogflow:
 """"""""""""""""""""""""""""""""""""""""
 I.) UI:
@@ -436,7 +436,7 @@ responses to have Pepper randomly choose between text responses. See
 'General Information' section above for information on how to have Pepper
 display different text from what he speaks.
 
-</span></code></pre></div>
+</code></pre></div>
 <p><img src = "images/TABLET.TEXT.png"/></p>
 
 <h2 id="text-bubbles">TEXT BUBBLES</h2>
@@ -446,7 +446,7 @@ display different text from what he speaks.
 </blockquote>
 
 <p>Selectable, Scrollable (1-4 max on tablet at a time) - variable size</p>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""
 Dialogflow:
 """"""""""""""""""""""""""""""""""""""""
 I.) UI: 
@@ -456,61 +456,61 @@ section, select 'Custom Payload' and enter the following:
 
 Without style/formatting:
 {
-  "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Tap</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">Say</span><span class="w"> </span><span class="err">one</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">following</span><span class="s2">",
-  "</span><span class="err">randomBubbles</span><span class="s2">": [
+  "title": "Tap or Say one of the following",
+  "randomBubbles": [
     {
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">1</span><span class="s2">",
-      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">1</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Bubble</span><span class="mi">1</span><span class="s2">"
+      "speak": "You clicked Bubble 1",
+      "title": "Title of Bubble 1",
+      "value": "Bubble1"
     },
     {
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">2</span><span class="s2">",
-      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">2</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Bubble</span><span class="w"> </span><span class="mi">2</span><span class="s2">"
+      "speak": "You clicked Bubble 2",
+      "title": "Title of Bubble 2",
+      "value": "Bubble 2"
     },
     {
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">3</span><span class="s2">",
-      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">3</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Bubble</span><span class="w"> </span><span class="mi">3</span><span class="s2">"
+      "speak": "You clicked Bubble 3",
+      "title": "Title of Bubble 3",
+      "value": "Bubble 3"
     },
     {
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">4</span><span class="s2">",
-      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">4</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Bubble</span><span class="w"> </span><span class="mi">4</span><span class="s2">"
+      "speak": "You clicked Bubble 4",
+      "title": "Title of Bubble 4",
+      "value": "Bubble 4"
     }]
   }
 
 With style/formatting:
 {
-  "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Tap</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">Say</span><span class="w"> </span><span class="err">one</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">following</span><span class="s2">",
-  "</span><span class="err">randomize</span><span class="s2">": false,
-  "</span><span class="err">backgroundColor</span><span class="s2">": "</span><span class="err">#ccccff</span><span class="s2">",
-  "</span><span class="err">backgroundImage</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//pepperstoragedev.blob.core.windows.net/pepperdrive/</span><span class="mi">41092</span><span class="err">db</span><span class="mi">5</span><span class="err">-ee</span><span class="mi">34-424</span><span class="err">a-bdf</span><span class="mi">3-6</span><span class="err">bca</span><span class="mi">579180</span><span class="err">af</span><span class="mi">57646</span><span class="err">fd</span><span class="mi">2-3e12-48</span><span class="err">db-bc</span><span class="mi">23-36e597</span><span class="err">b</span><span class="mi">697</span><span class="err">ef.png</span><span class="s2">",
-  "</span><span class="err">textColor</span><span class="s2">": "</span><span class="err">red</span><span class="s2">",
-  "</span><span class="err">font</span><span class="s2">": "</span><span class="err">Courier</span><span class="w"> </span><span class="err">New</span><span class="s2">",
-  "</span><span class="err">bubbleColor</span><span class="s2">": "</span><span class="err">green</span><span class="s2">",
-  "</span><span class="err">bubbleTextColor</span><span class="s2">": "</span><span class="err">yellow</span><span class="s2">",
-  "</span><span class="err">bubbleFont</span><span class="s2">": "</span><span class="err">Fantasy</span><span class="s2">",
-  "</span><span class="err">randomBubbles</span><span class="s2">": [
+  "title": "Tap or Say one of the following",
+  "randomize": false,
+  "backgroundColor": "#ccccff",
+  "backgroundImage": "https://pepperstoragedev.blob.core.windows.net/pepperdrive/41092db5-ee34-424a-bdf3-6bca579180af57646fd2-3e12-48db-bc23-36e597b697ef.png",
+  "textColor": "red",
+  "font": "Courier New",
+  "bubbleColor": "green",
+  "bubbleTextColor": "yellow",
+  "bubbleFont": "Fantasy",
+  "randomBubbles": [
     {
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">1</span><span class="s2">",
-      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">1</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Bubble</span><span class="w"> </span><span class="mi">1</span><span class="s2">"
+      "speak": "You clicked Bubble 1",
+      "title": "Title of Bubble 1",
+      "value": "Bubble 1"
     },
     {
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">2</span><span class="s2">",
-      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">2</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Bubble</span><span class="w"> </span><span class="mi">2</span><span class="s2">"
+      "speak": "You clicked Bubble 2",
+      "title": "Title of Bubble 2",
+      "value": "Bubble 2"
     },
     {
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">3</span><span class="s2">",
-      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">3</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Bubble</span><span class="w"> </span><span class="mi">3</span><span class="s2">"
+      "speak": "You clicked Bubble 3",
+      "title": "Title of Bubble 3",
+      "value": "Bubble 3"
     },
     {
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">clicked</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">4</span><span class="s2">",
-      "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Title</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Bubble</span><span class="w"> </span><span class="mi">4</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Bubble</span><span class="w"> </span><span class="mi">4</span><span class="s2">"
+      "speak": "You clicked Bubble 4",
+      "title": "Title of Bubble 4",
+      "value": "Bubble 4"
     }]
   }
 
@@ -533,7 +533,7 @@ B.) Google Assistant &gt; List:
       7) Add more list items, which will become more Text Bubbles
 
 
-</span></code></pre></div>
+</code></pre></div>
 <p><img src = "images/TABLET.TEXT_BUBBLES.png"/>
 <img src = "images/TABLET.TEXT_BUBBLES.Long.png"/></p>
 
@@ -546,7 +546,7 @@ B.) Google Assistant &gt; List:
 <p>Selectable, Scrollable (3 max on tablet at a time)</p>
 
 <p>Dimensions: 360w x 341t ea.</p>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""
 Dialogflow:
 """"""""""""""""""""""""""""""""""""""""
 I.) UI:
@@ -566,7 +566,7 @@ need to create to receive the action
 8) Add as many list items as you want displayed
 
 
-</span></code></pre></div>
+</code></pre></div>
 <p><img src = "images/TABLET.IMAGE.Carousel.Captioned.png"/></p>
 
 <h2 id="image-carousel-uncaptioned">IMAGE - Carousel, Uncaptioned</h2>
@@ -578,37 +578,37 @@ need to create to receive the action
 <p>Selectable, Scrollable (3 max on tablet at a time)</p>
 
 <p>Dimensions: 360w x 361t ea.</p>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""
 Dialogflow: 
 """"""""""""""""""""""""""""""""""""""""
 For a given intent within your agent, under the 'Response'
 section, select 'Custom Payload' and enter the following:
 {
-  "</span><span class="err">title</span><span class="s2">": "</span><span class="err">Tap</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">Say</span><span class="w"> </span><span class="err">one</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">following</span><span class="s2">",
-  "</span><span class="err">imageCards</span><span class="s2">": [
+  "title": "Tap or Say one of the following",
+  "imageCards": [
     {
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">The</span><span class="w"> </span><span class="err">American</span><span class="w"> </span><span class="err">boxer</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">strong-looking</span><span class="w"> </span><span class="err">dog.</span><span class="s2">",
-      "</span><span class="err">contentURL</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//static.pexels.com/photos/</span><span class="mi">158682</span><span class="err">/snow-dog-de-bordeaux</span><span class="mi">-158682</span><span class="err">.jpeg</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">boxer</span><span class="s2">"
+      "speak": "The American boxer is a strong-looking dog.",
+      "contentURL": "https://static.pexels.com/photos/158682/snow-dog-de-bordeaux-158682.jpeg",
+      "value": "boxer"
     },
     {
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Its</span><span class="w"> </span><span class="err">coat</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">short</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">generally</span><span class="w"> </span><span class="err">smooth.</span><span class="s2">",
-      "</span><span class="err">contentURL</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//static.pexels.com/photos/</span><span class="mi">158682</span><span class="err">/snow-dog-de-bordeaux</span><span class="mi">-158682</span><span class="err">.jpeg</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">boxer</span><span class="s2">"
+      "speak": "Its coat is short and generally smooth.",
+      "contentURL": "https://static.pexels.com/photos/158682/snow-dog-de-bordeaux-158682.jpeg",
+      "value": "boxer"
     },
     {
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">The</span><span class="w"> </span><span class="err">Akita</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">very</span><span class="w"> </span><span class="err">intelligent</span><span class="w"> </span><span class="err">dog.</span><span class="s2">",
-      "</span><span class="err">contentURL</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//upload.wikimedia.org/wikipedia/commons/</span><span class="mi">5</span><span class="err">/</span><span class="mi">56</span><span class="err">/Papillon_Ears.jpg</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">akita</span><span class="s2">"
+      "speak": "The Akita is a very intelligent dog.",
+      "contentURL": "https://upload.wikimedia.org/wikipedia/commons/5/56/Papillon_Ears.jpg",
+      "value": "akita"
     },
     {
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">This</span><span class="w"> </span><span class="err">dog</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">sociable</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">children.</span><span class="s2">",
-      "</span><span class="err">contentURL</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//upload.wikimedia.org/wikipedia/commons/</span><span class="mi">5</span><span class="err">/</span><span class="mi">56</span><span class="err">/Papillon_Ears.jpg</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">akita</span><span class="s2">"
+      "speak": "This dog can be sociable with children.",
+      "contentURL": "https://upload.wikimedia.org/wikipedia/commons/5/56/Papillon_Ears.jpg",
+      "value": "akita"
     }
   ]
 }
-</span></code></pre></div>
+</code></pre></div>
 <p><img src = "images/TABLET.IMAGE.Carousel.Uncaptioned.png"/></p>
 
 <h2 id="image-1-6-icon-layouts">IMAGE - 1-6-Icon Layouts</h2>
@@ -621,56 +621,56 @@ section, select 'Custom Payload' and enter the following:
 Background image configurable</p>
 
 <p>Dimensions: 280w x 225t ea.</p>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""
 Dialogflow: 
 """"""""""""""""""""""""""""""""""""""""
 For a given intent within your agent, under the 'Response'
 section, select 'Custom Payload' and enter the following:
 {
-  "</span><span class="err">backgroundColor</span><span class="s2">": "</span><span class="err">#d</span><span class="mi">7</span><span class="err">d</span><span class="mi">7</span><span class="err">d</span><span class="mi">7</span><span class="s2">",
-  "</span><span class="err">backgroundImage</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//pepperstoragedev.blob.core.windows.net/pepperdrive/</span><span class="mi">41092</span><span class="err">db</span><span class="mi">5</span><span class="err">-ee</span><span class="mi">34-424</span><span class="err">a-bdf</span><span class="mi">3-6</span><span class="err">bca</span><span class="mi">579180</span><span class="err">af</span><span class="mi">60</span><span class="err">cd</span><span class="mi">05</span><span class="err">b</span><span class="mi">2-4</span><span class="err">caf</span><span class="mi">-47e3</span><span class="err">-b</span><span class="mi">654</span><span class="err">-e</span><span class="mi">69</span><span class="err">da</span><span class="mi">3</span><span class="err">b</span><span class="mi">6</span><span class="err">f</span><span class="mi">81</span><span class="err">a.jpg</span><span class="s2">",
-  "</span><span class="err">text</span><span class="s2">": "</span><span class="err">Background</span><span class="w"> </span><span class="err">color</span><span class="w"> </span><span class="err">code</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">image</span><span class="w"> </span><span class="err">together</span><span class="s2">",
-  "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Color</span><span class="w"> </span><span class="err">code</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">image</span><span class="w"> </span><span class="err">test</span><span class="s2">",
-  "</span><span class="err">customIcons</span><span class="s2">": [
+  "backgroundColor": "#d7d7d7",
+  "backgroundImage": "https://pepperstoragedev.blob.core.windows.net/pepperdrive/41092db5-ee34-424a-bdf3-6bca579180af60cd05b2-4caf-47e3-b654-e69da3b6f81a.jpg",
+  "text": "Background color code and image together",
+  "speak": "Color code and image test",
+  "customIcons": [
     {
-      "</span><span class="err">iconUrl</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//pepperstoragedev.blob.core.windows.net/pepperdrive/</span><span class="mi">41092</span><span class="err">db</span><span class="mi">5</span><span class="err">-ee</span><span class="mi">34-424</span><span class="err">a-bdf</span><span class="mi">3-6</span><span class="err">bca</span><span class="mi">579180</span><span class="err">af</span><span class="mi">6</span><span class="err">c</span><span class="mi">4</span><span class="err">dfe</span><span class="mi">53-5</span><span class="err">fa</span><span class="mi">2-45</span><span class="err">a</span><span class="mi">2</span><span class="err">-a</span><span class="mi">431-4</span><span class="err">cf</span><span class="mi">014</span><span class="err">fc</span><span class="mi">750</span><span class="err">e.png</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">One</span><span class="w"> </span><span class="err">icon</span><span class="s2">",
-      "</span><span class="err">text</span><span class="s2">": "</span><span class="err">Icon</span><span class="w"> </span><span class="mi">1</span><span class="s2">",
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Good</span><span class="w"> </span><span class="err">choice</span><span class="s2">"
+      "iconUrl": "https://pepperstoragedev.blob.core.windows.net/pepperdrive/41092db5-ee34-424a-bdf3-6bca579180af6c4dfe53-5fa2-45a2-a431-4cf014fc750e.png",
+      "value": "One icon",
+      "text": "Icon 1",
+      "speak": "Good choice"
     },
     {
-      "</span><span class="err">iconUrl</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//pepperstoragedev.blob.core.windows.net/pepperdrive/</span><span class="mi">41092</span><span class="err">db</span><span class="mi">5</span><span class="err">-ee</span><span class="mi">34-424</span><span class="err">a-bdf</span><span class="mi">3-6</span><span class="err">bca</span><span class="mi">579180</span><span class="err">afa</span><span class="mi">013</span><span class="err">ade</span><span class="mi">8</span><span class="err">-f</span><span class="mi">8</span><span class="err">b</span><span class="mi">1-4</span><span class="err">c</span><span class="mi">69-914e-4</span><span class="err">c</span><span class="mi">255274</span><span class="err">c</span><span class="mi">84</span><span class="err">c.png</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Two</span><span class="w"> </span><span class="err">icons</span><span class="s2">",
-      "</span><span class="err">text</span><span class="s2">": "</span><span class="err">Icon</span><span class="w"> </span><span class="mi">2</span><span class="s2">",
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">OK</span><span class="s2">"
+      "iconUrl": "https://pepperstoragedev.blob.core.windows.net/pepperdrive/41092db5-ee34-424a-bdf3-6bca579180afa013ade8-f8b1-4c69-914e-4c255274c84c.png",
+      "value": "Two icons",
+      "text": "Icon 2",
+      "speak": "OK"
     },
     {
-      "</span><span class="err">iconUrl</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//pepperstoragedev.blob.core.windows.net/pepperdrive/</span><span class="mi">41092</span><span class="err">db</span><span class="mi">5</span><span class="err">-ee</span><span class="mi">34-424</span><span class="err">a-bdf</span><span class="mi">3-6</span><span class="err">bca</span><span class="mi">579180</span><span class="err">afde</span><span class="mi">0</span><span class="err">a</span><span class="mi">0</span><span class="err">ee</span><span class="mi">6-947</span><span class="err">d</span><span class="mi">-4</span><span class="err">ca</span><span class="mi">7-918</span><span class="err">c-a</span><span class="mi">034e6</span><span class="err">e</span><span class="mi">65350</span><span class="err">.png</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Three</span><span class="w"> </span><span class="err">icons</span><span class="s2">",
-      "</span><span class="err">text</span><span class="s2">": "</span><span class="err">Icon</span><span class="w"> </span><span class="mi">3</span><span class="s2">",
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">You</span><span class="w"> </span><span class="err">got</span><span class="w"> </span><span class="err">it</span><span class="s2">"
+      "iconUrl": "https://pepperstoragedev.blob.core.windows.net/pepperdrive/41092db5-ee34-424a-bdf3-6bca579180afde0a0ee6-947d-4ca7-918c-a034e6e65350.png",
+      "value": "Three icons",
+      "text": "Icon 3",
+      "speak": "You got it"
     },
     {
-      "</span><span class="err">iconUrl</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//pepperstoragedev.blob.core.windows.net/pepperdrive/</span><span class="mi">41092</span><span class="err">db</span><span class="mi">5</span><span class="err">-ee</span><span class="mi">34-424</span><span class="err">a-bdf</span><span class="mi">3-6</span><span class="err">bca</span><span class="mi">579180</span><span class="err">af</span><span class="mi">6e65</span><span class="err">cd</span><span class="mi">8</span><span class="err">c</span><span class="mi">-9e2</span><span class="err">a</span><span class="mi">-4</span><span class="err">db</span><span class="mi">4</span><span class="err">-b</span><span class="mi">65</span><span class="err">c</span><span class="mi">-107</span><span class="err">b</span><span class="mi">4629</span><span class="err">c</span><span class="mi">1</span><span class="err">a</span><span class="mi">8</span><span class="err">.png</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Four</span><span class="w"> </span><span class="err">icons</span><span class="s2">",
-      "</span><span class="err">text</span><span class="s2">": "</span><span class="err">Icon</span><span class="w"> </span><span class="mi">4</span><span class="s2">",
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Alright</span><span class="s2">"
+      "iconUrl": "https://pepperstoragedev.blob.core.windows.net/pepperdrive/41092db5-ee34-424a-bdf3-6bca579180af6e65cd8c-9e2a-4db4-b65c-107b4629c1a8.png",
+      "value": "Four icons",
+      "text": "Icon 4",
+      "speak": "Alright"
     },
     {
-      "</span><span class="err">iconUrl</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//pepperstoragedev.blob.core.windows.net/pepperdrive/</span><span class="mi">41092</span><span class="err">db</span><span class="mi">5</span><span class="err">-ee</span><span class="mi">34-424</span><span class="err">a-bdf</span><span class="mi">3-6</span><span class="err">bca</span><span class="mi">579180</span><span class="err">af</span><span class="mi">969</span><span class="err">a</span><span class="mi">089</span><span class="err">b</span><span class="mi">-884</span><span class="err">b</span><span class="mi">-47e2</span><span class="err">-b</span><span class="mi">896</span><span class="err">-b</span><span class="mi">2</span><span class="err">b</span><span class="mi">9</span><span class="err">f</span><span class="mi">07</span><span class="err">eea</span><span class="mi">31</span><span class="err">.png</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Five</span><span class="w"> </span><span class="err">icons</span><span class="s2">",
-      "</span><span class="err">text</span><span class="s2">": "</span><span class="err">Icon</span><span class="w"> </span><span class="mi">5</span><span class="s2">",
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Great</span><span class="s2">"
+      "iconUrl": "https://pepperstoragedev.blob.core.windows.net/pepperdrive/41092db5-ee34-424a-bdf3-6bca579180af969a089b-884b-47e2-b896-b2b9f07eea31.png",
+      "value": "Five icons",
+      "text": "Icon 5",
+      "speak": "Great"
     },
     {
-      "</span><span class="err">iconUrl</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//pepperstoragedev.blob.core.windows.net/pepperdrive/</span><span class="mi">41092</span><span class="err">db</span><span class="mi">5</span><span class="err">-ee</span><span class="mi">34-424</span><span class="err">a-bdf</span><span class="mi">3-6</span><span class="err">bca</span><span class="mi">579180</span><span class="err">afc</span><span class="mi">611</span><span class="err">cb</span><span class="mi">65-0926-4</span><span class="err">ccb-b</span><span class="mi">308-4</span><span class="err">f</span><span class="mi">879</span><span class="err">f</span><span class="mi">131</span><span class="err">ec</span><span class="mi">8</span><span class="err">.png</span><span class="s2">",
-      "</span><span class="err">value</span><span class="s2">": "</span><span class="err">Six</span><span class="w"> </span><span class="err">icons</span><span class="s2">",
-      "</span><span class="err">text</span><span class="s2">": "</span><span class="err">Icon</span><span class="w"> </span><span class="mi">6</span><span class="s2">",
-      "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Wonderful</span><span class="s2">"
+      "iconUrl": "https://pepperstoragedev.blob.core.windows.net/pepperdrive/41092db5-ee34-424a-bdf3-6bca579180afc611cb65-0926-4ccb-b308-4f879f131ec8.png",
+      "value": "Six icons",
+      "text": "Icon 6",
+      "speak": "Wonderful"
     }
   ]
 }
-</span></code></pre></div>
+</code></pre></div>
 <p><img src = "images/TABLET.IMAGE.1-6-ICON.1_icon.png"/>
 <img src = "images/TABLET.IMAGE.1-6-ICON.2_icon.png"/>
 <img src = "images/TABLET.IMAGE.1-6-ICON.3_icon.png"/>
@@ -690,7 +690,7 @@ section, select 'Custom Payload' and enter the following:
 <p>Dimensions: <br>
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;- approx. 975w x 585t for landscape Basic Cards<br>
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;- approx. 415w x 585t for portrait Basic Cards</p>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Dialogflow: Non-actionable Images (with follow-up buttons)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 I.) UI:
@@ -710,7 +710,7 @@ alive with a follow-up message. To prompt the user for another action,
 simply combine the Basic Card with the Google Assistant Suggestion Chips.
 
 
-</span></code></pre></div>
+</code></pre></div>
 <p><img src = "images/TABLET.IMAGE.Basic-Card-Landscape.png"/>
 <img src = "images/TABLET.IMAGE.Basic-Card-Portrait.png"/></p>
 
@@ -721,7 +721,7 @@ simply combine the Basic Card with the Google Assistant Suggestion Chips.
 </blockquote>
 
 <p>Non-selectable, Non-Scrollable, Persistent (once displayed, the image will remain throughout the rest of the interaction unless or until a new background image is set) - 1280w x 800t</p>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""
 Dialogflow: 
 """"""""""""""""""""""""""""""""""""""""
 I.) UI:
@@ -730,8 +730,8 @@ For a given intent within your agent, under the 'Response'
 section, click 'Add Message Content', select 'Custom Payload' 
 and copy and paste the following:
 {
-  "</span><span class="err">backgroundImage</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//pepperstoragedev.blob.core.windows.net/pepperdrive/c</span><span class="mi">8</span><span class="err">f</span><span class="mi">7061</span><span class="err">d-cd</span><span class="mi">26-4807-8113-209</span><span class="err">cf</span><span class="mi">7</span><span class="err">f</span><span class="mi">574738</span><span class="err">baae</span><span class="mi">0</span><span class="err">ca</span><span class="mi">-27e1-4998-8732-7042</span><span class="err">c</span><span class="mi">66e12</span><span class="err">ad.jpg</span><span class="s2">",
-  "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Here</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">persistent</span><span class="w"> </span><span class="err">background</span><span class="w"> </span><span class="err">image</span><span class="w"> </span><span class="err">||</span><span class="s2">"
+  "backgroundImage": "https://pepperstoragedev.blob.core.windows.net/pepperdrive/c8f7061d-cd26-4807-8113-209cf7f574738baae0ca-27e1-4998-8732-7042c66e12ad.jpg",
+  "speak": "Here is an persistent background image ||"
 }
 
 Notes: 
@@ -740,10 +740,10 @@ A) With non-actionable images, it is recommended to keep the conversation
 alive with a follow-up message. To prompt the user for another action, 
 simply combine the Basic Card with the Google Assistant Suggestion Chips.
 
-B) When using JSON (^^), any QiChat commands must be double-escaped (</span><span class="se">\\</span><span class="s2">).
+B) When using JSON (^^), any QiChat commands must be double-escaped (\\).
 
 
-</span></code></pre></div>
+</code></pre></div>
 <p><img src = "images/TABLET_UI.Other_UI_Settings.png"/></p>
 
 <h2 id="image-fullscreen-image">IMAGE - Fullscreen Image</h2>
@@ -753,7 +753,7 @@ B) When using JSON (^^), any QiChat commands must be double-escaped (</span><spa
 </blockquote>
 
 <p>Non-selectable, Non-Scrollable, Skippable - 1280w x 800t</p>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""
 Dialogflow: 
 """"""""""""""""""""""""""""""""""""""""
 I.) UI:
@@ -763,9 +763,9 @@ section, click 'Add Message Content', select 'Custom Payload'
 and copy and paste the following:
 
 {
-  "</span><span class="err">imageURL</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//pepperstoragedev.blob.core.windows.net/files/Default_Story_</span><span class="mi">1</span><span class="err">.jpg</span><span class="s2">",
-  "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Hi</span><span class="p">,</span><span class="w"> </span><span class="err">I</span><span class="w"> </span><span class="err">dont</span><span class="w"> </span><span class="err">know</span><span class="w"> </span><span class="err">how</span><span class="w"> </span><span class="err">much</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">know</span><span class="w"> </span><span class="err">about</span><span class="w"> </span><span class="err">me</span><span class="p">,</span><span class="w"> </span><span class="err">but</span><span class="w"> </span><span class="err">I</span><span class="w"> </span><span class="err">am</span><span class="w"> </span><span class="err">here</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">host.</span><span class="s2">",
-  "</span><span class="err">delay</span><span class="s2">": 2
+  "imageURL": "https://pepperstoragedev.blob.core.windows.net/files/Default_Story_1.jpg",
+  "speak": "Hi, I dont know how much you know about me, but I am here to be your host.",
+  "delay": 2
 }
 
 Notes: 
@@ -774,10 +774,10 @@ A) With non-actionable images, it is recommended to keep the conversation
 alive with a follow-up message. To prompt the user for another action, 
 simply combine the Basic Card with the Google Assistant Suggestion Chips.
 
-B) When using JSON (^^), any QiChat commands must be double-escaped (</span><span class="se">\\</span><span class="s2">).
+B) When using JSON (^^), any QiChat commands must be double-escaped (\\).
 
 
-</span></code></pre></div>
+</code></pre></div>
 <p><img src = "images/TABLET.IMAGE.Full_Screen.png"/></p>
 
 <h2 id="image-sequence-of-images">IMAGE - Sequence of Images</h2>
@@ -787,13 +787,13 @@ B) When using JSON (^^), any QiChat commands must be double-escaped (</span><spa
 </blockquote>
 
 <p>Images can be chained together for the effect of Pepper telling a story, similar to a slide-show presentation. For this, it is recommended to use a sequence of Full Screen Images.</p>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""
 Dialogflow: IMAGE RESPONSE
 """"""""""""""""""""""""""""""""""""""""
 To create a non-actionable sequence of (full screen) images, use the
 'Full Screen Image Response' described above. Chain the Custom
 Payloads together, one after another, to create a story.
-</span></code></pre></div>
+</code></pre></div>
 <p><img src = "images/TABLET.IMAGE.Full_Screen.png"/></p>
 
 <h2 id="video-fullscreen-video">VIDEO - Fullscreen Video</h2>
@@ -816,7 +816,7 @@ Technical Specs: <br>
 <br></p>
 
 <p>Note: If video file is uploaded/served from Pepper Drive, Pepper will actually locally cache the video for faster display upon subsequent views.</p>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""
 Dialogflow: VIDEO RESPONSE
 """"""""""""""""""""""""""""""""""""""""
 I.) UI:
@@ -824,14 +824,14 @@ For a given intent within your agent, under the 'Response'
 section, click 'Add Message Content', select 'Custom Payload'
 and copy and paste the following:
 {
-  "</span><span class="err">videoURL</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//url-of-your-video-file.mp</span><span class="mi">4</span><span class="s2">",
-  "</span><span class="err">contentType</span><span class="s2">": "</span><span class="err">video/mp</span><span class="mi">4</span><span class="s2">",
-  "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Here</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">short</span><span class="w"> </span><span class="err">video</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">relevant</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">utterance...</span><span class="s2">"
+  "videoURL": "https://url-of-your-video-file.mp4",
+  "contentType": "video/mp4",
+  "speak": "Here is a short video that is relevant to your utterance..."
 }
 
-Note: When using JSON (^^), any QiChat commands must be double-escaped (</span><span class="se">\\</span><span class="s2">).
+Note: When using JSON (^^), any QiChat commands must be double-escaped (\\).
 
-</span></code></pre></div>
+</code></pre></div>
 <p><img src = "images/TABLET.VIDEO.Full_Screen.png"/></p>
 
 <h2 id="webpage-show-webpage">WEBPAGE - Show Webpage</h2>
@@ -845,7 +845,7 @@ Note: When using JSON (^^), any QiChat commands must be double-escaped (</span><
 <aside class="success">Feature Details: <br>• To prevent undesired end user navigation to other websites, no URL bar is displayed. <br>• Hyperlinks can be followed, so long as they do not create a new tab. The href target attribute &ldquo;self&rdquo; needs to be specified for the hyperlink; this opens the linked document in the same window as it was clicked (this is default). </aside> 
 
 <aside class="notice">Limitations: <br>• One important limitation to this feature is that the website must allow embedding within an iFrame. If the website does not allow embedding, it will produce an &ldquo;X-Frame Origin Error&rdquo; and will display a blank screen on Pepper. <br> • Additionally, all pop-up windows, including modal windows, will be blocked from display. </aside>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""
 Dialogflow: 
 """"""""""""""""""""""""""""""""""""""""
 I.) UI:
@@ -853,15 +853,15 @@ For a given intent within your agent, under the 'Response'
 section, click 'Add Message Content', select 'Custom Payload'
 and copy and paste the following:
 {
-  "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Here</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">webpage</span><span class="w"> </span><span class="err">||</span><span class="s2">",
-  "</span><span class="err">action</span><span class="s2">": "</span><span class="err">showWebpage</span><span class="s2">",
-  "</span><span class="err">action_parameters</span><span class="s2">": {
-    "</span><span class="err">url</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//www.theorganproject.net/promote-registration-individuals/</span><span class="s2">",
-    "</span><span class="err">onClose</span><span class="s2">": "</span><span class="err">Web</span><span class="w"> </span><span class="err">page</span><span class="w"> </span><span class="err">closed</span><span class="s2">"
+  "speak": "Here is a webpage ||",
+  "action": "showWebpage",
+  "action_parameters": {
+    "url": "https://www.theorganproject.net/promote-registration-individuals/",
+    "onClose": "Web page closed"
   }
 }
 
-</span></code></pre></div>
+</code></pre></div>
 <p><img src = "images/TABLET.WEBPAGE.png"/>
 <img src = "images/TABLET.WEBPAGE.Keyboard.png"/></p>
 
@@ -870,17 +870,17 @@ and copy and paste the following:
 <blockquote>
 <p>USER INPUT - SHOW KEYBOARD:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""
 Dialogflow: 
 """"""""""""""""""""""""""""""""""""""""
 A keyboard can be shown to receive any type of input. To do so,
 for a given intent within your agent, under the 'Response'
 section, select 'Custom Payload' and enter the following:
 {
-  "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">If</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">type</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">email</span><span class="w"> </span><span class="err">I'll</span><span class="w"> </span><span class="err">send</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">photo.</span><span class="s2">"
-  "</span><span class="err">action</span><span class="s2">": "</span><span class="err">showKeyboard</span><span class="s2">"
+  "speak": "If you type in your email I'll send you a photo."
+  "action": "showKeyboard"
 }
-</span></code></pre></div>
+</code></pre></div>
 <p><img src = "images/TABLET.USER-INPUT.Show-Keyboard.png"/></p>
 
 <h2 id="user-input-privacy-policy">USER INPUT - PRIVACY POLICY</h2>
@@ -900,7 +900,7 @@ Fig. - Pepper Chat CMS ^^ - Download CTA results from within the Pepper Chat CMS
 <h3 id="checkbox">CHECKBOX</h3>
 
 <p>Keyboard with checked box with Privacy Policy displayed (for CTA) - .PDF format only.</p>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""
 Dialogflow: PRIVACY POLICY - CHECKBOX
 """"""""""""""""""""""""""""""""""""""""
 I.) UI: 
@@ -908,23 +908,23 @@ For a given intent within your agent, under the 'Response'
 section, click 'Add Message Content', select 'Custom Payload'
 and copy and paste the following:
 {
-  "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Please</span><span class="w"> </span><span class="err">type</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">email</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">agree</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">our</span><span class="w"> </span><span class="err">privacy</span><span class="w"> </span><span class="err">policy</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">continue</span><span class="s2">",
-  "</span><span class="err">privacyPolicy</span><span class="s2">": {
-    "</span><span class="err">url</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//pepperstoragedev.blob.core.windows.net/pepperdrive/</span><span class="mi">41092</span><span class="err">db</span><span class="mi">5</span><span class="err">-ee</span><span class="mi">34-424</span><span class="err">a-bdf</span><span class="mi">3-6</span><span class="err">bca</span><span class="mi">579180</span><span class="err">afprivacy-policy-template.pdf</span><span class="s2">",
-    "</span><span class="err">inputType</span><span class="s2">": "</span><span class="err">email</span><span class="s2">",
-    "</span><span class="err">checkBoxChecked</span><span class="s2">": true
+  "speak": "Please type in your email and agree to our privacy policy to continue",
+  "privacyPolicy": {
+    "url": "https://pepperstoragedev.blob.core.windows.net/pepperdrive/41092db5-ee34-424a-bdf3-6bca579180afprivacy-policy-template.pdf",
+    "inputType": "email",
+    "checkBoxChecked": true
   }
 }
 
-The value of "</span><span class="err">inputType</span><span class="s2">" can be either 'phone number' or 'email'.
+The value of "inputType" can be either 'phone number' or 'email'.
 
 Note: With non-actionable images, it is recommended to keep the conversation
 alive with a follow-up message. To prompt the user for another action, 
 simply combine the Basic Card with the Google Assistant Suggestion Chips.
 
-</span></code></pre></div>
+</code></pre></div>
 <p><img src = "images/TABLET.USER_INPUT.PRIVACY-POLICY.Checked.png"/>
-<img src = "images/TABLET.USER_INPUT.PRIVACY-POLICY.Unchecked.png"/></p>
+<img src = "images/TABLET.USER_INPUT.PRIVACY-POLICY.Keypad.png"/></p>
 
 <h3 id="modal-dialog-pop-up">MODAL DIALOG POP-UP</h3>
 
@@ -933,7 +933,7 @@ simply combine the Basic Card with the Google Assistant Suggestion Chips.
 </blockquote>
 
 <p>Modal window pops up with Privacy Policy displayed (for CTA) - .PDF format only</p>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""
 Dialogflow: PRIVACY POLICY - Modal Dialog Pop-up
 """"""""""""""""""""""""""""""""""""""""
 I.) UI:
@@ -941,21 +941,21 @@ For a given intent within your agent, under the 'Response'
 section, click 'Add Message Content', select 'Custom Payload'
 and copy and paste the following:
 {
-  "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Please</span><span class="w"> </span><span class="err">enter</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">email</span><span class="s2">",
-  "</span><span class="err">privacyPolicy</span><span class="s2">": {
-    "</span><span class="err">url</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//pepperstoragedev.blob.core.windows.net/pepperdrive/</span><span class="mi">41092</span><span class="err">db</span><span class="mi">5</span><span class="err">-ee</span><span class="mi">34-424</span><span class="err">a-bdf</span><span class="mi">3-6</span><span class="err">bca</span><span class="mi">579180</span><span class="err">afprivacy-policy-template.pdf</span><span class="s2">",
-    "</span><span class="err">inputType</span><span class="s2">": "</span><span class="err">email</span><span class="s2">",
-    "</span><span class="err">forcedPopup</span><span class="s2">": true
+  "speak": "Please enter your email",
+  "privacyPolicy": {
+    "url": "https://pepperstoragedev.blob.core.windows.net/pepperdrive/41092db5-ee34-424a-bdf3-6bca579180afprivacy-policy-template.pdf",
+    "inputType": "email",
+    "forcedPopup": true
   }
 }
 
-The value of "</span><span class="err">inputType</span><span class="s2">" can be either 'phone number' or 'email'.
+The value of "inputType" can be either 'phone number' or 'email'.
 
 Note: With non-actionable images, it is recommended to keep the conversation
 alive with a follow-up message. To prompt the user for another action, 
 simply combine the Basic Card with the Google Assistant Suggestion Chips.
 
-</span></code></pre></div>
+</code></pre></div>
 <p><img src = "images/TABLET.USER_INPUT.PRIVACY-POLICY.Modal.png"/>
 <img src = "images/TABLET.USER_INPUT.PRIVACY-POLICY.Yes_Or_Not.png"/></p>
 
@@ -970,73 +970,73 @@ simply combine the Basic Card with the Google Assistant Suggestion Chips.
 <p>Configures style and settings for the chatbot&rsquo;s UI.</p>
 
 <aside class="notice">Note: In order for a style to take effect and be persistent, the style must not only be specified in the response of an intent but must be implemented as well. For example, if you would like to change the  font of all the tablet text in your Pepper experience, you must first specify the font style, but then you must in the same response also provide a response type that renders text on the tablet, thus implementing the style.</aside>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""
 Dialogflow:  UPDATE CHATBOT STYLE
 """"""""""""""""""""""""""""""""""""""""
 For a given intent within your agent, under the 'Response'
 section, select 'Custom Payload' and enter the following:
 {
-  "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Setting</span><span class="w"> </span><span class="err">background</span><span class="w"> </span><span class="err">image</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">color</span><span class="w"> </span><span class="err">||</span><span class="s2">",
-  "</span><span class="err">action</span><span class="s2">": "</span><span class="err">setStyle</span><span class="s2">",
-  "</span><span class="err">action_parameters</span><span class="s2">": {
-    "</span><span class="err">backgroundColor</span><span class="s2">": "</span><span class="err">#ebc</span><span class="mi">6</span><span class="err">eb</span><span class="s2">",
-    "</span><span class="err">backgroundImage</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//pepperstoragedev.blob.core.windows.net/pepperdrive/</span><span class="mi">41092</span><span class="err">db</span><span class="mi">5</span><span class="err">-ee</span><span class="mi">34-424</span><span class="err">a-bdf</span><span class="mi">3-6</span><span class="err">bca</span><span class="mi">579180</span><span class="err">afbd</span><span class="mi">2</span><span class="err">dcbc</span><span class="mi">8</span><span class="err">-f</span><span class="mi">435-4615</span><span class="err">-b</span><span class="mi">63</span><span class="err">c</span><span class="mi">-4274</span><span class="err">d</span><span class="mi">66</span><span class="err">d</span><span class="mi">7993</span><span class="err">.png</span><span class="s2">",
-    "</span><span class="err">restoreDefault</span><span class="s2">": false,
-    "</span><span class="err">listenBarLocation</span><span class="s2">": "</span><span class="err">top</span><span class="s2">", 
-    "</span><span class="err">nextUtterance</span><span class="s2">": "</span><span class="p">{</span><span class="err">Insert</span><span class="w"> </span><span class="err">any</span><span class="w"> </span><span class="err">Intent's</span><span class="w"> </span><span class="err">Training</span><span class="w"> </span><span class="err">Phrase</span><span class="w"> </span><span class="err">here...</span><span class="p">}</span><span class="s2">"
+  "speak": "Setting background image and color ||",
+  "action": "setStyle",
+  "action_parameters": {
+    "backgroundColor": "#ebc6eb",
+    "backgroundImage": "https://pepperstoragedev.blob.core.windows.net/pepperdrive/41092db5-ee34-424a-bdf3-6bca579180afbd2dcbc8-f435-4615-b63c-4274d66d7993.png",
+    "restoreDefault": false,
+    "listenBarLocation": "top", 
+    "nextUtterance": "{Insert any Intent's Training Phrase here...}"
   }
 }
 
 Notes:
-- "</span><span class="err">speak</span><span class="s2">" property is optional. 
-- "</span><span class="err">action</span><span class="s2">" property is required to set the style (value = "</span><span class="err">setStyle</span><span class="s2">")
-- Set "</span><span class="err">restoreDefault</span><span class="s2">" to true to restore the original (default)
- chatbot screen style. "</span><span class="err">backgroundColor</span><span class="s2">" and "</span><span class="err">backgroundImage</span><span class="s2">" 
+- "speak" property is optional. 
+- "action" property is required to set the style (value = "setStyle")
+- Set "restoreDefault" to true to restore the original (default)
+ chatbot screen style. "backgroundColor" and "backgroundImage" 
  properties can be omitted in this case (ignored if present).
 - Use it if you want Pepper to say something when chatbot style 
 is updated.
-- "</span><span class="err">listenBarLocation</span><span class="s2">" values can be 'top'|'bottom'|'invisible'
-- "</span><span class="err">nextUtterance</span><span class="s2">" property is also optional. You can trigger 
+- "listenBarLocation" values can be 'top'|'bottom'|'invisible'
+- "nextUtterance" property is also optional. You can trigger 
 next chatbot intent automatically after changing the style by 
 assigning one of an intent's training phrases to this property.
-- Use "</span><span class="err">default</span><span class="s2">" as "</span><span class="err">backgroundColor</span><span class="s2">" or "</span><span class="err">backgroundImage</span><span class="s2">" value 
+- Use "default" as "backgroundColor" or "backgroundImage" value 
 to restore the original state of corresponding property
-- Use "</span><span class="err">none</span><span class="s2">" as "</span><span class="err">backgroundImage</span><span class="s2">" to remove the image
+- Use "none" as "backgroundImage" to remove the image
 - Style changes persist until the end of chatbot session. Original 
 chatbot style is restored every time chatbot session is restarted.
 
-</span></code></pre></div>
+</code></pre></div>
 <p><img src = "images/TABLET.SETTINGS.Style.png"/></p>
 
 <h3 id="background-set-color">BACKGROUND - SET COLOR</h3>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""
 Dialogflow:  SET BACKGROUND COLOR
 """"""""""""""""""""""""""""""""""""""""
 I.) UI: 
 For a given intent within your agent, under the 'Response'
 section, select 'Custom Payload' and enter the following:
 {
-  "</span><span class="err">backgroundColor</span><span class="s2">": "</span><span class="err">#d</span><span class="mi">7</span><span class="err">d</span><span class="mi">7</span><span class="err">d</span><span class="mi">7</span><span class="s2">",
-  "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Here</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">background</span><span class="w"> </span><span class="err">color</span><span class="w"> </span><span class="err">||</span><span class="s2">"
+  "backgroundColor": "#d7d7d7",
+  "speak": "Here is a background color ||"
 }
 
-</span></code></pre></div>
+</code></pre></div>
 <p><img src = "images/TABLET.BACKGROUND.COLOR.png"/></p>
 
 <h3 id="background-set-image">BACKGROUND - SET IMAGE</h3>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""
 Dialogflow:  SET BACKGROUND IMAGE
 """"""""""""""""""""""""""""""""""""""""
 I.) UI: 
 For a given intent within your agent, under the 'Response'
 section, select 'Custom Payload' and enter the following:
 {
-  "</span><span class="err">backgroundColor</span><span class="s2">": "</span><span class="err">#d</span><span class="mi">7</span><span class="err">d</span><span class="mi">7</span><span class="err">d</span><span class="mi">7</span><span class="s2">",
-  "</span><span class="err">backgroundImage</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//pepperstoragedev.blob.core.windows.net/pepperdrive/c</span><span class="mi">8</span><span class="err">f</span><span class="mi">7061</span><span class="err">d-cd</span><span class="mi">26-4807-8113-209</span><span class="err">cf</span><span class="mi">7</span><span class="err">f</span><span class="mi">574738</span><span class="err">baae</span><span class="mi">0</span><span class="err">ca</span><span class="mi">-27e1-4998-8732-7042</span><span class="err">c</span><span class="mi">66e12</span><span class="err">ad.jpg</span><span class="s2">",
-  "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Here</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">actionable</span><span class="w"> </span><span class="err">background</span><span class="w"> </span><span class="err">image</span><span class="w"> </span><span class="err">||</span><span class="s2">"
+  "backgroundColor": "#d7d7d7",
+  "backgroundImage": "https://pepperstoragedev.blob.core.windows.net/pepperdrive/c8f7061d-cd26-4807-8113-209cf7f574738baae0ca-27e1-4998-8732-7042c66e12ad.jpg",
+  "speak": "Here is an actionable background image ||"
 }
 
-</span></code></pre></div>
+</code></pre></div>
 <p><img src = "images/TABLET.BACKGROUND.IMAGE.png"/></p>
 
 <h3 id="other-ui-settings">OTHER UI SETTINGS</h3>
@@ -1286,33 +1286,33 @@ mind \pau=400\ it&rsquo;s \pau=300\ \rspd=50\ tearable. \rspd=100\ || Want to he
 </blockquote>
 
 <p>Launches a locally installed, <a href='http://doc.aldebaran.com/2-5/naoqi/index.html'>NAOqi</a> application - and meanwhile maintains chatbot session persistence. NAOqi applications can be built with <a href='http://doc.aldebaran.com/2-5/software/choregraphe/index.html'>Choregraphe</a> or with our Python SDK and the <a href='http://doc.aldebaran.com/2-5/dev/libqi/api/python/index.html#py-api-index'>qi Framework</a> via one of our <a href='https://github.com/pepperhacking/robot-jumpstarter'>Robot Jumpstarter templates</a>. <a href="https://community.ald.softbankrobotics.com/en/resources/software/language/en-gb">Download Choregraphe here</a> (requires creating a SBR community account). Launching a custom NAOqi application from Dialogflow requires knowing the application&rsquo;s APP ID, which can be found in the Properties of the Choregraphe project.</p>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""
 Dialogflow: RUN AN APPLICATION
 """"""""""""""""""""""""""""""""""""""""
 For a given intent within your agent, under the 'Response'
 section, select 'Custom Payload' and enter the following:
 Syntax:
 {
-  "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Insert</span><span class="w"> </span><span class="err">what</span><span class="w"> </span><span class="err">Pepper</span><span class="w"> </span><span class="err">should</span><span class="w"> </span><span class="err">speak</span><span class="w"> </span><span class="err">here...</span><span class="s2">",
-  "</span><span class="err">action</span><span class="s2">": "</span><span class="err">startApp</span><span class="s2">",
-  "</span><span class="err">action_parameters</span><span class="s2">": {
-    "</span><span class="err">appId</span><span class="s2">": "</span><span class="p">{</span><span class="err">APP-ID</span><span class="w"> </span><span class="err">HERE</span><span class="p">}</span><span class="err">/</span><span class="p">{</span><span class="err">BEHAVIOR-TO-RUN</span><span class="w"> </span><span class="err">HERE</span><span class="p">}</span><span class="s2">"
+  "speak": "Insert what Pepper should speak here...",
+  "action": "startApp",
+  "action_parameters": {
+    "appId": "{APP-ID HERE}/{BEHAVIOR-TO-RUN HERE}"
   }
 }
 
 Ex.
 {
-  "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Launching</span><span class="w"> </span><span class="err">Survey</span><span class="w"> </span><span class="err">application</span><span class="s2">",
-  "</span><span class="err">action</span><span class="s2">": "</span><span class="err">startApp</span><span class="s2">",
-  "</span><span class="err">action_parameters</span><span class="s2">": {
-    "</span><span class="err">appId</span><span class="s2">": "</span><span class="err">pepper-survey/.</span><span class="s2">"
+  "speak": "Launching Survey application",
+  "action": "startApp",
+  "action_parameters": {
+    "appId": "pepper-survey/."
   }
 }
 
-** The "</span><span class="err">.</span><span class="s2">" in the example above will launch the main behavior
-of the "</span><span class="err">pepper-survey</span><span class="s2">" app.
+** The "." in the example above will launch the main behavior
+of the "pepper-survey" app.
 
-</span></code></pre></div>
+</code></pre></div>
 <p><img src = "images/ACTIONS.RUN-APPLICATION.png"/></p>
 
 <h2 id="actions-play-a-game">ACTIONS - PLAY A GAME</h2>
@@ -1320,17 +1320,17 @@ of the "</span><span class="err">pepper-survey</span><span class="s2">" app.
 <blockquote>
 <p>ACTIONS - PLAY A GAME:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""
 Dialogflow: PLAY A GAME
 """"""""""""""""""""""""""""""""""""""""
 I.) UI:
   A.) To initiate a specific game, under the 'Response' section, 
   select 'Custom Payload' and enter the following:
   {
-    "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Initiating</span><span class="w"> </span><span class="err">selfie</span><span class="w"> </span><span class="err">mode.</span><span class="s2">",
-    "</span><span class="err">action</span><span class="s2">": "</span><span class="err">playGame</span><span class="s2">",
-    "</span><span class="err">action_parameters</span><span class="s2">": {
-      "</span><span class="err">gameName</span><span class="s2">": "</span><span class="err">Take</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">Selfie</span><span class="s2">"
+    "speak": "Initiating selfie mode.",
+    "action": "playGame",
+    "action_parameters": {
+      "gameName": "Take a Selfie"
     }
   }
 
@@ -1343,11 +1343,11 @@ I.) UI:
   B.) To initiate a random game, under the 'Response' section, 
   select 'Custom Payload' and enter the following:
   { 
-    "</span><span class="err">payloadType</span><span class="s2">": "</span><span class="err">action</span><span class="s2">",
-    "</span><span class="err">action</span><span class="s2">": "</span><span class="err">playRandomGame</span><span class="s2">"
+    "payloadType": "action",
+    "action": "playRandomGame"
   }
 
-</span></code></pre></div>
+</code></pre></div>
 <p><img src = "images/ACTIONS.PLAY-A-GAME.png"/></p>
 
 <h2 id="actions-trigger-an-intent">ACTIONS - TRIGGER AN INTENT</h2>
@@ -1358,20 +1358,20 @@ I.) UI:
 
 <p>HACK: Using the &lsquo;Update Chatbot Style&rsquo; action payload, you can actually trigger another intent. 
 Provide an utterance to an intent you want to trigger</p>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""
 Dialogflow:  TRIGGER AN INTENT
 """"""""""""""""""""""""""""""""""""""""
 I.) UI: 
 For a given intent within your agent, under the 'Response'
 section, select 'Custom Payload' and enter the following:
 {
-  "</span><span class="err">action</span><span class="s2">": "</span><span class="err">setStyle</span><span class="s2">",
-  "</span><span class="err">action_parameters</span><span class="s2">": {
-    "</span><span class="err">nextUtterance</span><span class="s2">": "</span><span class="err">Start</span><span class="s2">"
+  "action": "setStyle",
+  "action_parameters": {
+    "nextUtterance": "Start"
   }
 }
 
-</span></code></pre></div>
+</code></pre></div>
 <p><img src = "images/ACTIONS.TRIGGER-INTENT.png"/></p>
 
 <h2 id="actions-switch-language">ACTIONS - SWITCH LANGUAGE</h2>
@@ -1398,7 +1398,7 @@ section, select 'Custom Payload' and enter the following:
         }</p>
 
 <aside type='info'>NOTE: Requires that you have a multilingual agent. Also note that this will change the language for the entire communication system involving Pepper.  This includes Pepper&rsquo;s language, the transcription service language, and the agent&rsquo;s language.  </aside>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""
 Dialogflow:  SWITCH THE LANGUAGE
 """"""""""""""""""""""""""""""""""""""""
 I.) UI: 
@@ -1412,22 +1412,22 @@ Payload' and enter the following:
 
 General Syntax:
 {
-  "</span><span class="err">action</span><span class="s2">": "</span><span class="err">setLanguage</span><span class="s2">",
-  "</span><span class="err">action_parameters</span><span class="s2">": {
-    "</span><span class="err">language</span><span class="s2">": "</span><span class="err">Spanish</span><span class="s2">"|"</span><span class="err">English</span><span class="s2">"|"</span><span class="err">Spanish</span><span class="s2">"|"</span><span class="err">French</span><span class="s2">"|"</span><span class="err">Japanese</span><span class="s2">"| "</span><span class="err">Chinese</span><span class="s2">" 
+  "action": "setLanguage",
+  "action_parameters": {
+    "language": "Spanish"|"English"|"Spanish"|"French"|"Japanese"| "Chinese" 
                 (↑↑ only provide one of these options↑↑)
   }
 }
 
 Ex.
 {
-  "</span><span class="err">action</span><span class="s2">": "</span><span class="err">setLanguage</span><span class="s2">",
-  "</span><span class="err">action_parameters</span><span class="s2">": {
-    "</span><span class="err">language</span><span class="s2">": "</span><span class="err">Spanish</span><span class="s2">"
+  "action": "setLanguage",
+  "action_parameters": {
+    "language": "Spanish"
   }
 }
 
-</span></code></pre></div>
+</code></pre></div>
 <p><img src = "images/ACTIONS.SWITCH-LANGUAGE.png"/></p>
 
 <h2 id="actions-get-robot-location">ACTIONS - GET ROBOT LOCATION</h2>
@@ -1457,18 +1457,18 @@ Ex.
   </tr>
 </table>
 </aside>
-<div class="highlight"><pre class="highlight dialogflow tab-dialogflow"><code><span class="s2">"""""""""""""""""""""""""""""""""""""""""
+<div class="highlight"><pre class="highlight plaintext"><code>"""""""""""""""""""""""""""""""""""""""""
 Dialogflow:  GET ROBOT LOCATION
 """"""""""""""""""""""""""""""""""""""""
 I.) UI: 
 For a given intent within your agent, under the 'Response'
 section, select 'Custom Payload' and enter the following:
 {
-  "</span><span class="err">speak</span><span class="s2">": "</span><span class="err">Getting</span><span class="w"> </span><span class="err">triangulated</span><span class="w"> </span><span class="err">geolocation</span><span class="w"> </span><span class="err">information</span><span class="w"> </span><span class="err">||</span><span class="s2">",
-  "</span><span class="err">action</span><span class="s2">": "</span><span class="err">getLocation</span><span class="s2">"
+  "speak": "Getting triangulated geolocation information ||",
+  "action": "getLocation"
 }
 
-</span></code></pre></div>
+</code></pre></div>
 <p><img src = "images/ACTIONS.GET-ROBOT-LOCATION.png"/></p>
 
 <h1 id="localization">→ Localization</h1>
