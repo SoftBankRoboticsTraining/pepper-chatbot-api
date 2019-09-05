@@ -1437,15 +1437,15 @@ Ex.) The following example shows how this might look in practice:<br>
 
 <p>A. There are 4-5 steps involved, depending on whether or not you use fulfillment.</p>
 
-<p>1) First, from within the Dialogflow Console, you need to make sure your 
+<p>1) UPGRADE AGENT: First, from within the Dialogflow Console, you need to make sure your 
 bot is upgraded to Dialogflow V2 under the &#39;API VERSION&#39; under the 
 Settings tab within your agent. Simply click on the V2 API radial 
 button.</p>
 
-<p>2.) Great! Now under the &#39;GOOGLE PROJECT&#39; section of Settings, click on 
+<p>2.) DOWNLOAD KEYPATH FILE: Now, under the &#39;GOOGLE PROJECT&#39; section of Settings, click on 
 the hyperlinked value under &#39;Service Account&#39;.</p>
 
-<p>Awesome! Now you should be within the Google Cloud Platform console. 
+<p>Now, you should be within the Google Cloud Platform console. 
 Navigate to Service Accounts. Click on the ellipsis for the service 
 account called Dialogflow Integrations. Select &#39;Create key&#39; and select
 JSON as the Key Type.</p>
@@ -1453,12 +1453,12 @@ JSON as the Key Type.</p>
 <p>Now save that document! Pepper Chat will ask you to upload that document 
 when pairing your Dialogflow bot.</p>
 
-<p>3.) Pair the chatbot in Pepper Chat using the downloaded keypath file</p>
+<p>3.) PAIR CHATBOT: Pair the chatbot in Pepper Chat using the downloaded keypath file</p>
 
-<p>4.) Update any occurences of Text Bubbles, Basic Cards, or Carousels 
+<p>4.) UPDATE ANY DEPRECATED V1 SYNTAX: Update any occurences of Text Bubbles, Basic Cards, or Carousels 
 with the new syntax specified in this documentation.</p>
 
-<p>5.) [Only necessary if you use a webhook] Update your webhook to either use
+<p>5.) UPDATE WEBHOOK: [Only necessary if your chatbot use a webhook] Update your webhook to either use
  SBRA&#39;s new V2 fulfillment library or else update your webhook manually per
   the new Dialogflow V2 syntax if you do not use the SBRA fulfillment
    library</p>
