@@ -70,9 +70,11 @@ If you would like to learn and build on your own, you can take our free, <a href
 ```dialogflow
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 DIALOGFLOW SETUP INSTRUCTIONS:
-For Dialogflow bots, setup varies based on which agent version your bot is. 
-For V1 agents, setup consists of providing us with your Client Access Token. 
-You can find your Client Access Token by following the below steps.
+Note: V1 Agents and the V1 chatbot authentication mechanism (Client Access 
+  Tokens) have been deprecated! Please follow the step-by-step guide outlined
+  in the FAQ at the bottom of this page to migrate your Pepper Dialogflow 
+  chatbot to V2. When it comes to pairing your migrated V2 chatbot to Pepper
+  Chat, follow the following instructions:
 
 V2 Instructions: 
 Step 1: Open your bot in Dialogflow (https://console.dialogflow.com/)
@@ -87,8 +89,7 @@ Step 4: Within the Google Cloud Platform console, click on the Actions ellipsis
 Step 5: Upload this keypath file into Pepper Chat → See central panel
  for instructions
 
-Note: V1 Agents and the V1 chatbot authentication mechanism (Client Access 
-  Tokens) have been deprecated.
+
 
 
 
