@@ -21,15 +21,15 @@ Q. How do I upgrade an agent from V1 to V2?
 
 A. There are 4-5 steps involved, depending on whether or not you use fulfillment.
 
-1) First, from within the Dialogflow Console, you need to make sure your 
+1) UPGRADE AGENT: First, from within the Dialogflow Console, you need to make sure your 
 bot is upgraded to Dialogflow V2 under the 'API VERSION' under the 
 Settings tab within your agent. Simply click on the V2 API radial 
 button.
 
-2.) Great! Now under the 'GOOGLE PROJECT' section of Settings, click on 
+2.) DOWNLOAD KEYPATH FILE: Now, under the 'GOOGLE PROJECT' section of Settings, click on 
 the hyperlinked value under 'Service Account'.
 
-Awesome! Now you should be within the Google Cloud Platform console. 
+Now, you should be within the Google Cloud Platform console. 
 Navigate to Service Accounts. Click on the ellipsis for the service 
 account called Dialogflow Integrations. Select 'Create key' and select
 JSON as the Key Type.
@@ -37,12 +37,12 @@ JSON as the Key Type.
 Now save that document! Pepper Chat will ask you to upload that document 
 when pairing your Dialogflow bot.
 
-3.) Pair the chatbot in Pepper Chat using the downloaded keypath file
+3.) PAIR CHATBOT: Pair the chatbot in Pepper Chat using the downloaded keypath file
 
-4.) Update any occurences of Text Bubbles, Basic Cards, or Carousels 
+4.) UPDATE ANY DEPRECATED V1 SYNTAX: Update any occurences of Text Bubbles, Basic Cards, or Carousels 
 with the new syntax specified in this documentation.
 
-5.) [Only necessary if you use a webhook] Update your webhook to either use
+5.) UPDATE WEBHOOK: [Only necessary if your chatbot use a webhook] Update your webhook to either use
  SBRA's new V2 fulfillment library or else update your webhook manually per
   the new Dialogflow V2 syntax if you do not use the SBRA fulfillment
    library
