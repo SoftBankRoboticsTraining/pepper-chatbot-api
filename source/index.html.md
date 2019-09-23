@@ -539,7 +539,7 @@ For a given intent within your agent, under the 'Response'
 section, click 'Add Message Content', select 'Custom Payload' 
 and copy and paste the following:
 {
-  "backgroundImage": "https://pepperstoragedev.blob.core.windows.net/pepperdrive/c8f7061d-cd26-4807-8113-209cf7f574738baae0ca-27e1-4998-8732-7042c66e12ad.jpg",
+  "backgroundImage": "https://pepperstorageprod.blob.core.windows.net/pepperdrive/b01d1715-6c1c-4e73-ae19-5136ecdd6bf8020fb261-ddde-4080-923e-cfc247281a63.png",
   "speak": "Here is an persistent background image ||"
 }
 
